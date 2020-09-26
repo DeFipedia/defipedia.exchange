@@ -1,0 +1,77 @@
+.home-page {
+  margin: auto;
+  margin-top: 20vh;
+  width: 80vw;
+}
+
+.MuiGrid-item h3 {
+  font-weight: bold;
+  text-align: center;
+}
+.MuiGrid-item p {
+  text-align: center;
+  font-weight: 300;
+  font-size: 12pt;
+  line-height: 1.5;
+  margin-top: 7%;
+}
+
+.MuiCard-root {
+  height: 55vh;
+  width: 70%;
+  float: right;
+}
+
+.buy-btn {
+  width: 70%;
+  height: 15%;
+  float: right;
+  opacity: 80%;
+  margin-top: 2% !important;
+  color: white !important;
+  font-weight: bolder !important;
+  text-transform: none !important;
+  font-size: 18pt !important;
+}
+.buy-btn:hover {
+  background: #ff6400 !important;
+  opacity: 100% !important;
+}
+
+.coming-soon-actions {
+  width: 70% !important;
+  height: 20% !important;
+  float: right;
+  margin-top: 2%;
+}
+.coming-soon-actions button {
+  width: 48%;
+  color: grey;
+}
+.coming-soon-actions button:nth-child(2) {
+  float: right;
+}
+
+@media screen and (max-width: 800px) {
+  .MuiCard-root {
+    float: none;
+    margin: auto;
+    width: 100%;
+    height: 30vh;
+  }
+
+  .buy-btn {
+    float: none;
+    width: 100%;
+  }
+
+  .coming-soon-actions {
+    float: none;
+  }
+  .coming-soon-actions button {
+    margin-top: 5%;
+    margin-bottom: 20%;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

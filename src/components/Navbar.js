@@ -3,13 +3,17 @@ import {AppBar, Toolbar, Typography} from '@material-ui/core'
 
 
 const Navbar = (props) => {
-    let {brandTitle} = props
+    let {brandTitle, brandLogo, navOptions} = props
     return(
-        <AppBar position='fixed' >
+        <AppBar position='fixed' color='bg'>
             <Toolbar>
-                <Typography variant='h6'>
+                <img alt='brand-logo' src={brandLogo}/>
+                <Typography variant='h7' color='text'>
                     {brandTitle}
                 </Typography>
+                {/* {navOptions && navOptions.map(option => (
+                    <p>dfsdfdsfsdsdsdfs</p>
+                ))} */}
             </Toolbar>
         </AppBar >
     )

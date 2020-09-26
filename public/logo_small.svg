@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="74px" height="74px" viewBox="0 0 74 74" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Logo</title>
+    <defs>
+        <rect id="path-1" x="13" y="8" width="3" height="3"></rect>
+        <filter x="-66.7%" y="-33.3%" width="233.3%" height="233.3%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="0.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Designs---Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD---Light---About---Road-Map" transform="translate(-50.000000, 0.000000)">
+            <g id="Logo" transform="translate(50.000000, 0.000000)">
+                <rect id="Frame" x="0" y="0" width="74" height="74"></rect>
+                <g id="Lightlogo-Small" transform="translate(25.000000, 25.000000)">
+                    <polygon id="Smalllogopath-Dark" fill="#252525" points="13 9 -1.10245146e-13 9 1.70530257e-13 24 15 24 15.0071124 1 23 1 23 9 16 9 16 10 24 10 24 0 14 0 14 23 1 23 1 10 13 10"></polygon>
+                    <g id="Connectingblock-Lightgrey">
+                        <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                        <use fill="#F2F2F2" fill-rule="evenodd" xlink:href="#path-1"></use>
+                    </g>
+                    <rect id="Smallblock-Blue" fill="#006FFF" x="17" y="3" width="4" height="4"></rect>
+                    <rect id="Largeblock-Orange" fill="#FF6400" x="3" y="12" width="9" height="9"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
