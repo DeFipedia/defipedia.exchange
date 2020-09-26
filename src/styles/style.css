@@ -50,7 +50,7 @@
 }
 
 .MuiCard-root {
-  height: 55vh;
+  height: 45vh;
   width: 70%;
   float: right;
 }
@@ -60,7 +60,7 @@
   height: 15%;
   float: right;
   opacity: 80%;
-  margin-top: 2% !important;
+  margin-top: 12% !important;
   color: white !important;
   font-weight: bolder !important;
   text-transform: none !important;
