@@ -1,12 +1,21 @@
 import React from 'react';
 import {Route, Switch} from 'react-router-dom'
+import Home from './pages/Home';
+import Navbar from './components/Navbar'
+import './styles/style.css'
 
 const App = () => {
+  let navOptions = ['Buy']
   return (
     <div className='App'>
+      <Navbar 
+        brandTitle='DeFipedia + $BOOKS' 
+        brandLogo={process.env.PUBLIC_URL + 'logo_small.svg'}
+        navOptions = {navOptions}
+      />
       <Switch>
         <Route exact path='/'>
-          <p>This is home route</p>
+          <Home />
         </Route>
       </Switch>
     </div>
