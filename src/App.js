@@ -5,9 +5,14 @@ import Navbar from './components/Navbar'
 import './styles/style.css'
 
 const App = () => {
+  let navOptions = ['Buy']
   return (
     <div className='App'>
-      <Navbar brandTitle='DeFipedia + $BOOKS' brandLogo={process.env.PUBLIC_URL + 'logo_small.svg'}/>
+      <Navbar 
+        brandTitle='DeFipedia + $BOOKS' 
+        brandLogo={process.env.PUBLIC_URL + 'logo_small.svg'}
+        navOptions = {navOptions}
+      />
       <Switch>
         <Route exact path='/'>
           <Home />

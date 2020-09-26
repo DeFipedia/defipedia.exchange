@@ -1,5 +1,5 @@
 import React from 'react';
-import {AppBar, Toolbar, Typography} from '@material-ui/core'
+import {AppBar, Toolbar, Typography, Button} from '@material-ui/core'
 
 
 const Navbar = (props) => {
@@ -11,9 +11,11 @@ const Navbar = (props) => {
                 <Typography variant='h7' color='text'>
                     {brandTitle}
                 </Typography>
-                {/* {navOptions && navOptions.map(option => (
-                    <p>dfsdfdsfsdsdsdfs</p>
-                ))} */}
+                <nav className='nav-options'>
+                    {navOptions && navOptions.map(option => (
+                        <Button variant='contained' color='primary'>{option}</Button>
+                    ))}
+                </nav>
             </Toolbar>
         </AppBar >
     )

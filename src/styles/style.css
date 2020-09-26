@@ -1,3 +1,36 @@
+.MuiAppBar-root {
+  height: 12vh;
+}
+
+.nav-options {
+  display: none;
+}
+
+@media screen and (min-width: 700px) and (max-width: 800px) {
+  .MuiAppBar-root {
+    height: 8vh;
+  }
+
+  .nav-options {
+    display: block;
+    float: right;
+  }
+  .nav-options button {
+    margin-left: 50vw;
+  }
+}
+@media screen and (min-width: 300px) and (max-width: 600px) {
+  .MuiAppBar-root {
+    height: 8vh;
+  }
+
+  .nav-options {
+    display: block;
+  }
+  .nav-options button {
+    margin-left: 90%;
+  }
+}
 .home-page {
   margin: auto;
   margin-top: 20vh;
@@ -53,6 +86,10 @@
 }
 
 @media screen and (max-width: 800px) {
+  .home-page {
+    margin-top: 15vh;
+  }
+
   .MuiCard-root {
     float: none;
     margin: auto;
@@ -71,6 +108,7 @@
   .coming-soon-actions button {
     margin-top: 5%;
     margin-bottom: 20%;
+    height: 5vh;
   }
 }
 
