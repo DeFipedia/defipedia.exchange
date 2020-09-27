@@ -59,16 +59,17 @@
   width: 70%;
   height: 15%;
   float: right;
-  opacity: 80%;
+  opacity: 0.8;
   margin-top: 12% !important;
   color: white !important;
   font-weight: bolder !important;
   text-transform: none !important;
   font-size: 18pt !important;
+  z-index: 2;
 }
 .buy-btn:hover {
   background: #ff6400 !important;
-  opacity: 100% !important;
+  opacity: 1 !important;
 }
 
 .coming-soon-actions {
