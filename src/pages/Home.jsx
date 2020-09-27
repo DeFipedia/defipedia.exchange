@@ -1,10 +1,12 @@
 import React, {useState} from 'react'
-import {Grid, Card, CardContent, Tooltip, Button} from '@material-ui/core'
+import {Grid, Card, CardContent, Tooltip, Button, useTheme} from '@material-ui/core'
 import Popup from '../components/Popup'
 import {Spring} from 'react-spring/renderprops'
 import { useSpring, animated } from 'react-spring'
 
 const Home = () => {
+    let theme = useTheme()
+
     const [open, setOpen] = useState(false)
 
     const showComingSoon = () => {
@@ -55,7 +57,7 @@ const Home = () => {
                             </CardContent>
                         </Card>
                     </animated.div>
-                    <Button variant='contained' color='primary' className='buy-btn'>Buy</Button>
+                    <Button variant='contained' style={{backgroundColor: theme.palette.primary.main}} className='buy-btn'>Buy</Button>
                     <span className='coming-soon-actions'>
                         <Tooltip title='Coming Soon'>
                             <Button onClick={showComingSoon} variant='contained' disableElevation>Sell</Button>
