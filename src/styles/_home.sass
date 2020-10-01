@@ -1,15 +1,24 @@
 .home-page
     margin: auto
-    margin-top: 10vh
+    margin-top: 5vh
     width: 80vw
     text-align: center
     position: relative
+
+.card-panel
+    display: grid
+    grid-template-columns: 1fr
+    grid-template-rows: 1fr
+    grid-template-areas: 'overlap'
 
 .MuiCard-root
     width: 25vw
     height: 55vh
     margin: auto
     background: linear-gradient(to bottom right, #343434, #151515)
+    border-radius: 10px !important
+    grid-area: overlap
+    z-index: 2
     span
         display: flex
         justify-content: space-between
@@ -46,7 +55,19 @@
         width: 65% 
         margin: 8%
 
-    
+.learn-more-section
+    width: 25vw
+    margin: auto
+    text-align: left
+    background-color: #F2F2F2
+    height: 10vh
+    border-radius: 10px
+    grid-area: overlap
+    margin-top: 60vh
+    p
+        padding: 5%
+        font-weight: bold
+        font-size: 12px
 
 .actions
     width: 25vw
@@ -69,6 +90,7 @@
         width: 48%
         color: #979797
         text-transform: none !important
+        background-color: #F2F2F2
 
 
 // @media screen and ( max-width: 800px )

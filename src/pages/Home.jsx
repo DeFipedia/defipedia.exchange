@@ -13,21 +13,27 @@ const Home = () => {
     //----------//
     return(
         <div className='home-page'>
-            <Card>
-                <CardContent>
-                    <h3>$BOOKS on Uniswap</h3> 
-                    <p>2020 DeFi Packs</p>  
-                    <img alt='cover-art' src={process.env.PUBLIC_URL + 'assets/cover-art.jpg'}/>  
-                    <h4>$ 200.00 USD</h4> 
-                    <span>
-                        <p>50/50 available</p>
-                        <div>
-                            <p>Dynamic Pricing Stats</p> 
-                            <img alt='question-mark' src={process.env.PUBLIC_URL + '/assets/question-mark.png'}/>
-                        </div>
-                    </span>                
-                </CardContent>                
-            </Card>
+            <div className='card-panel'>
+                <Card>
+                    <CardContent>
+                        <h3>$BOOKS on Uniswap</h3> 
+                        <p>2020 DeFi Packs</p>  
+                        <img alt='cover-art' src={process.env.PUBLIC_URL + 'assets/cover-art.jpg'}/>  
+                        <h4>$ 200.00 USD</h4> 
+                        <span>
+                            <p>50/50 available</p>
+                            <div>
+                                <p>Dynamic Pricing Stats</p> 
+                                <img alt='question-mark' src={process.env.PUBLIC_URL + '/assets/question-mark.png'}/>
+                            </div>
+                        </span>                
+                    </CardContent>                
+                </Card>
+                {/* ------------------------- */}
+                <section className='learn-more-section'>
+                    <p>Buy and sell real books with digital currency. Delivered on demand. Learn more</p>
+                </section>
+            </div>
             <div className='actions'>
                 <Button variant='contained' style={{backgroundColor: theme.palette.primary.main}} className='buy-btn'>Buy</Button>
                 <span className='coming-soon-actions'>
