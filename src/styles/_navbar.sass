@@ -1,22 +1,20 @@
 .MuiAppBar-root
-    height: 12vh
+    height: 10vh
 
-.nav-options
-    display: none
+// .MuiToolbar-root
+//     justify: 'space-between'
+
+// // .nav-options
+// //     float: right
 
 @media screen and (min-width: 700px) and ( max-width: 800px )
     .MuiAppBar-root
         height: 8vh
-    .nav-options
-        display: block   
-        float: right
-        button
-            margin-left: 50vw
 
 @media screen and (min-width: 300px) and ( max-width: 600px )
     .MuiAppBar-root
         height: 8vh
-    .nav-options
-        display: block   
-        button
-            margin-left: 90%  
+        .nav-options
+            margin-left: 35%
+        .MuiTypography-root
+            display: none

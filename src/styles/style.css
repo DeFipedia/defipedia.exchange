@@ -1,34 +1,21 @@
 .MuiAppBar-root {
-  height: 12vh;
-}
-
-.nav-options {
-  display: none;
+  height: 10vh;
 }
 
 @media screen and (min-width: 700px) and (max-width: 800px) {
   .MuiAppBar-root {
     height: 8vh;
   }
-
-  .nav-options {
-    display: block;
-    float: right;
-  }
-  .nav-options button {
-    margin-left: 50vw;
-  }
 }
 @media screen and (min-width: 300px) and (max-width: 600px) {
   .MuiAppBar-root {
     height: 8vh;
   }
-
-  .nav-options {
-    display: block;
+  .MuiAppBar-root .nav-options {
+    margin-left: 35%;
   }
-  .nav-options button {
-    margin-left: 90%;
+  .MuiAppBar-root .MuiTypography-root {
+    display: none;
   }
 }
 .home-page {

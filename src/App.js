@@ -5,11 +5,11 @@ import Navbar from './components/Navbar'
 import './styles/style.css'
 
 const App = () => {
-  let navOptions = ['Buy']
+  let navOptions = ['None Redeemed']
   return (
     <div className='App'>
       <Navbar 
-        brandTitle='DeFipedia + $BOOKS' 
+        brandTitle='DeFipedia' 
         brandLogo={process.env.PUBLIC_URL + 'logo_small.svg'}
         navOptions = {navOptions}
       />
