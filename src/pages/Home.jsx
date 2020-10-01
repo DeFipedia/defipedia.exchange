@@ -15,7 +15,17 @@ const Home = () => {
         <div className='home-page'>
             <Card>
                 <CardContent>
-                    <p>Token data will be available here</p>                        
+                    <h3>$BOOKS on Uniswap</h3> 
+                    <p>2020 DeFi Packs</p>  
+                    <img alt='cover-art' src={process.env.PUBLIC_URL + 'assets/cover-art.jpg'}/>  
+                    <h4>$ 200.00 USD</h4> 
+                    <span>
+                        <p>50/50 available</p>
+                        <div>
+                            <p>Dynamic Pricing Stats</p> 
+                            <img alt='question-mark' src={process.env.PUBLIC_URL + '/assets/question-mark.png'}/>
+                        </div>
+                    </span>                
                 </CardContent>                
             </Card>
             <div className='actions'>
