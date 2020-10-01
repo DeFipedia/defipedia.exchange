@@ -17,7 +17,7 @@ const CardModal = (props) => {
                         {/* <img src={process.env.PUBLIC_URL + 'logo_small.svg'} /> */}
                         <p>Get Packs</p>
                     </div>
-                    <IconButton onClick={handleClose}>
+                    <IconButton elevation={0} onClick={handleClose}>
                         <CloseIcon style={{fill: '#FF6400'}} />
                     </IconButton>
                 </span>

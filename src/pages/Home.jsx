@@ -44,7 +44,7 @@ const Home = () => {
                     </CardContent>                
                 </Card>
                 <section className='learn-more-section'>
-                    <p>Buy and sell real books with digital currency. Delivered on demand. Learn more</p>
+                    <p>Buy and sell real books with digital currency. Delivered on demand. <a href='/details'>Learn More</a></p>
                 </section>
             </div>
             <div className='actions'>
@@ -65,21 +65,25 @@ const Home = () => {
         <div className='card-panel'>
                 <Card>
                     <CardContent>
-                        <h3>$BOOKS on Uniswap</h3> 
+                        <h3>$BOOKS on Auction</h3> 
                         <p>2020 DeFi Packs</p>  
                         <img alt='cover-art' src={process.env.PUBLIC_URL + 'assets/cover-art.jpg'}/>  
-                        <h4>$ 200.00 USD</h4> 
+                        <h4>$ 1000.00 USD</h4> 
                         <span>
-                            <p>50/50 available</p>
+                            <p>950/950 available</p>
                             <div>
                                 <p>Dynamic Pricing Stats</p> 
-                                <img alt='question-mark' src={process.env.PUBLIC_URL + '/assets/question-mark.png'}/>
+                                <img 
+                                    alt='question-mark' 
+                                    src={process.env.PUBLIC_URL + '/assets/question-mark.png'}
+                                    onClick={() => showDynamicPricingStatModal()}
+                                />
                             </div>
                         </span>                
                     </CardContent>                
                 </Card>
                 <section className='learn-more-section'>
-                    <p>Buy and sell real books with digital currency. Delivered on demand. Learn more</p>
+                    <p>Buy and sell real books with digital currency. Delivered on demand. <a href='/details'>Learn More</a></p>
                 </section>
             </div>
             <div className='actions'>

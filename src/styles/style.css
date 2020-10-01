@@ -104,6 +104,9 @@
   font-weight: bold;
   font-size: 12px;
 }
+.learn-more-section a {
+  color: #FF6400;
+}
 
 .actions {
   width: 25vw;
@@ -160,6 +163,54 @@
 }
 .dynamic-pricing-modal .dynamic-pricing-modal-content a {
   color: #006FFF;
+}
+
+.details-page {
+  margin-top: 12vh;
+}
+
+.detail-card {
+  width: 25vw;
+  height: 60vh;
+  background: linear-gradient(to bottom right, #343434, #151515);
+  border-radius: 10px !important;
+  margin: auto;
+  padding-top: 1%;
+}
+.detail-card .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+.detail-card .header h4 {
+  color: white;
+}
+.detail-card .detail-card-section div {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+.detail-card .detail-card-section div p {
+  color: white;
+  font-size: 10pt;
+}
+.detail-card .detail-card-description {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+.detail-card .detail-card-description p {
+  color: white;
+  margin-top: 10%;
+}
+.detail-card .detail-card-description a {
+  color: #FF6400;
+  font-weight: bold;
+}
+.detail-card .action button {
+  margin-top: 5% !important;
 }
 
 /*# sourceMappingURL=style.css.map */
