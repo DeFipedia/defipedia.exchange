@@ -28,6 +28,7 @@
   width: 80vw;
   text-align: center;
   position: relative;
+  margin-bottom: 120px;
 }
 
 .card-panel {
@@ -129,6 +130,36 @@
   color: #979797;
   text-transform: none !important;
   background-color: #F2F2F2;
+}
+
+.dynamic-pricing-modal {
+  height: 85vh !important;
+  margin-top: 10vh !important;
+  width: 30vw !important;
+  margin: auto;
+  z-index: 5 !important;
+  background-color: white;
+  border-radius: 10px;
+  padding-left: 2%;
+  padding-right: 2%;
+}
+.dynamic-pricing-modal .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.dynamic-pricing-modal .header p {
+  font-weight: bold;
+}
+.dynamic-pricing-modal .dynamic-pricing-modal-content h4 {
+  font-size: 12pt !important;
+  margin: 0px;
+}
+.dynamic-pricing-modal .dynamic-pricing-modal-content p {
+  font-size: 10pt;
+}
+.dynamic-pricing-modal .dynamic-pricing-modal-content a {
+  color: #006FFF;
 }
 
 /*# sourceMappingURL=style.css.map */
