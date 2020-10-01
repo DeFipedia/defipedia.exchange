@@ -1,68 +1,54 @@
 .home-page
     margin: auto
-    margin-top: 20vh
+    margin-top: 10vh
     width: 80vw
-
-.MuiGrid-item
-    h3
-        font-weight: bold
-        text-align: center
-    p
-        text-align: center
-        font-weight: 300
-        font-size: 12pt
-        line-height: 1.5
-        margin-top: 7%
+    text-align: center
+    position: relative
 
 .MuiCard-root
-    height: 45vh
-    width: 70%
-    float: right
+    width: 25vw
+    height: 55vh
+    margin: auto
+
+.actions
+    width: 25vw
+    display: grid
+    padding: 1%
+    margin: auto
+    text-align: center
 
 .buy-btn
-    width: 70%
-    height: 15%
-    float: right
-    opacity: 0.8
-    margin-top: 12% !important
     color: white !important
-    font-weight: bolder !important
+    width: 100% !important
     text-transform: none !important
-    font-size: 18pt !important
-    z-index: 2
-    &:hover
-        background: #ff6400 !important
-        opacity: 1.0 !important
 
 .coming-soon-actions
-    width: 70% !important
-    height: 20% !important
-    float: right
+    width: 100% 
     margin-top: 2%
+    display: flex
+    justify-content: space-between
     button 
         width: 48%
         color: grey
-    button:nth-child(2)
-        float: right
 
 
-@media screen and ( max-width: 800px )
-    .home-page
-        margin-top: 15vh
-    .MuiCard-root
-        float: none
-        margin: auto
-        width: 100%
-        height: 30vh
-    .buy-btn
-        float: none
-        width: 100%
-    .coming-soon-actions
-        float: none
-        button 
-            margin-top: 5%
-            margin-bottom: 20%
-            height: 5vh
+// @media screen and ( max-width: 800px )
+//     .home-page
+//         margin-top: 15vh
+//     .MuiCard-root
+//         float: none
+//         margin: auto
+//         width: 100%
+//         height: 30vh
+//     .buy-btn
+//         float: none
+//         width: 100%
+//     .coming-soon-actions
+//         float: none
+//         button 
+//             margin-top: 5%
+//             margin-bottom: 20%
+//             height: 5vh
         
     
 
