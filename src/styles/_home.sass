@@ -1,12 +1,11 @@
 .home-page
     margin: auto
-    margin-top: 5vh
+    margin-top: 3vh
     width: 80vw
     text-align: center
     position: relative
     margin-bottom: 120px
-    // .card-panel:nth-child(2)
-    //     margin-top: 2vh
+        
 
 .card-panel
     display: grid
@@ -56,7 +55,7 @@
     img 
         height: 65%
         width: 65% 
-        margin: 8%
+        margin: 8%        
 
 .learn-more-section
     width: 25vw
@@ -79,6 +78,7 @@
     display: grid
     padding: 1%
     margin: auto
+    margin-top: 1%
     text-align: center
 
 .buy-btn
@@ -99,6 +99,8 @@
 
 // for tablet//
 @media screen and (min-width: 700px) and ( max-width: 900px )
+    .home-page
+        margin-top: 5vh
     .MuiCard-root
         width: 70vw
         height: 55vh
@@ -106,11 +108,13 @@
         width: 70vw
     .actions
         width: 70vw
+        margin-top: 2%
 
 // for mobile//
 @media screen and (min-width: 400px) and ( max-width: 699px )
     .home-page
         width: 80vw
+        margin-top: 5vh
     .MuiCard-root
         width: 80vw
         height: 400px
@@ -125,15 +129,18 @@
 @media screen and ( max-width:  399px)
     .home-page
          width: 90vw
+         margin-top: 7vh
     .MuiCard-root
         width: 90vw
-        height: 60vh
+        height: 400px
         margin-top: 1vh
         margin-top: 5vh
     .learn-more-section
         width: 90vw
-        margin-top: 62vh
-        height: 15vh
+        margin-top: 420px
+        height: 80px
+        p 
+            line-height: 1
     .actions
         width: 90vw 
 

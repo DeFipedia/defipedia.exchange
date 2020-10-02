@@ -1,5 +1,8 @@
 .MuiAppBar-root {
   height: 10vh;
+}
+
+.MuiToolbar-root {
   display: flex;
   justify-content: space-between;
 }
@@ -28,7 +31,7 @@
 }
 .home-page {
   margin: auto;
-  margin-top: 5vh;
+  margin-top: 3vh;
   width: 80vw;
   text-align: center;
   position: relative;
@@ -117,6 +120,7 @@
   display: grid;
   padding: 1%;
   margin: auto;
+  margin-top: 1%;
   text-align: center;
 }
 
@@ -140,6 +144,10 @@
 }
 
 @media screen and (min-width: 700px) and (max-width: 900px) {
+  .home-page {
+    margin-top: 5vh;
+  }
+
   .MuiCard-root {
     width: 70vw;
     height: 55vh;
@@ -151,11 +159,13 @@
 
   .actions {
     width: 70vw;
+    margin-top: 2%;
   }
 }
 @media screen and (min-width: 400px) and (max-width: 699px) {
   .home-page {
     width: 80vw;
+    margin-top: 5vh;
   }
 
   .MuiCard-root {
@@ -177,19 +187,23 @@
 @media screen and (max-width: 399px) {
   .home-page {
     width: 90vw;
+    margin-top: 7vh;
   }
 
   .MuiCard-root {
     width: 90vw;
-    height: 60vh;
+    height: 400px;
     margin-top: 1vh;
     margin-top: 5vh;
   }
 
   .learn-more-section {
     width: 90vw;
-    margin-top: 62vh;
-    height: 15vh;
+    margin-top: 420px;
+    height: 80px;
+  }
+  .learn-more-section p {
+    line-height: 1;
   }
 
   .actions {
