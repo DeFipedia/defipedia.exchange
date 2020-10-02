@@ -17,10 +17,12 @@
   .MuiAppBar-root {
     height: 8vh;
   }
-  .MuiAppBar-root .nav-options {
-    margin-left: 35%;
-  }
   .MuiAppBar-root .MuiTypography-root {
+    display: none;
+  }
+}
+@media screen and (max-width: 399px) {
+  .MuiTypography-root {
     display: none;
   }
 }
@@ -158,14 +160,14 @@
 
   .MuiCard-root {
     width: 80vw;
-    height: 50vh;
+    height: 400px;
     margin-top: 0px;
     margin-top: 5vh;
   }
 
   .learn-more-section {
     width: 80vw;
-    margin-top: 52vh;
+    margin-top: 420px;
   }
 
   .actions {
@@ -187,6 +189,7 @@
   .learn-more-section {
     width: 90vw;
     margin-top: 62vh;
+    height: 15vh;
   }
 
   .actions {
