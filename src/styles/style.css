@@ -1,115 +1,216 @@
 .MuiAppBar-root {
-  height: 12vh;
+  height: 10vh;
 }
 
-.nav-options {
-  display: none;
+.nav-options button {
+  text-transform: none !important;
 }
 
 @media screen and (min-width: 700px) and (max-width: 800px) {
   .MuiAppBar-root {
     height: 8vh;
   }
-
-  .nav-options {
-    display: block;
-    float: right;
-  }
-  .nav-options button {
-    margin-left: 50vw;
-  }
 }
 @media screen and (min-width: 300px) and (max-width: 600px) {
   .MuiAppBar-root {
     height: 8vh;
   }
-
-  .nav-options {
-    display: block;
+  .MuiAppBar-root .nav-options {
+    margin-left: 35%;
   }
-  .nav-options button {
-    margin-left: 90%;
+  .MuiAppBar-root .MuiTypography-root {
+    display: none;
   }
 }
 .home-page {
   margin: auto;
-  margin-top: 20vh;
+  margin-top: 5vh;
   width: 80vw;
+  text-align: center;
+  position: relative;
+  margin-bottom: 120px;
 }
 
-.MuiGrid-item h3 {
-  font-weight: bold;
-  text-align: center;
-}
-.MuiGrid-item p {
-  text-align: center;
-  font-weight: 300;
-  font-size: 12pt;
-  line-height: 1.5;
-  margin-top: 7%;
+.card-panel {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "overlap";
 }
 
 .MuiCard-root {
-  height: 45vh;
-  width: 70%;
+  width: 25vw;
+  height: 55vh;
+  margin: auto;
+  background: linear-gradient(to bottom right, #343434, #151515);
+  border-radius: 10px !important;
+  grid-area: overlap;
+  z-index: 2;
+}
+.MuiCard-root span {
+  display: flex;
+  justify-content: space-between;
+}
+.MuiCard-root span div {
+  display: flex;
+  align-items: center;
+}
+.MuiCard-root span div p {
+  margin-right: 5px !important;
+}
+.MuiCard-root span div img {
+  height: 12px;
+  width: 12px;
   float: right;
+  margin: 0px;
+}
+.MuiCard-root h4 {
+  color: white;
+  margin: 0px;
+  text-align: left;
+  font-size: 16px;
+}
+.MuiCard-root h3 {
+  color: white;
+  margin: 0px;
+  text-align: left;
+}
+.MuiCard-root p {
+  color: #979797;
+  margin: 0px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  text-align: left;
+}
+.MuiCard-root img {
+  height: 65%;
+  width: 65%;
+  margin: 8%;
+}
+
+.learn-more-section {
+  width: 25vw;
+  margin: auto;
+  text-align: left;
+  background-color: #F2F2F2;
+  height: 10vh;
+  border-radius: 10px;
+  grid-area: overlap;
+  margin-top: 60vh;
+}
+.learn-more-section p {
+  padding: 5%;
+  font-weight: bold;
+  font-size: 12px;
+}
+.learn-more-section a {
+  color: #FF6400;
+}
+
+.actions {
+  width: 25vw;
+  display: grid;
+  padding: 1%;
+  margin: auto;
+  text-align: center;
 }
 
 .buy-btn {
-  width: 70%;
-  height: 15%;
-  float: right;
-  opacity: 80%;
-  margin-top: 12% !important;
   color: white !important;
-  font-weight: bolder !important;
+  width: 100% !important;
   text-transform: none !important;
-  font-size: 18pt !important;
-}
-.buy-btn:hover {
-  background: #ff6400 !important;
-  opacity: 100% !important;
 }
 
 .coming-soon-actions {
-  width: 70% !important;
-  height: 20% !important;
-  float: right;
+  width: 100%;
   margin-top: 2%;
+  display: flex;
+  justify-content: space-between;
 }
 .coming-soon-actions button {
   width: 48%;
-  color: grey;
+  color: #979797;
+  text-transform: none !important;
+  background-color: #F2F2F2;
 }
-.coming-soon-actions button:nth-child(2) {
-  float: right;
+
+.dynamic-pricing-modal {
+  height: 85vh !important;
+  margin-top: 10vh !important;
+  width: 30vw !important;
+  margin: auto;
+  z-index: 5 !important;
+  background-color: white;
+  border-radius: 10px;
+  padding-left: 2%;
+  padding-right: 2%;
+}
+.dynamic-pricing-modal .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.dynamic-pricing-modal .header p {
+  font-weight: bold;
+}
+.dynamic-pricing-modal .dynamic-pricing-modal-content h4 {
+  font-size: 12pt !important;
+  margin: 0px;
+}
+.dynamic-pricing-modal .dynamic-pricing-modal-content p {
+  font-size: 10pt;
+}
+.dynamic-pricing-modal .dynamic-pricing-modal-content a {
+  color: #006FFF;
 }
 
-@media screen and (max-width: 800px) {
-  .home-page {
-    margin-top: 15vh;
-  }
+.details-page {
+  margin-top: 12vh;
+}
 
-  .MuiCard-root {
-    float: none;
-    margin: auto;
-    width: 100%;
-    height: 30vh;
-  }
-
-  .buy-btn {
-    float: none;
-    width: 100%;
-  }
-
-  .coming-soon-actions {
-    float: none;
-  }
-  .coming-soon-actions button {
-    margin-top: 5%;
-    margin-bottom: 20%;
-    height: 5vh;
-  }
+.detail-card {
+  width: 25vw;
+  height: 60vh;
+  background: linear-gradient(to bottom right, #343434, #151515);
+  border-radius: 10px !important;
+  margin: auto;
+  padding-top: 1%;
+}
+.detail-card .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+.detail-card .header h4 {
+  color: white;
+}
+.detail-card .detail-card-section div {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+.detail-card .detail-card-section div p {
+  color: white;
+  font-size: 10pt;
+}
+.detail-card .detail-card-description {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+.detail-card .detail-card-description p {
+  color: white;
+  margin-top: 10%;
+}
+.detail-card .detail-card-description a {
+  color: #FF6400;
+  font-weight: bold;
+}
+.detail-card .action button {
+  margin-top: 5% !important;
 }
 
 /*# sourceMappingURL=style.css.map */
