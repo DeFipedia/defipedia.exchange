@@ -1,17 +1,19 @@
 .MuiAppBar-root {
   height: 10vh;
+  display: flex;
+  justify-content: space-between;
 }
 
 .nav-options button {
   text-transform: none !important;
 }
 
-@media screen and (min-width: 700px) and (max-width: 800px) {
+@media screen and (min-width: 700px) and (max-width: 900px) {
   .MuiAppBar-root {
     height: 8vh;
   }
 }
-@media screen and (min-width: 300px) and (max-width: 600px) {
+@media screen and (min-width: 300px) and (max-width: 699px) {
   .MuiAppBar-root {
     height: 8vh;
   }
@@ -135,6 +137,20 @@
   background-color: #F2F2F2;
 }
 
+@media screen and (min-width: 700px) and (max-width: 900px) {
+  .MuiCard-root {
+    width: 70vw;
+    height: 55vh;
+  }
+
+  .learn-more-section {
+    width: 70vw;
+  }
+
+  .actions {
+    width: 70vw;
+  }
+}
 .dynamic-pricing-modal {
   height: 85vh !important;
   margin-top: 10vh !important;
