@@ -290,7 +290,26 @@
   font-weight: bold;
 }
 .detail-card .action button {
-  margin-top: 5% !important;
+  margin-top: 5%;
+}
+
+@media screen and (min-width: 700px) and (max-width: 900px) {
+  .detail-card {
+    width: 70vw;
+    height: 45vh;
+  }
+}
+@media screen and (min-width: 400px) and (max-width: 699px) {
+  .detail-card {
+    width: 80vw;
+    height: 450px;
+  }
+}
+@media screen and (max-width: 399px) {
+  .detail-card {
+    width: 90vw;
+    height: 450px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
