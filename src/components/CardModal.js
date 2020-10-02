@@ -13,8 +13,12 @@ const CardModal = (props) => {
         >
             <div className='dynamic-pricing-modal'>
                 <span className='header'>
-                    <p>Get Packs</p>
-                    <CloseIcon style={{fill: '#FF6400'}} />
+                    <div>
+                        <p>Get Packs</p>
+                    </div>
+                    <IconButton elevation={0} onClick={handleClose}>
+                        <CloseIcon style={{fill: '#FF6400'}} />
+                    </IconButton>
                 </span>
                 <section class='dynamic-pricing-modal-content'>
                     <h4>How it works:</h4>
