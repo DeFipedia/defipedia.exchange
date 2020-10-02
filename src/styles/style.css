@@ -197,10 +197,10 @@
   }
 }
 .dynamic-pricing-modal {
-  height: 85vh !important;
-  margin-top: 10vh !important;
-  width: 30vw !important;
+  height: 85vh;
+  width: 30vw;
   margin: auto;
+  margin-top: 10vh;
   z-index: 5 !important;
   background-color: white;
   border-radius: 10px;
@@ -226,6 +226,25 @@
   color: #006FFF;
 }
 
+@media screen and (min-width: 700px) and (max-width: 900px) {
+  .dynamic-pricing-modal {
+    width: 50vw;
+    height: 55vh;
+  }
+}
+@media screen and (min-width: 400px) and (max-width: 699px) {
+  .dynamic-pricing-modal {
+    width: 80vw;
+    height: 600px;
+  }
+}
+@media screen and (max-width: 399px) {
+  .dynamic-pricing-modal {
+    width: 85vw;
+    height: 90vh;
+    margin-top: 5vh;
+  }
+}
 .details-page {
   margin-top: 12vh;
 }
