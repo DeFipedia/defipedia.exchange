@@ -75,7 +75,7 @@ const Home = () => {
                             <div className='card-title'>
                                 <h3>$BOOKS on</h3>  <h3 style={{color: theme.palette.primary.main}}>Auction</h3> 
                             </div>
-                            <a href='https://www.dutchswap.com/' target='_blank'>
+                            <a href='https://www.dutchswap.com/' target='_blank' rel='noopener noreferrer'>
                                 <img alt='dutch swap logo' src={process.env.PUBLIC_URL + 'assets/dutch_swap.svg'}/>
                             </a>
                         </span>
