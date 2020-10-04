@@ -14,7 +14,6 @@ const CardModal = (props) => {
             <div className='dynamic-pricing-modal'>
                 <span className='header'>
                     <div>
-                        {/* <img src={process.env.PUBLIC_URL + 'logo_small.svg'} /> */}
                         <p>Get Packs</p>
                     </div>
                     <IconButton elevation={0} onClick={handleClose}>

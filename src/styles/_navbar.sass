@@ -1,18 +1,24 @@
 .MuiAppBar-root
     height: 10vh
 
+.MuiToolbar-root
+    display: flex
+    justify-content: space-between
+
 .nav-options
     button
         text-transform: none !important
 
-@media screen and (min-width: 700px) and ( max-width: 800px )
+@media screen and (min-width: 700px) and ( max-width: 900px )
     .MuiAppBar-root
         height: 8vh
 
-@media screen and (min-width: 300px) and ( max-width: 600px )
+@media screen and (min-width: 400px) and ( max-width: 699px )
     .MuiAppBar-root
         height: 8vh
-        .nav-options
-            margin-left: 35%
         .MuiTypography-root
+            display: none
+
+@media screen and ( max-width:  399px)
+    .MuiTypography-root
             display: none
