@@ -18,7 +18,7 @@ const App = () => {
   return (
       <div className='App'>
       <Navbar 
-        brandTitle='DeFipedia' 
+        brandTitle={process.env.PUBLIC_URL + 'assets/brand-title.svg'}
         brandLogo={process.env.PUBLIC_URL + 'logo_small.svg'}
         navOptions = {navOptions}
       />

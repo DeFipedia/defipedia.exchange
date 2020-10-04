@@ -40,7 +40,7 @@ const Details = () => {
                     </section>
                 <section className='detail-card-description'>
                     <p>The price of BOOKS changes when tokens are bought and sold</p>
-                    <a>Read More</a>
+                    <a href='https://uniswap.exchange/' target='_blank'>Read More</a>
                 </section>
             </div>
 
