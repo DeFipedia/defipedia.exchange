@@ -5,9 +5,14 @@
     display: flex
     justify-content: space-between
 
+.brand-logo
+    display: flex
+    align-items: center
+
 .nav-options
     button
         text-transform: none !important
+
 
 @media screen and (min-width: 700px) and ( max-width: 900px )
     .MuiAppBar-root
@@ -16,9 +21,9 @@
 @media screen and (min-width: 400px) and ( max-width: 699px )
     .MuiAppBar-root
         height: 8vh
-        .MuiTypography-root
-            display: none
+    .brand-title
+        display: none !important
 
 @media screen and ( max-width:  399px)
-    .MuiTypography-root
-            display: none
+    .brand-title
+        display: none !important

@@ -26,21 +26,27 @@ const Home = () => {
             <div className='card-panel'>
                 <Card>
                     <CardContent>
-                        <h3>$BOOKS on Uniswap</h3> 
+                        <span className='card-header'>
+                            <div className='card-title'>
+                                <h3>$BOOKS on </h3> <h3 style={{color: theme.palette.primary.main}}>Uniswap</h3>
+                            </div>
+                        </span>
                         <p>2020 DeFi Packs</p>  
                         <img alt='cover-art' src={process.env.PUBLIC_URL + 'assets/cover-art.jpg'}/>  
-                        <h4>$ 200.00 USD</h4> 
-                        <span>
-                            <p>50/50 available</p>
-                            <div>
-                                <p>Dynamic Pricing Stats</p> 
-                                <img 
-                                    alt='question-mark' 
-                                    src={process.env.PUBLIC_URL + '/assets/question-mark.png'} 
-                                    onClick={() => showDynamicPricingStatModal()}
-                                />
-                            </div>
-                        </span>                
+                        <section className='card-data'>
+                            <h4>$ 200.00 USD</h4> 
+                            <span>
+                                <p>50/50 available</p>
+                                <div>
+                                    <p>Dynamic Pricing Stats</p> 
+                                    <img 
+                                        alt='question-mark' 
+                                        src={process.env.PUBLIC_URL + '/assets/question-mark.png'} 
+                                        onClick={() => showDynamicPricingStatModal()}
+                                    />
+                                </div>
+                            </span>
+                        </section>                
                     </CardContent>                
                 </Card>
                 <section className='learn-more-section'>
@@ -48,7 +54,7 @@ const Home = () => {
                 </section>
             </div>
             <div className='actions'>
-                <Button variant='contained' style={{backgroundColor: theme.palette.primary.main}} className='buy-btn'>Buy</Button>
+                <Button variant='contained' style={{backgroundColor: theme.palette.primary.main}} className='buy-btn'>Buy on Uniswap</Button>
                 <span className='coming-soon-actions'>
                     <Tooltip title='Coming Soon'>
                         <Button onClick={showComingSoon} variant='contained' disableElevation>Sell</Button>
@@ -65,21 +71,30 @@ const Home = () => {
         <div className='card-panel'>
                 <Card>
                     <CardContent>
-                        <h3>$BOOKS on Auction</h3> 
-                        <p>2020 DeFi Packs</p>  
-                        <img alt='cover-art' src={process.env.PUBLIC_URL + 'assets/cover-art.jpg'}/>  
-                        <h4>$ 1000.00 USD</h4> 
-                        <span>
-                            <p>950/950 available</p>
-                            <div>
-                                <p>Dynamic Pricing Stats</p> 
-                                <img 
-                                    alt='question-mark' 
-                                    src={process.env.PUBLIC_URL + '/assets/question-mark.png'}
-                                    onClick={() => showDynamicPricingStatModal()}
-                                />
+                        <span className='card-header'>
+                            <div className='card-title'>
+                                <h3>$BOOKS on</h3>  <h3 style={{color: theme.palette.primary.main}}>Auction</h3> 
                             </div>
-                        </span>                
+                            <a href='https://www.dutchswap.com/' target='_blank' rel='noopener noreferrer'>
+                                <img alt='dutch swap logo' src={process.env.PUBLIC_URL + 'assets/dutch_swap.svg'}/>
+                            </a>
+                        </span>
+                        <p>2020 DeFi Packs</p>  
+                        <img alt='cover-art' src={process.env.PUBLIC_URL + 'assets/cover-art.jpg'}/> 
+                        <section className='card-data'>
+                            <h4>$ 1000.00 USD</h4> 
+                            <span>
+                                <p>950/950 available</p>
+                                <div>
+                                    <p>Dynamic Pricing Stats</p> 
+                                    <img 
+                                        alt='question-mark' 
+                                        src={process.env.PUBLIC_URL + '/assets/question-mark.png'}
+                                        onClick={() => showDynamicPricingStatModal()}
+                                    />
+                                </div>
+                            </span>
+                        </section>                 
                     </CardContent>                
                 </Card>
                 <section className='learn-more-section'>
@@ -87,7 +102,7 @@ const Home = () => {
                 </section>
             </div>
             <div className='actions'>
-                <Button variant='contained' style={{backgroundColor: theme.palette.primary.main}} className='buy-btn'>Buy</Button>
+                <Button variant='contained' style={{backgroundColor: theme.palette.primary.main}} className='buy-btn'>Buy at Auction</Button>
                 <span className='coming-soon-actions'>
                     <Tooltip title='Coming Soon'>
                         <Button onClick={showComingSoon} variant='contained' disableElevation>Sell</Button>
