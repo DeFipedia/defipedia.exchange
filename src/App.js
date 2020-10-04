@@ -1,14 +1,11 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import {Route, Switch} from 'react-router-dom'
 import Home from './pages/Home';
 import Navbar from './components/Navbar'
 import './styles/style.css'
 import Details from './pages/Details';
-import { Connectors} from 'web3-react'
-import Web3Provider from 'web3-react';
-import {useWeb3Context} from 'web3-react';
-import Web3 from 'web3'
 import connectWeb3 from './functions/connectWeb3'
+
 const App = () => {
   // web 3 integration//
   connectWeb3()

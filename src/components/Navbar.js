@@ -1,5 +1,5 @@
 import React from 'react';
-import {AppBar, Toolbar, Typography, Button} from '@material-ui/core'
+import {AppBar, Toolbar, Button} from '@material-ui/core'
 
 
 const Navbar = (props) => {
@@ -10,7 +10,7 @@ const Navbar = (props) => {
                 <section className='brand-logo'>   
                     <img alt='brand-logo' src={brandLogo}/>
                     {/* this was text earlier but later changed into asset */}
-                    <img className='brand-title' src={brandTitle} />
+                    <img alt='brand-logo' className='brand-title' src={brandTitle} />
                 </section>
                 <nav className='nav-options'>
                     {navOptions && navOptions.map(option => (
