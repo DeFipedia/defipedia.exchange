@@ -21,26 +21,26 @@ const Details = () => {
                 </span>
                 <section className='detail-card-section'>
                         <div>
-                            <p>📓    Initial BOOKS on UniSwap</p>
+                            <p><span role='img' aria-label='book emoji'>📓</span> Initial BOOKS on UniSwap</p>
                             <p>50</p>
                         </div>
                         <div>
-                            <p>📓    Initial BOOKS on Auction</p>
+                            <p><span role='img' aria-label='book emoji'>📓</span> Initial BOOKS on Auction</p>
                             <p>950</p>
                         </div>
                         <div>
-                            <p>🔥    Redeemed BOOKS</p>
+                            <p><span role='img' aria-label='fire emoji'>🔥</span> Redeemed BOOKS</p>
                             <p>0</p>
                         </div>
                         <div>
-                            <p>💦    BOOKS Pool</p>
+                            <p><span role='img' aria-label='liquid emoji'>💦</span> BOOKS Pool</p>
                             <p>1000</p>
                         </div>
 
                     </section>
                 <section className='detail-card-description'>
                     <p>The price of BOOKS changes when tokens are bought and sold</p>
-                    <a href='https://uniswap.exchange/' target='_blank'>Read More</a>
+                    <a href='https://uniswap.exchange/' target='_blank' rel='noopener noreferrer'>Read More</a>
                 </section>
             </div>
 
