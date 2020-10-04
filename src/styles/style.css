@@ -146,6 +146,11 @@
   background-color: #F2F2F2;
 }
 
+.MuiAlert-root {
+  opacity: 80%;
+  background-color: white !important;
+}
+
 @media screen and (min-width: 700px) and (max-width: 900px) {
   .home-page {
     margin-top: 5vh;
