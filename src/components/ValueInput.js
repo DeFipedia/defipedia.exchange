@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 
-const PriceInput = () => {
+const ValueInput = () => {
     const [value, setValue] = useState(1)
 
     const increaseValue = () => {
@@ -19,7 +19,7 @@ const PriceInput = () => {
         }
     }
     return(
-        <div className='price-input'>
+        <div className='value-input'>
             <button onClick={decreaseValue}>-</button>
             <input type='number' value={value} />                
             <button onClick={increaseValue}>+</button>
@@ -27,4 +27,4 @@ const PriceInput = () => {
     )
 }
 
-export default PriceInput
+export default ValueInput

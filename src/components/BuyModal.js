@@ -1,6 +1,6 @@
 import React from 'react';
 import {Modal, Card, CardContent, Typography, CardActionArea, Button} from '@material-ui/core'
-import PriceInput from './PriceInput';
+import ValueInput from './ValueInput';
 const BuyModal = (props) => {
 
     const {open} = props
@@ -22,7 +22,7 @@ const BuyModal = (props) => {
                                 <p>950/950 available</p>
                             </div>
                             <div className='unit-indicator'>
-                                <PriceInput />
+                                <ValueInput />
                             </div>
                         </section>
                     </CardContent>

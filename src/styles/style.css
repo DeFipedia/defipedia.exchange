@@ -438,27 +438,27 @@
     width: 135% !important;
   }
 }
-.price-input {
+.value-input {
   display: flex;
   align-items: center;
 }
-.price-input input {
+.value-input input {
   width: 15%;
   height: 25px;
   text-align: center;
 }
-.price-input button {
+.value-input button {
   height: 33px;
 }
-.price-input input::-webkit-outer-spin-button {
+.value-input input::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: none;
 }
-.price-input input::-webkit-inner-spin-button {
+.value-input input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: none;
 }
-.price-input input[type=number] {
+.value-input input[type=number] {
   -moz-appearance: textfield;
 }
 
