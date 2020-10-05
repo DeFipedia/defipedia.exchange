@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import {Card, CardContent, Tooltip, Button, useTheme} from '@material-ui/core'
 import Popup from '../components/Popup'
 import CardModal from '../components/CardModal'
+import BuyModal from '../components/BuyModal'
 
 const Home = () => {
     // for theme//
@@ -9,6 +10,7 @@ const Home = () => {
     // for state variables//
     const [open, setOpen] = useState(false)
     const [modalOpen, setModalOpen] = useState(false)
+    const [triggerBuyModal, setTriggerBuyModal] = useState(false)
     // methods //
     const showComingSoon = () => {
         setOpen(true) 
@@ -18,6 +20,9 @@ const Home = () => {
     }
     const closeDynamicPricingModal = () => {
         setModalOpen(false)
+    }
+    const showBuyModal = () => {
+        setTriggerBuyModal(true)
     }
     //----------//
     return(
@@ -102,7 +107,14 @@ const Home = () => {
                 </section>
             </div>
             <div className='actions'>
-                <Button variant='contained' style={{backgroundColor: theme.palette.primary.main}} className='buy-btn'>Buy at Auction</Button>
+                <Button 
+                    variant='contained' 
+                    style={{backgroundColor: theme.palette.primary.main}} 
+                    className='buy-btn'
+                    onClick={showBuyModal}
+                >
+                    Buy at Auction
+                </Button>
                 <span className='coming-soon-actions'>
                     <Tooltip title='Coming Soon'>
                         <Button onClick={showComingSoon} variant='contained' disableElevation>Sell</Button>
@@ -113,6 +125,7 @@ const Home = () => {
                 </span>
             </div>
         <Popup open={open}/>
+        <BuyModal open={triggerBuyModal}/>
         </div>
     )
 }
