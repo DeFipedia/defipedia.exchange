@@ -393,8 +393,10 @@
 }
 .buy-modal .MuiCard-root {
   text-align: center;
+  margin: auto;
 }
 .buy-modal .data-indicator {
+  margin-top: 4vh;
   width: 390px;
   display: flex;
   justify-content: space-between;
@@ -417,6 +419,25 @@
   text-transform: none;
 }
 
+@media screen and (min-width: 700px) and (max-width: 900px) {
+  .data-indicator {
+    width: 120% !important;
+  }
+  .data-indicator p {
+    font-size: 15pt;
+    font-weight: bold;
+  }
+}
+@media screen and (min-width: 400px) and (max-width: 699px) {
+  .data-indicator {
+    width: 135% !important;
+  }
+}
+@media screen and (max-width: 399px) {
+  .data-indicator {
+    width: 135% !important;
+  }
+}
 .price-input {
   display: flex;
   align-items: center;
