@@ -14,7 +14,7 @@ const Navbar = (props) => {
                 </section>
                 <nav className='nav-options'>
                     {navOptions && navOptions.map(option => (
-                        <Button variant='outlined' color='secondary'>{option}</Button>
+                        <Button variant='outlined' key={option} color='secondary'>{option}</Button>
                     ))}
                 </nav>
             </Toolbar>

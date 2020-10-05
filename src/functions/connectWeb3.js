@@ -1,5 +1,6 @@
 import Web3 from 'web3'
-import abi from '../data/abi.json'
+import auctionABI from '../data/auctionABI.json'
+
 const connectWeb3 = async () => {
     // const web3 = new Web3(Web3.givenProvider)
     // const  accounts = await web3.eth.getAccounts()
@@ -10,12 +11,19 @@ const connectWeb3 = async () => {
     }).catch((e) => {
         console.log('Something went wrong', e)
     })
-    const smartContractAddr = `${process.env.REACT_APP_SMART_CONTRACT_ADDRESS}`
-    const contract = new web3.eth.Contract(abi, smartContractAddr)
-    contract.methods.name().call().then(console.log)
-    contract.methods.totalSupply().call().then(console.log)
-
-}
+    const contractAddr = `${process.env.REACT_APP_CONTRACT_ADDRESS}`
+    const auctionContract = new web3.eth.Contract(auctionABI, contractAddr)
+    auctionContract.methods.startPrice().call().then(console.log)
+    auctionContract.methods.totalTokens().call().then(console.log)
+    auctionContract.methods.tokensRemaining().call().then(console.log)
+    auctionContract.methods.tokenPrice().call().then(console.log)
+//     let startPrice = await auctionContract.methods.startPrice().call()
+// console.log('start price', startPrice)
+// let totalTokens = await auctionContract.methods.totalTokens().call()
+// console.log('total tokens', totalTokens)
+// let tokensRemaining = await auctionContract.methods.tokensRemaining().call()
+// console.log('tokens remaining', tokensRemaining)
+}   
 
 export default connectWeb3
 
