@@ -19,7 +19,7 @@ const PriceInput = () => {
         }
     }
     return(
-        <div>
+        <div className='price-input'>
             <button onClick={decreaseValue}>-</button>
             <input type='number' value={value} />                
             <button onClick={increaseValue}>+</button>

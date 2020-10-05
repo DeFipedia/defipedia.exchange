@@ -382,6 +382,65 @@
     margin-top: 25%;
   }
 }
+.buy-modal {
+  height: 100vh;
+  margin: 0px;
+  width: 99vw;
+  padding-top: 15vh;
+}
+.buy-modal h4 {
+  font-weight: bold;
+}
+.buy-modal .MuiCard-root {
+  text-align: center;
+}
+.buy-modal .data-indicator {
+  width: 390px;
+  display: flex;
+  justify-content: space-between;
+}
+.buy-modal .data-indicator p {
+  font-size: 12pt;
+  color: white;
+}
+.buy-modal .actions .buy-button {
+  background-color: #FF6400;
+  color: white;
+  text-transform: none;
+  font-weight: bold;
+}
+.buy-modal .actions .cancel-button {
+  margin-top: 1vh;
+  background-color: white;
+  color: #FF6400;
+  font-weight: bold;
+  text-transform: none;
+}
+
+.price-input {
+  display: flex;
+  align-items: center;
+}
+.price-input input {
+  width: 15%;
+  height: 25px;
+  text-align: center;
+}
+.price-input button {
+  height: 33px;
+}
+.price-input input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: none;
+}
+.price-input input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: none;
+}
+.price-input input[type=number] {
+  -moz-appearance: textfield;
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
