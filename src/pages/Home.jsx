@@ -4,7 +4,8 @@ import Popup from '../components/Popup'
 import CardModal from '../components/CardModal'
 import BuyModal from '../components/BuyModal'
 
-const Home = () => {
+const Home = ({tokenData}) => {
+
     // for theme//
     let theme = useTheme()
     // for state variables//
@@ -24,6 +25,13 @@ const Home = () => {
     const showBuyModal = () => {
         setTriggerBuyModal(true)
     }
+    
+    // sanitizing data to show on card//
+    // const sanitizeData = () => {
+    //     console.log(tokenPrice)
+    // }
+    // sanitizeData()
+
     //----------//
     return(
         <div className='home-page'>
@@ -87,9 +95,9 @@ const Home = () => {
                         <p>2020 DeFi Packs</p>  
                         <img alt='cover-art' src={process.env.PUBLIC_URL + 'assets/cover-art.jpg'}/> 
                         <section className='card-data'>
-                            <h4>$ 1000.00 USD</h4> 
+                            <h4>{tokenData.tokenPrice} ETH</h4> 
                             <span>
-                                <p>950/950 available</p>
+                                <p>{tokenData.tokensRemaining}/{tokenData.totalTokens} available</p>
                                 <div>
                                     <p>Dynamic Pricing Stats</p> 
                                     <img 

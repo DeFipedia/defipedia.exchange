@@ -1,15 +1,25 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import {Route, Switch} from 'react-router-dom'
 import Home from './pages/Home';
 import Navbar from './components/Navbar'
 import './styles/style.css'
 import Details from './pages/Details';
-import connectWeb3 from './functions/connectWeb3'
+import connectAuction from './functions/connectAuction'
 
 const App = () => {
-  // web 3 integration//
-  connectWeb3()
 
+  // states variables//
+  const [tokenData, setTokenData] = useState({})
+
+  const connectToAuction = async () => {
+    let currentTokenData = await connectAuction()
+    setTokenData(currentTokenData)
+  }
+  //connecting to auction//
+  useEffect(() => {
+    connectToAuction()
+  }, [])
+  
   // -----------------------//
   let navOptions = ['None Redeemed']
   return (
@@ -21,7 +31,7 @@ const App = () => {
       />
       <Switch>
         <Route exact path='/'>
-          <Home />
+          <Home tokenData={tokenData}/>
         </Route>
         <Route path='/details'>
           <Details />
