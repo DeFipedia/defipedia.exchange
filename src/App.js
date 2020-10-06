@@ -4,7 +4,7 @@ import Home from './pages/Home';
 import Navbar from './components/Navbar'
 import './styles/style.css'
 import Details from './pages/Details';
-import connectAuction from './functions/connectAuction'
+import {connectAuction} from './functions/connectAuction'
 
 const App = () => {
 

@@ -1,7 +1,19 @@
-import React from 'react';
-import {Modal, Card, CardContent, Typography, CardActionArea, Button} from '@material-ui/core'
+import React, {useEffect} from 'react';
+import {Modal, Card, CardContent, Typography, Button} from '@material-ui/core'
 import ValueInput from './ValueInput';
+import {commitEth} from '../functions/commitEth'
+import Web3 from 'web3'
+import auctionABI from '../data/auctionABI.json'
+
+
 const BuyModal = (props) => {
+
+    const buyToken = async () => {
+        const value  = 100000
+        // const account = from
+        console.log('buy button')
+        commitEth(value)
+    }
 
     const {open} = props
     return(
@@ -28,7 +40,7 @@ const BuyModal = (props) => {
                     </CardContent>
                 </Card>
                 <div className='actions'>
-                    <Button className='buy-button'>
+                    <Button className='buy-button' onClick={() => buyToken()}>
                         Buy Now
                     </Button>
                     <Button className='cancel-button'>
