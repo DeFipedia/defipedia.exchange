@@ -15,7 +15,7 @@ export const commitEth = async (amount) => {
         value: amount,
         gasPrice: 0
     })
-    await sendTransaction(method, account, amount);
+    // await sendTransaction(method, account, amount);
 }
 
 

@@ -5,19 +5,23 @@ import Navbar from './components/Navbar'
 import './styles/style.css'
 import Details from './pages/Details';
 import {connectAuction} from './functions/connectAuction'
-
+import {getPoolData} from './functions/getPoolData'
 const App = () => {
-
-  // states variables//
+  
+  
+  // state variables//
   const [tokenData, setTokenData] = useState({})
+  const [poolData, setPoolData] = useState({})
 
-  const connectToAuction = async () => {
+  const fetchData = async () => {
     let currentTokenData = await connectAuction()
     setTokenData(currentTokenData)
+    let currentPoolData = await getPoolData()
+    setPoolData(currentPoolData)
   }
   //connecting to auction//
   useEffect(() => {
-    connectToAuction()
+    fetchData()
   }, [])
   
   // -----------------------//
@@ -31,7 +35,7 @@ const App = () => {
       />
       <Switch>
         <Route exact path='/'>
-          <Home tokenData={tokenData}/>
+          <Home tokenData={tokenData} poolData={poolData} />
         </Route>
         <Route path='/details'>
           <Details />

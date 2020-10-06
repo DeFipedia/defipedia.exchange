@@ -4,7 +4,7 @@ import Popup from '../components/Popup'
 import CardModal from '../components/CardModal'
 import BuyModal from '../components/BuyModal'
 
-const Home = ({tokenData}) => {
+const Home = ({tokenData, poolData}) => {
 
     // for theme//
     let theme = useTheme()
@@ -47,7 +47,7 @@ const Home = ({tokenData}) => {
                         <p>2020 DeFi Packs</p>  
                         <img alt='cover-art' src={process.env.PUBLIC_URL + 'assets/cover-art.jpg'}/>  
                         <section className='card-data'>
-                            <h4>$ 200.00 USD</h4> 
+                            <h4>{poolData.rate} ETH</h4> 
                             <span>
                                 <p>50/50 available</p>
                                 <div>
