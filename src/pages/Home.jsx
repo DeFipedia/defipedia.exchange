@@ -4,8 +4,8 @@ import Popup from '../components/Popup'
 import CardModal from '../components/CardModal'
 import BuyModal from '../components/BuyModal'
 
-const Home = ({tokenData, poolData}) => {
-
+const Home = (props) => {
+    const {tokenData, poolData} = props
     // for theme//
     let theme = useTheme()
     // for state variables//
@@ -139,7 +139,7 @@ const Home = ({tokenData, poolData}) => {
                 </span>
             </div>
         <Popup open={open} />
-        <BuyModal open={triggerBuyModal} close={closeBuyModal}/>
+        <BuyModal open={triggerBuyModal} close={closeBuyModal} tokenData={tokenData} />
         </div>
     )
 }

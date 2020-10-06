@@ -1,8 +1,8 @@
 import Web3 from 'web3'
 import auctionABI from '../data/auctionABI.json'
 
-const provider = new Web3.providers.HttpProvider(`https://kovan.infura.io/v3/${process.env.REACT_APP_INFURA_PROJECT_ID}`)
-const web3 = new Web3(provider)
+// const provider = new Web3.providers.HttpProvider(`https://kovan.infura.io/v3/${process.env.REACT_APP_INFURA_PROJECT_ID}`)
+const web3 = new Web3(window.ethereum)
 const contractAddr = `${process.env.REACT_APP_CONTRACT_ADDRESS}`
 const auctionContract = new web3.eth.Contract(auctionABI, contractAddr)
 

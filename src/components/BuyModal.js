@@ -15,7 +15,9 @@ const BuyModal = (props) => {
         commitEth(value)
     }
 
-    const {open, close} = props
+    console.log(props)
+
+    const {open, close, tokenData} = props
     return(
         <Modal
             open={open}
@@ -30,7 +32,7 @@ const BuyModal = (props) => {
                         <img alt='$BOOK cover art' src={process.env.PUBLIC_URL +  'assets/cover-art.jpg'}/>
                         <section className='data-indicator'>
                             <div className='token-data'>
-                                <p>3 Eth</p>
+                                <p>{tokenData.tokenPrice} ETH</p>
                                 <p>950/950 available</p>
                             </div>
                             <div className='unit-indicator'>
