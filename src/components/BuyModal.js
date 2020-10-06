@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useState} from 'react';
 import {Modal, Card, CardContent, Typography, Button} from '@material-ui/core'
 import ValueInput from './ValueInput';
 import {commitEth} from '../functions/commitEth'
@@ -9,15 +9,36 @@ import auctionABI from '../data/auctionABI.json'
 const BuyModal = (props) => {
 
     const buyToken = async () => {
-        const value  = 100000
+        const numberOfTokens  = 0
         // const account = from
-        console.log('buy button')
-        commitEth(value)
+        commitEth(numberOfTokens)
+    }
+    
+    const [value, setValue] = useState(1)
+
+    const increaseValue = () => {
+        setValue(prevValue => prevValue + 1)
     }
 
-    console.log(props)
+    const decreaseValue = () => {
+        setValue(prevValue => prevValue - 1)
+    }
+
+    const validateInput = () => {
+        if(value > 5) {
+            // give a alert//
+            alert('You can not select more than 5')
+            //set back to 5//
+            setValue(5)
+            
+        }else if (value <= 0) {
+            alert('Value can not be negative or zero')
+            setValue(1)
+        }
+    }
 
     const {open, close, tokenData} = props
+
     return(
         <Modal
             open={open}
@@ -36,7 +57,12 @@ const BuyModal = (props) => {
                                 <p>950/950 available</p>
                             </div>
                             <div className='unit-indicator'>
-                                <ValueInput />
+                                <ValueInput 
+                                    increaseValue={increaseValue}
+                                    decreaseValue={decreaseValue}
+                                    value={value}
+                                    validateInput={validateInput}
+                                />
                             </div>
                         </section>
                     </CardContent>
