@@ -25,6 +25,10 @@ const Home = ({tokenData, poolData}) => {
     const showBuyModal = () => {
         setTriggerBuyModal(true)
     }
+
+    const closeBuyModal = () => {
+        setTriggerBuyModal(false)
+    }
     
     // sanitizing data to show on card//
     // const sanitizeData = () => {
@@ -134,8 +138,8 @@ const Home = ({tokenData, poolData}) => {
                     </Tooltip>
                 </span>
             </div>
-        <Popup open={open}/>
-        <BuyModal open={triggerBuyModal}/>
+        <Popup open={open} />
+        <BuyModal open={triggerBuyModal} close={closeBuyModal}/>
         </div>
     )
 }

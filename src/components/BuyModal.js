@@ -15,7 +15,7 @@ const BuyModal = (props) => {
         commitEth(value)
     }
 
-    const {open} = props
+    const {open, close} = props
     return(
         <Modal
             open={open}
@@ -43,7 +43,7 @@ const BuyModal = (props) => {
                     <Button className='buy-button' onClick={() => buyToken()}>
                         Buy Now
                     </Button>
-                    <Button className='cancel-button'>
+                    <Button className='cancel-button' onClick={close}>
                         Cancel
                     </Button>
                 </div>
