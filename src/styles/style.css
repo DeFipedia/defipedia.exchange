@@ -6,8 +6,12 @@
   display: flex;
   justify-content: space-between;
 }
+.MuiToolbar-root .brand-logo {
+  height: 40px;
+  width: 40px;
+}
 
-.brand-logo {
+.brand-header {
   display: flex;
   align-items: center;
 }
@@ -124,6 +128,7 @@
   width: 12px;
   float: right;
   margin: 0px;
+  box-shadow: none;
 }
 
 .learn-more-section {
@@ -144,6 +149,15 @@
 }
 .learn-more-section a {
   color: #FF6400;
+}
+
+.learn-more-button {
+  background-color: #F2F2F2;
+  color: #FF6400;
+  font-size: 9pt;
+  margin-top: 0%;
+  font-weight: bold;
+  border: none;
 }
 
 .actions {

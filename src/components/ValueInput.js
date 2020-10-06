@@ -11,17 +11,22 @@ const ValueInput = () => {
         setValue(prevValue => prevValue - 1)
     }
 
-    const validateInput = (e) => {
+    const validateInput = () => {
         if(value > 5) {
+            // give a alert//
             alert('You can not select more than 5')
-        }else if (value < 0) {
+            //set back to 5//
+            setValue(5)
+            
+        }else if (value <= 0) {
             alert('Value can not be negative or zero')
+            setValue(1)
         }
     }
     return(
         <div className='value-input'>
             <button onClick={decreaseValue}>-</button>
-            <input type='number' value={value} />                
+            <input type='number' value={value} onChange={validateInput()}/>                
             <button onClick={increaseValue}>+</button>
         </div>
     )

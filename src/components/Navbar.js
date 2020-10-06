@@ -7,10 +7,10 @@ const Navbar = (props) => {
     return(
         <AppBar position='fixed' color='bg' elevation={0} >
             <Toolbar>
-                <section className='brand-logo'>   
-                    <img alt='brand-logo' src={brandLogo}/>
+                <section className='brand-header'>   
+                    <img className='brand-logo' alt='brand-logo' src={brandLogo}/>
                     {/* this was text earlier but later changed into asset */}
-                    <img alt='brand-logo' className='brand-title' src={brandTitle} />
+                    <img alt='brand-title' className='brand-title' src={brandTitle} />
                 </section>
                 <nav className='nav-options'>
                     {navOptions && navOptions.map(option => (

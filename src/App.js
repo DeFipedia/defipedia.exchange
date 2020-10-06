@@ -30,7 +30,7 @@ const App = () => {
       <div className='App'>
       <Navbar 
         brandTitle={process.env.PUBLIC_URL + 'assets/brand-title.svg'}
-        brandLogo={process.env.PUBLIC_URL + 'logo_small.svg'}
+        brandLogo={process.env.PUBLIC_URL + 'defipedia_logo.png'}
         navOptions = {navOptions}
       />
       <Switch>
