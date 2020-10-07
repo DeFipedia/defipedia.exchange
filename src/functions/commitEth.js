@@ -6,13 +6,24 @@ const web3 = new Web3(window.ethereum)
 const contractAddr = `${process.env.REACT_APP_CONTRACT_ADDRESS}`
 const auctionContract = new web3.eth.Contract(auctionABI, contractAddr)
 
+const web3Enabled = () => {
+    if(window.ethereum) {
+        window.web3 = new Web3(window.ethereum)
+        window.ethereum.enable()
+        return true
+    }else{
+        return false
+    }
+}
+
 export const commitEth = async (amount) => {
 
-    const from = await window.web3.eth.accounts[0]
-    const method = auctionContract.methods.commitEth()
-    const value = convertWeiToETH(amount)
-
-    await sendTransaction(method, from, value);
+    if(web3Enabled) {
+        const from = await window.web3.eth.accounts[0]
+        const method = auctionContract.methods.commitEth()
+        const value = convertWeiToETH(amount) 
+        await sendTransaction(method, from, value);
+    }
 }
 
 export const sendTransaction = (method, from, value) => {

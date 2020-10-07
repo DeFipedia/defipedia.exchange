@@ -6,6 +6,7 @@ import './styles/style.css'
 import Details from './pages/Details';
 import {connectAuction} from './functions/connectAuction'
 import {getPoolData} from './functions/getPoolData'
+import {web3Enabled} from './functions/web3Enabled'
 const App = () => {
   
   
@@ -14,10 +15,14 @@ const App = () => {
   const [poolData, setPoolData] = useState({})
 
   const fetchData = async () => {
-    let currentTokenData = await connectAuction()
-    setTokenData(currentTokenData)
-    let currentPoolData = await getPoolData()
-    setPoolData(currentPoolData)
+    if(web3Enabled) {
+      let currentTokenData = await connectAuction()
+      setTokenData(currentTokenData)
+      let currentPoolData = await getPoolData()
+      setPoolData(currentPoolData)
+    }else{
+      alert('Please install a Ethereum-compatible browser or extension like MetaMask to use this dApp')
+    }
   }
   //connecting to auction//
   useEffect(() => {
