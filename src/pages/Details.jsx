@@ -8,8 +8,8 @@ import {convertWeiToETH} from '../functions/convertWeiToETH'
 const Details = (props) => {
     const {tokenData} = props
     //state//
-    const [open, setOpen] = useState(false)
-    const [modalOpen, setModalOpen] = useState(false)
+    // const [open, setOpen] = useState(false)
+    // const [modalOpen, setModalOpen] = useState(false)
     const [triggerBuyModal, setTriggerBuyModal] = useState(false)
     // for theme//
     let theme = useTheme()
