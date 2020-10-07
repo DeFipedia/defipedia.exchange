@@ -68,7 +68,7 @@ const BuyModal = (props) => {
                         Buy Now
                     </Button>
                     <Button className='cancel-button' onClick={close}>
-                        Cancel
+                        Close
                     </Button>
                 </div>
             </div>

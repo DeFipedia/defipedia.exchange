@@ -2,6 +2,7 @@ import Web3 from 'web3'
 import auctionABI from '../data/auctionABI.json'
 import {convertWeiToETH} from './convertWeiToETH'
 
+
 const web3 = new Web3(window.ethereum)
 const contractAddr = `${process.env.REACT_APP_CONTRACT_ADDRESS}`
 const auctionContract = new web3.eth.Contract(auctionABI, contractAddr)

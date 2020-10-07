@@ -43,7 +43,7 @@ const App = () => {
           <Home tokenData={tokenData} poolData={poolData} />
         </Route>
         <Route path='/details'>
-          <Details />
+          <Details tokenData={tokenData} poolData={poolData} />
         </Route>
       </Switch>
     </div>
