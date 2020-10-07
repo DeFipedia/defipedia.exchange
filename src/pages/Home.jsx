@@ -2,13 +2,19 @@ import React, {useState} from 'react'
 import {Card, CardContent, Tooltip, Button, useTheme} from '@material-ui/core'
 import Popup from '../components/Popup'
 import CardModal from '../components/CardModal'
+import BuyModal from '../components/BuyModal'
+import {convertWeiToETH} from '../functions/convertWeiToETH'
 
-const Home = () => {
+const Home = (props) => {
+    const {tokenData, poolData} = props
     // for theme//
     let theme = useTheme()
-    // for state variables//
+    // for state //
     const [open, setOpen] = useState(false)
     const [modalOpen, setModalOpen] = useState(false)
+    const [triggerBuyModal, setTriggerBuyModal] = useState(false)
+    // token data eth is to use calue of token in ETH as smart contracts return value in Wei and to avoid mutating actual response from smart contracts//
+    const tokenDataETH ={}
     // methods //
     const showComingSoon = () => {
         setOpen(true) 
@@ -19,7 +25,25 @@ const Home = () => {
     const closeDynamicPricingModal = () => {
         setModalOpen(false)
     }
-    //----------//
+    const showBuyModal = () => {
+        setTriggerBuyModal(true)
+    }
+
+    const closeBuyModal = () => {
+        setTriggerBuyModal(false)
+    }
+
+    const convertToETH = () => {
+        if(tokenData.tokenPrice) {
+            let tokenPrice = convertWeiToETH(tokenData.tokenPrice)
+            tokenDataETH.tokenPrice = tokenPrice.substring(0,3)
+            let tokensRemaining = convertWeiToETH(tokenData.tokensRemaining)
+            tokenDataETH.tokensRemaining = tokensRemaining.substring(0,3)
+        }
+    }    
+
+    convertToETH()
+
     return(
         <div className='home-page'>
             <CardModal open={modalOpen} handleClose={closeDynamicPricingModal}/>
@@ -34,27 +58,31 @@ const Home = () => {
                         <p>2020 DeFi Packs</p>  
                         <img alt='cover-art' src={process.env.PUBLIC_URL + 'assets/cover-art.jpg'}/>  
                         <section className='card-data'>
-                            <h4>$ 200.00 USD</h4> 
+                            <h4>{poolData.rate} ETH</h4> 
                             <span>
-                                <p>50/50 available</p>
+                                <p>50 in Pool</p>
                                 <div>
                                     <p>Dynamic Pricing Stats</p> 
-                                    <img 
-                                        alt='question-mark' 
-                                        src={process.env.PUBLIC_URL + '/assets/question-mark.png'} 
-                                        onClick={() => showDynamicPricingStatModal()}
-                                    />
+                                    <a href='/details'>
+                                        <img 
+                                            alt='question-mark' 
+                                            src={process.env.PUBLIC_URL + '/assets/question-mark.png'} 
+                                        />
+                                    </a>
+                                    
                                 </div>
                             </span>
                         </section>                
                     </CardContent>                
                 </Card>
                 <section className='learn-more-section'>
-                    <p>Buy and sell real books with digital currency. Delivered on demand. <a href='/details'>Learn More</a></p>
+                    <p>Buy and sell real books with digital currency. Delivered on demand. <button className='learn-more-button' onClick={() => showDynamicPricingStatModal()}>Learn More</button></p>
                 </section>
             </div>
             <div className='actions'>
-                <Button variant='contained' style={{backgroundColor: theme.palette.primary.main}} className='buy-btn'>Buy on Uniswap</Button>
+                <a rel='noopener noreferrer' href='https://uniswap.info/pair/0xe108fdab8b03f6bd4c35b8e7a2249b120bf91a87' target='_blank'>
+                    <Button variant='contained' style={{backgroundColor: theme.palette.primary.main}} className='buy-btn'>Buy on Uniswap</Button>
+                </a>
                 <span className='coming-soon-actions'>
                     <Tooltip title='Coming Soon'>
                         <Button onClick={showComingSoon} variant='contained' disableElevation>Sell</Button>
@@ -82,9 +110,9 @@ const Home = () => {
                         <p>2020 DeFi Packs</p>  
                         <img alt='cover-art' src={process.env.PUBLIC_URL + 'assets/cover-art.jpg'}/> 
                         <section className='card-data'>
-                            <h4>$ 1000.00 USD</h4> 
+                            <h4>{tokenDataETH.tokenPrice} ETH</h4> 
                             <span>
-                                <p>950/950 available</p>
+                                <p>{tokenDataETH.tokensRemaining}/{tokenData.totalTokens} available</p>
                                 <div>
                                     <p>Dynamic Pricing Stats</p> 
                                     <img 
@@ -102,7 +130,14 @@ const Home = () => {
                 </section>
             </div>
             <div className='actions'>
-                <Button variant='contained' style={{backgroundColor: theme.palette.primary.main}} className='buy-btn'>Buy at Auction</Button>
+                <Button 
+                    variant='contained' 
+                    style={{backgroundColor: theme.palette.primary.main}} 
+                    className='buy-btn'
+                    onClick={showBuyModal}
+                >
+                    Buy at Auction
+                </Button>
                 <span className='coming-soon-actions'>
                     <Tooltip title='Coming Soon'>
                         <Button onClick={showComingSoon} variant='contained' disableElevation>Sell</Button>
@@ -112,7 +147,13 @@ const Home = () => {
                     </Tooltip>
                 </span>
             </div>
-        <Popup open={open}/>
+        <Popup open={open} />
+        <BuyModal 
+            open={triggerBuyModal} 
+            close={closeBuyModal} 
+            tokenDataETH={tokenDataETH} 
+            tokenData={tokenData}
+        />
         </div>
     )
 }
