@@ -1,3 +1,4 @@
+// import { getAddress } from 'ethers/lib/utils'
 import Web3 from 'web3'
 import auctionABI from '../data/auctionABI.json'
 import {convertWeiToETH} from './convertWeiToETH'
@@ -28,6 +29,7 @@ export const commitEth = async (amount) => {
         })
         // console.log('dummy o', typeof from[0])
         // console.log('from', from)
+        console.log(getAccountAddr)
         let userAddr = from[0]
         const method = auctionContract.methods.commitEth()
         const value = convertWeiToETH(amount) 
