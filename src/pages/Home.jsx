@@ -35,8 +35,10 @@ const Home = (props) => {
 
     const convertToETH = () => {
         if(tokenData.tokenPrice) {
-            const tokenPrice = convertWeiToETH(tokenData.tokenPrice)
+            let tokenPrice = convertWeiToETH(tokenData.tokenPrice)
             tokenDataETH.tokenPrice = tokenPrice.substring(0,3)
+            let tokensRemaining = convertWeiToETH(tokenData.tokensRemaining)
+            tokenDataETH.tokensRemaining = tokensRemaining.substring(0,3)
         }
     }    
     convertToETH()
@@ -107,7 +109,7 @@ const Home = (props) => {
                         <section className='card-data'>
                             <h4>{tokenDataETH.tokenPrice} ETH</h4> 
                             <span>
-                                <p>{tokenData.tokensRemaining}/{tokenData.totalTokens} available</p>
+                                <p>{tokenDataETH.tokensRemaining}/{tokenData.totalTokens} available</p>
                                 <div>
                                     <p>Dynamic Pricing Stats</p> 
                                     <img 
