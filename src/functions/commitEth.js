@@ -10,6 +10,7 @@ const auctionContract = new web3.eth.Contract(auctionABI, contractAddr)
 export const commitEth = async (amount) => {
 
     if(web3Enabled) {
+        let from = ''
         
         // const getAddress = await web3.eth.getAccounts((error, result) => {
         //     if(error){
@@ -21,11 +22,16 @@ export const commitEth = async (amount) => {
         //         return addr
         //     }
         // })
-        let from = await window.web3.eth.accounts[0]
-        console.log('from', from)
+        let getAccountAddr = await web3.eth.getAccounts().then(e => {
+            from = e
+            console.log('from i', from)
+        })
+        // console.log('dummy o', typeof from[0])
+        // console.log('from', from)
+        let userAddr = from[0]
         const method = auctionContract.methods.commitEth()
         const value = convertWeiToETH(amount) 
-        await sendTransaction(method, from, value);
+        await sendTransaction(method, userAddr, value);
     }
 }
 
