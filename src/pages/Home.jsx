@@ -41,6 +41,7 @@ const Home = (props) => {
             tokenDataETH.tokensRemaining = tokensRemaining.substring(0,3)
         }
     }    
+
     convertToETH()
 
     return(
@@ -59,7 +60,7 @@ const Home = (props) => {
                         <section className='card-data'>
                             <h4>{poolData.rate} ETH</h4> 
                             <span>
-                                <p>50/50 available</p>
+                                <p>50 in Pool</p>
                                 <div>
                                     <p>Dynamic Pricing Stats</p> 
                                     <a href='/details'>
@@ -79,7 +80,9 @@ const Home = (props) => {
                 </section>
             </div>
             <div className='actions'>
-                <Button variant='contained' style={{backgroundColor: theme.palette.primary.main}} className='buy-btn'>Buy on Uniswap</Button>
+                <a rel='noopener noreferrer' href='https://uniswap.info/pair/0xe108fdab8b03f6bd4c35b8e7a2249b120bf91a87' target='_blank'>
+                    <Button variant='contained' style={{backgroundColor: theme.palette.primary.main}} className='buy-btn'>Buy on Uniswap</Button>
+                </a>
                 <span className='coming-soon-actions'>
                     <Tooltip title='Coming Soon'>
                         <Button onClick={showComingSoon} variant='contained' disableElevation>Sell</Button>
