@@ -10,13 +10,13 @@ const BuyModal = (props) => {
 
     const {open, close, tokenDataETH, tokenData} = props
 
-    const buyToken = async () => {
-        const numberOfTokens  = tokenData.tokenPrice
-        commitEth(numberOfTokens)
-    }
-    
     const [value, setValue] = useState(1)
 
+    const buyToken = async () => {
+        const payableValue  = (tokenData.tokenPrice * value).toString()
+        commitEth(payableValue)
+    }
+    
     const increaseValue = () => {
         setValue(prevValue => prevValue + 1)
     }
