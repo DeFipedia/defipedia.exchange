@@ -1,4 +1,4 @@
-import { ChainId, Token, Fetcher, WETH, Route } from '@uniswap/sdk'
+import { ChainId, Fetcher, WETH, Route } from '@uniswap/sdk'
 import {web3Enabled} from './web3Enabled'
 export const getPoolData = async () => {
 
@@ -10,7 +10,6 @@ export const getPoolData = async () => {
         //token data//
         const chainId = ChainId.MAINNET
         const tokenAddress = '0x117c2aca45d87958ba054cb85af0fd57be00d624'
-        const decimals = 18
         // fetch book data//
         const BOOKS = await Fetcher.fetchTokenData(chainId, tokenAddress)
         // fetch pair data //

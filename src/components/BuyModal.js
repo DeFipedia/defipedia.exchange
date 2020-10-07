@@ -2,9 +2,6 @@ import React, {useState} from 'react';
 import {Modal, Card, CardContent, Typography, Button} from '@material-ui/core'
 import ValueInput from './ValueInput';
 import {commitEth} from '../functions/commitEth'
-import Web3 from 'web3'
-import auctionABI from '../data/auctionABI.json'
-
 
 const BuyModal = (props) => {
 
