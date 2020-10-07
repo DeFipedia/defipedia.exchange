@@ -8,11 +8,11 @@ import auctionABI from '../data/auctionABI.json'
 
 const BuyModal = (props) => {
 
-    const {open, close, tokenData} = props
+    const {open, close, tokenDataETH} = props
 
     const buyToken = async () => {
-        const numberOfTokens  = tokenData.tokenPrice
-        commitEth(numberOfTokens)
+        // const numberOfTokens  = tokenData.tokenPrice
+        // commitEth(numberOfTokens)
     }
     
     const [value, setValue] = useState(1)
@@ -52,8 +52,8 @@ const BuyModal = (props) => {
                         <img alt='$BOOK cover art' src={process.env.PUBLIC_URL +  'assets/cover-art.jpg'}/>
                         <section className='data-indicator'>
                             <div className='token-data'>
-                                <p>{tokenData.tokenPrice} ETH</p>
-                                <p>950/950 available</p>
+                                <p>{tokenDataETH.tokenPrice} ETH</p>
+                                <p>{tokenDataETH.tokensRemaining}/950 available</p>
                             </div>
                             <div className='unit-indicator'>
                                 <ValueInput 

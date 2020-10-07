@@ -145,7 +145,7 @@ const Home = (props) => {
                 </span>
             </div>
         <Popup open={open} />
-        <BuyModal open={triggerBuyModal} close={closeBuyModal} tokenData={tokenData} />
+        <BuyModal open={triggerBuyModal} close={closeBuyModal} tokenDataETH={tokenDataETH} />
         </div>
     )
 }

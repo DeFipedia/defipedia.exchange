@@ -8,14 +8,12 @@ const auctionContract = new web3.eth.Contract(auctionABI, contractAddr)
 
 export const commitEth = async (amount) => {
 
-    const from = window.web3.eth.accounts[0]
+    const from = await window.web3.eth.accounts[0]
     const method = auctionContract.methods.commitEth()
     const value = convertWeiToETH(amount)
 
     await sendTransaction(method, from, value);
 }
-
-
 
 export const sendTransaction = (method, from, value) => {
     return new Promise(async (resolve, reject) => {
