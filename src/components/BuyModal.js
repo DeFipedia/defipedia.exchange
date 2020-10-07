@@ -5,6 +5,8 @@ import {commitEth} from '../functions/commitEth'
 
 const BuyModal = (props) => {
 
+
+
     const {open, close, tokenDataETH, tokenData} = props
 
     const [value, setValue] = useState(1)

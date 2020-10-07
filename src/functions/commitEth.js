@@ -1,26 +1,28 @@
 import Web3 from 'web3'
 import auctionABI from '../data/auctionABI.json'
 import {convertWeiToETH} from './convertWeiToETH'
-
+import {web3Enabled} from './web3Enabled'
 
 const web3 = new Web3(window.ethereum)
 const contractAddr = `${process.env.REACT_APP_CONTRACT_ADDRESS}`
 const auctionContract = new web3.eth.Contract(auctionABI, contractAddr)
 
-const web3Enabled = () => {
-    if(window.ethereum) {
-        window.web3 = new Web3(window.ethereum)
-        window.ethereum.enable()
-        return true
-    }else{
-        return false
-    }
-}
-
 export const commitEth = async (amount) => {
 
     if(web3Enabled) {
-        const from = await window.web3.eth.accounts[0]
+        
+        // const getAddress = await web3.eth.getAccounts((error, result) => {
+        //     if(error){
+        //         console.log('Can not get account', error)
+        //     }else{
+            
+        //         const addr = result[0]
+        //         console.log(addr)
+        //         return addr
+        //     }
+        // })
+        let from = await window.web3.eth.accounts[0]
+        console.log('from', from)
         const method = auctionContract.methods.commitEth()
         const value = convertWeiToETH(amount) 
         await sendTransaction(method, from, value);
@@ -55,7 +57,7 @@ export const sendTransaction = (method, from, value) => {
         } catch (error) {
             if (error.code !== 4001)
                 // showErrorModal(error.message);
-                console.log('error message here')
+                console.log('can not commit eth', error)
             return resolve(false);
         }
     });
