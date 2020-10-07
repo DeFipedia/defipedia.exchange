@@ -8,9 +8,10 @@ import auctionABI from '../data/auctionABI.json'
 
 const BuyModal = (props) => {
 
+    const {open, close, tokenData} = props
+
     const buyToken = async () => {
-        const numberOfTokens  = 0
-        // const account = from
+        const numberOfTokens  = tokenData.tokenPrice
         commitEth(numberOfTokens)
     }
     
@@ -36,8 +37,6 @@ const BuyModal = (props) => {
             setValue(1)
         }
     }
-
-    const {open, close, tokenData} = props
 
     return(
         <Modal

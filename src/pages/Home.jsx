@@ -3,15 +3,18 @@ import {Card, CardContent, Tooltip, Button, useTheme} from '@material-ui/core'
 import Popup from '../components/Popup'
 import CardModal from '../components/CardModal'
 import BuyModal from '../components/BuyModal'
+import {convertWeiToETH} from '../functions/convertWeiToETH'
 
 const Home = (props) => {
     const {tokenData, poolData} = props
     // for theme//
     let theme = useTheme()
-    // for state variables//
+    // for state //
     const [open, setOpen] = useState(false)
     const [modalOpen, setModalOpen] = useState(false)
     const [triggerBuyModal, setTriggerBuyModal] = useState(false)
+    // token data eth is to use calue of token in ETH as smart contracts return value in Wei and to avoid mutating actual response from smart contracts//
+    const tokenDataETH ={}
     // methods //
     const showComingSoon = () => {
         setOpen(true) 
@@ -29,14 +32,15 @@ const Home = (props) => {
     const closeBuyModal = () => {
         setTriggerBuyModal(false)
     }
-    
-    // sanitizing data to show on card//
-    // const sanitizeData = () => {
-    //     console.log(tokenPrice)
-    // }
-    // sanitizeData()
 
-    //----------//
+    const convertToETH = () => {
+        if(tokenData.tokenPrice) {
+            const tokenPrice = convertWeiToETH(tokenData.tokenPrice)
+            tokenDataETH.tokenPrice = tokenPrice.substring(0,3)
+        }
+    }    
+    convertToETH()
+
     return(
         <div className='home-page'>
             <CardModal open={modalOpen} handleClose={closeDynamicPricingModal}/>
@@ -101,7 +105,7 @@ const Home = (props) => {
                         <p>2020 DeFi Packs</p>  
                         <img alt='cover-art' src={process.env.PUBLIC_URL + 'assets/cover-art.jpg'}/> 
                         <section className='card-data'>
-                            <h4>{tokenData.tokenPrice} ETH</h4> 
+                            <h4>{tokenDataETH.tokenPrice} ETH</h4> 
                             <span>
                                 <p>{tokenData.tokensRemaining}/{tokenData.totalTokens} available</p>
                                 <div>

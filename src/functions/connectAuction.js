@@ -22,10 +22,10 @@ export const connectAuction = async () => {
     // let totalTokens = await auctionContract.methods.totalTokens().call().then(console.log)
     // console.log(totalTokens)
     let tokensRemaining = await auctionContract.methods.tokensRemaining().call()
-    tokenData.tokensRemaining = Number(tokensRemaining.substring(0, 3))
+    tokenData.tokensRemaining = tokensRemaining
     // let commitmentsTotal = await auctionContract.methods.commitmentsTotal().call()
     let tokenPrice = await auctionContract.methods.priceFunction().call()
-    tokenData.tokenPrice =  parseFloat(tokenPrice.substring(0,3))/100
+    tokenData.tokenPrice =  tokenPrice
 
     return tokenData
 }   

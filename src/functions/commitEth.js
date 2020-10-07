@@ -1,24 +1,18 @@
 import Web3 from 'web3'
 import auctionABI from '../data/auctionABI.json'
+import {convertWeiToETH} from './convertWeiToETH'
 
-// const provider = new Web3.providers.HttpProvider(`https://kovan.infura.io/v3/${process.env.REACT_APP_INFURA_PROJECT_ID}`)
 const web3 = new Web3(window.ethereum)
 const contractAddr = `${process.env.REACT_APP_CONTRACT_ADDRESS}`
 const auctionContract = new web3.eth.Contract(auctionABI, contractAddr)
 
-export const commitEth = async (contractAddress, amount) => {
+export const commitEth = async (amount) => {
 
     const from = window.web3.eth.accounts[0]
-    console.log(from)
     const method = auctionContract.methods.commitEth()
-    // await sendTransaction(method, from, amount)
-    // const method = auctionContract.methods.commitEth().send({
-    //     from: account,
-    //     gas: 470000,
-    //     value: amount,
-    //     gasPrice: 0
-    // })
-    await sendTransaction(method, from, amount);
+    const value = convertWeiToETH(amount)
+
+    await sendTransaction(method, from, value);
 }
 
 
@@ -56,12 +50,3 @@ export const sendTransaction = (method, from, value) => {
         }
     });
 }
-
-// export const estimateGas = () => {
-
-//     const gasEstimate = web3.eth.estimateGas {
-//         from: from,
-//         to: to,
-
-//     }
-// }
