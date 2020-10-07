@@ -1,10 +1,39 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { useTheme, Button, Tooltip } from '@material-ui/core'
 import CloseIcon from '@material-ui/icons/Close';
 import {Link } from 'react-router-dom'
-const Details = () => {
+import BuyModal from '../components/BuyModal'
+import {convertWeiToETH} from '../functions/convertWeiToETH'
+
+const Details = (props) => {
+    const {tokenData} = props
+    //state//
+    const [open, setOpen] = useState(false)
+    const [modalOpen, setModalOpen] = useState(false)
+    const [triggerBuyModal, setTriggerBuyModal] = useState(false)
     // for theme//
     let theme = useTheme()
+    // token data eth is to use calue of token in ETH as smart contracts return value in Wei and to avoid mutating actual response from smart contracts//
+    const tokenDataETH ={}
+    //methods//
+    const showBuyModal = () => {
+        setTriggerBuyModal(true)
+    }
+
+    const closeBuyModal = () => {
+        setTriggerBuyModal(false)
+    }
+
+    const convertToETH = () => {
+        if(tokenData.tokenPrice) {
+            let tokenPrice = convertWeiToETH(tokenData.tokenPrice)
+            tokenDataETH.tokenPrice = tokenPrice.substring(0,3)
+            let tokensRemaining = convertWeiToETH(tokenData.tokensRemaining)
+            tokenDataETH.tokensRemaining = tokensRemaining.substring(0,3)
+        }
+    }    
+
+    convertToETH()
 
     return(
         <div className='details-page'>
@@ -46,8 +75,10 @@ const Details = () => {
 
             {/* ------------ */}
             <div className='actions'>
-                <Button variant='contained' style={{backgroundColor: theme.palette.primary.main}} className='buy-btn'>Buy on UniSwap</Button>
-                <span className='coming-soon-actions'>
+                <a rel='noopener noreferrer' href='https://uniswap.info/pair/0xe108fdab8b03f6bd4c35b8e7a2249b120bf91a87' target='_blank'>
+                    <Button variant='contained' style={{backgroundColor: theme.palette.primary.main}} className='buy-btn'>Buy on UniSwap</Button>
+                </a>
+                 <span className='coming-soon-actions'>
                     <Tooltip title='Coming Soon'>
                         <Button variant='contained' disableElevation>Sell on UniSwap</Button>
                     </Tooltip>
@@ -55,7 +86,7 @@ const Details = () => {
                         <Button variant='contained' disableElevation>Redeem</Button>
                     </Tooltip>
                 </span>
-                <Button variant='contained' style={{backgroundColor: theme.palette.primary.main}} className='buy-btn'>Buy at Auction</Button>
+                <Button variant='contained' style={{backgroundColor: theme.palette.primary.main}} className='buy-btn' onClick={showBuyModal}>Buy at Auction</Button>
                 <span className='coming-soon-actions'>
                     <Tooltip title='Coming Soon'>
                         <Button variant='contained' disableElevation>Sell on Auction</Button>
@@ -65,6 +96,12 @@ const Details = () => {
                     </Tooltip>
                 </span>
             </div>
+            <BuyModal 
+                open={triggerBuyModal} 
+                close={closeBuyModal} 
+                tokenDataETH={tokenDataETH} 
+                tokenData={tokenData}
+            />
         </div>
     )
 }

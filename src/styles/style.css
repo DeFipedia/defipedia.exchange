@@ -6,8 +6,12 @@
   display: flex;
   justify-content: space-between;
 }
+.MuiToolbar-root .brand-logo {
+  height: 40px;
+  width: 40px;
+}
 
-.brand-logo {
+.brand-header {
   display: flex;
   align-items: center;
 }
@@ -124,6 +128,7 @@
   width: 12px;
   float: right;
   margin: 0px;
+  box-shadow: none;
 }
 
 .learn-more-section {
@@ -144,6 +149,15 @@
 }
 .learn-more-section a {
   color: #FF6400;
+}
+
+.learn-more-button {
+  background-color: #F2F2F2;
+  color: #FF6400;
+  font-size: 9pt;
+  margin-top: 0%;
+  font-weight: bold;
+  border: none;
 }
 
 .actions {
@@ -382,6 +396,86 @@
     margin-top: 25%;
   }
 }
+.buy-modal {
+  height: 100vh;
+  margin: 0px;
+  width: 99vw;
+  padding-top: 15vh;
+}
+.buy-modal h4 {
+  font-weight: bold;
+}
+.buy-modal .MuiCard-root {
+  text-align: center;
+  margin: auto;
+}
+.buy-modal .data-indicator {
+  margin-top: 4vh;
+  width: 390px;
+  display: flex;
+  justify-content: space-between;
+}
+.buy-modal .data-indicator p {
+  font-size: 12pt;
+  color: white;
+}
+.buy-modal .actions .buy-button {
+  background-color: #FF6400;
+  color: white;
+  text-transform: none;
+  font-weight: bold;
+}
+.buy-modal .actions .cancel-button {
+  margin-top: 1vh;
+  background-color: white;
+  color: #FF6400;
+  font-weight: bold;
+  text-transform: none;
+}
+
+@media screen and (min-width: 700px) and (max-width: 900px) {
+  .data-indicator {
+    width: 120% !important;
+  }
+  .data-indicator p {
+    font-size: 15pt;
+    font-weight: bold;
+  }
+}
+@media screen and (min-width: 400px) and (max-width: 699px) {
+  .data-indicator {
+    width: 135% !important;
+  }
+}
+@media screen and (max-width: 399px) {
+  .data-indicator {
+    width: 135% !important;
+  }
+}
+.value-input {
+  display: flex;
+  align-items: center;
+}
+.value-input input {
+  width: 15%;
+  height: 25px;
+  text-align: center;
+}
+.value-input button {
+  height: 33px;
+}
+.value-input input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: none;
+}
+.value-input input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: none;
+}
+.value-input input[type=number] {
+  -moz-appearance: textfield;
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
