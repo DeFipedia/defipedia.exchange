@@ -2,11 +2,13 @@ FROM node:10
 
 WORKDIR /usr/src/app
 
-ENV PORT 5000
+EXPOSE  8545 8080 30303
+
+ENV PORT 8080
 
 COPY package.json ./
 
-RUN yarn install
+RUN yarn install 
 
 COPY . .
 
