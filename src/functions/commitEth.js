@@ -13,25 +13,7 @@ export const commitEth = async (amount) => {
 
     if(web3Enabled) {
         let from = ''
-        // let provider = new ethers.providers.Web3Provider(web3.currentProvider);
-        // console.log('provider', provider)
-        // let signer = provider.getSigner(0)
-        // console.log('signer', signer)
-        // let userA = await signer.getAddress()
-        // console.log('userA', userA)
-        // let userAB = userA.toString()
-        // console.log('userAB',userAB)
-    
-        // const getAddress = await web3.eth.getAccounts((error, result) => {
-        //     if(error){
-        //         console.log('Can not get account', error)
-        //     }else{
-            
-        //         const addr = result[0]
-        //         console.log(addr)
-        //         return addr
-        //     }
-        // })
+        
         let getAccountAddr = await web3.eth.getAccounts().then(e => {
             from = e
             console.log('from i', from)
