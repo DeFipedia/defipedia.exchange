@@ -3,6 +3,7 @@ import Web3 from 'web3'
 import auctionABI from '../data/auctionABI.json'
 import {convertWeiToETH} from './convertWeiToETH'
 import {web3Enabled} from './web3Enabled'
+import {ethers, utils} from 'ethers'
 
 const web3 = new Web3(window.ethereum)
 const contractAddr = `${process.env.REACT_APP_CONTRACT_ADDRESS}`
@@ -12,7 +13,15 @@ export const commitEth = async (amount) => {
 
     if(web3Enabled) {
         let from = ''
-        
+        // let provider = new ethers.providers.Web3Provider(web3.currentProvider);
+        // console.log('provider', provider)
+        // let signer = provider.getSigner(0)
+        // console.log('signer', signer)
+        // let userA = await signer.getAddress()
+        // console.log('userA', userA)
+        // let userAB = userA.toString()
+        // console.log('userAB',userAB)
+    
         // const getAddress = await web3.eth.getAccounts((error, result) => {
         //     if(error){
         //         console.log('Can not get account', error)
@@ -26,14 +35,14 @@ export const commitEth = async (amount) => {
         let getAccountAddr = await web3.eth.getAccounts().then(e => {
             from = e
             console.log('from i', from)
-        })
-        // console.log('dummy o', typeof from[0])
-        // console.log('from', from)
+        }).catch(e => {console.log(e)})
+        console.log('from t', typeof from[0])
+        console.log('from 0', from)
         console.log(getAccountAddr)
         let userAddr = from[0]
-        const method = auctionContract.methods.commitEth()
-        const value = convertWeiToETH(amount) 
-        await sendTransaction(method, userAddr, value);
+        // const method = auctionContract.methods.commitEth()
+        // const value = convertWeiToETH(amount) 
+        // await sendTransaction(method, userAddr, value);
     }
 }
 
