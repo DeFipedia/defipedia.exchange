@@ -1,8 +1,8 @@
 import { ChainId, Fetcher, WETH, Route } from '@uniswap/sdk'
-import {web3Enabled} from './web3Enabled'
+
 export const getPoolData = async () => {
 
-    let web3 = await web3Enabled()
+    // let web3 = await web3Enabled()
 
     const uniswapPoolData = {
         rate: '',
@@ -22,10 +22,4 @@ export const getPoolData = async () => {
     uniswapPoolData.rate = uniswapPoolRate
         
     return uniswapPoolData
-    // }else{
-    //     alert('Please install a Ethereum-compatible browser or extension like MetaMask to use this dApp')
-    // }
-
 }
-
-// 0xE108FDAB8B03f6bd4C35b8e7a2249b120bf91A87//

@@ -1,9 +1,8 @@
-import Web3 from 'web3'
 import auctionABI from '../data/auctionABI.json'
 import {web3Enabled} from './web3Enabled'
 
 export const connectAuction = async () => {
-    // if(web3Enabled){
+
         let web3 = await web3Enabled()
         console.log(web3)
         const contractAddr = `${process.env.REACT_APP_CONTRACT_ADDRESS}`
@@ -22,17 +21,13 @@ export const connectAuction = async () => {
 
         let tokensRemaining = await auctionContract.methods.tokensRemaining().call()
         tokenData.tokensRemaining = tokensRemaining
-        // let commitmentsTotal = await auctionContract.methods.commitmentsTotal().call()
+
         let tokenPrice = await auctionContract.methods.priceFunction().call()
         tokenData.tokenPrice =  tokenPrice
     
         console.log(tokenData)
         return tokenData
-        
 
-        // }else{
-        //      alert('Please install a Ethereum-compatible browser or extension like MetaMask to use this dApp')
-        // }
 }   
 
 

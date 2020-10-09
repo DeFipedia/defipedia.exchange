@@ -1,35 +1,22 @@
-// import { getAddress } from 'ethers/lib/utils'
-import Web3 from 'web3'
 import auctionABI from '../data/auctionABI.json'
 import {convertWeiToETH} from './convertWeiToETH'
 import {web3Enabled} from './web3Enabled'
-import {ethers, utils} from 'ethers'
-
 
 const contractAddr = `${process.env.REACT_APP_CONTRACT_ADDRESS}`
-// const auctionContract = new web3.eth.Contract(auctionABI, contractAddr)
 
 export const commitEth = async (amount) => {
         let web3 = await web3Enabled()
         const auctionContract = new web3.eth.Contract(auctionABI, contractAddr)
-        // let web3 = await web3Enabled()
-        // let from = ''
+
+        // this method will ask to connect wallet if not done before//
         let ethereum = window.ethereum
         let accounts = await ethereum.request({ method: 'eth_requestAccounts' })
         let selectedAccount = accounts[0]
-        console.log(selectedAccount)
-        // let getAccountAddr = await web3.eth.getAccounts().then(e => {
-        //     from = e
-        //     console.log('from i', from)
-        // }).catch(e => {console.log(e)})
-        // console.log('from t', typeof from[0])
-        // console.log('from 0', from)
-        // console.log(getAccountAddr)
-        // let userAddr = from[0]
+
         const method = auctionContract.methods.commitEth()
         const value = convertWeiToETH(amount) 
         await sendTransaction(method, selectedAccount, value);
-    // }
+
 }
 
 export const sendTransaction = async (method, from, value) => {
@@ -37,7 +24,7 @@ export const sendTransaction = async (method, from, value) => {
     return new Promise(async (resolve, reject) => {
         try {
             const gasPriceInWei = await web3.eth.getGasPrice()
-            // const estimatedGas = await estimateGas(method, from, gasPriceInWei * 20);
+
             let valueInWei = 0;
             if (value) {
                 valueInWei = web3.utils.toWei(value, 'ether');
@@ -45,7 +32,6 @@ export const sendTransaction = async (method, from, value) => {
             const options = {
                 from: from,
                 gasPrice: web3.utils.toHex(gasPriceInWei),
-                // gasLimit: estimatedGas,
                 value: valueInWei
             }
             method.send(options, (err, txHash) => {
@@ -53,14 +39,11 @@ export const sendTransaction = async (method, from, value) => {
                     console.log('err:', err)
                     return resolve(false);
                 }
-                // store.dispatch('notification/addTransaction', { transaction: newTransaction, coinbase: from });
-                // showTransactionSentModal(txHash);
                 console.log('success msg here')
                 return resolve(txHash);
             })
         } catch (error) {
             if (error.code !== 4001)
-                // showErrorModal(error.message);
                 console.log('can not commit eth', error)
             return resolve(false);
         }
