@@ -5,14 +5,15 @@ import {convertWeiToETH} from './convertWeiToETH'
 import {web3Enabled} from './web3Enabled'
 import {ethers, utils} from 'ethers'
 
-const web3 = new Web3(window.ethereum)
+
 const contractAddr = `${process.env.REACT_APP_CONTRACT_ADDRESS}`
-const auctionContract = new web3.eth.Contract(auctionABI, contractAddr)
+// const auctionContract = new web3.eth.Contract(auctionABI, contractAddr)
 
 export const commitEth = async (amount) => {
-
-    if(web3Enabled) {
-        let from = ''
+        let web3 = await web3Enabled()
+        const auctionContract = new web3.eth.Contract(auctionABI, contractAddr)
+        // let web3 = await web3Enabled()
+        // let from = ''
         let ethereum = window.ethereum
         let accounts = await ethereum.request({ method: 'eth_requestAccounts' })
         let selectedAccount = accounts[0]
@@ -28,10 +29,11 @@ export const commitEth = async (amount) => {
         const method = auctionContract.methods.commitEth()
         const value = convertWeiToETH(amount) 
         await sendTransaction(method, selectedAccount, value);
-    }   
+    // }
 }
 
-export const sendTransaction = (method, from, value) => {
+export const sendTransaction = async (method, from, value) => {
+    let web3 = await web3Enabled()
     return new Promise(async (resolve, reject) => {
         try {
             const gasPriceInWei = await web3.eth.getGasPrice()
