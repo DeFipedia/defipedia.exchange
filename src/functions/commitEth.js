@@ -13,19 +13,22 @@ export const commitEth = async (amount) => {
 
     if(web3Enabled) {
         let from = ''
-        
-        let getAccountAddr = await web3.eth.getAccounts().then(e => {
-            from = e
-            console.log('from i', from)
-        }).catch(e => {console.log(e)})
-        console.log('from t', typeof from[0])
-        console.log('from 0', from)
-        console.log(getAccountAddr)
-        let userAddr = from[0]
-        // const method = auctionContract.methods.commitEth()
-        // const value = convertWeiToETH(amount) 
-        // await sendTransaction(method, userAddr, value);
-    }
+        let ethereum = window.ethereum
+        let accounts = await ethereum.request({ method: 'eth_requestAccounts' })
+        let selectedAccount = accounts[0]
+        console.log(selectedAccount)
+        // let getAccountAddr = await web3.eth.getAccounts().then(e => {
+        //     from = e
+        //     console.log('from i', from)
+        // }).catch(e => {console.log(e)})
+        // console.log('from t', typeof from[0])
+        // console.log('from 0', from)
+        // console.log(getAccountAddr)
+        // let userAddr = from[0]
+        const method = auctionContract.methods.commitEth()
+        const value = convertWeiToETH(amount) 
+        await sendTransaction(method, selectedAccount, value);
+    }   
 }
 
 export const sendTransaction = (method, from, value) => {
