@@ -21,7 +21,7 @@ export const web3Enabled = async () => {
     }
     // else fallback to httpProvider (infura in this case) to work(just displays data) on non ethereum caompatibae browsers//
     else{
-        const provider = new Web3.providers.HttpProvider(process.env.REACT_APP_INFURA_PROJECT_ID)
+        const provider = new Web3.providers.HttpProvider(process.env.REACT_APP_WEB3_HTTP_PROVIDER)
         web3 = new Web3(provider)
         return web3
     }
