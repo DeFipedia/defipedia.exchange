@@ -16,7 +16,7 @@ export const connectAuction = async () => {
         web3.eth.net.isListening().then(() => {
             console.log('web 3 is connected')
         }).catch((e) => {
-            console.log('Something went wrong', e)
+            console.warn('Something went wrong', e)
         })
 
         let tokensRemaining = await auctionContract.methods.tokensRemaining().call()
@@ -25,7 +25,7 @@ export const connectAuction = async () => {
         let tokenPrice = await auctionContract.methods.priceFunction().call()
         tokenData.tokenPrice =  tokenPrice
     
-        console.log(tokenData)
+        // console.log(tokenData)
         return tokenData
 
 }   
