@@ -69,7 +69,7 @@ const Details = (props) => {
                     </section>
                 <section className='detail-card-description'>
                     <p>The price of BOOKS changes when tokens are bought and sold</p>
-                    <a href='https://uniswap.exchange/' target='_blank' rel='noopener noreferrer'>Read More</a>
+                    <a href='https://medium.com/@DeFiPedia/defipedia-debuts-with-books-collectors-defi-pack-b5eaf570ae9' target='_blank' rel='noopener noreferrer'>Read More</a>
                 </section>
             </div>
 
