@@ -114,19 +114,20 @@ const Home = (props) => {
                             <span>
                                 <p>{tokenDataETH.tokensRemaining}/{tokenData.totalTokens} available</p>
                                 <div>
-                                    <p>Dynamic Pricing Stats</p> 
-                                    <img 
-                                        alt='question-mark' 
-                                        src={process.env.PUBLIC_URL + '/assets/question-mark.png'}
-                                        onClick={() => showDynamicPricingStatModal()}
-                                    />
+                                    <p>Dynamic Pricing Stats</p>
+                                    <a href='/details'> 
+                                        <img 
+                                            alt='question-mark' 
+                                            src={process.env.PUBLIC_URL + '/assets/question-mark.png'}
+                                        />
+                                    </a>
                                 </div>
                             </span>
                         </section>                 
                     </CardContent>                
                 </Card>
                 <section className='learn-more-section'>
-                    <p>Buy and sell real books with digital currency. Delivered on demand. <a href='/details'>Learn More</a></p>
+                <p>Buy and sell real books with digital currency. Delivered on demand. <button className='learn-more-button' onClick={() => showDynamicPricingStatModal()}>Learn More</button></p>
                 </section>
             </div>
             <div className='actions'>

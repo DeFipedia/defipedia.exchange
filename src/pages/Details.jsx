@@ -88,9 +88,9 @@ const Details = (props) => {
                 </span>
                 <Button variant='contained' style={{backgroundColor: theme.palette.primary.main}} className='buy-btn' onClick={showBuyModal}>Buy at Auction</Button>
                 <span className='coming-soon-actions'>
-                    <Tooltip title='Coming Soon'>
+                    {/* <Tooltip title='Coming Soon'>
                         <Button variant='contained' disableElevation>Sell on Auction</Button>
-                    </Tooltip>
+                    </Tooltip> */}
                     <Tooltip title='Coming Soon'>               
                         <Button variant='contained' disableElevation>Redeem</Button>
                     </Tooltip>

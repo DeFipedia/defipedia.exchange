@@ -5,8 +5,6 @@ import {commitEth} from '../functions/commitEth'
 
 const BuyModal = (props) => {
 
-
-
     const {open, close, tokenDataETH, tokenData} = props
 
     const [value, setValue] = useState(1)
@@ -51,7 +49,7 @@ const BuyModal = (props) => {
                         <img alt='$BOOK cover art' src={process.env.PUBLIC_URL +  'assets/cover-art.jpg'}/>
                         <section className='data-indicator'>
                             <div className='token-data'>
-                                <p>{tokenDataETH.tokenPrice} ETH</p>
+                                <p>{tokenDataETH.tokenPrice * value} ETH </p>
                                 <p>{tokenDataETH.tokensRemaining}/950 available</p>
                             </div>
                             <div className='unit-indicator'>
