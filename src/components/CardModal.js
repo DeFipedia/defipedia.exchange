@@ -32,7 +32,7 @@ const CardModal = (props) => {
                         <p>Tokens on Uniswap will start at 0.3 ETH per $BOOKS. Each buy/sell on Uniswap will move the price</p>
                     {/* --------- */}
                     <h4>$BOOKS on Auction</h4>
-                        <p>Tokens at auction will start at $1,000 USD per $BOOKS. As time passes, the listing price will decay to $200 USD. Learn more about the time based 
+                        <p>Tokens at auction will start at 3 ETH per $BOOKS. As time passes, the listing price will decay to 0.5 ETH. Learn more about the time based 
                             <a href='https://docs.google.com/spreadsheets/d/e/2PACX-1vQCpeDTE3s66xtUC8X5h7Vq5hVdiU4UbBN9ifeQBCFWizwtELh6XWZyKCH9parPRjdXBZQq_wRuwqft/pubchart?oid=943438853&format=interactive' target='_blank' rel='noopener noreferrer'> price mechanism here.</a>
                         </p>
                     {/* --------------- */}
