@@ -60,7 +60,7 @@ const Home = (props) => {
                         <section className='card-data'>
                             <h4>{poolData.rate} ETH</h4> 
                             <span>
-                                <p>50 in Pool</p>
+                                <p>50 seeded in Pool</p>
                                 <div>
                                     <p>Dynamic Pricing Stats</p> 
                                     <a href='/details'>
@@ -80,7 +80,7 @@ const Home = (props) => {
                 </section>
             </div>
             <div className='actions'>
-                <a rel='noopener noreferrer' href='https://uniswap.info/pair/0xe108fdab8b03f6bd4c35b8e7a2249b120bf91a87' target='_blank'>
+                <a rel='noopener noreferrer' href='https://app.uniswap.org/#/swap?inputCurrency=ETH&outputCurrency=0x117c2aca45d87958ba054cb85af0fd57be00d624' target='_blank'>
                     <Button variant='contained' style={{backgroundColor: theme.palette.primary.main}} className='buy-btn'>Buy on Uniswap</Button>
                 </a>
                 <span className='coming-soon-actions'>
