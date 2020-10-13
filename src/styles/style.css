@@ -56,8 +56,10 @@
 }
 
 .MuiCard-root {
+  max-height: 650px;
   width: 25vw;
   height: 58vh;
+  max-height: 650px;
   margin: auto;
   background: linear-gradient(to bottom right, #343434, #151515);
   border-radius: 10px !important;
@@ -329,6 +331,7 @@
 .detail-card {
   width: 25vw;
   height: 60vh;
+  max-height: 650px;
   background: linear-gradient(to bottom right, #343434, #151515);
   border-radius: 10px !important;
   margin: auto;
@@ -409,6 +412,7 @@
 .buy-modal .MuiCard-root {
   text-align: center;
   margin: auto;
+  max-height: 650px;
 }
 .buy-modal .data-indicator {
   margin-top: 4vh;
