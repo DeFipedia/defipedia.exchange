@@ -1,18 +1,21 @@
 import React, {useState} from 'react';
-import {Modal, Card, CardContent, Typography, Button, TextField} from '@material-ui/core'
+import {Modal, Card, CardContent, Typography, Button, TextField, useTheme} from '@material-ui/core'
 import ValueInput from './ValueInput';
 import {commitEth} from '../functions/commitEth'
+import {convertETHToWei} from '../functions/convertETHToWei'
 
 const BuyModal = (props) => {
 
+    let theme = useTheme()
+
     const {open, close, tokenDataETH, tokenData} = props
 
-    const [inputValue, setInputValue] = useState(0)
+    const [inputValue, setInputValue] = useState()
 
     const buyToken = async () => {
         let inputValidation = await validateInput()
-        if(inputValidation === true){
-            const payableValue  = (tokenData.tokenPrice * inputValue).toString()
+        if(inputValidation == true){
+            const payableValue = await convertETHToWei(inputValue)
             commitEth(payableValue)
         }
     }
@@ -26,7 +29,8 @@ const BuyModal = (props) => {
     // }
 
     const validateInput = () => {
-        if(inputValue > 5) {
+        let maxValue = (tokenDataETH.tokenPrice * tokenDataETH.tokensRemaining)
+        if(inputValue > maxValue) {
             // give a alert//
             alert('You can not select more than 5')
             //set back to 5//
@@ -39,6 +43,7 @@ const BuyModal = (props) => {
             return false
         }else if (inputValue === NaN) {
             alert('Please insert a valid number')
+            return false
         }
         return true
     }
@@ -61,14 +66,17 @@ const BuyModal = (props) => {
                         <img alt='$BOOK cover art' src={process.env.PUBLIC_URL +  'assets/cover-art.jpg'}/>
                         <section className='data-indicator'>
                             <div className='token-data'>
-                                <p>{tokenDataETH.tokenPrice} ETH </p>
+                                <p>{tokenDataETH.tokenPrice} ETH / each</p>
                                 <p>{tokenDataETH.tokensRemaining}/950 available</p>
                             </div>
                             <div className='value-input'> 
                                 <TextField 
-                                    id='filled-basic' 
-                                    label='Filled' 
-                                    variant='filled' 
+                                    style={{
+                                        color: theme.palette.background.main,
+                                        border: theme.palette.background.main
+                                    }}
+                                    placeholder='Enter amount'
+                                    variant='outlined' 
                                     onChange={handleValueInputChange}
                                 />             
                             </div>

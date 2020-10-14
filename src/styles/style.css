@@ -424,6 +424,15 @@
   font-size: 12pt;
   color: white;
 }
+.buy-modal .value-input {
+  width: 50% !important;
+}
+.buy-modal .value-input input {
+  width: 7vw !important;
+  height: 0.2vh !important;
+  color: white;
+  border: 1px solid;
+}
 .buy-modal .actions .buy-button {
   background-color: #FF6400;
   color: white;
