@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Modal, Card, CardContent, Typography, Button} from '@material-ui/core'
+import {Modal, Card, CardContent, Typography, Button, TextField} from '@material-ui/core'
 import ValueInput from './ValueInput';
 import {commitEth} from '../functions/commitEth'
 
@@ -7,32 +7,44 @@ const BuyModal = (props) => {
 
     const {open, close, tokenDataETH, tokenData} = props
 
-    const [value, setValue] = useState(1)
+    const [inputValue, setInputValue] = useState(0)
 
     const buyToken = async () => {
-        const payableValue  = (tokenData.tokenPrice * value).toString()
-        commitEth(payableValue)
+        let inputValidation = await validateInput()
+        if(inputValidation === true){
+            const payableValue  = (tokenData.tokenPrice * inputValue).toString()
+            commitEth(payableValue)
+        }
     }
     
-    const increaseValue = () => {
-        setValue(prevValue => prevValue + 1)
-    }
+    // const increaseValue = () => {
+    //     setValue(prevValue => prevValue + 1)
+    // }
 
-    const decreaseValue = () => {
-        setValue(prevValue => prevValue - 1)
-    }
+    // const decreaseValue = () => {
+    //     setValue(prevValue => prevValue - 1)
+    // }
 
     const validateInput = () => {
-        if(value > 5) {
+        if(inputValue > 5) {
             // give a alert//
             alert('You can not select more than 5')
             //set back to 5//
-            setValue(5)
+            // setValue(5)
+            return false
             
-        }else if (value <= 0) {
-            alert('Value can not be negative or zero')
-            setValue(1)
+        }else if (inputValue < 0.01) {
+            alert('Sorry, you can not buy less than 0.01')
+            // setValue(1)
+            return false
+        }else if (inputValue === NaN) {
+            alert('Please insert a valid number')
         }
+        return true
+    }
+
+    const handleValueInputChange = (e) => {
+        setInputValue(e.target.value)
     }
 
     return(
@@ -49,16 +61,16 @@ const BuyModal = (props) => {
                         <img alt='$BOOK cover art' src={process.env.PUBLIC_URL +  'assets/cover-art.jpg'}/>
                         <section className='data-indicator'>
                             <div className='token-data'>
-                                <p>{tokenDataETH.tokenPrice * value} ETH </p>
+                                <p>{tokenDataETH.tokenPrice} ETH </p>
                                 <p>{tokenDataETH.tokensRemaining}/950 available</p>
                             </div>
-                            <div className='unit-indicator'>
-                                <ValueInput 
-                                    increaseValue={increaseValue}
-                                    decreaseValue={decreaseValue}
-                                    value={value}
-                                    validateInput={validateInput}
-                                />
+                            <div className='value-input'> 
+                                <TextField 
+                                    id='filled-basic' 
+                                    label='Filled' 
+                                    variant='filled' 
+                                    onChange={handleValueInputChange}
+                                />             
                             </div>
                         </section>
                     </CardContent>
