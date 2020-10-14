@@ -59,7 +59,7 @@ const BuyModal = (props) => {
                             <div className='value-input'> 
                                 <input
                                     value={inputValue}
-                                    placeholder='Enter amount'
+                                    placeholder='Enter amount (ETH)'
                                     variant='outlined' 
                                     onChange={handleValueInputChange}
                                 />             

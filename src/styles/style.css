@@ -416,7 +416,7 @@
 }
 .buy-modal .data-indicator {
   margin-top: 4vh;
-  width: 390px;
+  width: 100%;
   display: flex;
   justify-content: space-between;
 }
@@ -424,8 +424,9 @@
   font-size: 12pt;
   color: white;
 }
-.buy-modal .value-input {
-  width: 50% !important;
+.buy-modal .value-input input {
+  width: 8vw;
+  height: 3vh;
 }
 .buy-modal .actions .buy-button {
   background-color: #FF6400;
@@ -443,21 +444,33 @@
 
 @media screen and (min-width: 700px) and (max-width: 900px) {
   .data-indicator {
-    width: 120% !important;
+    width: 100% !important;
   }
   .data-indicator p {
     font-size: 15pt;
     font-weight: bold;
   }
+
+  .value-input input {
+    width: 100% !important;
+  }
 }
 @media screen and (min-width: 400px) and (max-width: 699px) {
   .data-indicator {
-    width: 135% !important;
+    width: 100% !important;
+  }
+
+  .value-input input {
+    width: 100% !important;
   }
 }
 @media screen and (max-width: 399px) {
   .data-indicator {
-    width: 135% !important;
+    width: 100% !important;
+  }
+
+  .value-input input {
+    width: 100% !important;
   }
 }
 body {
