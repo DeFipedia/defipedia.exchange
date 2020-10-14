@@ -427,12 +427,6 @@
 .buy-modal .value-input {
   width: 50% !important;
 }
-.buy-modal .value-input input {
-  width: 7vw !important;
-  height: 0.2vh !important;
-  color: white;
-  border: 1px solid;
-}
 .buy-modal .actions .buy-button {
   background-color: #FF6400;
   color: white;
@@ -466,30 +460,6 @@
     width: 135% !important;
   }
 }
-.value-input {
-  display: flex;
-  align-items: center;
-}
-.value-input input {
-  width: 15%;
-  height: 25px;
-  text-align: center;
-}
-.value-input button {
-  height: 33px;
-}
-.value-input input::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: none;
-}
-.value-input input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: none;
-}
-.value-input input[type=number] {
-  -moz-appearance: textfield;
-}
-
 body {
   font-family: Arial, Helvetica, sans-serif;
 }

@@ -13,7 +13,7 @@ const BuyModal = (props) => {
 
     const buyToken = async () => {
         let inputValidation = await validateInput()
-        if(inputValidation == true){
+        if(inputValidation === true){
             const payableValue = await convertETHToWei(inputValue)
             commitEth(payableValue)
         }
@@ -28,7 +28,7 @@ const BuyModal = (props) => {
         }else if (inputValue < 0.01) {
             alert('Sorry, you can not buy less than 0.01')
             return false
-        }else if (inputValue === NaN) {
+        }else if (typeof inputValue != Number) {
             alert('Please insert a valid number')
             return false
         }
@@ -57,11 +57,8 @@ const BuyModal = (props) => {
                                 <p>{tokenDataETH.tokensRemaining}/950 available</p>
                             </div>
                             <div className='value-input'> 
-                                <TextField 
-                                    style={{
-                                        color: theme.palette.background.main,
-                                        border: theme.palette.background.main
-                                    }}
+                                <input
+                                    value={inputValue}
                                     placeholder='Enter amount'
                                     variant='outlined' 
                                     onChange={handleValueInputChange}
