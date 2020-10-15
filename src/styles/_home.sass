@@ -1,6 +1,6 @@
 .home-page
     margin: auto
-    margin-top: 3vh
+    margin-top: 75px
     width: 80vw
     text-align: center
     position: relative
@@ -13,9 +13,8 @@
     grid-template-areas: 'overlap'
 
 .MuiCard-root
-    max-height: 650px
-    width: 25vw
-    height: 58vh
+    width: 374px
+    height: 470px
     max-height: 650px
     margin: auto
     background: linear-gradient(to bottom right, #343434, #151515)
@@ -28,26 +27,29 @@
         text-align: left
         font-size: 16px
     .card-header
-        display: flex
-        justify-content: space-between
-        align-items: center
-        margin: 0px
-        padding-top: 0px  
-        a 
-            height: 25%
-            width: 25%
-            img
-                border: none
-                box-shadow: none   
-                margin-top: 0px !important
-                margin-bottom: 0px !important
-    .card-title
-        display: block
-        text-align: left
-        h3
-           color: white
-           margin: 0px
-           display: inline-block 
+        // display: flex
+        // justify-content: space-between
+        // align-items: center
+        // margin: 0px
+        // padding-top: 0px  
+        // a 
+        //     // height: 25%
+        //     // width: 25%
+        //     img
+        //         border: none
+        //         box-shadow: none   
+        //         margin-top: 0px !important
+        //         margin-bottom: 0px !important
+        .card-title
+            display: block
+            text-align: left
+            margin-top: 25px
+            margin-left: 25px
+            margin-right: 25px
+            h3
+                color: white
+                margin: 0px
+                display: inline-block 
              
     p  
         color: #979797
@@ -55,40 +57,59 @@
         font-size: 14px
         font-weight: 400
         line-height: 18px
-        text-align: left !important
+        // -------------//
+        // margin-top: 55px
+        // ------------- margin top was suggested to be 55 px but that looks awful, using my value unutil discussed otherwise //
+        margin-top: 5px
+        margin-left: 25px
+        margin-right: 25px !important
+        text-align: left
     img 
-        height: 65%
-        width: 65% 
+        height: 240px
+        width: 240px
         margin: 8%  
         border: 2px solid #343434  
         border-radius: 2px
-        box-shadow: 2px 4px 4px    
-    .card-data
-        span
-            display: flex
-            justify-content: space-between
-            // this is div container p tag and image//
-            div
-                display: flex
-                align-items: center
-                p 
-                    margin-right: 5px !important
-                img 
-                    height: 12px
-                    width: 12px
-                    float: right
-                    margin: 0px   
-                    box-shadow: none   
+        box-shadow: 2px 4px 4px   
+     
+// ---------------------------------------------------------------------------------------------------//
+.card-data
+    h4 
+        margin-left: 25px !important
+    span
+        display: flex
+        justify-content: space-between
+        .dynamic-pricing-icon
+            margin-bottom: 36px
+// .MuiCard-root
+//     .card-data
+//         > h4
+//             margin-right: 25px  
+//         span
+//             display: flex
+//             justify-content: space-between
+//             div
+//                 display: flex
+//                 align-items: center
+//                 p 
+//                     margin-right: 25px
+//                     margin-bottom: 50px
+//                 img 
+//                     height: 12px
+//                     width: 12px
+//                     float: right
+//                     margin: 0px   
+//                     box-shadow: none   
 
 .learn-more-section
-    width: 25vw
+    width: 374px
     margin: auto
     text-align: left
     background-color: #F2F2F2
     height: 12vh
     border-radius: 10px
     grid-area: overlap
-    margin-top: 60vh
+    margin-top: 485px
     p
         padding: 5%
         margin-top: 5%
@@ -103,29 +124,30 @@
     color: #FF6400
     font-size: 9pt
     margin-top: 0%
+    margin-right: 8px !important
     font-weight: bold
     border: none
 
 .actions
-    width: 25vw
+    width: 374px
     display: grid
-    padding: 1%
     margin: auto
-    margin-top: 1%
     text-align: center
 
 .buy-btn
     color: white !important
-    width: 100% !important
+    width: 374px 
+    height: 40px 
+    margin-top: 10px !important
     text-transform: none !important
 
 .coming-soon-actions
-    width: 100% 
-    margin-top: 2%
-    display: flex
-    justify-content: space-between
+    // display: flex
+    // justify-content: space-between
     button 
-        width: 48%
+        width: 185px
+        height: 40px
+        margin-top: 10px
         color: #979797
         text-transform: none !important
         background-color: #F2F2F2

@@ -60,16 +60,11 @@ const Home = (props) => {
                         <section className='card-data'>
                             <h4>{poolData.rate} ETH</h4> 
                             <span>
-                                <p>50 seeded in Pool</p>
-                                <div>
-                                    <p>Dynamic Pricing Stats</p> 
+                                <p>50 seeded</p>
+                                <div className='dynamic-pricing-icon'> 
                                     <a href='/details'>
-                                        <img 
-                                            alt='question-mark' 
-                                            src={process.env.PUBLIC_URL + '/assets/question-mark.png'} 
-                                        />
-                                    </a>
-                                    
+                                        <p>Dynamic Pricing Stats <i class="fas fa-question-circle"></i></p>
+                                    </a>    
                                 </div>
                             </span>
                         </section>                

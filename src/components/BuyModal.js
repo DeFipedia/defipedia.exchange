@@ -38,16 +38,22 @@ const BuyModal = (props) => {
     }
 
     const onlyContainsDigits = (str) => {
-        return /\d/.test(str)
+        if((/\d/.test(str)) === true){
+            console.log(true)
+            return true
+        }else{
+            console.log(false)
+            return false
+        }
     }
 
     const handleValueInputChange =  (e) => {
         let value = e.target.value
-        // if(onlyContainsDigits(value) === false){
-        //     alert('Please insert a valid number')
-        // }else {
+        if(onlyContainsDigits(value) === false){
+             alert('Please insert a valid number')
+        }else {
             setInputValue(value)
-        // }
+        }
     }
 
     return(
