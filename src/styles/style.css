@@ -191,8 +191,8 @@
   background-color: #F2F2F2;
 }
 
-.home-page .MuiCard-root:nth-child(2) {
-  display: none !important;
+.auction-card {
+  margin-top: 30px !important;
 }
 
 .MuiAlert-root {
@@ -273,13 +273,11 @@
 }
 
 .detail-card {
-  width: 25vw;
-  height: 60vh;
-  max-height: 650px;
+  width: 374px;
+  height: 470px;
   background: linear-gradient(to bottom right, #343434, #151515);
   border-radius: 10px !important;
   margin: auto;
-  padding-top: 1%;
 }
 .detail-card .header {
   display: flex;
@@ -325,11 +323,6 @@
   }
 }
 @media screen and (min-width: 400px) and (max-width: 699px) {
-  .detail-card {
-    width: 80vw;
-    height: 450px;
-  }
-
   .detail-card-description {
     margin-top: 25%;
   }

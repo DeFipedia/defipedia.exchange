@@ -91,7 +91,7 @@ const Home = (props) => {
         {/* --------------------------------------------------------------------------------------------------------------------------------- */}
         {/* Rational:- usually card should be a seperate component to be reusable  but here it's being used just twice making the efforts redundant and there were time constarints  */}
         {/* TODO:- if updated and card is being used 4-5 or more times then make it a reusable component */}
-        <div className='card-panel'>
+        <div className='card-panel auction-card'>
                 <Card>
                     <CardContent>
                         <span className='card-header'>
