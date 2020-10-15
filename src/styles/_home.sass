@@ -1,7 +1,7 @@
 .home-page
     margin: auto
     margin-top: 75px
-    width: 80vw
+    // width: 80vw
     text-align: center
     position: relative
     margin-bottom: 120px   
@@ -27,8 +27,17 @@
         text-align: left
         font-size: 16px
     .card-header
-        // display: flex
-        // justify-content: space-between
+        display: flex
+        justify-content: space-between
+        align-items: center
+        .dutch-swap-logo
+            img
+                height: 50px
+                width: 50px
+                box-shadow: none
+                border: none
+                margin-top: 0px 
+                margin-bottom: 0px
         // align-items: center
         // margin: 0px
         // padding-top: 0px  
@@ -38,8 +47,7 @@
         //     img
         //         border: none
         //         box-shadow: none   
-        //         margin-top: 0px !important
-        //         margin-bottom: 0px !important
+        //         
         .card-title
             display: block
             text-align: left
@@ -81,6 +89,8 @@
         justify-content: space-between
         .dynamic-pricing-icon
             margin-bottom: 36px
+            .fa-question-circle
+                color: #FF6400
 // .MuiCard-root
 //     .card-data
 //         > h4
@@ -112,7 +122,7 @@
     margin-top: 485px
     p
         padding: 5%
-        margin-top: 5%
+        margin-top: 35px
         font-weight: bold
         font-size: 12px
         line-height: 1.6
@@ -142,8 +152,8 @@
     text-transform: none !important
 
 .coming-soon-actions
-    // display: flex
-    // justify-content: space-between
+    display: flex
+    justify-content: space-between
     button 
         width: 185px
         height: 40px
@@ -152,6 +162,14 @@
         text-transform: none !important
         background-color: #F2F2F2
 
+
+// minor change for second card//
+.home-page
+    .MuiCard-root
+        &:nth-child(2)
+           display: none !important
+            
+
 // this is for snackbar/alert// 
 .MuiAlert-root
     opacity: 80%
@@ -159,51 +177,54 @@
 
 // for tablet//
 @media screen and (min-width: 700px) and ( max-width: 900px )
-    .home-page
-        margin-top: 5vh
-    .MuiCard-root
-        width: 70vw
-        height: 55vh
-    .learn-more-section
-        width: 70vw
-        height: 8vh
-    .actions
-        width: 70vw
-        margin-top: 2%
+    // .home-page
+    //     margin-top: 5vh
+    // .MuiCard-root
+    //     width: 70vw
+    //     height: 55vh
+    // .learn-more-section
+    //     width: 70vw
+    //     height: 8vh
+    // .actions
+    //     width: 70vw
+    //     margin-top: 2%
 
 // for mobile//
 @media screen and (min-width: 400px) and ( max-width: 699px )
-    .home-page
-        width: 80vw
-        margin-top: 5vh
-    .MuiCard-root
-        width: 80vw
-        height: 400px
-        margin-top: 0px
-        margin-top: 5vh
     .learn-more-section
-        width: 80vw
-        margin-top: 420px
-        height: 10vh
-    .actions
-        width: 80vw
+        p 
+            margin-top: 25px
+    // .home-page
+    //     width: 100vw
+    //     // .MuiCard-root
+    //     //     width: 10vw
+
+    // .learn-more-section
+    //     width: 80vw
+    //     margin-top: 420px
+    //     height: 10vh
+    // .actions
+    //     width: 80vw
 
 @media screen and ( max-width:  399px)
-    .home-page
-         width: 90vw
-         margin-top: 7vh
-    .MuiCard-root
-        width: 90vw
-        height: 400px
-        margin-top: 1vh
-        margin-top: 5vh
     .learn-more-section
-        width: 90vw
-        margin-top: 420px
-        height: 70px
-        padding: 1%
         p 
-            line-height: 1.4
-    .actions
-        width: 90vw 
+            margin-top: 20px
+//     .home-page
+//          width: 90vw
+//          margin-top: 7vh
+//     .MuiCard-root
+//         width: 90vw
+//         height: 400px
+//         margin-top: 1vh
+//         margin-top: 5vh
+//     .learn-more-section
+//         width: 90vw
+//         margin-top: 420px
+//         height: 70px
+//         padding: 1%
+//         p 
+//             line-height: 1.4
+//     .actions
+//         width: 90vw 
 

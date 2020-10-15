@@ -98,24 +98,22 @@ const Home = (props) => {
                             <div className='card-title'>
                                 <h3>$BOOKS on</h3>  <h3 style={{color: theme.palette.primary.main}}>Auction</h3> 
                             </div>
-                            <a href='https://www.dutchswap.com/' target='_blank' rel='noopener noreferrer'>
-                                <img alt='dutch swap logo' src={process.env.PUBLIC_URL + 'assets/dutch_swap.svg'}/>
-                            </a>
+                            <div className='dutch-swap-logo'>
+                                <a href='https://www.dutchswap.com/' target='_blank' rel='noopener noreferrer'>
+                                    <img alt='dutch swap logo' src={process.env.PUBLIC_URL + 'assets/dutch_swap.svg'}/>
+                                </a>
+                            </div>
                         </span>
                         <p>2020 DeFi Packs</p>  
                         <img alt='cover-art' src={process.env.PUBLIC_URL + 'assets/cover-art.jpg'}/> 
                         <section className='card-data'>
                             <h4>{tokenDataETH.tokenPrice} ETH</h4> 
                             <span>
-                                <p>{tokenDataETH.tokensRemaining}/{tokenData.totalTokens} available</p>
-                                <div>
-                                    <p>Dynamic Pricing Stats</p>
-                                    <a href='/details'> 
-                                        <img 
-                                            alt='question-mark' 
-                                            src={process.env.PUBLIC_URL + '/assets/question-mark.png'}
-                                        />
-                                    </a>
+                                <p>{tokenDataETH.tokensRemaining}/{tokenData.totalTokens}</p>
+                                <div className='dynamic-pricing-icon'> 
+                                    <a href='/details'>
+                                        <p>Dynamic Pricing Stats <i class="fas fa-question-circle"></i></p>
+                                    </a>    
                                 </div>
                             </span>
                         </section>                 

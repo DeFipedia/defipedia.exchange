@@ -45,7 +45,6 @@
 .home-page {
   margin: auto;
   margin-top: 75px;
-  width: 80vw;
   text-align: center;
   position: relative;
   margin-bottom: 120px;
@@ -73,6 +72,19 @@
   margin: 0px;
   text-align: left;
   font-size: 16px;
+}
+.MuiCard-root .card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.MuiCard-root .card-header .dutch-swap-logo img {
+  height: 50px;
+  width: 50px;
+  box-shadow: none;
+  border: none;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 .MuiCard-root .card-header .card-title {
   display: block;
@@ -116,6 +128,9 @@
 .card-data span .dynamic-pricing-icon {
   margin-bottom: 36px;
 }
+.card-data span .dynamic-pricing-icon .fa-question-circle {
+  color: #FF6400;
+}
 
 .learn-more-section {
   width: 374px;
@@ -129,7 +144,7 @@
 }
 .learn-more-section p {
   padding: 5%;
-  margin-top: 5%;
+  margin-top: 35px;
   font-weight: bold;
   font-size: 12px;
   line-height: 1.6;
@@ -163,6 +178,10 @@
   text-transform: none !important;
 }
 
+.coming-soon-actions {
+  display: flex;
+  justify-content: space-between;
+}
 .coming-soon-actions button {
   width: 185px;
   height: 40px;
@@ -172,79 +191,23 @@
   background-color: #F2F2F2;
 }
 
+.home-page .MuiCard-root:nth-child(2) {
+  display: none !important;
+}
+
 .MuiAlert-root {
   opacity: 80%;
   background-color: white !important;
 }
 
-@media screen and (min-width: 700px) and (max-width: 900px) {
-  .home-page {
-    margin-top: 5vh;
-  }
-
-  .MuiCard-root {
-    width: 70vw;
-    height: 55vh;
-  }
-
-  .learn-more-section {
-    width: 70vw;
-    height: 8vh;
-  }
-
-  .actions {
-    width: 70vw;
-    margin-top: 2%;
-  }
-}
 @media screen and (min-width: 400px) and (max-width: 699px) {
-  .home-page {
-    width: 80vw;
-    margin-top: 5vh;
-  }
-
-  .MuiCard-root {
-    width: 80vw;
-    height: 400px;
-    margin-top: 0px;
-    margin-top: 5vh;
-  }
-
-  .learn-more-section {
-    width: 80vw;
-    margin-top: 420px;
-    height: 10vh;
-  }
-
-  .actions {
-    width: 80vw;
+  .learn-more-section p {
+    margin-top: 25px;
   }
 }
 @media screen and (max-width: 399px) {
-  .home-page {
-    width: 90vw;
-    margin-top: 7vh;
-  }
-
-  .MuiCard-root {
-    width: 90vw;
-    height: 400px;
-    margin-top: 1vh;
-    margin-top: 5vh;
-  }
-
-  .learn-more-section {
-    width: 90vw;
-    margin-top: 420px;
-    height: 70px;
-    padding: 1%;
-  }
   .learn-more-section p {
-    line-height: 1.4;
-  }
-
-  .actions {
-    width: 90vw;
+    margin-top: 20px;
   }
 }
 .dynamic-pricing-modal {
