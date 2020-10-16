@@ -60,16 +60,11 @@ const Home = (props) => {
                         <section className='card-data'>
                             <h4>{poolData.rate} ETH</h4> 
                             <span>
-                                <p>50 in Pool</p>
-                                <div>
-                                    <p>Dynamic Pricing Stats</p> 
+                                <p>50 seeded</p>
+                                <div className='dynamic-pricing-icon'> 
                                     <a href='/details'>
-                                        <img 
-                                            alt='question-mark' 
-                                            src={process.env.PUBLIC_URL + '/assets/question-mark.png'} 
-                                        />
-                                    </a>
-                                    
+                                        <p>Dynamic Pricing Stats <i class="fas fa-question-circle"></i></p>
+                                    </a>    
                                 </div>
                             </span>
                         </section>                
@@ -80,7 +75,7 @@ const Home = (props) => {
                 </section>
             </div>
             <div className='actions'>
-                <a rel='noopener noreferrer' href='https://uniswap.info/pair/0xe108fdab8b03f6bd4c35b8e7a2249b120bf91a87' target='_blank'>
+                <a rel='noopener noreferrer' href='https://app.uniswap.org/#/swap?inputCurrency=ETH&outputCurrency=0x117c2aca45d87958ba054cb85af0fd57be00d624' target='_blank'>
                     <Button variant='contained' style={{backgroundColor: theme.palette.primary.main}} className='buy-btn'>Buy on Uniswap</Button>
                 </a>
                 <span className='coming-soon-actions'>
@@ -96,37 +91,36 @@ const Home = (props) => {
         {/* --------------------------------------------------------------------------------------------------------------------------------- */}
         {/* Rational:- usually card should be a seperate component to be reusable  but here it's being used just twice making the efforts redundant and there were time constarints  */}
         {/* TODO:- if updated and card is being used 4-5 or more times then make it a reusable component */}
-        <div className='card-panel'>
+        <div className='card-panel auction-card'>
                 <Card>
                     <CardContent>
                         <span className='card-header'>
                             <div className='card-title'>
                                 <h3>$BOOKS on</h3>  <h3 style={{color: theme.palette.primary.main}}>Auction</h3> 
                             </div>
-                            <a href='https://www.dutchswap.com/' target='_blank' rel='noopener noreferrer'>
-                                <img alt='dutch swap logo' src={process.env.PUBLIC_URL + 'assets/dutch_swap.svg'}/>
-                            </a>
+                            <div className='dutch-swap-logo'>
+                                <a href='https://www.dutchswap.com/' target='_blank' rel='noopener noreferrer'>
+                                    <img alt='dutch swap logo' src={process.env.PUBLIC_URL + 'assets/dutch_swap.svg'}/>
+                                </a>
+                            </div>
                         </span>
                         <p>2020 DeFi Packs</p>  
                         <img alt='cover-art' src={process.env.PUBLIC_URL + 'assets/cover-art.jpg'}/> 
                         <section className='card-data'>
                             <h4>{tokenDataETH.tokenPrice} ETH</h4> 
                             <span>
-                                <p>{tokenDataETH.tokensRemaining}/{tokenData.totalTokens} available</p>
-                                <div>
-                                    <p>Dynamic Pricing Stats</p> 
-                                    <img 
-                                        alt='question-mark' 
-                                        src={process.env.PUBLIC_URL + '/assets/question-mark.png'}
-                                        onClick={() => showDynamicPricingStatModal()}
-                                    />
+                                <p>{tokenDataETH.tokensRemaining}/{tokenData.totalTokens}</p>
+                                <div className='dynamic-pricing-icon'> 
+                                    <a href='/details'>
+                                        <p>Dynamic Pricing Stats <i class="fas fa-question-circle"></i></p>
+                                    </a>    
                                 </div>
                             </span>
                         </section>                 
                     </CardContent>                
                 </Card>
                 <section className='learn-more-section'>
-                    <p>Buy and sell real books with digital currency. Delivered on demand. <a href='/details'>Learn More</a></p>
+                <p>Buy and sell real books with digital currency. Delivered on demand. <button className='learn-more-button' onClick={() => showDynamicPricingStatModal()}>Learn More</button></p>
                 </section>
             </div>
             <div className='actions'>

@@ -1,10 +1,13 @@
 .MuiAppBar-root {
   height: 10vh;
+  max-height: 74px;
 }
 
 .MuiToolbar-root {
   display: flex;
   justify-content: space-between;
+  max-height: 74px;
+  align-items: center;
 }
 .MuiToolbar-root .brand-logo {
   height: 40px;
@@ -41,8 +44,7 @@
 }
 .home-page {
   margin: auto;
-  margin-top: 3vh;
-  width: 80vw;
+  margin-top: 75px;
   text-align: center;
   position: relative;
   margin-bottom: 120px;
@@ -56,8 +58,8 @@
 }
 
 .MuiCard-root {
-  width: 25vw;
-  height: 55vh;
+  width: 374px;
+  height: 470px;
   margin: auto;
   background: linear-gradient(to bottom right, #343434, #151515);
   border-radius: 10px !important;
@@ -74,24 +76,23 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0px;
-  padding-top: 0px;
 }
-.MuiCard-root .card-header a {
-  height: 25%;
-  width: 25%;
-}
-.MuiCard-root .card-header a img {
-  border: none;
+.MuiCard-root .card-header .dutch-swap-logo img {
+  height: 50px;
+  width: 50px;
   box-shadow: none;
-  margin-top: 0px !important;
-  margin-bottom: 0px !important;
+  border: none;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
-.MuiCard-root .card-title {
+.MuiCard-root .card-header .card-title {
   display: block;
   text-align: left;
+  margin-top: 25px;
+  margin-left: 25px;
+  margin-right: 25px;
 }
-.MuiCard-root .card-title h3 {
+.MuiCard-root .card-header .card-title h3 {
   color: white;
   margin: 0px;
   display: inline-block;
@@ -102,47 +103,47 @@
   font-size: 14px;
   font-weight: 400;
   line-height: 18px;
-  text-align: left !important;
+  margin-top: 5px;
+  margin-left: 25px;
+  margin-right: 25px !important;
+  text-align: left;
 }
 .MuiCard-root img {
-  height: 65%;
-  width: 65%;
+  height: 240px;
+  width: 240px;
   margin: 8%;
   border: 2px solid #343434;
   border-radius: 2px;
   box-shadow: 2px 4px 4px;
 }
-.MuiCard-root .card-data span {
+
+.card-data h4 {
+  margin-left: 25px !important;
+}
+.card-data span {
   display: flex;
   justify-content: space-between;
 }
-.MuiCard-root .card-data span div {
-  display: flex;
-  align-items: center;
+.card-data span .dynamic-pricing-icon {
+  margin-bottom: 36px;
 }
-.MuiCard-root .card-data span div p {
-  margin-right: 5px !important;
-}
-.MuiCard-root .card-data span div img {
-  height: 12px;
-  width: 12px;
-  float: right;
-  margin: 0px;
-  box-shadow: none;
+.card-data span .dynamic-pricing-icon .fa-question-circle {
+  color: #FF6400;
 }
 
 .learn-more-section {
-  width: 25vw;
+  width: 374px;
   margin: auto;
   text-align: left;
   background-color: #F2F2F2;
   height: 12vh;
   border-radius: 10px;
   grid-area: overlap;
-  margin-top: 60vh;
+  margin-top: 485px;
 }
 .learn-more-section p {
   padding: 5%;
+  margin-top: 35px;
   font-weight: bold;
   font-size: 12px;
   line-height: 1.6;
@@ -156,36 +157,41 @@
   color: #FF6400;
   font-size: 9pt;
   margin-top: 0%;
+  margin-right: 8px !important;
   font-weight: bold;
   border: none;
 }
 
 .actions {
-  width: 25vw;
+  width: 374px;
   display: grid;
-  padding: 1%;
   margin: auto;
-  margin-top: 1%;
   text-align: center;
 }
 
 .buy-btn {
   color: white !important;
-  width: 100% !important;
+  width: 374px;
+  height: 40px;
+  margin-top: 10px !important;
   text-transform: none !important;
 }
 
 .coming-soon-actions {
-  width: 100%;
-  margin-top: 2%;
   display: flex;
   justify-content: space-between;
 }
 .coming-soon-actions button {
-  width: 48%;
+  width: 185px;
+  height: 40px;
+  margin-top: 10px;
   color: #979797;
   text-transform: none !important;
   background-color: #F2F2F2;
+}
+
+.auction-card {
+  margin-top: 30px !important;
 }
 
 .MuiAlert-root {
@@ -193,74 +199,14 @@
   background-color: white !important;
 }
 
-@media screen and (min-width: 700px) and (max-width: 900px) {
-  .home-page {
-    margin-top: 5vh;
-  }
-
-  .MuiCard-root {
-    width: 70vw;
-    height: 55vh;
-  }
-
-  .learn-more-section {
-    width: 70vw;
-    height: 8vh;
-  }
-
-  .actions {
-    width: 70vw;
-    margin-top: 2%;
-  }
-}
 @media screen and (min-width: 400px) and (max-width: 699px) {
-  .home-page {
-    width: 80vw;
-    margin-top: 5vh;
-  }
-
-  .MuiCard-root {
-    width: 80vw;
-    height: 400px;
-    margin-top: 0px;
-    margin-top: 5vh;
-  }
-
-  .learn-more-section {
-    width: 80vw;
-    margin-top: 420px;
-    height: 10vh;
-  }
-
-  .actions {
-    width: 80vw;
+  .learn-more-section p {
+    margin-top: 25px;
   }
 }
 @media screen and (max-width: 399px) {
-  .home-page {
-    width: 90vw;
-    margin-top: 7vh;
-  }
-
-  .MuiCard-root {
-    width: 90vw;
-    height: 400px;
-    margin-top: 1vh;
-    margin-top: 5vh;
-  }
-
-  .learn-more-section {
-    width: 90vw;
-    margin-top: 420px;
-    height: 70px;
-    padding: 1%;
-  }
   .learn-more-section p {
-    line-height: 1.4;
-  }
-
-  .actions {
-    width: 90vw;
+    margin-top: 20px;
   }
 }
 .dynamic-pricing-modal {
@@ -326,12 +272,11 @@
 }
 
 .detail-card {
-  width: 25vw;
-  height: 60vh;
+  width: 374px;
+  height: 470px;
   background: linear-gradient(to bottom right, #343434, #151515);
   border-radius: 10px !important;
   margin: auto;
-  padding-top: 1%;
 }
 .detail-card .header {
   display: flex;
@@ -377,11 +322,6 @@
   }
 }
 @media screen and (min-width: 400px) and (max-width: 699px) {
-  .detail-card {
-    width: 80vw;
-    height: 450px;
-  }
-
   .detail-card-description {
     margin-top: 25%;
   }
@@ -408,16 +348,21 @@
 .buy-modal .MuiCard-root {
   text-align: center;
   margin: auto;
+  max-height: 650px;
 }
 .buy-modal .data-indicator {
   margin-top: 4vh;
-  width: 390px;
+  width: 100%;
   display: flex;
   justify-content: space-between;
 }
 .buy-modal .data-indicator p {
   font-size: 12pt;
   color: white;
+}
+.buy-modal .value-input input {
+  width: 8vw;
+  height: 3vh;
 }
 .buy-modal .actions .buy-button {
   background-color: #FF6400;
@@ -435,47 +380,35 @@
 
 @media screen and (min-width: 700px) and (max-width: 900px) {
   .data-indicator {
-    width: 120% !important;
+    width: 100% !important;
   }
   .data-indicator p {
     font-size: 15pt;
     font-weight: bold;
   }
+
+  .value-input input {
+    width: 100% !important;
+  }
 }
 @media screen and (min-width: 400px) and (max-width: 699px) {
   .data-indicator {
-    width: 135% !important;
+    width: 100% !important;
+  }
+
+  .value-input input {
+    width: 100% !important;
   }
 }
 @media screen and (max-width: 399px) {
   .data-indicator {
-    width: 135% !important;
+    width: 100% !important;
+  }
+
+  .value-input input {
+    width: 100% !important;
   }
 }
-.value-input {
-  display: flex;
-  align-items: center;
-}
-.value-input input {
-  width: 15%;
-  height: 25px;
-  text-align: center;
-}
-.value-input button {
-  height: 33px;
-}
-.value-input input::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: none;
-}
-.value-input input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: none;
-}
-.value-input input[type=number] {
-  -moz-appearance: textfield;
-}
-
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
