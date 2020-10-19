@@ -1,39 +1,58 @@
 import React, {useState} from 'react';
-import {Modal, Card, CardContent, Typography, Button} from '@material-ui/core'
-import ValueInput from './ValueInput';
+import {Modal, Card, CardContent, Typography, Button, TextField, useTheme} from '@material-ui/core'
 import {commitEth} from '../functions/commitEth'
+import {convertETHToWei} from '../functions/convertETHToWei'
 
 const BuyModal = (props) => {
 
-
+    let theme = useTheme()
 
     const {open, close, tokenDataETH, tokenData} = props
 
-    const [value, setValue] = useState(1)
+    const [inputValue, setInputValue] = useState(0)
 
     const buyToken = async () => {
-        const payableValue  = (tokenData.tokenPrice * value).toString()
-        commitEth(payableValue)
-    }
-    
-    const increaseValue = () => {
-        setValue(prevValue => prevValue + 1)
-    }
-
-    const decreaseValue = () => {
-        setValue(prevValue => prevValue - 1)
+        let inputValidation = await validateInput()
+        if(inputValidation === true){
+            const payableValue = await convertETHToWei(inputValue)
+            commitEth(payableValue)
+        }else{
+            alert('Please enter a valid number')
+        }
     }
 
     const validateInput = () => {
-        if(value > 5) {
-            // give a alert//
+        let maxValue = (tokenDataETH.tokenPrice * tokenDataETH.tokensRemaining)
+        if(inputValue > maxValue) {
             alert('You can not select more than 5')
-            //set back to 5//
-            setValue(5)
+            return false
             
-        }else if (value <= 0) {
-            alert('Value can not be negative or zero')
-            setValue(1)
+        }else if (inputValue < 0.01) {
+            alert('Sorry, you can not buy less than 0.01')
+            return false
+        }else if (onlyContainsDigits(inputValue) === false) {
+            alert('Please insert a valid number')
+            return false
+        }
+        return true
+    }
+
+    const onlyContainsDigits = (str) => {
+        if((/\d/.test(str)) === true){
+            console.log(true)
+            return true
+        }else{
+            console.log(false)
+            return false
+        }
+    }
+
+    const handleValueInputChange =  (e) => {
+        let value = e.target.value
+        if(onlyContainsDigits(value) === false){
+             alert('Please insert a valid number')
+        }else {
+            setInputValue(value)
         }
     }
 
@@ -51,16 +70,16 @@ const BuyModal = (props) => {
                         <img alt='$BOOK cover art' src={process.env.PUBLIC_URL +  'assets/cover-art.jpg'}/>
                         <section className='data-indicator'>
                             <div className='token-data'>
-                                <p>{tokenDataETH.tokenPrice} ETH</p>
+                                <p>{tokenDataETH.tokenPrice} ETH / each</p>
                                 <p>{tokenDataETH.tokensRemaining}/950 available</p>
                             </div>
-                            <div className='unit-indicator'>
-                                <ValueInput 
-                                    increaseValue={increaseValue}
-                                    decreaseValue={decreaseValue}
-                                    value={value}
-                                    validateInput={validateInput}
-                                />
+                            <div className='value-input'> 
+                                <input
+                                    value={inputValue}
+                                    placeholder='Enter amount (ETH)'
+                                    variant='outlined' 
+                                    onChange={handleValueInputChange}
+                                />             
                             </div>
                         </section>
                     </CardContent>
