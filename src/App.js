@@ -13,6 +13,13 @@ const App = () => {
   // state variables//
   const [tokenData, setTokenData] = useState({})
   const [poolData, setPoolData] = useState({})
+  const [accountAddr, setAccountAddr] = useState(null)
+
+  const checkWalletConnection = async () => {
+    let accounts = await window.ethereum.request({ method: 'eth_requestAccounts' })
+    let selectedAccount = accounts[0]        
+    setAccountAddr(selectedAccount)
+  }
 
   const fetchData = async () => {
     if(web3Enabled) {
@@ -24,19 +31,28 @@ const App = () => {
       alert('Please install a Ethereum-compatible browser or extension like MetaMask to use this dApp')
     }
   }
-  //connecting to auction//
+
+  const connectWallet = async () => {
+      if(web3Enabled) {
+        let accounts = await window.ethereum.request({ method: 'eth_requestAccounts' })
+        let selectedAccount = accounts[0]        
+        setAccountAddr(selectedAccount)
+      }
+  }
+  //connecting to auction, checking for wallet connection //
   useEffect(() => {
     fetchData()
+    checkWalletConnection()
   }, [])
   
   // -----------------------//
-  let navOptions = ['None Redeemed']
   return (
       <div className='App'>
       <Navbar 
         brandTitle={process.env.PUBLIC_URL + 'assets/brand-title.svg'}
         brandLogo={process.env.PUBLIC_URL + 'defipedia_logo.png'}
-        navOptions = {navOptions}
+        accountAddr={accountAddr}
+        connectWallet={connectWallet} 
       />
       <Switch>
         <Route exact path='/'>

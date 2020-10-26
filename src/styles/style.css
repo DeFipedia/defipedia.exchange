@@ -19,8 +19,16 @@
   align-items: center;
 }
 
+.nav-options {
+  display: flex;
+}
 .nav-options button {
   text-transform: none !important;
+}
+.nav-options button:nth-of-type(2) {
+  color: white;
+  background-color: #FF6400;
+  margin-left: 10px;
 }
 
 @media screen and (min-width: 700px) and (max-width: 900px) {
