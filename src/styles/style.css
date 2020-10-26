@@ -52,7 +52,7 @@
 }
 .home-page {
   margin: auto;
-  margin-top: 75px;
+  margin-top: 50px;
   text-align: center;
   position: relative;
   margin-bottom: 120px;
@@ -199,7 +199,7 @@
 }
 
 .auction-card {
-  margin-top: 30px !important;
+  margin-top: 10px !important;
 }
 
 .MuiAlert-root {
