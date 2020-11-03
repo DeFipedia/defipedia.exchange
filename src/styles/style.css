@@ -142,7 +142,8 @@
 
 .learn-more-section {
   width: 374px;
-  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
   text-align: left;
   background-color: #F2F2F2;
   height: 100px;
@@ -208,16 +209,6 @@
   background-color: white !important;
 }
 
-@media screen and (min-width: 400px) and (max-width: 699px) {
-  .learn-more-section p {
-    margin-top: 25px;
-  }
-}
-@media screen and (max-width: 399px) {
-  .learn-more-section p {
-    margin-top: 20px;
-  }
-}
 .dynamic-pricing-modal {
   height: 85vh;
   width: 30vw;
