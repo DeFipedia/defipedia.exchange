@@ -342,17 +342,19 @@
   justify-content: space-between;
 }
 .buy-modal .MuiCard-root .data-indicator {
-  margin-top: 4vh;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 .buy-modal .MuiCard-root .data-indicator p {
   font-size: 12pt;
   color: white;
 }
 .buy-modal .MuiCard-root .data-indicator input {
-  width: 8vw;
-  height: 3vh;
+  width: 80px;
+  height: 35px;
+  border-radius: 10px;
+  border: none;
 }
 .buy-modal .actions .buy-button {
   background-color: #FF6400 !important;
