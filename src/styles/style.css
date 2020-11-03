@@ -51,7 +51,6 @@
   }
 }
 .home-page {
-  margin: auto;
   margin-top: 50px;
   text-align: center;
   position: relative;
@@ -68,7 +67,9 @@
 .MuiCard-root {
   width: 374px;
   height: 470px;
-  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
   background: linear-gradient(to bottom right, #343434, #151515);
   border-radius: 10px !important;
   grid-area: overlap;
@@ -199,7 +200,7 @@
 }
 
 .auction-card {
-  margin-top: 10px !important;
+  margin-top: 0px;
 }
 
 .MuiAlert-root {
