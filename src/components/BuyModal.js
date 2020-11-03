@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
-import {Modal, Card, CardContent, Typography, Button, TextField, useTheme} from '@material-ui/core'
+import {Modal, Card, CardContent, Typography, Button, IconButton, useTheme} from '@material-ui/core'
 import {commitEth} from '../functions/commitEth'
 import {convertETHToWei} from '../functions/convertETHToWei'
+import CloseIcon from '@material-ui/icons/Close';
 
 const BuyModal = (props) => {
 
@@ -66,7 +67,12 @@ const BuyModal = (props) => {
             <div className='buy-modal'>
                 <Card>
                     <CardContent>
-                        <Typography variant='h4'>Buy</Typography>
+                        <span className='header'>
+                            <Typography variant='h4'>Buy</Typography>
+                            <IconButton elevation={0} onClick={close}>
+                                <CloseIcon style={{fill: '#FF6400'}} />
+                            </IconButton>
+                        </span>
                         <img alt='$BOOK cover art' src={process.env.PUBLIC_URL +  'assets/cover-art.jpg'}/>
                         <section className='data-indicator'>
                             <div className='token-data'>
@@ -87,9 +93,6 @@ const BuyModal = (props) => {
                 <div className='actions'>
                     <Button className='buy-button' onClick={() => buyToken()}>
                         Buy Now
-                    </Button>
-                    <Button className='cancel-button' onClick={close}>
-                        Close
                     </Button>
                 </div>
             </div>
