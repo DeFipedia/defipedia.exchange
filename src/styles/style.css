@@ -166,13 +166,13 @@
   display: grid;
   margin: auto;
   text-align: center;
+  margin-top: 10px;
 }
 
 .buy-btn {
   color: white !important;
   width: 374px;
   height: 40px;
-  margin-top: 10px !important;
   text-transform: none !important;
 }
 
@@ -326,9 +326,9 @@
   height: 470px;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 50px;
+  margin-top: 175px;
   background: linear-gradient(to bottom right, #343434, #151515);
-  border-radius: 10px !important;
+  border-radius: 10px;
 }
 .buy-modal .MuiCard-root {
   text-align: center;
@@ -341,24 +341,25 @@
   align-items: center;
   justify-content: space-between;
 }
-.buy-modal .data-indicator {
+.buy-modal .MuiCard-root .data-indicator {
   margin-top: 4vh;
   display: flex;
   justify-content: space-between;
 }
-.buy-modal .data-indicator p {
+.buy-modal .MuiCard-root .data-indicator p {
   font-size: 12pt;
   color: white;
 }
-.buy-modal .value-input input {
+.buy-modal .MuiCard-root .data-indicator input {
   width: 8vw;
   height: 3vh;
 }
 .buy-modal .actions .buy-button {
-  background-color: #FF6400;
+  background-color: #FF6400 !important;
   color: white;
+  width: 374px;
+  height: 40px;
   text-transform: none;
-  font-weight: bold;
 }
 
 body {
