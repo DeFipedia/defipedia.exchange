@@ -322,7 +322,12 @@
   }
 }
 .buy-modal {
-  margin: auto;
+  width: 374px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.buy-modal:focus {
+  outline: none !important;
 }
 .buy-modal .MuiCard-root {
   width: 374px;
