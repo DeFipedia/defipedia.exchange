@@ -1,9 +1,10 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {AppBar, Toolbar, Button} from '@material-ui/core'
 
 
 const Navbar = (props) => {
-    let {brandTitle, brandLogo, navOptions} = props
+    let {brandTitle, brandLogo, accountAddr, connectWallet} = props
+
     return(
         <AppBar position='fixed' color='inherit' elevation={0} >
             <Toolbar>
@@ -13,9 +14,11 @@ const Navbar = (props) => {
                     <img alt='brand-title' className='brand-title' src={brandTitle} />
                 </section>
                 <nav className='nav-options'>
-                    {navOptions && navOptions.map(option => (
-                        <Button variant='outlined' key={option} color='secondary'>{option}</Button>
-                    ))}
+                    <Button variant='outlined' color='secondary'>None Redeemed</Button>
+                    {accountAddr != null 
+                        ? <Button variant='outlined'>Connected</Button>
+                        : <Button variant='outlined' onClick={connectWallet}>Connect Wallet</Button>
+                    }
                 </nav>
             </Toolbar>
         </AppBar >

@@ -1,61 +1,38 @@
 .buy-modal
-    height: 100vh 
-    margin: 0px
-    width: 99vw
-    padding-top: 15vh
-    
-    h4 
-        font-weight: bold
+    width: 374px
+    margin-left: auto
+    margin-right: auto
+    &:focus
+        outline: none !important
     .MuiCard-root
+        width: 374px
+        height: 470px
+        margin-top: 75px
+        background: linear-gradient(to bottom right, #343434, #151515)
+        border-radius: 10px
         text-align: center
-        margin: auto
-        max-height: 650px
-    .data-indicator
-        margin-top: 4vh
-        width: 100% 
-        // width: 390px
-        display: flex
-        justify-content: space-between
-        p
-            font-size: 12pt
-            color: white
-    .value-input
-        input 
-            width: 8vw
-            height: 3vh
+        h4 
+            font-weight: bold
+        .header
+            display: flex
+            align-items: center
+            justify-content: space-between
+        .data-indicator
+            display: flex
+            justify-content: space-between
+            align-items: center
+            p
+                font-size: 12pt
+                color: white
+            input 
+                width:  80px
+                height: 38px
+                border-radius: 10px
+                border: none
     .actions
         .buy-button
-            background-color: #FF6400
+            background-color: #FF6400 !important
             color: white
-            text-transform: none
-            font-weight: bold
-        .cancel-button
-            margin-top: 1vh
-            background-color: white
-            color: #FF6400 
-            font-weight: bold
-            text-transform: none
-
-@media screen and (min-width: 700px) and ( max-width: 900px )
-    .data-indicator
-        width: 100% !important
-        p 
-            font-size: 15pt
-            font-weight: bold
-    .value-input
-        input
-            width: 100% !important
-
-@media screen and (min-width: 400px) and ( max-width: 699px )
-    .data-indicator
-        width: 100% !important
-    .value-input
-        input
-            width: 100% !important
-
-@media screen and ( max-width:  399px)
-    .data-indicator
-        width: 100% !important
-    .value-input
-        input
-            width: 100% !important
+            width: 374px 
+            height: 40px
+            text-transform: none 

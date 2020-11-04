@@ -1,13 +1,12 @@
 .MuiAppBar-root {
-  height: 10vh;
   max-height: 74px;
 }
 
 .MuiToolbar-root {
   display: flex;
   justify-content: space-between;
-  max-height: 74px;
   align-items: center;
+  max-height: 74px;
 }
 .MuiToolbar-root .brand-logo {
   height: 40px;
@@ -16,23 +15,21 @@
 
 .brand-header {
   display: flex;
-  align-items: center;
 }
 
+.nav-options {
+  display: flex;
+}
 .nav-options button {
   text-transform: none !important;
 }
-
-@media screen and (min-width: 700px) and (max-width: 900px) {
-  .MuiAppBar-root {
-    height: 8vh;
-  }
+.nav-options button:nth-of-type(2) {
+  color: white;
+  background-color: #FF6400;
+  margin-left: 10px;
 }
-@media screen and (min-width: 400px) and (max-width: 699px) {
-  .MuiAppBar-root {
-    height: 8vh;
-  }
 
+@media screen and (min-width: 400px) and (max-width: 699px) {
   .brand-title {
     display: none !important;
   }
@@ -43,9 +40,7 @@
   }
 }
 .home-page {
-  margin: auto;
-  margin-top: 75px;
-  text-align: center;
+  margin-top: 50px;
   position: relative;
   margin-bottom: 120px;
 }
@@ -60,10 +55,13 @@
 .MuiCard-root {
   width: 374px;
   height: 470px;
-  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
   background: linear-gradient(to bottom right, #343434, #151515);
   border-radius: 10px !important;
   grid-area: overlap;
+  text-align: center;
   z-index: 2;
 }
 .MuiCard-root h4 {
@@ -133,10 +131,11 @@
 
 .learn-more-section {
   width: 374px;
-  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
   text-align: left;
   background-color: #F2F2F2;
-  height: 12vh;
+  height: 100px;
   border-radius: 10px;
   grid-area: overlap;
   margin-top: 485px;
@@ -167,13 +166,13 @@
   display: grid;
   margin: auto;
   text-align: center;
+  margin-top: 10px;
 }
 
 .buy-btn {
   color: white !important;
   width: 374px;
   height: 40px;
-  margin-top: 10px !important;
   text-transform: none !important;
 }
 
@@ -190,25 +189,11 @@
   background-color: #F2F2F2;
 }
 
-.auction-card {
-  margin-top: 30px !important;
-}
-
 .MuiAlert-root {
   opacity: 80%;
   background-color: white !important;
 }
 
-@media screen and (min-width: 400px) and (max-width: 699px) {
-  .learn-more-section p {
-    margin-top: 25px;
-  }
-}
-@media screen and (max-width: 399px) {
-  .learn-more-section p {
-    margin-top: 20px;
-  }
-}
 .dynamic-pricing-modal {
   height: 85vh;
   width: 30vw;
@@ -337,78 +322,52 @@
   }
 }
 .buy-modal {
-  height: 100vh;
-  margin: 0px;
-  width: 99vw;
-  padding-top: 15vh;
+  width: 374px;
+  margin-left: auto;
+  margin-right: auto;
 }
-.buy-modal h4 {
-  font-weight: bold;
+.buy-modal:focus {
+  outline: none !important;
 }
 .buy-modal .MuiCard-root {
+  width: 374px;
+  height: 470px;
+  margin-top: 75px;
+  background: linear-gradient(to bottom right, #343434, #151515);
+  border-radius: 10px;
   text-align: center;
-  margin: auto;
-  max-height: 650px;
 }
-.buy-modal .data-indicator {
-  margin-top: 4vh;
-  width: 100%;
+.buy-modal .MuiCard-root h4 {
+  font-weight: bold;
+}
+.buy-modal .MuiCard-root .header {
   display: flex;
+  align-items: center;
   justify-content: space-between;
 }
-.buy-modal .data-indicator p {
+.buy-modal .MuiCard-root .data-indicator {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.buy-modal .MuiCard-root .data-indicator p {
   font-size: 12pt;
   color: white;
 }
-.buy-modal .value-input input {
-  width: 8vw;
-  height: 3vh;
+.buy-modal .MuiCard-root .data-indicator input {
+  width: 80px;
+  height: 38px;
+  border-radius: 10px;
+  border: none;
 }
 .buy-modal .actions .buy-button {
-  background-color: #FF6400;
+  background-color: #FF6400 !important;
   color: white;
-  text-transform: none;
-  font-weight: bold;
-}
-.buy-modal .actions .cancel-button {
-  margin-top: 1vh;
-  background-color: white;
-  color: #FF6400;
-  font-weight: bold;
+  width: 374px;
+  height: 40px;
   text-transform: none;
 }
 
-@media screen and (min-width: 700px) and (max-width: 900px) {
-  .data-indicator {
-    width: 100% !important;
-  }
-  .data-indicator p {
-    font-size: 15pt;
-    font-weight: bold;
-  }
-
-  .value-input input {
-    width: 100% !important;
-  }
-}
-@media screen and (min-width: 400px) and (max-width: 699px) {
-  .data-indicator {
-    width: 100% !important;
-  }
-
-  .value-input input {
-    width: 100% !important;
-  }
-}
-@media screen and (max-width: 399px) {
-  .data-indicator {
-    width: 100% !important;
-  }
-
-  .value-input input {
-    width: 100% !important;
-  }
-}
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
