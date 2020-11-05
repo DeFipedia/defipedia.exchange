@@ -6,7 +6,7 @@ import BuyModal from '../components/BuyModal'
 import {convertWeiToETH} from '../functions/convertWeiToETH'
 
 const Home = (props) => {
-    const {tokenData, poolData} = props
+    const {tokenData, poolData, accountAddr, connectWallet}  = props
     // for theme//
     let theme = useTheme()
     // for state //
@@ -112,7 +112,7 @@ const Home = (props) => {
                                 <p>{tokenDataETH.tokensRemaining}/{tokenData.totalTokens}</p>
                                 <div className='dynamic-pricing-icon'> 
                                     <a href='/details'>
-                                        <p>Dynamic Pricing Stats <i class="fas fa-question-circle"></i></p>
+                                        <p>Dynamic Pricing Stats <i className="fas fa-question-circle"></i></p>
                                     </a>    
                                 </div>
                             </span>
@@ -147,6 +147,8 @@ const Home = (props) => {
             close={closeBuyModal} 
             tokenDataETH={tokenDataETH} 
             tokenData={tokenData}
+            accountAddr={accountAddr}
+            connectWallet={connectWallet}
         />
         </div>
     )

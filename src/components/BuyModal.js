@@ -8,7 +8,7 @@ const BuyModal = (props) => {
 
     let theme = useTheme()
 
-    const {open, close, tokenDataETH, tokenData} = props
+    const {open, close, tokenDataETH, tokenData, accountAddr, connectWallet} = props
 
     const [inputValue, setInputValue] = useState(0)
 
@@ -91,9 +91,11 @@ const BuyModal = (props) => {
                     </CardContent>
                 </Card>
                 <div className='actions'>
-                    <Button className='buy-button' onClick={() => buyToken()}>
-                        Buy Now
-                    </Button>
+                {accountAddr != null 
+                    ? <Button className='buy-button' onClick={() => buyToken()}>Buy Now</Button>
+                    : <Button className='buy-button'onClick={() => connectWallet()}>Connect Wallet</Button>
+                }
+                    
                 </div>
             </div>
         </Modal>

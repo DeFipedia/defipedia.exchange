@@ -56,7 +56,12 @@ const App = () => {
       />
       <Switch>
         <Route exact path='/'>
-          <Home tokenData={tokenData} poolData={poolData} />
+          <Home 
+            tokenData={tokenData} 
+            poolData={poolData} 
+            accountAddr={accountAddr}
+            connectWallet={connectWallet}
+          />
         </Route>
         <Route path='/details'>
           <Details tokenData={tokenData} poolData={poolData} />
