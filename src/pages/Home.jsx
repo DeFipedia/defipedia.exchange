@@ -124,22 +124,30 @@ const Home = (props) => {
                 </section>
             </div>
             <div className='actions'>
-                <Button 
+                {/* <Button 
                     variant='contained' 
                     style={{backgroundColor: theme.palette.primary.main}} 
                     className='buy-btn'
                     onClick={showBuyModal}
                 >
                     Buy at Auction
+                </Button> */}
+                <Button 
+                    variant='contained' 
+                    style={{backgroundColor: theme.palette.primary.main}} 
+                    className='withdraw-btn'
+                    onClick={() => {alert('alert')}}
+                >
+                    Withdraw my commitment
                 </Button>
-                <span className='coming-soon-actions'>
+                {/* <span className='coming-soon-actions'>
                     <Tooltip title='Coming Soon'>
                         <Button onClick={showComingSoon} variant='contained' disableElevation>Sell</Button>
                     </Tooltip>
                     <Tooltip title='Coming Soon'>               
                         <Button variant='contained' disableElevation>Redeem</Button>
                     </Tooltip>
-                </span>
+                </span> */}
             </div>
         <Popup open={open} />
         <BuyModal 

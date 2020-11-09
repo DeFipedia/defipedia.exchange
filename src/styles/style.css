@@ -169,7 +169,7 @@
   margin-top: 10px;
 }
 
-.buy-btn {
+.buy-btn, .withdraw-btn {
   color: white !important;
   width: 374px;
   height: 40px;
