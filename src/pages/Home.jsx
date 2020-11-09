@@ -4,6 +4,7 @@ import Popup from '../components/Popup'
 import CardModal from '../components/CardModal'
 import BuyModal from '../components/BuyModal'
 import {convertWeiToETH} from '../functions/convertWeiToETH'
+import {withdrawCommit} from '../functions/withdrawCommit'
 
 const Home = (props) => {
     const {tokenData, poolData, accountAddr, connectWallet}  = props
@@ -136,7 +137,7 @@ const Home = (props) => {
                     variant='contained' 
                     style={{backgroundColor: theme.palette.primary.main}} 
                     className='withdraw-btn'
-                    onClick={() => {alert('alert')}}
+                    onClick={withdrawCommit}
                 >
                     Withdraw my commitment
                 </Button>
