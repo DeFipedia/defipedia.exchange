@@ -57,7 +57,7 @@
   height: 470px;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 50px;
+  margin-top: 30px;
   background: linear-gradient(to bottom right, #343434, #151515);
   border-radius: 10px !important;
   grid-area: overlap;
@@ -138,7 +138,7 @@
   height: 100px;
   border-radius: 10px;
   grid-area: overlap;
-  margin-top: 485px;
+  margin-top: 470px;
 }
 .learn-more-section p {
   padding: 5%;
@@ -169,7 +169,7 @@
   margin-top: 10px;
 }
 
-.buy-btn {
+.buy-btn, .withdraw-btn {
   color: white !important;
   width: 374px;
   height: 40px;
@@ -192,6 +192,44 @@
 .MuiAlert-root {
   opacity: 80%;
   background-color: white !important;
+}
+
+.auction-card {
+  background-color: white;
+  width: 374px;
+  height: 540px;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  left: 0;
+  right: 0;
+  border-radius: 8px;
+  text-align: center;
+  opacity: 20%;
+  z-index: 3;
+}
+
+.auction-text {
+  width: 271.94px;
+  height: 37.46px;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  top: 850px;
+  left: 0;
+  right: 0;
+  font-family: Helvetica;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 40px;
+  text-align: center;
+  letter-spacing: 1px;
+  color: #FF0000;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
+  transform: rotate(-30deg);
+  z-index: 4;
 }
 
 .dynamic-pricing-modal {

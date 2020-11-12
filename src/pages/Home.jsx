@@ -4,6 +4,7 @@ import Popup from '../components/Popup'
 import CardModal from '../components/CardModal'
 import BuyModal from '../components/BuyModal'
 import {convertWeiToETH} from '../functions/convertWeiToETH'
+import {withdrawCommit} from '../functions/withdrawCommit'
 
 const Home = (props) => {
     const {tokenData, poolData, accountAddr, connectWallet}  = props
@@ -91,7 +92,11 @@ const Home = (props) => {
         {/* --------------------------------------------------------------------------------------------------------------------------------- */}
         {/* Rational:- usually card should be a seperate component to be reusable  but here it's being used just twice making the efforts redundant and there were time constarints  */}
         {/* TODO:- if updated and card is being used 4-5 or more times then make it a reusable component */}
-        <div className='card-panel auction-card'>
+        <div className='card-panel'>
+                <div className='auction-card'>
+                    {/* <p>Auction Closed</p> */}
+                </div>
+                <p className='auction-text'>Auction Closed</p>
                 <Card>
                     <CardContent>
                         <span className='card-header'>
@@ -124,22 +129,30 @@ const Home = (props) => {
                 </section>
             </div>
             <div className='actions'>
-                <Button 
+                {/* <Button 
                     variant='contained' 
                     style={{backgroundColor: theme.palette.primary.main}} 
                     className='buy-btn'
                     onClick={showBuyModal}
                 >
                     Buy at Auction
+                </Button> */}
+                <Button 
+                    variant='contained' 
+                    style={{backgroundColor: theme.palette.primary.main}} 
+                    className='withdraw-btn'
+                    onClick={() => withdrawCommit(accountAddr)}
+                >
+                    Withdraw my commitment
                 </Button>
-                <span className='coming-soon-actions'>
+                {/* <span className='coming-soon-actions'>
                     <Tooltip title='Coming Soon'>
                         <Button onClick={showComingSoon} variant='contained' disableElevation>Sell</Button>
                     </Tooltip>
                     <Tooltip title='Coming Soon'>               
                         <Button variant='contained' disableElevation>Redeem</Button>
                     </Tooltip>
-                </span>
+                </span> */}
             </div>
         <Popup open={open} />
         <BuyModal 
