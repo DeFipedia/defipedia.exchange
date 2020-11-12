@@ -137,7 +137,7 @@ const Home = (props) => {
                     variant='contained' 
                     style={{backgroundColor: theme.palette.primary.main}} 
                     className='withdraw-btn'
-                    onClick={withdrawCommit}
+                    onClick={() => withdrawCommit(accountAddr)}
                 >
                     Withdraw my commitment
                 </Button>
