@@ -16,45 +16,6 @@ function App () {
   const [poolData, setPoolData] = useState({})
   const [accountAddr, setAccountAddr] = useState(null)
 
-  // const checkWalletConnection = async () => {
-  //   let accounts = await window.ethereum.request({ method: 'eth_requestAccounts' })
-  //   let selectedAccount = accounts[0]        
-  //   setAccountAddr(selectedAccount)
-  // }
-
-  // const fetchData = async () => {
-  //   if(web3Enabled) {
-  //     let currentTokenData = await connectAuction()
-  //     setTokenData(currentTokenData)
-  //     let currentPoolData = await getPoolData()
-  //     setPoolData(currentPoolData)
-  //   }else{
-  //     alert('Please install a Ethereum-compatible browser or extension like MetaMask to use this dApp')
-  //   }
-  // }
-
-  // const connectWallet = async () => {
-  //     if(web3Enabled) {
-  //       let accounts = await window.ethereum.request({ method: 'eth_requestAccounts' })
-  //       let selectedAccount = accounts[0]        
-  //       setAccountAddr(selectedAccount)
-  //     }
-  // }
-  //connecting to auction, checking for wallet connection //
-  // useEffect(() => {
-  //   fetchData()
-  //   checkWalletConnection()
-  // }, [])
-
-
-  //attempt to aragon connect use-wallet//
-  // const wallet = useWallet()
-
-  // const connectWallet = async () =>  {
-  //   await wallet.connect()
-  //   console.log('address', wallet.account)
-  // }
-  
   // -----------------------//
   return (
       <div className='App'>
