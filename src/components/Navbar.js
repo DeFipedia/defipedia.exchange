@@ -13,6 +13,10 @@ const Navbar = (props) => {
         setOpen(true)
     }
 
+    const closeWeb3SignInModal = () => {
+        setOpen(false)
+    }
+
     return(
         <div>
         <AppBar position='fixed' color='inherit' elevation={0} >
@@ -32,7 +36,10 @@ const Navbar = (props) => {
                 </nav>
             </Toolbar>
         </AppBar >
-        <Web3SignIn open={open}/>
+        <Web3SignIn 
+            open={open}
+            close={closeWeb3SignInModal}
+        />
         </div>
     )
 }

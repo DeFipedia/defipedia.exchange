@@ -47,10 +47,19 @@ export default () => (
         chainId={1}
         connectors={{
         // This is how connectors get configured
-            portis: 
-              { 
-                dAppId: process.env.REACT_APP_PORTIS_KEY 
-              },
+            portis: { 
+              dAppId: process.env.REACT_APP_PORTIS_KEY 
+            },
+            fortmatic: {
+              apiKey: process.env.REACT_APP_FORTMATIC_KEY
+            },
+            walletconnect: {
+              rpcUrl: 'https://bridge.walletconnect.org'
+            },
+            walletlink: {
+              appName: 'DeFipedia Exchange',
+              url: `https://mainnet.infura.io/v3/${process.env.REACT_APP_INFURA_ID}`
+            }
         }}
     >
       <App />
