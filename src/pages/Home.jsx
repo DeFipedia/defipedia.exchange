@@ -163,7 +163,7 @@ const Home = (props) => {
             accountAddr={accountAddr}
             connectWallet={connectWallet}
         />
-        </div>
+    </div>
     )
 }
 

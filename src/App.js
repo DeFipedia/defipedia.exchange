@@ -48,13 +48,13 @@ function App () {
 
 
   //attempt to aragon connect use-wallet//
-  const wallet = useWallet()
+  // const wallet = useWallet()
 
-  const connectWallet = async () =>  {
-    await wallet.connect()
-    console.log(wallet.account)
-  }
-
+  // const connectWallet = async () =>  {
+  //   await wallet.connect()
+  //   console.log('address', wallet.account)
+  // }
+  
   // -----------------------//
   return (
       <div className='App'>
@@ -62,7 +62,7 @@ function App () {
           brandTitle={process.env.PUBLIC_URL + 'assets/brand-title.svg'}
           brandLogo={process.env.PUBLIC_URL + 'defipedia_logo.png'}
           accountAddr={accountAddr}
-          connectWallet={connectWallet} 
+          // connectWallet={connectWallet} 
         />
         <Switch>
           <Route exact path='/'>
@@ -83,12 +83,15 @@ function App () {
 
 export default () => (
   <UseWalletProvider
-    chainId={1}
-    connectors={{
-      // This is how connectors get configured
-      portis: { dAppId: '47c91e55-8ecf-45f6-937d-9015bcf65b36' },
-    }}
-  >
-  <App />
-  </UseWalletProvider> 
-) 
+        chainId={1}
+        connectors={{
+        // This is how connectors get configured
+            portis: 
+              { 
+                dAppId: process.env.REACT_APP_PORTIS_KEY 
+              },
+        }}
+    >
+      <App />
+    </UseWalletProvider>
+)
