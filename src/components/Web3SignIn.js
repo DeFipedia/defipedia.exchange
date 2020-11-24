@@ -26,7 +26,7 @@ const Web3SignIn = (props) => {
                 </CardContent>
             <Button onClick={() => wallet.connect()}>MetaMask</Button>
             <Button onClick={() => wallet.connect('portis')}>Portis</Button>
-            <Button onClick={() => {wallet.connect('fortmatic')}}>fortmatic</Button>
+            <Button onClick={() => {wallet.connect('fortmatic')}}>Fortmatic</Button>
             <Button onClick={() => {wallet.connect('walletconnect')}}>Wallet Connect</Button>
             <Button onClick={() => {wallet.connect('authereum')}}>Authereum</Button>
             <Button onClick={() => {wallet.connect('frame')}}>Frame</Button>
