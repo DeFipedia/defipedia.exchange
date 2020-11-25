@@ -17,9 +17,9 @@ export const getPoolData = async () => {
     const pair = await Fetcher.fetchPairData(BOOKS, WETH[BOOKS.chainId])
     const route = new Route([pair], WETH[BOOKS.chainId])
     //get price from pool
-    const uniswapPoolRate = route.midPrice.invert().toSignificant(6)
+    const uniswapPoolPrice = route.midPrice.invert().toSignificant(6)
     //save things on object to return//
-    uniswapPoolData.rate = uniswapPoolRate
+    uniswapPoolData.rate = uniswapPoolPrice
         
     return uniswapPoolData
 }

@@ -16,6 +16,21 @@ function App () {
   const [poolData, setPoolData] = useState({})
   const [accountAddr, setAccountAddr] = useState(null)
 
+  useEffect(() => {
+    fetchData()
+  }, [])
+
+  const fetchData = async () => {
+    if(web3Enabled) {
+      // let currentTokenData = await connectAuction()
+      // setTokenData(currentTokenData)
+      let currentPoolData = await getPoolData()
+      setPoolData(currentPoolData)
+    }else{
+      alert('Please install a Ethereum-compatible browser or extension like MetaMask to use this dApp')
+    }
+  }
+
   // -----------------------//
   return (
       <div className='App'>
@@ -62,6 +77,6 @@ export default () => (
             }
         }}
     >
-      <App />
+    <App />
     </UseWalletProvider>
 )

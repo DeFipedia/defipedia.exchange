@@ -5,11 +5,12 @@ import CardModal from '../components/CardModal'
 import BuyModal from '../components/BuyModal'
 import {convertWeiToETH} from '../functions/convertWeiToETH'
 import {withdrawCommit} from '../functions/withdrawCommit'
+import AuctionCard from '../components/AuctionCard'
 
 const Home = (props) => {
     const {tokenData, poolData, accountAddr, connectWallet}  = props
     // for theme//
-    let theme = useTheme()
+    const theme = useTheme()
     // for state //
     const [open, setOpen] = useState(false)
     const [modalOpen, setModalOpen] = useState(false)
@@ -47,123 +48,19 @@ const Home = (props) => {
 
     return(
         <div className='home-page'>
-            <CardModal open={modalOpen} handleClose={closeDynamicPricingModal}/>
-            <div className='card-panel'>
-                <Card>
-                    <CardContent>
-                        <span className='card-header'>
-                            <div className='card-title'>
-                                <h3>$BOOKS on </h3> <h3 style={{color: theme.palette.primary.main}}>Uniswap</h3>
-                            </div>
-                        </span>
-                        <p>2020 DeFi Packs</p>  
-                        <img alt='cover-art' src={process.env.PUBLIC_URL + 'assets/cover-art.jpg'}/>  
-                        <section className='card-data'>
-                            <h4>{poolData.rate} ETH</h4> 
-                            <span>
-                                <p>50 seeded</p>
-                                <div className='dynamic-pricing-icon'> 
-                                    <a href='/details'>
-                                        <p>Dynamic Pricing Stats <i class="fas fa-question-circle"></i></p>
-                                    </a>    
-                                </div>
-                            </span>
-                        </section>                
-                    </CardContent>                
-                </Card>
-                <section className='learn-more-section'>
-                    <p>Buy and sell real books with digital currency. Delivered on demand. <button className='learn-more-button' onClick={() => showDynamicPricingStatModal()}>Learn More</button></p>
-                </section>
+            <AuctionCard 
+                title='Uniswap'
+                image={process.env.PUBLIC_URLassets + '/cover-art.jpg'}
+                price={poolData.rate}
+            />
+            {/*@DEV: The auction-card element is used as masking layer*/}
+            <div className='auction-card-mask'>
             </div>
-            <div className='actions'>
-                <a rel='noopener noreferrer' href='https://app.uniswap.org/#/swap?inputCurrency=ETH&outputCurrency=0x117c2aca45d87958ba054cb85af0fd57be00d624' target='_blank'>
-                    <Button variant='contained' style={{backgroundColor: theme.palette.primary.main}} className='buy-btn'>Buy on Uniswap</Button>
-                </a>
-                <span className='coming-soon-actions'>
-                    <Tooltip title='Coming Soon'>
-                        <Button onClick={showComingSoon} variant='contained' disableElevation>Sell</Button>
-                    </Tooltip>
-                    <Tooltip title='Coming Soon'>               
-                        <Button variant='contained' disableElevation>Redeem</Button>
-                    </Tooltip>
-                </span>
-            </div>
-
-        {/* --------------------------------------------------------------------------------------------------------------------------------- */}
-        {/* Rational:- usually card should be a seperate component to be reusable  but here it's being used just twice making the efforts redundant and there were time constarints  */}
-        {/* TODO:- if updated and card is being used 4-5 or more times then make it a reusable component */}
-        <div className='card-panel'>
-                <div className='auction-card'>
-                    {/* <p>Auction Closed</p> */}
-                </div>
-                <p className='auction-text'>Auction Closed</p>
-                <Card>
-                    <CardContent>
-                        <span className='card-header'>
-                            <div className='card-title'>
-                                <h3>$BOOKS on</h3>  <h3 style={{color: theme.palette.primary.main}}>Auction</h3> 
-                            </div>
-                            <div className='dutch-swap-logo'>
-                                <a href='https://www.dutchswap.com/' target='_blank' rel='noopener noreferrer'>
-                                    <img alt='dutch swap logo' src={process.env.PUBLIC_URL + 'assets/dutch_swap.svg'}/>
-                                </a>
-                            </div>
-                        </span>
-                        <p>2020 DeFi Packs</p>  
-                        <img alt='cover-art' src={process.env.PUBLIC_URL + 'assets/cover-art.jpg'}/> 
-                        <section className='card-data'>
-                            <h4>{tokenDataETH.tokenPrice} ETH</h4> 
-                            <span>
-                                <p>{tokenDataETH.tokensRemaining}/{tokenData.totalTokens}</p>
-                                <div className='dynamic-pricing-icon'> 
-                                    <a href='/details'>
-                                        <p>Dynamic Pricing Stats <i className="fas fa-question-circle"></i></p>
-                                    </a>    
-                                </div>
-                            </span>
-                        </section>                 
-                    </CardContent>                
-                </Card>
-                <section className='learn-more-section'>
-                <p>Buy and sell real books with digital currency. Delivered on demand. <button className='learn-more-button' onClick={() => showDynamicPricingStatModal()}>Learn More</button></p>
-                </section>
-            </div>
-            <div className='actions'>
-                {/* <Button 
-                    variant='contained' 
-                    style={{backgroundColor: theme.palette.primary.main}} 
-                    className='buy-btn'
-                    onClick={showBuyModal}
-                >
-                    Buy at Auction
-                </Button> */}
-                <Button 
-                    variant='contained' 
-                    style={{backgroundColor: theme.palette.primary.main}} 
-                    className='withdraw-btn'
-                    onClick={() => withdrawCommit(accountAddr)}
-                >
-                    Withdraw my commitment
-                </Button>
-                {/* <span className='coming-soon-actions'>
-                    <Tooltip title='Coming Soon'>
-                        <Button onClick={showComingSoon} variant='contained' disableElevation>Sell</Button>
-                    </Tooltip>
-                    <Tooltip title='Coming Soon'>               
-                        <Button variant='contained' disableElevation>Redeem</Button>
-                    </Tooltip>
-                </span> */}
-            </div>
-        <Popup open={open} />
-        <BuyModal 
-            open={triggerBuyModal} 
-            close={closeBuyModal} 
-            tokenDataETH={tokenDataETH} 
-            tokenData={tokenData}
-            accountAddr={accountAddr}
-            connectWallet={connectWallet}
-        />
-    </div>
+            <p className='auction-text'>Auction Closed</p>
+            <AuctionCard 
+                title='Auction'
+            />
+        </div>
     )
 }
 
