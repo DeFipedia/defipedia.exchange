@@ -4,7 +4,7 @@ import CardModal from './CardModal'
 
 const AuctionCard = (props) => {
     //props for card data//
-    let {title, image, price} = props
+    let {title, image, price, totalTokens, learnMoreTag} = props
     //for theme//
     const theme = useTheme()
     //for state //
@@ -32,14 +32,14 @@ const AuctionCard = (props) => {
                             </div>
                         </span>
                         <p>2020 DeFi Packs</p>  
-                        <img alt='cover-art' src={process.env.PUBLIC_URL + 'assets/cover-art.jpg'}/>  
+                        <img alt='cover-art' src={image}/>  
                         <section className='card-data'>
                             <h4>{price} ETH</h4> 
                             <span>
-                                <p>50 seeded</p>
+                                <p>{totalTokens} available</p>
                                 <div className='dynamic-pricing-icon'> 
                                     <a href='/details'>
-                                        <p>Dynamic Pricing Stats <i class="fas fa-question-circle"></i></p>
+                                        <p>Learn more <i class="fas fa-question-circle"></i></p>
                                     </a>    
                                 </div>
                             </span>
@@ -47,7 +47,8 @@ const AuctionCard = (props) => {
                     </CardContent>                
                 </Card>
                 <section className='learn-more-section'>
-                    <p>Buy and sell real books with digital currency. Delivered on demand. <button className='learn-more-button' onClick={() => showDynamicPricingStatModal()}>Learn More</button></p>
+                    <p>Support the free market</p>
+                    <p>{learnMoreTag}</p>
                 </section>
             </div>
         </React.Fragment>

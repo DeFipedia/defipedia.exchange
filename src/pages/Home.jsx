@@ -50,8 +50,10 @@ const Home = (props) => {
         <div className='home-page'>
             <AuctionCard 
                 title='Uniswap'
-                image={process.env.PUBLIC_URLassets + '/cover-art.jpg'}
+                image={process.env.PUBLIC_URL + 'assets/cover-art.jpg'}
                 price={poolData.rate}
+                totalTokens='50'
+                learnMoreTag='Swap here!'
             />
             {/*@DEV: The auction-card element is used as masking layer*/}
             <div className='auction-card-mask'>
@@ -60,6 +62,8 @@ const Home = (props) => {
                 {/* This blob until here from last comment is used as masking layer for Auction card(old dutch aution car) */}
                 <AuctionCard 
                     title='Auction'
+                    image={process.env.PUBLIC_URL + 'assets/cover-art.jpg'}
+                    totalTokens='950'
                 />
         </div>
     )
