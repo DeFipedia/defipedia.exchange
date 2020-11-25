@@ -56,10 +56,11 @@ const Home = (props) => {
             {/*@DEV: The auction-card element is used as masking layer*/}
             <div className='auction-card-mask'>
             </div>
-            <p className='auction-text'>Auction Closed</p>
-            <AuctionCard 
-                title='Auction'
-            />
+                <p className='auction-text'>Auction Closed</p>
+                {/* This blob until here from last comment is used as masking layer for Auction card(old dutch aution car) */}
+                <AuctionCard 
+                    title='Auction'
+                />
         </div>
     )
 }
