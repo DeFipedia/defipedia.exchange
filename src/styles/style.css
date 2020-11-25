@@ -55,8 +55,6 @@
 .MuiCard-root {
   width: 334px;
   height: 470px;
-  margin-left: auto;
-  margin-right: auto;
   margin-top: 30px;
   background: linear-gradient(to bottom right, #343434, #151515);
   border-radius: 10px !important;
@@ -135,7 +133,7 @@
   margin-right: auto;
   text-align: left;
   background-color: #F2F2F2;
-  height: 100px;
+  height: 90px;
   border-radius: 10px;
   grid-area: overlap;
   margin-top: 470px;
@@ -235,6 +233,11 @@
   text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
   transform: rotate(-30deg);
   z-index: 4;
+}
+
+footer {
+  height: 100px;
+  background: linear-gradient(to right, #FF6400, #006FFF);
 }
 
 .dynamic-pricing-modal {
