@@ -70,6 +70,84 @@ a {
   letter-spacing: 1px;
 }
 
+footer {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  height: 155px;
+  background: linear-gradient(to right, #FF6400, #006FFF);
+  z-index: 3;
+}
+footer p {
+  margin-top: 30px;
+  text-align: center;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 14px;
+  letter-spacing: 0.625px;
+  color: #FFFFFF;
+  text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.25);
+}
+footer span {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+}
+footer span input {
+  width: 334px;
+  height: 40px;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  background: #FFFFFF;
+  border: 0.1px solid #FFFFFF;
+  box-sizing: border-box;
+  box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.75);
+  border-radius: 4px;
+  padding-left: 10px;
+}
+footer span ::placeholder {
+  width: 170px;
+  height: 18px;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  letter-spacing: 0.625px;
+  color: #343434;
+}
+footer span button {
+  width: 126px;
+  height: 40px;
+  color: white;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
+  letter-spacing: 1px;
+  border: 0.5px solid white !important;
+  opacity: 0.4;
+}
+
+.fab {
+  color: white;
+  font-size: 24px;
+  margin-left: 8px;
+}
+
+.social-media-handle {
+  width: 190px;
+  height: 24px;
+}
+
+.right {
+  display: inline;
+  position: absolute;
+  left: 60%;
+  width: 416px;
+}
+
 .home-page {
   margin-top: 50px;
   position: relative;
@@ -263,14 +341,6 @@ a {
   color: #FF0000;
   text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
   transform: rotate(-30deg);
-  z-index: 4;
-}
-
-footer {
-  position: fixed;
-  bottom: 0px;
-  width: 100%;
-  background: linear-gradient(to right, #FF6400, #006FFF);
 }
 
 .dynamic-pricing-modal {

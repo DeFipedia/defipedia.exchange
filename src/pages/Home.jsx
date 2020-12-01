@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import {useTheme, Grid} from '@material-ui/core'
 import AuctionCard from '../components/AuctionCard'
 import {Button} from '../components/Button'
+import {Footer} from '../components/Footer'
 import {convertWeiToETH} from '../functions/convertWeiToETH'
 
 const Home = (props) => {
@@ -89,23 +90,8 @@ const Home = (props) => {
                         <Button label='Withdraw deposit' />
                     </section>
                 </Grid>
-            </Grid>
-            {/* @DEV: This is for rendering footer */}
-            <footer>
-                <p>Don't miss out, keep pace with all the latest</p>
-                <span>
-                    <input placeholder='Add an email address' />
-                    <Button variant='comtained'>Subscribe</Button>
-                </span>
-                <section>
-                    <i class="fab fa-discord"></i>
-                    <i class="fab fa-twitter-square"></i>
-                    <i class="fab fa-linkedin"></i>
-                    <i class="fab fa-github-square"></i>
-                    <i class="fab fa-telegram"></i>
-                    <i class="fab fa-medium"></i>
-                </section>
-            </footer>
+            </Grid>    
+            <Footer />
         </div>
     )
 }
