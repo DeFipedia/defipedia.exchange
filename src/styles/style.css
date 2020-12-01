@@ -1,3 +1,12 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  overflow: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
 .MuiAppBar-root {
   max-height: 74px;
 }
@@ -414,15 +423,6 @@ footer {
   width: 374px;
   height: 40px;
   text-transform: none;
-}
-
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  overflow: hidden;
-}
-
-a {
-  text-decoration: none;
 }
 
 /*# sourceMappingURL=style.css.map */
