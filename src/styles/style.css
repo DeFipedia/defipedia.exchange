@@ -236,7 +236,9 @@
 }
 
 footer {
-  height: 100px;
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
   background: linear-gradient(to right, #FF6400, #006FFF);
 }
 
@@ -416,6 +418,7 @@ footer {
 
 body {
   font-family: Arial, Helvetica, sans-serif;
+  overflow: hidden;
 }
 
 a {

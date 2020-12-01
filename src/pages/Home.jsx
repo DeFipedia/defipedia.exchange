@@ -48,7 +48,7 @@ const Home = (props) => {
 
     return(
         <div className='home-page'>
-            <Grid container justify='center' spacing={1}>
+            <Grid container justify='center' spacing={2}>
                 <Grid item>
                     {/* This is UniSwap Card */}
                     <AuctionCard 
