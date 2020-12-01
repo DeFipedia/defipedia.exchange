@@ -1,12 +1,29 @@
 import React from 'react'
 
-const Button = (props) => {
-    const {label} = props
+const VARIANTS = [
+    'btn--primary',
+    'btn-secondary',
+    'btn-disabled'
+]
+
+const SIZES = [
+    'btn--medium',
+    'btn--small' 
+]
+
+//@DEV: this is the functional component that renders button
+export const Button = ({label, onClick, variant, size}) => {
+
+    const checkButtonVariant = VARIANTS.includes(variant) ? variant : VARIANTS[0]
+
+    const checkButtonSizes = SIZES.includes(size) ?  size : SIZES[0]
+
     return(
-        <button className='dp-button'>
+        <button 
+            onClick={onClick} 
+            className={`btn ${checkButtonVariant} ${checkButtonSizes}`}
+        >
             {label}
         </button>
     )
 }
-
-export default Button

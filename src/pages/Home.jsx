@@ -1,12 +1,8 @@
 import React, {useState} from 'react'
 import {useTheme, Grid} from '@material-ui/core'
 import AuctionCard from '../components/AuctionCard'
-import Button from '../components/Button'
+import {Button} from '../components/Button'
 import {convertWeiToETH} from '../functions/convertWeiToETH'
-// import Popup from '../components/Popup'
-// import CardModal from '../components/CardModal'
-// import BuyModal from '../components/BuyModal'
-// import {withdrawCommit} from '../functions/withdrawCommit'
 
 const Home = (props) => {
     const {tokenData, poolData, accountAddr, connectWallet}  = props
