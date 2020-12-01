@@ -4,7 +4,7 @@ const Button = (props) => {
     const {label} = props
     return(
         <button>
-            label
+            {label}
         </button>
     )
 }

@@ -1,11 +1,12 @@
 import React, {useState} from 'react'
-import {Card, CardContent, Tooltip, Button, useTheme, Grid, TextField} from '@material-ui/core'
-import Popup from '../components/Popup'
-import CardModal from '../components/CardModal'
-import BuyModal from '../components/BuyModal'
-import {convertWeiToETH} from '../functions/convertWeiToETH'
-import {withdrawCommit} from '../functions/withdrawCommit'
+import {useTheme, Grid} from '@material-ui/core'
 import AuctionCard from '../components/AuctionCard'
+import Button from '../components/Button'
+import {convertWeiToETH} from '../functions/convertWeiToETH'
+// import Popup from '../components/Popup'
+// import CardModal from '../components/CardModal'
+// import BuyModal from '../components/BuyModal'
+// import {withdrawCommit} from '../functions/withdrawCommit'
 
 const Home = (props) => {
     const {tokenData, poolData, accountAddr, connectWallet}  = props
@@ -51,13 +52,16 @@ const Home = (props) => {
             <Grid container justify='center' spacing={2}>
                 <Grid item>
                     {/* This is UniSwap Card */}
-                    <AuctionCard 
-                        title='Uniswap'
-                        image={process.env.PUBLIC_URL + 'assets/cover-art.jpg'}
-                        price={poolData.rate}
-                        totalTokens='50'
-                        learnMoreTag='Swap here!'
-                    />
+                    <section>
+                        <AuctionCard 
+                            title='Uniswap'
+                            image={process.env.PUBLIC_URL + 'assets/cover-art.jpg'}
+                            price={poolData.rate}
+                            totalTokens='50'
+                            learnMoreTag='Swap here!'
+                        />
+                        <Button label='buy' />
+                    </section>
                 </Grid>
                 <Grid item>
                     {/* Sale Card */}
