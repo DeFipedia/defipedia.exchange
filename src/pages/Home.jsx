@@ -60,18 +60,23 @@ const Home = (props) => {
                             totalTokens='50'
                             learnMoreTag='Swap here!'
                         />
-                        <Button label='buy' />
+                        <Button label='Buy' />
+                        <Button label='Sell on Uniswap' />
                     </section>
                 </Grid>
                 <Grid item>
                     {/* Sale Card */}
-                    <AuctionCard 
-                        title='Pre-sale'
-                        image={process.env.PUBLIC_URL + 'assets/books-presale.png'}
-                        price='dummy price'
-                        totalTokens='950'
-                        learnMoreTag='Buy direct!'
-                    />
+                    <section>
+                        <AuctionCard 
+                            title='Pre-sale'
+                            image={process.env.PUBLIC_URL + 'assets/books-presale.png'}
+                            price='dummy price'
+                            totalTokens='950'
+                            learnMoreTag='Buy direct!'
+                        />
+                        <Button label='Buy' />
+                        <Button label='Redeem (coming soon)' />
+                    </section>
                 </Grid>
                 {/*@DEV: The auction-card element is used as masking layer*/}
                 {/* <div className='auction-card-mask'>
@@ -79,11 +84,14 @@ const Home = (props) => {
                     <p className='auction-text'>Auction Closed</p> */}
                 {/* This blob until here from last comment is used as masking layer for Auction card(old dutch aution car) */}
                 <Grid item>
-                    <AuctionCard 
-                        title='Auction'
-                        image={process.env.PUBLIC_URL + 'assets/cover-art.jpg'}
-                        totalTokens='950'
-                    />
+                    <section>
+                        <AuctionCard 
+                            title='Auction'
+                            image={process.env.PUBLIC_URL + 'assets/cover-art.jpg'}
+                            totalTokens='950'
+                        />
+                        <Button label='Withdraw deposit' />
+                    </section>
                 </Grid>
             </Grid>
             {/* @DEV: This is for rendering footer */}
