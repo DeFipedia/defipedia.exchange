@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import {useTheme, Grid} from '@material-ui/core'
-import AuctionCard from '../components/AuctionCard'
+import SaleCard from '../components/SaleCard'
 import {Button} from '../components/Button'
 import {Footer} from '../components/Footer'
 import {convertWeiToETH} from '../functions/convertWeiToETH'
@@ -50,7 +50,7 @@ const Home = (props) => {
                 <Grid item>
                     {/* This is UniSwap Card */}
                     <section>
-                        <AuctionCard 
+                        <SaleCard 
                             title='Uniswap'
                             image={process.env.PUBLIC_URL + 'assets/cover-art.jpg'}
                             price={poolData.rate}
@@ -64,7 +64,7 @@ const Home = (props) => {
                 <Grid item>
                     {/* Sale Card */}
                     <section>
-                        <AuctionCard 
+                        <SaleCard 
                             title='Pre-sale'
                             image={process.env.PUBLIC_URL + 'assets/books-presale.png'}
                             price='dummy price'
@@ -82,7 +82,7 @@ const Home = (props) => {
                 {/* This blob until here from last comment is used as masking layer for Auction card(old dutch aution card) */}
                 <Grid item>
                     <section>
-                        <AuctionCard 
+                        <SaleCard 
                             title='Auction'
                             image={process.env.PUBLIC_URL + 'assets/cover-art.jpg'}
                             totalTokens='950'

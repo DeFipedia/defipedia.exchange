@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import {useTheme, Card, CardContent} from '@material-ui/core'
 import CardModal from './CardModal'
 
-const AuctionCard = (props) => {
+const SaleCard = (props) => {
     //props for card data//
     let {title, image, price, totalTokens, learnMoreTag} = props
     //for theme//
@@ -24,7 +24,7 @@ const AuctionCard = (props) => {
             <CardModal open={modalOpen} handleClose={closeDynamicPricingModal} />
             {/* @DEV: this actually renders the card */}
             <div className='card-panel'>
-                <Card>
+                <Card className='sale-card'>
                     <CardContent>
                         <span className='card-header'>
                             <div className='card-title'>
@@ -55,4 +55,4 @@ const AuctionCard = (props) => {
     )
 }
 
-export default AuctionCard
+export default SaleCard
