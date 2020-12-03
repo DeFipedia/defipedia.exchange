@@ -76,10 +76,10 @@ const Home = (props) => {
                     </section>
                 </Grid>
                 {/*@DEV: The auction-card element is used as masking layer*/}
-                {/* <div className='auction-card-mask'>
-                    </div>
-                    <p className='auction-text'>Auction Closed</p> */}
-                {/* This blob until here from last comment is used as masking layer for Auction card(old dutch aution car) */}
+                <div className='auction-card-mask'>
+                </div>
+                <p className='auction-mask-text'>Auction Closed</p>
+                {/* This blob until here from last comment is used as masking layer for Auction card(old dutch aution card) */}
                 <Grid item>
                     <section>
                         <AuctionCard 

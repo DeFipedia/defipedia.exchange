@@ -13,8 +13,6 @@
 .MuiCard-root
     width: 334px
     height: 470px
-    // margin-left: auto
-    // margin-right: auto
     margin-top: 30px
     background: linear-gradient(to bottom right, #343434, #151515)
     border-radius: 10px !important
@@ -145,39 +143,33 @@
 
 // auction-card class used as massking layer//
 .auction-card-mask
-    background-color: white
-    width: 374px
-    height: 540px
     position: absolute
-    margin-left: auto
-    margin-right: auto
-    margin-top: 30px
-    left: 0
-    right: 0
-    border-radius: 8px
-    text-align: center
-    opacity: 20%
+    width: 344px
+    height: 470px
+    top: 40px
+    left: calc(50% - 344px/2 + 344px)
+    background-color: white
+    opacity: 0.2
     z-index: 3
 
-.auction-text
-        width: 271.94px
-        height: 37.46px
-        position: absolute
-        margin-left: auto
-        margin-right: auto
-        top: 850px
-        left: 0
-        right: 0
-        font-family: Helvetica
-        font-style: normal
-        font-weight: bold
-        font-size: 48px
-        line-height: 40px
-        text-align: center
-        letter-spacing: 1px
-        color: #FF0000
-        text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25)
-        transform: rotate(-30deg)
+.auction-mask-text 
+    position: absolute
+    width: 271.94px
+    height: 77.14px
+    left: calc(50% - 334px/2 + 344px)
+    padding-left: 20px //this is trick to avoid weird behaviour from 'left'//
+    top: 200px
+    font-family: Helvetica
+    font-style: normal
+    font-weight: bold
+    font-size: 48px
+    line-height: 40px
+    text-align: center
+    letter-spacing: 1px
+    color: #343434
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25)
+    transform: rotate(-14deg)
+    z-index: 4
 
     
 
