@@ -1,0 +1,42 @@
+.web3-signIn
+    margin-top: 60px
+    .MuiCard-root
+        margin-left: auto
+        margin-right: auto
+        width: 500px
+        height: 600px
+        //this is for header//
+        span
+            display: flex
+            justify-content: space-between
+            align-items: center
+            p 
+                font-size: 24px
+                font-style: bold
+                font-weight: 400
+        //this is to override buttons to connect wallets inside card content//
+        .wallet-connectors
+            margin-top: 35px
+            button
+                margin-top: 10px
+                width: 80%
+                height: 50px
+                background-color: #ff6400
+                color: white
+                opacity: 60%
+                font-size: 17px
+                font-weight: 300
+                &:hover
+                    opacity: 80%
+                    
+
+
+
+//media queries--------------------------------------------------------------//
+
+@media screen and ( max-width: 600px  )
+    .web3-signIn
+        //this changes the card width when widow width goes less than 600px
+        .MuiCard-root
+            width: 380px
+    

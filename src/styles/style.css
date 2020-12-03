@@ -148,6 +148,47 @@ footer span button {
   width: 416px;
 }
 
+.web3-signIn {
+  margin-top: 60px;
+}
+.web3-signIn .MuiCard-root {
+  margin-left: auto;
+  margin-right: auto;
+  width: 500px;
+  height: 600px;
+}
+.web3-signIn .MuiCard-root span {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.web3-signIn .MuiCard-root span p {
+  font-size: 24px;
+  font-style: bold;
+  font-weight: 400;
+}
+.web3-signIn .MuiCard-root .wallet-connectors {
+  margin-top: 35px;
+}
+.web3-signIn .MuiCard-root .wallet-connectors button {
+  margin-top: 10px;
+  width: 80%;
+  height: 50px;
+  background-color: #ff6400;
+  color: white;
+  opacity: 60%;
+  font-size: 17px;
+  font-weight: 300;
+}
+.web3-signIn .MuiCard-root .wallet-connectors button:hover {
+  opacity: 80%;
+}
+
+@media screen and (max-width: 600px) {
+  .web3-signIn .MuiCard-root {
+    width: 380px;
+  }
+}
 .home-page {
   margin-top: 50px;
   position: relative;
