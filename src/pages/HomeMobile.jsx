@@ -11,15 +11,15 @@ const HomeMobile = () => {
     const settings = {
         dots: true,
         fade: true,
-        infinite: true,
+        infinite: false,
         speed: 500,
-        slidesToShow: 1,
+        slidesToShow: 2,
         slidesToScroll: 1,
-        arrows: true
+        arrows: false
     }
     return(
         <div className='home-page-mobile'>
-            <Slider>
+            <Slider settings={settings}>
                 {/* This is UniSwap Card */}
                 <section>
                     <SaleCard 

@@ -349,6 +349,18 @@ footer span button {
   margin-bottom: 120px;
 }
 
+.home-page-mobile .sale-card {
+  width: 274px;
+  height: 360px;
+  margin-top: 75px;
+}
+.home-page-mobile .sale-card img {
+  width: 178px;
+  height: 178px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .dynamic-pricing-modal {
   height: 85vh;
   width: 30vw;
