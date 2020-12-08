@@ -9,6 +9,7 @@ import {getPoolData} from './functions/getPoolData'
 import {web3Enabled} from './functions/web3Enabled'
 import { useWallet, UseWalletProvider } from 'use-wallet'
 import Web3 from "web3";
+import HomeMobile from './pages/HomeMobile'
 
 function App () {  
   // state variables//
@@ -42,12 +43,13 @@ function App () {
         />
         <Switch>
           <Route exact path='/'>
-            <Home 
+            {/* <Home 
               tokenData={tokenData} 
               poolData={poolData} 
               accountAddr={accountAddr}
               // connectWallet={connectWallet}
-            />
+            /> */}
+            <HomeMobile />
           </Route>
           <Route path='/details'>
             <Details tokenData={tokenData} poolData={poolData} />
