@@ -8,18 +8,18 @@ import SaleCard from '../components/SaleCard'
 import {Button} from '../components/Button'
 
 const HomeMobile = () => {
-    const settings = {
+    const carouselSettings = {
         dots: true,
-        fade: true,
+        fade: false,
         infinite: false,
         speed: 500,
-        slidesToShow: 2,
+        slidesToShow: 1,
         slidesToScroll: 1,
-        arrows: false
+        centerMode: true,
     }
     return(
         <div className='home-page-mobile'>
-            <Slider settings={settings}>
+            <Slider {...carouselSettings}>
                 {/* This is UniSwap Card */}
                 <section>
                     <SaleCard 
