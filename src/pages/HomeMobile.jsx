@@ -10,6 +10,7 @@ import {Button} from '../components/Button'
 const HomeMobile = () => {
     const carouselSettings = {
         dots: true,
+        dotsClass: "slick-dots slick-square-dots", //this is to customize the dots//
         fade: false,
         infinite: false,
         speed: 500,
