@@ -6,6 +6,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import Slider from 'react-slick'
 import SaleCard from '../components/SaleCard'
 import {Button} from '../components/Button'
+import SwipeableBottomSheet from 'react-swipeable-bottom-sheet'
 
 const HomeMobile = () => {
     const carouselSettings = {
@@ -56,6 +57,23 @@ const HomeMobile = () => {
                     <Button label='Withdraw deposit' />
                 </section>
             </Slider>
+            {/* Swipeable footer */}
+            <SwipeableBottomSheet overflowHeight={64}>
+                <div className='mobile-footer' style={{ height: '284px' }}>
+                    <div className='nugget'></div>
+                    <p>Don't miss out, keep pace with all the latest</p>
+                    <input placeholder='Add an email address' />
+                    <Button variant='outlined' >Subscribe</Button>
+                    <section className='social-media-handle'>
+                        <i class="fab fa-discord"></i>
+                        <i class="fab fa-twitter-square"></i>
+                        <i class="fab fa-linkedin"></i>
+                        <i class="fab fa-github-square"></i>
+                        <i class="fab fa-telegram"></i>
+                        <i class="fab fa-medium"></i>
+                    </section>
+                </div>
+            </SwipeableBottomSheet>
         </div>
 
     )
