@@ -16,6 +16,7 @@ const HomeMobile = () => {
         slidesToShow: 1,
         slidesToScroll: 1,
         centerMode: true,
+        initialSlide: 1
     }
     return(
         <div className='home-page-mobile'>
