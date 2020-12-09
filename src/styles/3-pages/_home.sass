@@ -5,7 +5,9 @@
 
 // DEV:  these styles are for HomeMobile page//
 // NOTICE: these styles override a lot of sale card styles which might be moved to that stylesheet later on//
+// Rational: Currently mobile styling is kept here instead of media queries bcoz the component that reders for mobile is different from desktop//
 
+// For sale card//
 .home-page-mobile
     .sale-card
         width: 274px
@@ -16,8 +18,33 @@
             height: 178px
             margin-left: auto
             margin-right: auto
-            // left: 48px
-            // top: 84px
+        .card-title
+            h3
+                font-size: 16px
+                line-height: 18px
+                letter-spacing: 1px
+        .card-data
+            p 
+                font-size: 12px
+                line-height: 14px
+                letter-spacing: 1px
+
+//for learn more section i.e the grey backdrop on bottom on card//
+.home-page-mobile
+    .learn-more-section
+        height: 60px
+        width: 274px
+        margin-top: 430px
+        p
+            margin-top: 10px
+            &:nth-of-type(2)
+                margin-top: 0px
+//for buttons //
+.home-page-mobile
+    .btn
+        width: 274px
+        height: 40px
+                
 
 
     

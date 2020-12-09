@@ -20,13 +20,13 @@ const HomeMobile = () => {
     }
     return(
         <div className='home-page-mobile'>
-            <Slider {...carouselSettings}>
+            <Slider className='sale-carousel' {...carouselSettings}>
                 {/* This is UniSwap Card */}
                 <section>
                     <SaleCard 
                         title='Uniswap'
                         image={process.env.PUBLIC_URL + 'assets/cover-art.jpg'}
-                        price='15'
+                        price='200.00'
                         totalTokens='50'
                         learnMoreTag='Swap here!'
                     />
@@ -38,7 +38,7 @@ const HomeMobile = () => {
                     <SaleCard 
                         title='Pre-sale'
                         image={process.env.PUBLIC_URL + 'assets/books-presale.png'}
-                        price='dummy price'
+                        price='200'
                         totalTokens='950'
                         learnMoreTag='Buy direct!'
                     />
