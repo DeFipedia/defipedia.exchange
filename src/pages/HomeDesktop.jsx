@@ -6,24 +6,11 @@ import {Footer} from '../components/Footer'
 import {convertWeiToETH} from '../functions/convertWeiToETH'
 
 const HomeDesktop = (props) => {
-    // for theme//
-    const theme = useTheme()
-    // for state //
-    const [open, setOpen] = useState(false)
-    const [modalOpen, setModalOpen] = useState(false)
+
+    // for handling buy modal trigger //
     const [triggerBuyModal, setTriggerBuyModal] = useState(false)
-    // token data eth is to use calue of token in ETH as smart contracts return value in Wei and to avoid mutating actual response from smart contracts//
-    const tokenDataETH ={}
+
     // methods //
-    const showComingSoon = () => {
-        setOpen(true) 
-    }
-    const showDynamicPricingStatModal = () => {
-        setModalOpen(true)
-    }
-    const closeDynamicPricingModal = () => {
-        setModalOpen(false)
-    }
     const showBuyModal = () => {
         setTriggerBuyModal(true)
     }
@@ -31,17 +18,6 @@ const HomeDesktop = (props) => {
     const closeBuyModal = () => {
         setTriggerBuyModal(false)
     }
-
-    // const convertToETH = () => {
-    //     if(tokenData.tokenPrice) {
-    //         let tokenPrice = convertWeiToETH(tokenData.tokenPrice)
-    //         tokenDataETH.tokenPrice = tokenPrice.substring(0,3)
-    //         let tokensRemaining = convertWeiToETH(tokenData.tokensRemaining)
-    //         tokenDataETH.tokensRemaining = tokensRemaining.substring(0,3)
-    //     }
-    // }    
-
-    // convertToETH()
 
     return(
         <div className='home-page'>
