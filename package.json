@@ -20,6 +20,7 @@
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
+    "react-sizes": "^2.0.0",
     "react-slick": "^0.27.13",
     "react-spring": "^8.0.27",
     "react-swipeable-bottom-sheet": "^1.1.2",

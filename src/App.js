@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react';
 import {Route, Switch} from 'react-router-dom'
-import Home from './pages/Home';
 import Navbar from './components/Navbar'
 import './styles/style.css'
 import Details from './pages/Details';
@@ -8,8 +7,9 @@ import {connectAuction} from './functions/connectAuction'
 import {getPoolData} from './functions/getPoolData'
 import {web3Enabled} from './functions/web3Enabled'
 import { useWallet, UseWalletProvider } from 'use-wallet'
-import Web3 from "web3";
+import Web3 from 'web3';
 import HomeMobile from './pages/HomeMobile'
+import Home from './pages/Home'
 
 function App () {  
   // state variables//
@@ -49,7 +49,8 @@ function App () {
               accountAddr={accountAddr}
               // connectWallet={connectWallet}
             /> */}
-            <HomeMobile />
+            {/* <HomeMobile /> */}
+            <Home />
           </Route>
           <Route path='/details'>
             <Details tokenData={tokenData} poolData={poolData} />
