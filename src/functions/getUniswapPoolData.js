@@ -2,10 +2,11 @@ import { ChainId, Fetcher, WETH, Route } from '@uniswap/sdk'
 
 export const getUniswapPoolData = async () => {
 
-    // let web3 = await web3Enabled()
+    // commented for now as it doesn't need a web3 instance to fetch data//
+    // await web3Enabled()
 
     const uniswapPoolData = {
-        rate: '',
+        rate: 0,
     }
     
     //token data//
