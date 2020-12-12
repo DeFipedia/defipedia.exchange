@@ -3,35 +3,98 @@
     position: relative
     margin-bottom: 120px
 
-// .actions
-//     width: 374px
-//     display: grid
-//     margin: auto
-//     text-align: center
-//     margin-top: 10px
+// DEV:  these styles are for HomeMobile page//
+// NOTICE: these styles override a lot of sale card styles which might be moved to that stylesheet later on//
+// Rational: Currently mobile styling is kept here instead of media queries bcoz the component that reders for mobile is different from desktop//
 
-// .buy-btn, .withdraw-btn
-//     color: white !important
-//     width: 374px 
-//     height: 40px 
-//     text-transform: none !important
+// For sale card//
+.home-page-mobile
+    .sale-card
+        width: 274px
+        height: 360px
+        margin-top: 75px
+        img
+            width: 178px
+            height: 178px
+            margin-left: auto
+            margin-right: auto
+        .card-title
+            h3
+                font-size: 16px
+                line-height: 18px
+                letter-spacing: 1px
+        .card-data
+            p 
+                font-size: 12px
+                line-height: 14px
+                letter-spacing: 1px
+//---------------------------------------------------------------//
+//for learn more section i.e the grey backdrop on bottom on card//
+.home-page-mobile
+    .learn-more-section
+        height: 60px
+        width: 274px
+        margin-top: 430px
+        p
+            margin-top: 10px
+            &:nth-of-type(2)
+                margin-top: 0px
+//--------------------------------------------------------------//
+//for buttons //
+.home-page-mobile
+    .btn
+        width: 274px
+        height: 40px
+//---------------------------------------------------------------//
 
-// .coming-soon-actions
-//     display: flex
-//     justify-content: space-between
-//     button 
-//         width: 185px
-//         height: 40px
-//         margin-top: 10px
-//         color: #979797
-//         text-transform: none !important
-//         background-color: #F2F2F2
-            
 
-// // this is for snackbar/alert// 
-// .MuiAlert-root
-//     opacity: 80%
-//     background-color: white !important
+//@Dev:  these styles are to customize dots for the carouosel//
+.slick-square-dots
+    button
+        margin-top: 12px !important
+        height: 8px !important
+        width: 8px !important
+        background-color: white !important
+        border: 1px solid #343434 !important
+        box-sizing: border-box
+        border-radius: 2px
+        &::before
+            display: none
+
+
+.slick-square-dots
+    .slick-active
+        button
+            background-color: #343434 !important
+
+//These is for mobile footer build using react-swipeable-bottom-sheet//
+.mobile-footer
+    background: linear-gradient(269.5deg, #006FFF 0%, #FF6400 100%)
+    border: 0.5px solid #FFFFFF
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.25)
+    .nugget
+        width: 13px
+        height: 3px
+        background-color: white
+        margin-left: auto
+        margin-right: auto
+        margin-top: 5px
+    p
+        color: white
+        margin-top: 62px
+        margin-left: 31px !important
+        font-family: Helvetica
+        font-style: normal
+        font-weight: normal
+        font-size: 14px
+        line-height: 14px
+        letter-spacing: 0.625px
+    input 
+        width: 334px
+        height: 40px
+        
+
+                
 
 
     
