@@ -14,7 +14,8 @@ const Home = ({isMobile}) => {
 }   
 
 const mapSizesToProps = ({width}) => ({
-    isMobile:  width < 600
+    // @Notice:  this is the breakpoint for mobile, changing this will effect on what gets render at which viewport//
+    isMobile:  width < 1090
 })
 
 export default withSizes(mapSizesToProps)(Home)
