@@ -7,6 +7,9 @@ import {convertWeiToETH} from '../functions/convertWeiToETH'
 
 const HomeDesktop = (props) => {
 
+    const {uniswapData} = props
+    console.log(uniswapData)
+
     // for handling buy modal trigger //
     const [triggerBuyModal, setTriggerBuyModal] = useState(false)
 
@@ -28,7 +31,7 @@ const HomeDesktop = (props) => {
                         <SaleCard 
                             title='Uniswap'
                             image={process.env.PUBLIC_URL + 'assets/cover-art.jpg'}
-                            price='200'
+                            price={uniswapData.rate}
                             totalTokens='50'
                             learnMoreTag='Swap here!'
                         />

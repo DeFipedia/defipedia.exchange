@@ -39,7 +39,7 @@ const SaleCard = (props) => {
                                 <p>{totalTokens} available</p>
                                 <div className='dynamic-pricing-icon'> 
                                     <a href='/details'>
-                                        <p>Learn more <i class="fas fa-question-circle"></i></p>
+                                        <p>Learn more <i className="fas fa-question-circle"></i></p>
                                     </a>    
                                 </div>
                             </span>

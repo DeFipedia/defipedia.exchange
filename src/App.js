@@ -3,19 +3,18 @@ import {Route, Switch} from 'react-router-dom'
 import Navbar from './components/Navbar'
 import './styles/style.css'
 import Details from './pages/Details';
-import {connectAuction} from './functions/connectAuction'
-import {getPoolData} from './functions/getPoolData'
 import {web3Enabled} from './functions/web3Enabled'
 import { useWallet, UseWalletProvider } from 'use-wallet'
-import Web3 from 'web3';
-import HomeMobile from './pages/HomeMobile'
 import Home from './pages/Home'
+import {getUniswapPoolData} from './functions/getUniswapPoolData'
 
 function App () {  
-  // state variables//
-  const [tokenData, setTokenData] = useState({})
-  const [poolData, setPoolData] = useState({})
-  const [accountAddr, setAccountAddr] = useState(null)
+  
+  // const [tokenData, setTokenData] = useState({})
+  const [uniswapPoolData, setuniswapPoolData] = useState({
+    rate: 0
+  })
+  // const [accountAddr, setAccountAddr] = useState(null)
 
   useEffect(() => {
     fetchData()
@@ -25,8 +24,8 @@ function App () {
     if(web3Enabled) {
       // let currentTokenData = await connectAuction()
       // setTokenData(currentTokenData)
-      let currentPoolData = await getPoolData()
-      setPoolData(currentPoolData)
+      let uniswapPoolData = await getUniswapPoolData()
+      setuniswapPoolData(uniswapPoolData)
     }else{
       alert('Please install a Ethereum-compatible browser or extension like MetaMask to use this dApp')
     }
@@ -38,22 +37,18 @@ function App () {
         <Navbar 
           brandTitle={process.env.PUBLIC_URL + 'assets/brand-title.svg'}
           brandLogo={process.env.PUBLIC_URL + 'defipedia_logo.png'}
-          accountAddr={accountAddr}
-          // connectWallet={connectWallet} 
         />
         <Switch>
           <Route exact path='/'>
-            {/* <Home 
-              tokenData={tokenData} 
-              poolData={poolData} 
-              accountAddr={accountAddr}
-              // connectWallet={connectWallet}
-            /> */}
-            {/* <HomeMobile /> */}
-            <Home />
+            <Home 
+              uniswapData={uniswapPoolData}
+            />
           </Route>
           <Route path='/details'>
-            <Details tokenData={tokenData} poolData={poolData} />
+            <Details 
+              // tokenData={tokenData} 
+              // uniswapData={uniswapPoolData} 
+            />
           </Route>
         </Switch>
       </div>
@@ -80,6 +75,6 @@ export default () => (
             }
         }}
     >
-    <App />
+      <App />
     </UseWalletProvider>
 )

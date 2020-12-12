@@ -8,7 +8,10 @@ import SaleCard from '../components/SaleCard'
 import {Button} from '../components/Button'
 import SwipeableBottomSheet from 'react-swipeable-bottom-sheet'
 
-const HomeMobile = () => {
+const HomeMobile = (props) => {
+
+    const {uniswapData} = props
+
     const carouselSettings = {
         dots: true,
         dotsClass: "slick-dots slick-square-dots", //this is to customize the dots//
@@ -28,7 +31,7 @@ const HomeMobile = () => {
                     <SaleCard 
                         title='Uniswap'
                         image={process.env.PUBLIC_URL + 'assets/cover-art.jpg'}
-                        price='200.00'
+                        price={uniswapData.rate}
                         totalTokens='50'
                         learnMoreTag='Swap here!'
                     />
