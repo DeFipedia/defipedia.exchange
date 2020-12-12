@@ -3,6 +3,8 @@ import HomeMobile from './HomeMobile'
 import HomeDesktop from './HomeDesktop'
 import withSizes from 'react-sizes'
 
+// DEV: This components just deices which component to render bassed on device's viewport//
+//Not implemented in App.js to avoid clutter and to keep it clean and modular//
 const Home = ({isMobile}) => {
     return (
         <React.Fragment>
