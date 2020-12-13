@@ -11,17 +11,15 @@ export const Footer = () => {
             <span>
                 <input placeholder='Add an email address' />
                 {/* this is MUI button, not the custom one */}
-                <div className='right'>
-                    <Button variant='outlined' style={{color: theme.palette.background.main}}>Subscribe</Button>
-                    <section className='social-media-handle'>
-                        <i className="fab fa-discord"></i>
-                        <i className="fab fa-twitter-square"></i>
-                        <i className="fab fa-linkedin"></i>
-                        <i className="fab fa-github-square"></i>
-                        <i className="fab fa-telegram"></i>
-                        <i className="fab fa-medium"></i>
-                    </section>
-                </div>
+                <Button variant='outlined' style={{color: theme.palette.background.main}}>Subscribe</Button>
+                {/* <section className='social-media-handle'> */}
+                    <i className="fab fa-discord"></i>
+                    <i className="fab fa-twitter-square"></i>
+                    <i className="fab fa-linkedin"></i>
+                    <i className="fab fa-github-square"></i>
+                    <i className="fab fa-telegram"></i>
+                    <i className="fab fa-medium"></i>
+                {/* </section>    */}
             </span>
         </footer>
     )

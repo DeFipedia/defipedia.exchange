@@ -246,20 +246,21 @@ footer p {
 footer span {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
   margin-top: 5px;
+  margin-left: 15%;
 }
 footer span input {
   width: 334px;
   height: 40px;
-  position: relative;
-  margin-left: auto;
-  margin-right: auto;
   background: #FFFFFF;
   border: 0.1px solid #FFFFFF;
   box-sizing: border-box;
   box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.75);
   border-radius: 4px;
   padding-left: 10px;
+  align-content: center !important;
 }
 footer span ::placeholder {
   width: 170px;
@@ -270,9 +271,10 @@ footer span ::placeholder {
   letter-spacing: 0.625px;
   color: #343434;
 }
-footer span button {
+footer span .MuiButtonBase-root {
   width: 126px;
   height: 40px;
+  margin-left: 10px;
   color: white;
   font-style: normal;
   font-weight: normal;
@@ -282,6 +284,11 @@ footer span button {
   letter-spacing: 1px;
   border: 0.5px solid white !important;
   opacity: 0.4;
+  border-radius: 4px;
+}
+footer span .MuiButtonBase-root .MuiTouchRipple-root {
+  height: 40px;
+  margin: 0px;
 }
 
 .fab {
@@ -293,13 +300,6 @@ footer span button {
 .social-media-handle {
   width: 190px;
   height: 24px;
-}
-
-.right {
-  display: inline;
-  position: absolute;
-  left: 60%;
-  width: 416px;
 }
 
 .web3-signIn {
