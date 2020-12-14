@@ -35,8 +35,8 @@ const HomeDesktop = (props) => {
                             totalTokens='50'
                             learnMoreTag='Swap here!'
                         />
-                        <Button label='Buy' />
-                        <Button label='Sell on Uniswap' />
+                        <Button label='Buy' variant='primary' />
+                        <Button label='Sell on Uniswap' variant='default'/>
                     </section>
                 </Grid>
                 <Grid item>
@@ -49,8 +49,8 @@ const HomeDesktop = (props) => {
                             totalTokens='950'
                             learnMoreTag='Buy direct!'
                         />
-                        <Button label='Buy' />
-                        <Button label='Redeem (coming soon)' />
+                        <Button label='Buy' variant='secondary'/>
+                        <Button label='Redeem (coming soon)' variant='default'/>
                     </section>
                 </Grid>
                 {/*@DEV: The auction-card element is used as masking layer*/}
@@ -65,7 +65,7 @@ const HomeDesktop = (props) => {
                             image={process.env.PUBLIC_URL + 'assets/cover-art.jpg'}
                             totalTokens='950'
                         />
-                        <Button label='Withdraw deposit' />
+                        <Button label='Withdraw deposit' variant='default'/>
                     </section>
                 </Grid>
             </Grid>    
