@@ -35,8 +35,8 @@ const HomeMobile = (props) => {
                         totalTokens='50'
                         learnMoreTag='Swap here!'
                     />
-                    <Button label='Buy' />
-                    <Button label='Sell on Uniswap' />
+                    <Button label='Buy' variant='primary'/>
+                    <Button label='Sell on Uniswap' variant='default' />
                 </section>
                 {/* Sale Card */}
                 <section>
@@ -47,8 +47,8 @@ const HomeMobile = (props) => {
                         totalTokens='950'
                         learnMoreTag='Buy direct!'
                     />
-                    <Button label='Buy' />
-                    <Button label='Redeem (coming soon)' />
+                    <Button label='Buy' variant='secondary' />
+                    <Button label='Redeem (coming soon)' variant='default' />
                 </section>
                 {/* Ducth auction card */}
                 <section>
@@ -57,7 +57,7 @@ const HomeMobile = (props) => {
                         image={process.env.PUBLIC_URL + 'assets/cover-art.jpg'}
                         totalTokens='950'
                     />
-                    <Button label='Withdraw deposit' />
+                    <Button label='Withdraw deposit' variant='default'/>
                 </section>
             </Slider>
             {/* Swipeable footer */}
