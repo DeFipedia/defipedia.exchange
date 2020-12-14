@@ -28,7 +28,7 @@ const SaleCard = (props) => {
                     <CardContent>
                         <span className='card-header'>
                             <div className='card-title'>
-                                <h3>$BOOKS on </h3> <h3 style={{color: theme.palette.primary.main}}>{title}</h3>
+                                <h3>$BOOKS on </h3> <h3 className='sale-type'>{title}</h3>
                             </div>
                         </span>
                         <p>2020 DeFi Packs</p>  
