@@ -61,6 +61,7 @@ a {
 
 .btn--primary {
   color: white;
+  background-color: #FF6400;
 }
 
 .btn--medium {
@@ -295,6 +296,7 @@ footer span .MuiButtonBase-root .MuiTouchRipple-root {
   color: white;
   font-size: 24px;
   margin-left: 8px;
+  cursor: pointer;
 }
 
 .social-media-handle {
