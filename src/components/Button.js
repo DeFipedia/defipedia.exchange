@@ -3,7 +3,8 @@ import React from 'react'
 const VARIANTS = [
     'primary',
     'secondary',
-    'default'
+    'default',
+    'outlined'
 ]
 
 const SIZES = [

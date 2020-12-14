@@ -1,10 +1,12 @@
+@use '../1-basics/variables'
+
 .home-page
     margin-top: 50px
     position: relative
     margin-bottom: 120px
 
-// DEV:  these styles are for HomeMobile page//
-// NOTICE: these styles override a lot of sale card styles which might be moved to that stylesheet later on//
+// @DEV:  these styles are for HomeMobile page//
+// @NOTICE: these styles override a lot of sale card styles which might be moved to that stylesheet later on//
 // Rational: Currently mobile styling is kept here instead of media queries bcoz the component that reders for mobile is different from desktop//
 
 // For sale card//
@@ -41,10 +43,10 @@
                 margin-top: 0px
 //--------------------------------------------------------------//
 //for buttons //
-.home-page-mobile
-    .btn
-        width: 274px
-        height: 40px
+// .home-page-mobile
+//     .btn
+//         width: 274px
+//         height: 40px
 //---------------------------------------------------------------//
 
 
@@ -67,9 +69,9 @@
         button
             background-color: #343434 !important
 
-//These is for mobile footer build using react-swipeable-bottom-sheet//
+//These is for mobile footer built using react-swipeable-bottom-sheet//
 .mobile-footer
-    background: linear-gradient(269.5deg, #006FFF 0%, #FF6400 100%)
+    background: linear-gradient(269.5deg, $secondary 0%, $primary 100%)
     border: 0.5px solid #FFFFFF
     box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.25)
     .nugget
@@ -81,17 +83,25 @@
         margin-top: 5px
     p
         color: white
-        margin-top: 62px
-        margin-left: 31px !important
+        margin-top: 52px
+        margin-left: 42px 
         font-family: Helvetica
         font-style: normal
         font-weight: normal
         font-size: 14px
         line-height: 14px
         letter-spacing: 0.625px
-    input 
-        width: 334px
-        height: 40px
+    .subscribe-section
+        text-align: center
+        input
+            width: 334px
+            height: 40px
+    .social-media-handle
+        margin-right: auto
+        margin-left: auto
+        margin-top: 38px
+        display: flex
+        align-items: center
         
 
                 

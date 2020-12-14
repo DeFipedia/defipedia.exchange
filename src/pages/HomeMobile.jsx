@@ -65,8 +65,10 @@ const HomeMobile = (props) => {
                 <div className='mobile-footer' style={{ height: '284px' }}>
                     <div className='nugget'></div>
                     <p>Don't miss out, keep pace with all the latest</p>
-                    <input placeholder='Add an email address' />
-                    <Button variant='outlined' >Subscribe</Button>
+                    <section className='subscribe-section'>
+                        <input placeholder='Add an email address' />
+                        <Button variant='outlined' size='medium'>Subscribe</Button>
+                    </section>
                     <section className='social-media-handle'>
                         <i class="fab fa-discord"></i>
                         <i class="fab fa-twitter-square"></i>
