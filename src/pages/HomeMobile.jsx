@@ -7,6 +7,9 @@ import Slider from 'react-slick'
 import SaleCard from '../components/SaleCard'
 import {Button} from '../components/Button'
 import SwipeableBottomSheet from 'react-swipeable-bottom-sheet'
+import MailchimpSubscribe from "react-mailchimp-subscribe"
+
+const SimpleForm = () => <MailchimpSubscribe url={process.env.REACT_APP_MAILCHIMP_URL}/>
 
 const HomeMobile = (props) => {
 
@@ -70,6 +73,14 @@ const HomeMobile = (props) => {
                     <div className='nugget'></div>
                     <p>Don't miss out, keep pace with all the latest</p>
                     <section className='subscribe-section'>
+                        {/* <MailchimpSubscribe 
+                            url={process.env.REACT_APP_MAILCHIMP_URL}
+                            render={({subscribe}) => (
+                                <div className='mailChimp-subscribe-form'>
+                                    <SimpleForm onSubmitted={formData => subscribe(formData)} />
+                                </div>
+                            )} 
+                        /> */}
                         <input placeholder='Add an email address' />
                         <Button variant='outlined' size='medium'>Subscribe</Button>
                     </section>
