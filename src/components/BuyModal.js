@@ -95,7 +95,6 @@ const BuyModal = (props) => {
                     ? <Button className='buy-button' onClick={() => buyToken()}>Buy Now</Button>
                     : <Button className='buy-button'onClick={() => connectWallet()}>Connect Wallet</Button>
                 }
-                    
                 </div>
             </div>
         </Modal>

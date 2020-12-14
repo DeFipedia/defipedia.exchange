@@ -1,3 +1,12 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  overflow: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
 .MuiAppBar-root {
   max-height: 74px;
 }
@@ -25,7 +34,7 @@
 }
 .nav-options button:nth-of-type(2) {
   color: white;
-  background-color: #FF6400;
+  background-color: #006FFF;
   margin-left: 10px;
 }
 
@@ -39,10 +48,49 @@
     display: none !important;
   }
 }
-.home-page {
-  margin-top: 50px;
-  position: relative;
-  margin-bottom: 120px;
+.btn {
+  border-radius: 4px;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  font-family: Helvetica;
+  font-style: normal;
+  text-align: center;
+  filter: drop-shadow(0px 2px 2px);
+}
+
+.primary {
+  color: white;
+  background-color: #FF6400;
+  border-color: #FF6400;
+}
+
+.secondary {
+  background-color: #006FFF;
+  color: white;
+  border-color: #006FFF;
+}
+
+.default {
+  background-color: #F2F2F2;
+  color: #979797;
+}
+
+.outlined {
+  background-color: Transparent;
+  filter: none;
+  border: 0.5px solid #FFFFFF;
+  color: white;
+}
+
+.medium {
+  height: 40px;
+  width: 334px;
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: bold;
+  letter-spacing: 1px;
 }
 
 .card-panel {
@@ -52,30 +100,30 @@
   grid-template-areas: "overlap";
 }
 
-.MuiCard-root {
-  width: 374px;
+.sale-card {
+  width: 334px;
   height: 470px;
+  margin-top: 30px;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 30px;
   background: linear-gradient(to bottom right, #343434, #151515);
   border-radius: 10px !important;
   grid-area: overlap;
   text-align: center;
   z-index: 2;
 }
-.MuiCard-root h4 {
+.sale-card h4 {
   color: white;
   margin: 0px;
   text-align: left;
   font-size: 16px;
 }
-.MuiCard-root .card-header {
+.sale-card .card-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.MuiCard-root .card-header .dutch-swap-logo img {
+.sale-card .card-header .dutch-swap-logo img {
   height: 50px;
   width: 50px;
   box-shadow: none;
@@ -83,30 +131,30 @@
   margin-top: 0px;
   margin-bottom: 0px;
 }
-.MuiCard-root .card-header .card-title {
+.sale-card .card-header .card-title {
   display: block;
   text-align: left;
-  margin-top: 25px;
-  margin-left: 25px;
-  margin-right: 25px;
+  margin-top: 20px;
+  margin-left: 15px;
+  margin-right: 15px;
 }
-.MuiCard-root .card-header .card-title h3 {
+.sale-card .card-header .card-title h3 {
   color: white;
   margin: 0px;
   display: inline-block;
 }
-.MuiCard-root p {
+.sale-card p {
   color: #979797;
   margin: 0px;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 400;
   line-height: 18px;
   margin-top: 5px;
-  margin-left: 25px;
-  margin-right: 25px !important;
+  margin-left: 15px;
+  margin-right: 15px;
   text-align: left;
 }
-.MuiCard-root img {
+.sale-card img {
   height: 240px;
   width: 240px;
   margin: 8%;
@@ -116,11 +164,14 @@
 }
 
 .card-data h4 {
-  margin-left: 25px !important;
+  margin-left: 15px;
 }
 .card-data span {
   display: flex;
   justify-content: space-between;
+}
+.card-data span p {
+  font-size: 12pt;
 }
 .card-data span .dynamic-pricing-icon {
   margin-bottom: 36px;
@@ -130,25 +181,30 @@
 }
 
 .learn-more-section {
-  width: 374px;
+  width: 334px;
   margin-left: auto;
   margin-right: auto;
   text-align: left;
   background-color: #F2F2F2;
-  height: 100px;
+  height: 90px;
   border-radius: 10px;
   grid-area: overlap;
   margin-top: 470px;
 }
 .learn-more-section p {
-  padding: 5%;
-  margin-top: 35px;
-  font-weight: bold;
+  margin-top: 40px;
+  margin-bottom: 0px;
+  margin-left: 20px;
+  font-style: normal;
+  font-weight: normal;
   font-size: 12px;
-  line-height: 1.6;
+  line-height: 20px;
+  letter-spacing: 1px;
 }
-.learn-more-section a {
-  color: #FF6400;
+.learn-more-section p:nth-of-type(2) {
+  margin-top: 0px;
+  font-weight: 700;
+  font-style: normal;
 }
 
 .learn-more-button {
@@ -161,64 +217,149 @@
   border: none;
 }
 
-.actions {
-  width: 374px;
-  display: grid;
-  margin: auto;
+footer {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  height: 155px;
+  background: linear-gradient(to right, #FF6400, #006FFF);
+  z-index: 3;
+}
+footer p {
+  margin-top: 30px;
   text-align: center;
-  margin-top: 10px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 14px;
+  letter-spacing: 0.625px;
+  color: #FFFFFF;
+  text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.25);
 }
-
-.buy-btn, .withdraw-btn {
-  color: white !important;
-  width: 374px;
-  height: 40px;
-  text-transform: none !important;
-}
-
-.coming-soon-actions {
+footer span {
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5px;
+  margin-left: 15%;
 }
-.coming-soon-actions button {
-  width: 185px;
+footer span input {
+  width: 334px;
   height: 40px;
-  margin-top: 10px;
-  color: #979797;
-  text-transform: none !important;
-  background-color: #F2F2F2;
+  background: #FFFFFF;
+  border: 0.1px solid #FFFFFF;
+  box-sizing: border-box;
+  box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.75);
+  border-radius: 4px;
+  padding-left: 10px;
+  align-content: center !important;
+}
+footer span ::placeholder {
+  width: 170px;
+  height: 18px;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  letter-spacing: 0.625px;
+  color: #343434;
 }
 
-.MuiAlert-root {
-  opacity: 80%;
-  background-color: white !important;
+.mailChimp-subscribe-form button {
+  margin-left: 10px;
+  height: 38px;
+  width: 126px;
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  background-color: Transparent;
+  border: 0.5px solid #FFFFFF;
+  color: white;
+  font-size: 12px;
+  line-height: 14px;
+  border-radius: 4px;
+  font-style: normal;
+  font-weight: normal;
+}
+.mailChimp-subscribe-form div div {
+  display: none;
 }
 
-.auction-card {
-  background-color: white;
-  width: 374px;
-  height: 540px;
-  position: absolute;
+.fab {
+  color: white;
+  font-size: 24px;
+  margin-left: 8px;
+  cursor: pointer;
+}
+
+.social-media-handle {
+  width: 190px;
+  height: 24px;
+}
+
+.web3-signIn {
+  margin-top: 60px;
+}
+.web3-signIn .MuiCard-root {
   margin-left: auto;
   margin-right: auto;
-  margin-top: 30px;
-  left: 0;
-  right: 0;
-  border-radius: 8px;
+  width: 500px;
+  height: 600px;
+}
+.web3-signIn .MuiCard-root span {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.web3-signIn .MuiCard-root span p {
+  font-size: 24px;
+  font-style: bold;
+  font-weight: 400;
+}
+
+.wallet-connectors {
+  margin-top: 35px;
   text-align: center;
-  opacity: 20%;
+}
+.wallet-connectors button {
+  margin-top: 10px !important;
+  width: 80%;
+  height: 50px;
+  font-size: 17px;
+  font-weight: 350;
+  opacity: 0.8;
+}
+.wallet-connectors button:hover {
+  opacity: 1;
+}
+
+@media screen and (max-width: 600px) {
+  .web3-signIn .MuiCard-root {
+    width: 380px;
+  }
+}
+.home-page {
+  margin-top: 50px;
+  position: relative;
+  margin-bottom: 120px;
+}
+
+.auction-card-mask {
+  position: absolute;
+  width: 344px;
+  height: 470px;
+  padding: 5%;
+  background-color: white;
+  opacity: 0.2;
   z-index: 3;
 }
 
-.auction-text {
-  width: 271.94px;
-  height: 37.46px;
+.auction-mask-text {
   position: absolute;
-  margin-left: auto;
-  margin-right: auto;
-  top: 850px;
-  left: 0;
-  right: 0;
+  width: 271.94px;
+  height: 77.14px;
+  padding: 22px;
+  top: 180px;
   font-family: Helvetica;
   font-style: normal;
   font-weight: bold;
@@ -226,10 +367,120 @@
   line-height: 40px;
   text-align: center;
   letter-spacing: 1px;
-  color: #FF0000;
+  color: #343434;
   text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
-  transform: rotate(-30deg);
+  transform: rotate(-14deg);
   z-index: 4;
+}
+
+.home-page-mobile .sale-card {
+  width: 274px;
+  height: 360px;
+  margin-top: 75px;
+}
+.home-page-mobile .sale-card img {
+  width: 178px;
+  height: 178px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.home-page-mobile .sale-card .card-title h3 {
+  font-size: 16px;
+  line-height: 18px;
+  letter-spacing: 1px;
+}
+.home-page-mobile .sale-card .card-data p {
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 1px;
+}
+
+.dutch-auction-mask {
+  position: absolute;
+  padding: 5px;
+  width: 300px;
+  height: 360px;
+  margin-top: 75px;
+  z-index: 4;
+  background-color: white;
+  opacity: 0.2;
+}
+
+.auction-mask-text {
+  top: 150px;
+}
+
+.home-page-mobile .learn-more-section {
+  height: 60px;
+  width: 274px;
+  margin-top: 430px;
+}
+.home-page-mobile .learn-more-section p {
+  margin-top: 10px;
+}
+.home-page-mobile .learn-more-section p:nth-of-type(2) {
+  margin-top: 0px;
+}
+
+.sale-carousel section .btn {
+  width: 274px;
+  height: 40px;
+}
+
+.slick-square-dots button {
+  margin-top: 12px !important;
+  height: 8px !important;
+  width: 8px !important;
+  background-color: white !important;
+  border: 1px solid #343434 !important;
+  box-sizing: border-box;
+  border-radius: 2px;
+}
+.slick-square-dots button::before {
+  display: none;
+}
+
+.slick-square-dots .slick-active button {
+  background-color: #343434 !important;
+}
+
+.mobile-footer {
+  background: linear-gradient(269.5deg, #006FFF 0%, #FF6400 100%);
+  border: 0.5px solid #FFFFFF;
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.25);
+}
+.mobile-footer .nugget {
+  width: 13px;
+  height: 3px;
+  background-color: white;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5px;
+}
+.mobile-footer p {
+  color: white;
+  margin-top: 52px;
+  margin-left: 42px;
+  font-family: Helvetica;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 14px;
+  letter-spacing: 0.625px;
+}
+.mobile-footer .subscribe-section {
+  text-align: center;
+}
+.mobile-footer .subscribe-section input {
+  width: 334px;
+  height: 40px;
+}
+.mobile-footer .social-media-handle {
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 38px;
+  display: flex;
+  align-items: center;
 }
 
 .dynamic-pricing-modal {
@@ -404,14 +655,6 @@
   width: 374px;
   height: 40px;
   text-transform: none;
-}
-
-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-a {
-  text-decoration: none;
 }
 
 /*# sourceMappingURL=style.css.map */
