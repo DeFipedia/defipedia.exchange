@@ -239,7 +239,6 @@ footer p {
 footer span {
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
   justify-content: center;
   margin-top: 5px;
   margin-left: 15%;
@@ -264,24 +263,26 @@ footer span ::placeholder {
   letter-spacing: 0.625px;
   color: #343434;
 }
-footer span .MuiButtonBase-root {
-  width: 126px;
-  height: 40px;
+
+.mailChimp-subscribe-form button {
   margin-left: 10px;
+  height: 38px;
+  width: 126px;
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  background-color: Transparent;
+  border: 0.5px solid #FFFFFF;
   color: white;
-  font-style: normal;
-  font-weight: normal;
   font-size: 12px;
   line-height: 14px;
-  text-align: center;
-  letter-spacing: 1px;
-  border: 0.5px solid white !important;
-  opacity: 0.4;
   border-radius: 4px;
+  font-style: normal;
+  font-weight: normal;
 }
-footer span .MuiButtonBase-root .MuiTouchRipple-root {
-  height: 40px;
-  margin: 0px;
+.mailChimp-subscribe-form div div {
+  display: none;
 }
 
 .fab {
