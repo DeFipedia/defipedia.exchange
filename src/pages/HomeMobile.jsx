@@ -22,7 +22,7 @@ const HomeMobile = (props) => {
         slidesToScroll: 1,
         centerMode: true,
         initialSlide: 1,
-        centerPadding: '50px'
+        centerPadding: '60px'
     }
     return(
         <div className='home-page-mobile'>

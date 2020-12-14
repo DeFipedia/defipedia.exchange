@@ -27,12 +27,12 @@ const Navbar = (props) => {
                     <img alt='brand-title' className='brand-title' src={brandTitle} />
                 </section>
                 <nav className='nav-options'>
-                    <Button variant='outlined' color='secondary'>None Redeemed</Button>
+                    <Button variant='outlined' color='primary'>None Redeemed</Button>
                     {/* {accountAddr != null 
                         ? <Button variant='outlined'>Connected</Button>
                         : <Button variant='outlined' onClick={connectWallet}>Connect Wallet</Button>
                     } */}
-                    <Button variant='outlined' onClick={showModal}>Connect Wallet</Button>
+                    <Button onClick={showModal} >Connect Wallet</Button>
                 </nav>
             </Toolbar>
         </AppBar >
