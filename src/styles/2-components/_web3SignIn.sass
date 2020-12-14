@@ -1,3 +1,5 @@
+@use '../1-basics/variables'
+    
 .web3-signIn
     margin-top: 60px
     .MuiCard-root
@@ -14,23 +16,21 @@
                 font-size: 24px
                 font-style: bold
                 font-weight: 400
-        //this is to override buttons to connect wallets inside card content//
-        .wallet-connectors
-            margin-top: 35px
-            button
-                margin-top: 10px
-                width: 80%
-                height: 50px
-                background-color: #ff6400
-                color: white
-                opacity: 60%
-                font-size: 17px
-                font-weight: 300
-                &:hover
-                    opacity: 80%
-                    
-
-
+        
+        
+//this is to override buttons to connect wallets inside card content//        
+.wallet-connectors
+    margin-top: 35px
+    text-align: center//to center all buttons in card//
+    button
+        margin-top: 10px !important
+        width: 80%
+        height: 50px       
+        font-size: 17px
+        font-weight: 350
+        opacity: 0.8
+        &:hover
+            opacity: 1
 
 //media queries--------------------------------------------------------------//
 

@@ -336,21 +336,21 @@ footer span .MuiButtonBase-root .MuiTouchRipple-root {
   font-style: bold;
   font-weight: 400;
 }
-.web3-signIn .MuiCard-root .wallet-connectors {
+
+.wallet-connectors {
   margin-top: 35px;
+  text-align: center;
 }
-.web3-signIn .MuiCard-root .wallet-connectors button {
-  margin-top: 10px;
+.wallet-connectors button {
+  margin-top: 10px !important;
   width: 80%;
   height: 50px;
-  background-color: #ff6400;
-  color: white;
-  opacity: 60%;
   font-size: 17px;
-  font-weight: 300;
+  font-weight: 350;
+  opacity: 0.8;
 }
-.web3-signIn .MuiCard-root .wallet-connectors button:hover {
-  opacity: 80%;
+.wallet-connectors button:hover {
+  opacity: 1;
 }
 
 @media screen and (max-width: 600px) {

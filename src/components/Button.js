@@ -12,7 +12,7 @@ const SIZES = [
 ]
 
 //@DEV: this is the functional component that renders button
-export const Button = ({label, onClick, variant, size}) => {
+export const Button = ({label, children, onClick, variant, size}) => {
 
     const checkButtonVariant = VARIANTS.includes(variant) ? variant : VARIANTS[0]
 
@@ -23,7 +23,7 @@ export const Button = ({label, onClick, variant, size}) => {
             onClick={onClick} 
             className={`btn ${checkButtonVariant} ${checkButtonSize}`}
         >
-            {label}
+            {label? label : children}
         </button>
     )
 }
