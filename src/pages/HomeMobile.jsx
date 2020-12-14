@@ -22,7 +22,7 @@ const HomeMobile = (props) => {
         slidesToScroll: 1,
         centerMode: true,
         initialSlide: 1,
-        centerPadding: '60px'
+        centerPadding: '45px'
     }
     return(
         <div className='home-page-mobile'>
@@ -53,6 +53,9 @@ const HomeMobile = (props) => {
                 </section>
                 {/* Ducth auction card */}
                 <section>
+                    {/* this div is masking layer */}
+                    <div className='dutch-auction-mask'></div>
+                    <p className='auction-mask-text'>Auction Closed</p>
                     <SaleCard 
                         title='Auction'
                         image={process.env.PUBLIC_URL + 'assets/cover-art.jpg'}

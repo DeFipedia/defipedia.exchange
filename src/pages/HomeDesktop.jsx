@@ -53,13 +53,11 @@ const HomeDesktop = (props) => {
                         <Button label='Redeem (coming soon)' variant='default'/>
                     </section>
                 </Grid>
-                {/*@DEV: The auction-card element is used as masking layer*/}
-                <div className='auction-card-mask'>
-                </div>
-                <p className='auction-mask-text'>Auction Closed</p>
-                {/* This blob until here from last comment is used as masking layer for Auction card(old dutch aution card) */}
                 <Grid item>
                     <section>
+                        {/* this div is masking layer */}
+                        <div className='auction-card-mask' />
+                        <p className='auction-mask-text'>Auction Closed</p>
                         <SaleCard 
                             title='Auction'
                             image={process.env.PUBLIC_URL + 'assets/cover-art.jpg'}
