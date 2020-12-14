@@ -405,6 +405,11 @@ footer span .MuiButtonBase-root .MuiTouchRipple-root {
   margin-top: 0px;
 }
 
+.sale-carousel section .btn {
+  width: 274px;
+  height: 40px;
+}
+
 .slick-square-dots button {
   margin-top: 12px !important;
   height: 8px !important;
