@@ -7,7 +7,7 @@ import {web3Enabled} from './functions/web3Enabled'
 import { useWallet, UseWalletProvider } from 'use-wallet'
 import Home from './pages/Home'
 import {getUniswapPoolData} from './functions/getUniswapPoolData'
-import {getSaleData} from './functions/getSaleData'
+import {getSalePrice} from './functions/getSalePrice'
 
 function App () {  
   
@@ -25,7 +25,7 @@ function App () {
     if(web3Enabled) {
       // let currentTokenData = await connectAuction()
       // setTokenData(currentTokenData)
-      let saleData = await getSaleData()
+      let saleData = await getSalePrice()
       let uniswapPoolData = await getUniswapPoolData()
       setuniswapPoolData(uniswapPoolData)
     }else{
