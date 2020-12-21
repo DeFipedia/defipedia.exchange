@@ -84,12 +84,12 @@ const HomeMobile = (props) => {
                         <Button variant='outlined' size='medium'>Subscribe</Button>
                     </section>
                     <section className='social-media-handle'>
-                        <i class="fab fa-discord"></i>
-                        <i class="fab fa-twitter-square"></i>
-                        <i class="fab fa-linkedin"></i>
-                        <i class="fab fa-github-square"></i>
-                        <i class="fab fa-telegram"></i>
-                        <i class="fab fa-medium"></i>
+                        <i className="fab fa-discord"></i>
+                        <i className="fab fa-twitter-square"></i>
+                        <i className="fab fa-linkedin"></i>
+                        <i className="fab fa-github-square"></i>
+                        <i className="fab fa-telegram"></i>
+                        <i className="fab fa-medium"></i>
                     </section>
                 </div>
             </SwipeableBottomSheet>
