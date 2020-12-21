@@ -4,6 +4,7 @@ import SaleCard from '../components/SaleCard'
 import {Button} from '../components/Button'
 import {Footer} from '../components/Footer'
 import {convertWeiToETH} from '../functions/convertWeiToETH'
+import BuyModal from '../components/BuyModal'
 
 const HomeDesktop = (props) => {
 
@@ -49,7 +50,7 @@ const HomeDesktop = (props) => {
                             totalTokens='950'
                             learnMoreTag='Buy direct!'
                         />
-                        <Button label='Buy' variant='secondary'/>
+                        <Button label='Buy' variant='secondary' onClick={showBuyModal}/>
                         <Button label='Redeem (coming soon)' variant='default'/>
                     </section>
                 </Grid>
@@ -68,6 +69,12 @@ const HomeDesktop = (props) => {
                 </Grid>
             </Grid>    
             <Footer />
+            <BuyModal 
+            open={triggerBuyModal} 
+            close={closeBuyModal} 
+            // tokenDataETH={tokenDataETH} 
+            // tokenData={tokenData}
+            />
         </div>
     )
 }

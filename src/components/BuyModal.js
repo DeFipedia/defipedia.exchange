@@ -1,14 +1,15 @@
 import React, {useState} from 'react';
-import {Modal, Card, CardContent, Typography, Button, IconButton, useTheme} from '@material-ui/core'
+import {Modal, Card, CardContent, Typography, IconButton, useTheme} from '@material-ui/core'
 import {commitEth} from '../functions/commitEth'
 import {convertETHToWei} from '../functions/convertETHToWei'
 import CloseIcon from '@material-ui/icons/Close';
+import {Button} from './Button' 
 
 const BuyModal = (props) => {
 
     let theme = useTheme()
 
-    const {open, close, tokenDataETH, tokenData, accountAddr, connectWallet} = props
+    const {open, close, accountAddr, connectWallet} = props
 
     const [inputValue, setInputValue] = useState(0)
 
@@ -23,7 +24,7 @@ const BuyModal = (props) => {
     }
 
     const validateInput = () => {
-        let maxValue = (tokenDataETH.tokenPrice * tokenDataETH.tokensRemaining)
+        let maxValue = 15//(tokenDataETH.tokenPrice * tokenDataETH.tokensRemaining)
         if(inputValue > maxValue) {
             alert('You can not select more than 5')
             return false
@@ -73,16 +74,14 @@ const BuyModal = (props) => {
                                 <CloseIcon style={{fill: '#FF6400'}} />
                             </IconButton>
                         </span>
-                        <img alt='$BOOK cover art' src={process.env.PUBLIC_URL +  'assets/cover-art.jpg'}/>
+                        <img alt='$BOOK cover art' src={process.env.PUBLIC_URL +  'assets/books-presale.png'}/>
                         <section className='data-indicator'>
-                            <div className='token-data'>
-                                <p>{tokenDataETH.tokenPrice} ETH / each</p>
-                                <p>{tokenDataETH.tokensRemaining}/950 available</p>
+                            <div className='token-data'>            
+                                <h4>$ 200 USD</h4> {/* This is dummy value*/}
                             </div>
                             <div className='value-input'> 
                                 <input
                                     value={inputValue}
-                                    placeholder='Enter amount (ETH)'
                                     variant='outlined' 
                                     onChange={handleValueInputChange}
                                 />             
@@ -91,10 +90,11 @@ const BuyModal = (props) => {
                     </CardContent>
                 </Card>
                 <div className='actions'>
-                {accountAddr != null 
+                    <Button label='Buy' variant='primary' />
+                {/* {accountAddr != null 
                     ? <Button className='buy-button' onClick={() => buyToken()}>Buy Now</Button>
                     : <Button className='buy-button'onClick={() => connectWallet()}>Connect Wallet</Button>
-                }
+                } */}
                 </div>
             </div>
         </Modal>
