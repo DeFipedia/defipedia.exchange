@@ -5,12 +5,12 @@ import withSizes from 'react-sizes'
 
 // @DEV: This components just deices which component to render bassed on device's viewport//
 //Not implemented in App.js to avoid clutter and to keep it clean and modular//
-const Home = ({isMobile, uniswapData}) => {
+const Home = ({isMobile, uniswapData, saleData}) => {
     return (
         <React.Fragment>
             {isMobile 
-                ? <HomeMobile uniswapData={uniswapData}/> 
-                : <HomeDesktop uniswapData={uniswapData}/>
+                ? <HomeMobile uniswapData={uniswapData} saleData={saleData} /> 
+                : <HomeDesktop uniswapData={uniswapData} saleData={saleData} />
             }
         </React.Fragment>
     )

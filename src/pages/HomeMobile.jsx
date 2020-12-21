@@ -13,11 +13,11 @@ const SimpleForm = () => <MailchimpSubscribe url={process.env.REACT_APP_MAILCHIM
 
 const HomeMobile = (props) => {
 
-    const {uniswapData} = props
+    const {uniswapData, saleData} = props
 
     const carouselSettings = {
         dots: true,
-        dotsClass: "slick-dots slick-square-dots", //this is to customize the dots//
+        dotsClass: 'slick-dots slick-square-dots', //this is to customize the dots//
         fade: false,
         infinite: false,
         speed: 500,
@@ -46,7 +46,7 @@ const HomeMobile = (props) => {
                     <SaleCard 
                         title='Pre-sale'
                         image={process.env.PUBLIC_URL + 'assets/books-presale.png'}
-                        price='200'
+                        price={saleData.price}
                         totalTokens='950'
                         learnMoreTag='Buy direct!'
                     />

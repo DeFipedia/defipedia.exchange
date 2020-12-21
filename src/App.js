@@ -15,7 +15,11 @@ function App () {
   const [uniswapPoolData, setuniswapPoolData] = useState({
     rate: 0
   })
-  // const [accountAddr, setAccountAddr] = useState(null)
+
+  const [saleData, setSaleData] = useState({
+    price: 0
+  })
+
 
   useEffect(() => {
     fetchData()
@@ -23,9 +27,8 @@ function App () {
 
   const fetchData = async () => {
     if(web3Enabled) {
-      // let currentTokenData = await connectAuction()
-      // setTokenData(currentTokenData)
-      let saleData = await getSalePrice()
+      let currentSalePrice = await getSalePrice()
+      setSaleData({price: currentSalePrice})
       let uniswapPoolData = await getUniswapPoolData()
       setuniswapPoolData(uniswapPoolData)
     }else{
@@ -44,6 +47,7 @@ function App () {
           <Route exact path='/'>
             <Home 
               uniswapData={uniswapPoolData}
+              saleData={saleData}
             />
           </Route>
           <Route path='/details'>

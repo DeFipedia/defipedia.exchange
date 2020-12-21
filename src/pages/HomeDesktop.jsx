@@ -8,7 +8,7 @@ import BuyModal from '../components/BuyModal'
 
 const HomeDesktop = (props) => {
 
-    const {uniswapData} = props
+    const {uniswapData, saleData} = props
 
     // for handling buy modal trigger //
     const [triggerBuyModal, setTriggerBuyModal] = useState(false)
@@ -45,7 +45,7 @@ const HomeDesktop = (props) => {
                         <SaleCard 
                             title='Pre-sale'
                             image={process.env.PUBLIC_URL + 'assets/books-presale.png'}
-                            price='200'
+                            price={saleData.price}
                             totalTokens='950'
                             learnMoreTag='Buy direct!'
                         />
