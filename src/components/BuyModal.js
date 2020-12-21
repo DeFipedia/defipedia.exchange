@@ -4,6 +4,7 @@ import {commitEth} from '../functions/commitEth'
 import {convertETHToWei} from '../functions/convertETHToWei'
 import CloseIcon from '@material-ui/icons/Close';
 import {Button} from './Button' 
+import {buyTokensFromSale} from '../functions/buyTokensFromSale'
 
 const BuyModal = (props) => {
 
@@ -13,14 +14,15 @@ const BuyModal = (props) => {
 
     const [inputValue, setInputValue] = useState(0)
 
-    const buyToken = async () => {
-        let inputValidation = await validateInput()
-        if(inputValidation === true){
-            const payableValue = await convertETHToWei(inputValue)
-            commitEth(payableValue)
-        }else{
-            alert('Please enter a valid number')
-        }
+    const buyTokens = async () => {
+        // let inputValidation = await validateInput()
+        // if(inputValidation === true){
+        //     const payableValue = await convertETHToWei(inputValue)
+        //     commitEth(payableValue)
+        // }else{
+        //     alert('Please enter a valid number')
+        // }
+        await buyTokensFromSale()
     }
 
     const validateInput = () => {
@@ -90,7 +92,7 @@ const BuyModal = (props) => {
                     </CardContent>
                 </Card>
                 <div className='actions'>
-                    <Button label='Buy' variant='primary' />
+                    <Button label='Buy' variant='primary' onClick={buyTokens}/>
                 {/* {accountAddr != null 
                     ? <Button className='buy-button' onClick={() => buyToken()}>Buy Now</Button>
                     : <Button className='buy-button'onClick={() => connectWallet()}>Connect Wallet</Button>

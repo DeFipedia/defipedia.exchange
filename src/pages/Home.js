@@ -10,7 +10,7 @@ const Home = ({isMobile, uniswapData, saleData}) => {
         <React.Fragment>
             {isMobile 
                 ? <HomeMobile uniswapData={uniswapData} saleData={saleData} /> 
-                : <HomeDesktop uniswapData={uniswapData} saleData={saleData} />
+                : <HomeDesktop uniswapData={uniswapData} saleData={saleData}  />
             }
         </React.Fragment>
     )

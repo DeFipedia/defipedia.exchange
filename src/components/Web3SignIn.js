@@ -9,8 +9,6 @@ const Web3SignIn = (props) => {
 
     const {open, close, wallet} = props
 
-    console.log('wallet', wallet)
-
     return(
         <>
         <Modal
