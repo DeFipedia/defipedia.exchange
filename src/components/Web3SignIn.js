@@ -7,9 +7,9 @@ import {Button} from './Button'
 
 const Web3SignIn = (props) => {
 
-    const {open, close} = props
+    const {open, close, wallet} = props
 
-    const wallet = useWallet()
+    console.log('wallet', wallet)
 
     return(
         <>

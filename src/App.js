@@ -19,6 +19,8 @@ function App () {
   const [saleData, setSaleData] = useState({
     price: 0
   })
+  //this variable is to handle wallet connection (by usinng aragon's use-wallet), and pass onto other components when required//
+  const wallet = useWallet()
 
 
   useEffect(() => {
@@ -42,6 +44,7 @@ function App () {
         <Navbar 
           brandTitle={process.env.PUBLIC_URL + 'assets/brand-title.svg'}
           brandLogo={process.env.PUBLIC_URL + 'defipedia_logo.png'}
+          wallet={wallet}
         />
         <Switch>
           <Route exact path='/'>
@@ -63,7 +66,7 @@ function App () {
 
 export default () => (
   <UseWalletProvider
-        chainId={1}
+        chainId={42} //chain Id should '1' for mainnet, 42 is for kovan testnet//
         connectors={{
         // This is how connectors get configured
             portis: { 
