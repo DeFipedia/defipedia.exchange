@@ -9,7 +9,6 @@ import BuyModal from '../components/BuyModal'
 const HomeDesktop = (props) => {
 
     const {uniswapData} = props
-    console.log(uniswapData)
 
     // for handling buy modal trigger //
     const [triggerBuyModal, setTriggerBuyModal] = useState(false)
