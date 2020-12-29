@@ -13,8 +13,6 @@ const BuyModal = (props) => {
 
     const {open, close, accountAddr, connectWallet} = props
 
-    const [inputValue, setInputValue] = useState(0)
-
     const buyTokens = async () => {
         // let inputValidation = await validateInput()
         // if(inputValidation === true){
@@ -26,40 +24,40 @@ const BuyModal = (props) => {
         await buyTokensFromSale()
     }
 
-    const validateInput = () => {
-        let maxValue = 15//(tokenDataETH.tokenPrice * tokenDataETH.tokensRemaining)
-        if(inputValue > maxValue) {
-            alert('You can not select more than 5')
-            return false
+    // const validateInput = () => {
+    //     let maxValue = 15//(tokenDataETH.tokenPrice * tokenDataETH.tokensRemaining)
+    //     if(inputValue > maxValue) {
+    //         alert('You can not select more than 5')
+    //         return false
             
-        }else if (inputValue < 0.01) {
-            alert('Sorry, you can not buy less than 0.01')
-            return false
-        }else if (onlyContainsDigits(inputValue) === false) {
-            alert('Please insert a valid number')
-            return false
-        }
-        return true
-    }
+    //     }else if (inputValue < 0.01) {
+    //         alert('Sorry, you can not buy less than 0.01')
+    //         return false
+    //     }else if (onlyContainsDigits(inputValue) === false) {
+    //         alert('Please insert a valid number')
+    //         return false
+    //     }
+    //     return true
+    // }
 
-    const onlyContainsDigits = (str) => {
-        if((/\d/.test(str)) === true){
-            console.log(true)
-            return true
-        }else{
-            console.log(false)
-            return false
-        }
-    }
+    // const onlyContainsDigits = (str) => {
+    //     if((/\d/.test(str)) === true){
+    //         console.log(true)
+    //         return true
+    //     }else{
+    //         console.log(false)
+    //         return false
+    //     }
+    // }
 
-    const handleValueInputChange =  (e) => {
-        let value = e.target.value
-        if(onlyContainsDigits(value) === false){
-             alert('Please insert a valid number')
-        }else {
-            setInputValue(value)
-        }
-    }
+    // const handleValueInputChange =  (e) => {
+    //     let value = e.target.value
+    //     if(onlyContainsDigits(value) === false){
+    //          alert('Please insert a valid number')
+    //     }else {
+    //         setInputValue(value)
+    //     }
+    // }
 
     return(
         <Modal
@@ -83,13 +81,6 @@ const BuyModal = (props) => {
                                 <h4>$ 200 USD</h4> {/* This is dummy value*/}
                             </div>
                             <ValueInput />
-                            {/* <div className='value-input'> 
-                                <input
-                                    value={inputValue}
-                                    variant='outlined' 
-                                    onChange={handleValueInputChange}
-                                />             
-                            </div> */}
                         </section>
                     </CardContent>
                 </Card>
