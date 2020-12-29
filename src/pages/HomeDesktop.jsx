@@ -36,7 +36,7 @@ const HomeDesktop = (props) => {
                             learnMoreTag='Swap here!'
                         />
                         <Button label='Buy' variant='primary' />
-                        <Button label='Sell on Uniswap' variant='default'/>
+                        <Button label='Sell on Uniswap' variant='disabled'/>
                     </section>
                 </Grid>
                 <Grid item>
@@ -50,7 +50,7 @@ const HomeDesktop = (props) => {
                             learnMoreTag='Buy direct!'
                         />
                         <Button label='Buy' variant='secondary' onClick={showBuyModal}/>
-                        <Button label='Redeem (coming soon)' variant='default'/>
+                        <Button label='Redeem (coming soon)' variant='disabled'/>
                     </section>
                 </Grid>
                 <Grid item>

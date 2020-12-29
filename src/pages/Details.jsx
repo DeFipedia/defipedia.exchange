@@ -63,19 +63,17 @@ const Details = (props) => {
                     <Button label='Buy on Uniswap' variant='primary'/>
                 </a>
                  <span className='coming-soon-actions'>
-                    <Button label='Sell on Uniswap' variant='default' size='small'/>
-                    <Button label='Redeem' variant='default' size='small'/>
+                    <Button label='Sell on Uniswap' variant='disabled' size='small'/>
+                    <Button label='Redeem' variant='disabled' size='small'/>
                 </span>
-                <Button label='Buy on Sale' variant='primary'/>
-                <span className='coming-soon-actions'>
-                </span>
+                <Button label='Buy on Sale' variant='primary' onClick={showBuyModal} />
             </div>
-            {/* <BuyModal 
+            <BuyModal 
                 open={triggerBuyModal} 
                 close={closeBuyModal} 
-                tokenDataETH={tokenDataETH} 
-                tokenData={tokenData}
-            /> */}
+                // tokenDataETH={tokenDataETH} 
+                // tokenData={tokenData}
+            />
         </div>
     )
 }
