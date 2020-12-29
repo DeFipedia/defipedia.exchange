@@ -93,6 +93,15 @@ a {
   letter-spacing: 1px;
 }
 
+.small {
+  width: 165px;
+  height: 40px;
+  font-size: 12px;
+  line-height: 14px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
 .card-panel {
   display: grid;
   grid-template-columns: 1fr;
@@ -536,6 +545,61 @@ footer span ::placeholder {
   align-items: center;
 }
 
+.details-page {
+  margin-top: 75px;
+}
+
+.details-card {
+  width: 334px;
+  height: 470px;
+  background: linear-gradient(to bottom right, #343434, #151515);
+  border-radius: 10px !important;
+  margin: auto;
+}
+.details-card .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+.details-card .header h4 {
+  color: white;
+}
+
+.details-page .actions {
+  width: 334px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.details-page .actions .coming-soon-actions {
+  display: flex;
+}
+
+.detail-card-data div {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+.detail-card-data div p {
+  color: white;
+  font-size: 10pt;
+}
+
+.detail-card-description {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+.detail-card-description p {
+  color: white;
+  margin-top: 10%;
+}
+.detail-card-description a {
+  color: #FF6400;
+  font-weight: bold;
+}
+
 .dynamic-pricing-modal {
   height: 85vh;
   width: 30vw;
@@ -589,78 +653,6 @@ footer span ::placeholder {
     width: 85vw;
     height: 90vh;
     margin-top: 5vh;
-  }
-}
-.details-page {
-  margin-top: 12vh;
-}
-.details-page .actions > button:nth-of-type(2) {
-  margin-top: 2%;
-}
-
-.detail-card {
-  width: 374px;
-  height: 470px;
-  background: linear-gradient(to bottom right, #343434, #151515);
-  border-radius: 10px !important;
-  margin: auto;
-}
-.detail-card .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-left: 5%;
-  margin-right: 5%;
-}
-.detail-card .header h4 {
-  color: white;
-}
-.detail-card .detail-card-section div {
-  display: flex;
-  justify-content: space-between;
-  margin-left: 5%;
-  margin-right: 5%;
-}
-.detail-card .detail-card-section div p {
-  color: white;
-  font-size: 10pt;
-}
-.detail-card .detail-card-description {
-  margin-left: 5%;
-  margin-right: 5%;
-}
-.detail-card .detail-card-description p {
-  color: white;
-  margin-top: 10%;
-}
-.detail-card .detail-card-description a {
-  color: #FF6400;
-  font-weight: bold;
-}
-
-@media screen and (min-width: 700px) and (max-width: 900px) {
-  .detail-card {
-    width: 70vw;
-    height: 45vh;
-  }
-
-  .detail-card-description {
-    margin-top: 20%;
-  }
-}
-@media screen and (min-width: 400px) and (max-width: 699px) {
-  .detail-card-description {
-    margin-top: 25%;
-  }
-}
-@media screen and (max-width: 399px) {
-  .detail-card {
-    width: 90vw;
-    height: 450px;
-  }
-
-  .detail-card-description {
-    margin-top: 25%;
   }
 }
 

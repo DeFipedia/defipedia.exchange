@@ -11,7 +11,7 @@ export const web3Enabled = async () => {
 
     // old approach//
     // the mordern way, not injected web3
-    var web3 = window.web3
+    let web3 = window.web3
     if(window.ethereum) {
         
         web3 = await new Web3(web3.currentProvider)
