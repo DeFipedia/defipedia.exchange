@@ -5,6 +5,7 @@ import {convertETHToWei} from '../functions/convertETHToWei'
 import CloseIcon from '@material-ui/icons/Close';
 import {Button} from './Button' 
 import {buyTokensFromSale} from '../functions/buyTokensFromSale'
+import ValueInput from './ValueInput';
 
 const BuyModal = (props) => {
 
@@ -81,13 +82,14 @@ const BuyModal = (props) => {
                             <div className='token-data'>            
                                 <h4>$ 200 USD</h4> {/* This is dummy value*/}
                             </div>
-                            <div className='value-input'> 
+                            <ValueInput />
+                            {/* <div className='value-input'> 
                                 <input
                                     value={inputValue}
                                     variant='outlined' 
                                     onChange={handleValueInputChange}
                                 />             
-                            </div>
+                            </div> */}
                         </section>
                     </CardContent>
                 </Card>
