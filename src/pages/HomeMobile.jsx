@@ -39,7 +39,7 @@ const HomeMobile = (props) => {
                         learnMoreTag='Swap here!'
                     />
                     <Button label='Buy' variant='primary'/>
-                    <Button label='Sell on Uniswap' variant='default' />
+                    <Button label='Sell on Uniswap' variant='disabled' />
                 </section>
                 {/* Sale Card */}
                 <section>
@@ -51,7 +51,7 @@ const HomeMobile = (props) => {
                         learnMoreTag='Buy direct!'
                     />
                     <Button label='Buy' variant='secondary' />
-                    <Button label='Redeem (coming soon)' variant='default' />
+                    <Button label='Redeem (coming soon)' variant='disabled' />
                 </section>
                 {/* Ducth auction card */}
                 <section>
