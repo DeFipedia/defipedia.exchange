@@ -1,27 +1,12 @@
-import React, {useState} from 'react'
-import {useTheme, Card, CardContent} from '@material-ui/core'
-import CardModal from './CardModal'
+import React from 'react'
+import {Card, CardContent} from '@material-ui/core'
 
 const SaleCard = (props) => {
     //props for card data//
     let {title, image, price, totalTokens, learnMoreTag} = props
-    //for theme//
-    const theme = useTheme()
-    //for state //
-    const [modalOpen, setModalOpen] = useState(false)
-    //methods for pricing mechanism modal //
-    const showDynamicPricingStatModal = () => {
-        setModalOpen(true)
-    }
-
-    const closeDynamicPricingModal = () => {
-        setModalOpen(false)
-    }
 
     return(
         <React.Fragment>
-            {/* @DEV: this renders the modal when 'learn more' is clicked */}
-            <CardModal open={modalOpen} handleClose={closeDynamicPricingModal} />
             {/* @DEV: this actually renders the card */}
             <div className='card-panel'>
                 <Card className='sale-card'>

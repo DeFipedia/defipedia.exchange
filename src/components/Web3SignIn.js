@@ -1,7 +1,5 @@
 import React from 'react'
 import {Modal, Card, IconButton, CardContent} from '@material-ui/core'
-import { useWallet, UseWalletProvider } from 'use-wallet'
-import Web3 from "web3";
 import CloseIcon from '@material-ui/icons/Close';
 import {Button} from './Button'
 

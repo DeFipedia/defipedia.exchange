@@ -51,8 +51,6 @@ a {
 .btn {
   border-radius: 4px;
   margin-top: 10px;
-  margin-left: auto;
-  margin-right: auto;
   display: block;
   font-family: Helvetica;
   font-style: normal;
@@ -280,26 +278,9 @@ footer span ::placeholder {
   letter-spacing: 0.625px;
   color: #343434;
 }
-
-.mailChimp-subscribe-form button {
+footer span button {
   margin-left: 10px;
-  height: 38px;
-  width: 126px;
-  font-size: 16px;
-  line-height: 18px;
-  font-weight: bold;
-  letter-spacing: 1px;
-  background-color: Transparent;
-  border: 0.5px solid #FFFFFF;
-  color: white;
-  font-size: 12px;
-  line-height: 14px;
-  border-radius: 4px;
-  font-style: normal;
-  font-weight: normal;
-}
-.mailChimp-subscribe-form div div {
-  display: none;
+  margin-top: 0px !important;
 }
 
 .fab {
@@ -474,6 +455,10 @@ footer span ::placeholder {
   line-height: 14px;
   letter-spacing: 1px;
 }
+.home-page-mobile button {
+  margin-left: auto;
+  margin-right: auto;
+}
 
 .dutch-auction-mask {
   position: absolute;
@@ -592,6 +577,7 @@ footer span ::placeholder {
 }
 .details-page .actions .coming-soon-actions {
   display: flex;
+  justify-content: space-between;
 }
 
 .detail-card-data div {

@@ -1,9 +1,8 @@
 import React, {useState} from 'react'
-import {useTheme, Grid} from '@material-ui/core'
+import {Grid} from '@material-ui/core'
 import SaleCard from '../components/SaleCard'
 import {Button} from '../components/Button'
 import {Footer} from '../components/Footer'
-import {convertWeiToETH} from '../functions/convertWeiToETH'
 import BuyModal from '../components/BuyModal'
 
 const HomeDesktop = (props) => {
@@ -50,7 +49,7 @@ const HomeDesktop = (props) => {
                             learnMoreTag='Buy direct!'
                         />
                         <Button label='Buy' variant='secondary' onClick={showBuyModal}/>
-                        <Button label='Redeem (coming soon)' variant='disabled'/>
+                        <Button label='Redeem (coming soon)' variant='disabled' className='subscribe-btn-desktop' />
                     </section>
                 </Grid>
                 <Grid item>

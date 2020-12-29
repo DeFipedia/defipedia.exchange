@@ -1,7 +1,5 @@
-import React, {useState} from 'react';
-import {Modal, Card, CardContent, Typography, IconButton, useTheme} from '@material-ui/core'
-import {commitEth} from '../functions/commitEth'
-import {convertETHToWei} from '../functions/convertETHToWei'
+import React from 'react';
+import {Modal, Card, CardContent, Typography, IconButton} from '@material-ui/core'
 import CloseIcon from '@material-ui/icons/Close';
 import {Button} from './Button' 
 import {buyTokensFromSale} from '../functions/buyTokensFromSale'
@@ -9,9 +7,7 @@ import ValueInput from './ValueInput';
 
 const BuyModal = (props) => {
 
-    let theme = useTheme()
-
-    const {open, close, accountAddr, connectWallet} = props
+    const {open, close} = props
 
     const buyTokens = async () => {
         // let inputValidation = await validateInput()

@@ -1,5 +1,4 @@
 import React, {useState} from 'react'
-import { useTheme, Tooltip } from '@material-ui/core'
 import CloseIcon from '@material-ui/icons/Close';
 import {Link } from 'react-router-dom'
 import BuyModal from '../components/BuyModal'
@@ -10,10 +9,7 @@ const Details = (props) => {
     // const [open, setOpen] = useState(false)
     // const [modalOpen, setModalOpen] = useState(false)
     const [triggerBuyModal, setTriggerBuyModal] = useState(false)
-    // for theme//
-    let theme = useTheme()
     // token data eth is to use calue of token in ETH as smart contracts return value in Wei and to avoid mutating actual response from smart contracts//
-    const tokenDataETH ={}
     //methods//
     const showBuyModal = () => {
         setTriggerBuyModal(true)
@@ -71,8 +67,6 @@ const Details = (props) => {
             <BuyModal 
                 open={triggerBuyModal} 
                 close={closeBuyModal} 
-                // tokenDataETH={tokenDataETH} 
-                // tokenData={tokenData}
             />
         </div>
     )

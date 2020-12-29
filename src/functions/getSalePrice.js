@@ -1,6 +1,5 @@
 import {web3Enabled} from './web3Enabled'
 import saleABI from '../data/saleABI.json'
-import {convertWeiToETH} from './convertWeiToETH'
 
 export const getSalePrice = async () => {
     const web3 = await web3Enabled()
@@ -13,7 +12,5 @@ export const getSalePrice = async () => {
     //this is logic to convert Openzeppelin's "rate" (calculated with TKBits) into price(WEI)
     let currentPrice = await ((1 * 1000000000000000000) / rate)
     console.log(currentPrice)
-    //this coverts token's price into ETH and String format
-    // let currentPriceInETH = convertWeiToETH(currentPrice.toString())
     return currentPrice
 }   
