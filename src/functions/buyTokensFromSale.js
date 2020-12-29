@@ -12,15 +12,15 @@ export const buyTokensFromSale =  async () => {
     let accounts = await ethereum.request({ method: 'eth_requestAccounts' })
     let selectedAccount = accounts[0].toString()
     const method = saleContract.methods.buyTokens(selectedAccount)
-    // const value = convertWeiToETH(amount) 
-    await sendTransaction(method, selectedAccount, '1');
+    //const value = convertWeiToETH(amount) 
+    await sendTransaction(method, selectedAccount, '0.5');
 }
 
 export const sendTransaction = async (method, from, value) => {
-    let web3 = await web3Enabled()
+    const web3 = await web3Enabled()
     return new Promise(async (resolve, reject) => {
         try {
-            const gasPriceInWei = await web3.eth.getGasPrice()
+            let gasPriceInWei = await web3.eth.getGasPrice()
 
             let valueInWei = 0;
 
