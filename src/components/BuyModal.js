@@ -10,50 +10,9 @@ const BuyModal = (props) => {
     const {open, close} = props
 
     const buyTokens = async () => {
-        // let inputValidation = await validateInput()
-        // if(inputValidation === true){
-        //     const payableValue = await convertETHToWei(inputValue)
-        //     commitEth(payableValue)
-        // }else{
-        //     alert('Please enter a valid number')
-        // }
-        await buyTokensFromSale()
+        let inputValue = document.querySelector('.value-input input').value //this will be replaced with refs//
+        await buyTokensFromSale(inputValue)
     }
-
-    // const validateInput = () => {
-    //     let maxValue = 15//(tokenDataETH.tokenPrice * tokenDataETH.tokensRemaining)
-    //     if(inputValue > maxValue) {
-    //         alert('You can not select more than 5')
-    //         return false
-            
-    //     }else if (inputValue < 0.01) {
-    //         alert('Sorry, you can not buy less than 0.01')
-    //         return false
-    //     }else if (onlyContainsDigits(inputValue) === false) {
-    //         alert('Please insert a valid number')
-    //         return false
-    //     }
-    //     return true
-    // }
-
-    // const onlyContainsDigits = (str) => {
-    //     if((/\d/.test(str)) === true){
-    //         console.log(true)
-    //         return true
-    //     }else{
-    //         console.log(false)
-    //         return false
-    //     }
-    // }
-
-    // const handleValueInputChange =  (e) => {
-    //     let value = e.target.value
-    //     if(onlyContainsDigits(value) === false){
-    //          alert('Please insert a valid number')
-    //     }else {
-    //         setInputValue(value)
-    //     }
-    // }
 
     return(
         <Modal

@@ -1,9 +1,10 @@
 import {web3Enabled} from './web3Enabled'
 import saleABI from '../data/saleABI.json'
+import {getSalePrice} from './getSalePrice'
 
 const saleContractAddress = process.env.REACT_APP_SALE_CONTRACT_ADDRESS
 
-export const buyTokensFromSale =  async () => {
+export const buyTokensFromSale =  async (tokenAmount) => {
     let web3 = await web3Enabled()
     const saleContract = new web3.eth.Contract(saleABI, saleContractAddress)
 
@@ -12,8 +13,11 @@ export const buyTokensFromSale =  async () => {
     let accounts = await ethereum.request({ method: 'eth_requestAccounts' })
     let selectedAccount = accounts[0].toString()
     const method = saleContract.methods.buyTokens(selectedAccount)
-    //const value = convertWeiToETH(amount) 
-    await sendTransaction(method, selectedAccount, '0.5');
+    const price = await getSalePrice()
+    const value = (price * tokenAmount).toString() 
+    console.log('value', value)
+    console.log(selectedAccount)
+    await sendTransaction(method, selectedAccount, value);
 }
 
 export const sendTransaction = async (method, from, value) => {

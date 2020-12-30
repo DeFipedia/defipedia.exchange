@@ -6,7 +6,7 @@ import {Button} from './Button'
 const Web3SignIn = (props) => {
 
     const {open, close, wallet} = props
-
+    
     return(
         <>
         <Modal
