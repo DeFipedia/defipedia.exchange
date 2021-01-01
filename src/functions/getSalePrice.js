@@ -1,5 +1,5 @@
-import {web3Enabled} from './web3Enabled'
 import saleABI from '../data/saleABI.json'
+import { web3Enabled } from './web3Enabled'
 
 export const getSalePrice = async () => {
     const web3 = await web3Enabled()
@@ -8,9 +8,7 @@ export const getSalePrice = async () => {
     const saleContract =  new web3.eth.Contract(saleABI, saleContractAddr)
     
     let rate = await saleContract.methods.rate().call() //price is in wei and needs to be converted to be accurate
-    console.log(rate)
     //this is logic to convert Openzeppelin's "rate" (calculated with TKBits) into price(WEI)
     let currentPrice = await ((1 * 1000000000000000000) / rate)
-    console.log(currentPrice)
     return currentPrice
 }   

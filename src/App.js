@@ -3,15 +3,13 @@ import {Route, Switch} from 'react-router-dom'
 import Navbar from './components/Navbar'
 import './styles/style.css'
 import Details from './pages/Details';
-import {web3Enabled} from './functions/web3Enabled'
 import { useWallet, UseWalletProvider } from 'use-wallet'
 import Home from './pages/Home'
 import {getUniswapPoolData} from './functions/getUniswapPoolData'
 import {getSalePrice} from './functions/getSalePrice'
 
 function App () {  
-  
-  // const [tokenData, setTokenData] = useState({})
+
   const [uniswapPoolData, setuniswapPoolData] = useState({
     rate: 0
   })
@@ -19,24 +17,21 @@ function App () {
   const [saleData, setSaleData] = useState({
     price: 0
   })
-  //this variable is to handle wallet connection (by usinng aragon's use-wallet), and pass onto other components when required//
+
+  // //this variable is to handle wallet connection (by usinng aragon's use-wallet), and pass onto other components when required//
   const wallet = useWallet()
 
 
-  useEffect(() => {
-    fetchData()
-  }, [])
-
   const fetchData = async () => {
-    if(web3Enabled) {
       let currentSalePrice = await getSalePrice()
       setSaleData({price: currentSalePrice})
       let uniswapPoolData = await getUniswapPoolData()
       setuniswapPoolData(uniswapPoolData)
-    }else{
-      alert('Please install a Ethereum-compatible browser or extension like MetaMask to use this dApp')
-    }
   }
+
+  useEffect(() => {
+    fetchData()
+  }, [])
 
   // -----------------------//
   return (
@@ -55,8 +50,6 @@ function App () {
           </Route>
           <Route path='/details'>
             <Details 
-              // tokenData={tokenData} 
-              // uniswapData={uniswapPoolData} 
             />
           </Route>
         </Switch>

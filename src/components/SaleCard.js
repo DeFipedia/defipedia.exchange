@@ -19,7 +19,7 @@ const SaleCard = (props) => {
                         <p>2020 DeFi Packs</p>  
                         <img alt='cover-art' src={image}/>  
                         <section className='card-data'>
-                            <h4>$ {price} USD</h4> 
+                            <h4>{price} ETH</h4> 
                             <span>
                                 <p>{totalTokens} available</p>
                                 <div className='dynamic-pricing-icon'> 

@@ -4,7 +4,7 @@ import Web3SignIn from './Web3SignIn'
 
 const Navbar = (props) => {
     //destructing props//
-    let {brandTitle, brandLogo, wallet} = props
+    let {brandTitle, brandLogo, wallet, changeProvider} = props
 
     // for state //
     const [open, setOpen] = useState(false)
@@ -39,6 +39,7 @@ const Navbar = (props) => {
             open={open}
             close={closeWeb3SignInModal}
             wallet={wallet}
+            changeProvider={changeProvider}
         />
         </div>
     )

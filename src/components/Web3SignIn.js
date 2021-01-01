@@ -4,9 +4,19 @@ import CloseIcon from '@material-ui/icons/Close';
 import {Button} from './Button'
 
 const Web3SignIn = (props) => {
-
+    //to do: create web instance here with coneected wallet provider//
+    //-------------------------------------------------------------//
     const {open, close, wallet} = props
-    
+
+    const connectWallet = async (connector) => {
+        //this is a trick for metamask as useWallet doesn't take an argument for metamask while it requires one for every other wallet//
+        if(connector === 'metamask') {
+            wallet.connect()
+        }else{
+            wallet.connect(connector)
+        }
+    }
+    console.log('provider', wallet.ethereum)
     return(
         <>
         <Modal
@@ -24,13 +34,16 @@ const Web3SignIn = (props) => {
                     </span>
                     {/* Buttons for all the wallets */}
                     <section className='wallet-connectors'>
-                        <Button variant='primary' onClick={() => wallet.connect()}>MetaMask</Button>
+                        <Button variant='primary' onClick={() => connectWallet('metamask')}>MetaMask</Button>
+                        <Button variant='primary' onClick={() => connectWallet('portis')}>Portis</Button>
+                        <Button variant='primary' onClick={() => connectWallet('fortmatic')}>Fortmatic</Button>
+                        {/* <Button variant='primary' onClick={() => wallet.connect()}>MetaMask</Button>
                         <Button variant='primary' onClick={() => wallet.connect('portis')}>Portis</Button>
                         <Button variant='primary' onClick={() => {wallet.connect('fortmatic')}}>Fortmatic</Button>
                         <Button variant='primary' onClick={() => {wallet.connect('walletconnect')}}>Wallet Connect</Button>
                         <Button variant='primary' onClick={() => {wallet.connect('authereum')}}>Authereum</Button>
                         <Button variant='primary' onClick={() => {wallet.connect('frame')}}>Frame</Button>
-                        <Button variant='primary' onClick={() => {wallet.connect('walletlink')}}>Wallet Link</Button>
+                        <Button variant='primary' onClick={() => {wallet.connect('walletlink')}}>Wallet Link</Button> */}
                     </section>
                 </CardContent>
            </Card>
