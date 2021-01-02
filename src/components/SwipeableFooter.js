@@ -1,15 +1,22 @@
-import React from 'react'
+import React, {useState} from 'react'
 import SwipeableBottomSheet from 'react-swipeable-bottom-sheet'
 import {Button} from '../components/Button'
 
 const SwipeableFooter = () => {
+
+    const [email, setEmail] = useState('')
+
+    const handleInputChange = (e) => {
+        let {value} = e.target
+        setEmail(value)
+    }
     return(
         <SwipeableBottomSheet overflowHeight={60}>
             <div className='swipeable-footer' style={{ height: '285px' }}>
                 <div className='nugget'></div>
                 <p>Don't miss out, keep pace with all the latest</p>
                 <section className='subscribe-section'>
-                    <input placeholder='Add an email address' />
+                    <input placeholder='Add an email address' value={email} onChange={(e) => handleInputChange(e)} />
                     <Button variant='outlined' size='medium'>Subscribe</Button>         
                 </section>
                 <section className='social-media-handle'>
