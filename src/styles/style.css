@@ -401,6 +401,48 @@ footer span button {
   border-radius: 0px 4px 4px 0px;
 }
 
+.swipeable-footer {
+  background: linear-gradient(269.5deg, #006FFF 0%, #FF6400 100%);
+  border: 0.5px solid #FFFFFF;
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.25);
+}
+.swipeable-footer .nugget {
+  width: 13px;
+  height: 3px;
+  background-color: white;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5px;
+}
+.swipeable-footer p {
+  color: white;
+  margin-top: 52px;
+  margin-left: 42px;
+  font-family: Helvetica;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 14px;
+  letter-spacing: 0.625px;
+}
+.swipeable-footer .subscribe-section {
+  text-align: center;
+}
+.swipeable-footer .subscribe-section input {
+  width: 360px;
+  height: 40px;
+}
+.swipeable-footer .subscribe-section button {
+  width: 360px;
+}
+.swipeable-footer .social-media-handle {
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 38px;
+  display: flex;
+  align-items: center;
+}
+
 .home-page {
   margin-top: 50px;
   position: relative;
@@ -509,45 +551,6 @@ footer span button {
 
 .slick-square-dots .slick-active button {
   background-color: #343434 !important;
-}
-
-.mobile-footer {
-  background: linear-gradient(269.5deg, #006FFF 0%, #FF6400 100%);
-  border: 0.5px solid #FFFFFF;
-  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.25);
-}
-.mobile-footer .nugget {
-  width: 13px;
-  height: 3px;
-  background-color: white;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 5px;
-}
-.mobile-footer p {
-  color: white;
-  margin-top: 52px;
-  margin-left: 42px;
-  font-family: Helvetica;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 14px;
-  letter-spacing: 0.625px;
-}
-.mobile-footer .subscribe-section {
-  text-align: center;
-}
-.mobile-footer .subscribe-section input {
-  width: 360px;
-  height: 40px;
-}
-.mobile-footer .social-media-handle {
-  margin-right: auto;
-  margin-left: auto;
-  margin-top: 38px;
-  display: flex;
-  align-items: center;
 }
 
 .details-page {

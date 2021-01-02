@@ -6,7 +6,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import Slider from 'react-slick'
 import SaleCard from '../components/SaleCard'
 import {Button} from '../components/Button'
-import SwipeableBottomSheet from 'react-swipeable-bottom-sheet'
+import SwipeableFooter from '../components/SwipeableFooter'
 import BuyModal from '../components/BuyModal'
 
 const HomeMobile = (props) => {
@@ -78,24 +78,7 @@ const HomeMobile = (props) => {
                 </section>
             </Slider>
             {/* Swipeable footer */}
-            <SwipeableBottomSheet overflowHeight={60}>
-                <div className='mobile-footer' style={{ height: '285px' }}>
-                    <div className='nugget'></div>
-                    <p>Don't miss out, keep pace with all the latest</p>
-                    <section className='subscribe-section'>
-                        <input placeholder='Add an email address' />
-                        <Button variant='outlined' size='medium'>Subscribe</Button>
-                    </section>
-                    <section className='social-media-handle'>
-                        <i className="fab fa-discord"></i>
-                        <i className="fab fa-twitter-square"></i>
-                        <i className="fab fa-linkedin"></i>
-                        <i className="fab fa-github-square"></i>
-                        <i className="fab fa-telegram"></i>
-                        <i className="fab fa-medium"></i>
-                    </section>
-                </div>
-            </SwipeableBottomSheet>
+            <SwipeableFooter />
             <BuyModal 
                 open={triggerBuyModal} 
                 close={closeBuyModal} 
