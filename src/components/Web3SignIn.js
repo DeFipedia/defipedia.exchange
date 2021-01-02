@@ -37,13 +37,10 @@ const Web3SignIn = (props) => {
                         <Button variant='primary' onClick={() => connectWallet('metamask')}>MetaMask</Button>
                         <Button variant='primary' onClick={() => connectWallet('portis')}>Portis</Button>
                         <Button variant='primary' onClick={() => connectWallet('fortmatic')}>Fortmatic</Button>
-                        {/* <Button variant='primary' onClick={() => wallet.connect()}>MetaMask</Button>
-                        <Button variant='primary' onClick={() => wallet.connect('portis')}>Portis</Button>
-                        <Button variant='primary' onClick={() => {wallet.connect('fortmatic')}}>Fortmatic</Button>
-                        <Button variant='primary' onClick={() => {wallet.connect('walletconnect')}}>Wallet Connect</Button>
-                        <Button variant='primary' onClick={() => {wallet.connect('authereum')}}>Authereum</Button>
-                        <Button variant='primary' onClick={() => {wallet.connect('frame')}}>Frame</Button>
-                        <Button variant='primary' onClick={() => {wallet.connect('walletlink')}}>Wallet Link</Button> */}
+                        <Button variant='primary' onClick={() => connectWallet('walletconnect')}>Wallet Connect</Button>
+                        <Button variant='primary' onClick={() => connectWallet('authereum')}>Authereum</Button>
+                        <Button variant='primary' onClick={() => connectWallet('frame')}>Frame</Button>
+                        <Button variant='primary' onClick={() => connectWallet('walletlink')}>Wallet Link</Button>
                     </section>
                 </CardContent>
            </Card>

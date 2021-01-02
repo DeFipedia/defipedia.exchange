@@ -13,9 +13,6 @@ export const buyTokensFromSale =  async (tokenAmount, wallet) => {
     web3.setProvider(walletProvider)
     const saleContract = new web3.eth.Contract(saleABI, saleContractAddress)
 
-    // this method will ask to connect wallet if not done before//
-    // let ethereum = window.ethereum
-    // let accounts = await ethereum.request({ method: 'eth_requestAccounts' })
     let selectedAccount = wallet.account
     console.log(selectedAccount)
     const method = saleContract.methods.buyTokens(selectedAccount)
