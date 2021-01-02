@@ -71,8 +71,6 @@ const HomeDesktop = (props) => {
             open={triggerBuyModal} 
             close={closeBuyModal} 
             wallet={wallet}
-            // tokenDataETH={tokenDataETH} 
-            // tokenData={tokenData}
             />
         </div>
     )

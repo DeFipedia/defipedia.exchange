@@ -20,7 +20,6 @@ function App () {
 
   // //this variable is to handle wallet connection (by usinng aragon's use-wallet), and pass onto other components when required//
   const wallet = useWallet()
-  console.log(wallet)
 
   const fetchData = async () => {
       let currentSalePrice = await getSalePrice()

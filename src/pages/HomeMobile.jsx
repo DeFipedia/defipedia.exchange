@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 // @DEV: these were import as we are using a react port of slick carousel and it doesn't come with CSS bundled//
 //So, we have also installd slick-carousel and imported css as mentioned in docs//
 import 'slick-carousel/slick/slick.css';
@@ -7,10 +7,11 @@ import Slider from 'react-slick'
 import SaleCard from '../components/SaleCard'
 import {Button} from '../components/Button'
 import SwipeableBottomSheet from 'react-swipeable-bottom-sheet'
+import BuyModal from '../components/BuyModal'
 
 const HomeMobile = (props) => {
 
-    const {uniswapData, saleData} = props
+    const {uniswapData, saleData, wallet} = props
 
     const carouselSettings = {
         dots: true,
@@ -23,6 +24,19 @@ const HomeMobile = (props) => {
         centerMode: true,
         initialSlide: 1,
     }
+
+    // for handling buy modal trigger //
+    const [triggerBuyModal, setTriggerBuyModal] = useState(false)
+
+    // methods //
+    const showBuyModal = () => {
+        setTriggerBuyModal(true)
+    }
+
+    const closeBuyModal = () => {
+        setTriggerBuyModal(false)
+    }
+
     return(
         <div className='home-page-mobile'>
             <Slider className='sale-carousel' {...carouselSettings}>
@@ -47,7 +61,7 @@ const HomeMobile = (props) => {
                         totalTokens='950'
                         learnMoreTag='Buy direct!'
                     />
-                    <Button label='Buy' variant='secondary' />
+                    <Button label='Buy' variant='secondary' onClick={showBuyModal}/>
                     <Button label='Redeem (coming soon)' variant='disabled' />
                 </section>
                 {/* Ducth auction card */}
@@ -82,6 +96,11 @@ const HomeMobile = (props) => {
                     </section>
                 </div>
             </SwipeableBottomSheet>
+            <BuyModal 
+                open={triggerBuyModal} 
+                close={closeBuyModal} 
+                wallet={wallet}
+            />
         </div>
 
     )
