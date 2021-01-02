@@ -4,19 +4,24 @@ import {getSalePrice} from './getSalePrice'
 
 const saleContractAddress = process.env.REACT_APP_SALE_CONTRACT_ADDRESS
 
-export const buyTokensFromSale =  async (tokenAmount) => {
+export const buyTokensFromSale =  async (tokenAmount, wallet) => {
+    //extracting provider from wallet object//
+    let walletProvider = await wallet.ethereum
+    console.log('provider from buyTokens',walletProvider)
+    //todo: try to create a new web3 instace here with wallet's provider//
     let web3 = await web3Enabled()
+    web3.setProvider(walletProvider)
     const saleContract = new web3.eth.Contract(saleABI, saleContractAddress)
 
     // this method will ask to connect wallet if not done before//
-    let ethereum = window.ethereum
-    let accounts = await ethereum.request({ method: 'eth_requestAccounts' })
-    let selectedAccount = accounts[0].toString()
+    // let ethereum = window.ethereum
+    // let accounts = await ethereum.request({ method: 'eth_requestAccounts' })
+    let selectedAccount = wallet.account
+    console.log(selectedAccount)
     const method = saleContract.methods.buyTokens(selectedAccount)
     const price = await getSalePrice()
     const value = (price * tokenAmount).toString() 
     console.log('value', value)
-    console.log(selectedAccount)
     await sendTransaction(method, selectedAccount, value);
 }
 

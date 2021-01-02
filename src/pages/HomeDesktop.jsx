@@ -7,7 +7,7 @@ import BuyModal from '../components/BuyModal'
 
 const HomeDesktop = (props) => {
 
-    const {uniswapData, saleData} = props
+    const {uniswapData, saleData, wallet} = props
 
     // for handling buy modal trigger //
     const [triggerBuyModal, setTriggerBuyModal] = useState(false)
@@ -70,6 +70,7 @@ const HomeDesktop = (props) => {
             <BuyModal 
             open={triggerBuyModal} 
             close={closeBuyModal} 
+            wallet={wallet}
             // tokenDataETH={tokenDataETH} 
             // tokenData={tokenData}
             />

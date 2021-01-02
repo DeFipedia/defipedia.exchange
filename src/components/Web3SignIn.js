@@ -4,9 +4,9 @@ import CloseIcon from '@material-ui/icons/Close';
 import {Button} from './Button'
 
 const Web3SignIn = (props) => {
-    //to do: create web instance here with coneected wallet provider//
+    //to do: create web instance here with conected wallet provider//
     //-------------------------------------------------------------//
-    const {open, close, wallet} = props
+    const {open, close, wallet} = props //this is just state for modal//
 
     const connectWallet = async (connector) => {
         //this is a trick for metamask as useWallet doesn't take an argument for metamask while it requires one for every other wallet//
@@ -16,7 +16,7 @@ const Web3SignIn = (props) => {
             wallet.connect(connector)
         }
     }
-    console.log('provider', wallet.ethereum)
+
     return(
         <>
         <Modal
@@ -28,8 +28,8 @@ const Web3SignIn = (props) => {
                     {/* @DEV: this is the header */}
                     <span>
                         <p>Select a wallet to connect</p>
-                        <IconButton elevation={0} >
-                            <CloseIcon style={{fill: '#FF6400'}} onClick={close} />
+                        <IconButton elevation={0} onClick={close}>
+                            <CloseIcon style={{fill: '#FF6400'}} />
                         </IconButton>
                     </span>
                     {/* Buttons for all the wallets */}

@@ -20,7 +20,7 @@ function App () {
 
   // //this variable is to handle wallet connection (by usinng aragon's use-wallet), and pass onto other components when required//
   const wallet = useWallet()
-
+  console.log(wallet)
 
   const fetchData = async () => {
       let currentSalePrice = await getSalePrice()
@@ -46,6 +46,7 @@ function App () {
             <Home 
               uniswapData={uniswapPoolData}
               saleData={saleData}
+              wallet={wallet}
             />
           </Route>
           <Route path='/details'>
