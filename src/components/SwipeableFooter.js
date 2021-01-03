@@ -7,6 +7,8 @@ const SwipeableFooter = () => {
 
     const [email, setEmail] = useState('')
 
+    const [open, setOpen] = useState(false)
+
     const handleInputChange = (e) => {
         let {value} = e.target
         setEmail(value)
@@ -15,10 +17,14 @@ const SwipeableFooter = () => {
     const submitEmail = async () => {
         subscribeToNewsletter(email)
     }
+
+    const openSwipeableView = () => {
+        setOpen(!open)
+    }
     return(
-        <SwipeableBottomSheet overflowHeight={60}>
-            <div className='swipeable-footer' style={{ height: '285px' }}>
-                <div className='nugget'></div>
+        <SwipeableBottomSheet overflowHeight={60} open={open}>
+            <div className='swipeable-footer' style={{ height: '285px' }} onClick={openSwipeableView}>
+                <div className='nugget' onClick={openSwipeableView}></div>
                 <p>Don't miss out, keep pace with all the latest</p>
                 <section className='subscribe-section'>
                     <input placeholder='Add an email address' value={email} onChange={(e) => handleInputChange(e)} required/>
