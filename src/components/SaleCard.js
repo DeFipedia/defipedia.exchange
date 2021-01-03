@@ -5,6 +5,12 @@ const SaleCard = (props) => {
     //props for card data//
     let {title, image, price, totalTokens, learnMoreTag} = props
 
+    let displayPrice = 0
+    if(price) {
+        displayPrice = price.toString().substring(0,8)
+        console.log(typeof displayPrice, displayPrice)
+    }
+    
     return(
         <React.Fragment>
             {/* @DEV: this actually renders the card */}
@@ -19,7 +25,7 @@ const SaleCard = (props) => {
                         <p>2020 DeFi Packs</p>  
                         <img alt='cover-art' src={image}/>  
                         <section className='card-data'>
-                            <h4>{price} ETH</h4> 
+                            <h4>{displayPrice} ETH</h4> 
                             <span>
                                 <p>{totalTokens} available</p>
                                 <div className='dynamic-pricing-icon'> 
