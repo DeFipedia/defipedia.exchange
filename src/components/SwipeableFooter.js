@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import SwipeableBottomSheet from 'react-swipeable-bottom-sheet'
 import {Button} from '../components/Button'
+import { subscribeToNewsletter } from '../functions/subscribeToNewletter'
 
 const SwipeableFooter = () => {
 
@@ -10,14 +11,18 @@ const SwipeableFooter = () => {
         let {value} = e.target
         setEmail(value)
     }
+
+    const submitEmail = async () => {
+        subscribeToNewsletter(email)
+    }
     return(
         <SwipeableBottomSheet overflowHeight={60}>
             <div className='swipeable-footer' style={{ height: '285px' }}>
                 <div className='nugget'></div>
                 <p>Don't miss out, keep pace with all the latest</p>
                 <section className='subscribe-section'>
-                    <input placeholder='Add an email address' value={email} onChange={(e) => handleInputChange(e)} />
-                    <Button variant='outlined' size='medium'>Subscribe</Button>         
+                    <input placeholder='Add an email address' value={email} onChange={(e) => handleInputChange(e)} required/>
+                    <Button variant='outlined' size='medium' onClick={submitEmail}>Subscribe</Button>         
                 </section>
                 <section className='social-media-handle'>
                     <i className="fab fa-discord"></i>
