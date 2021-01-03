@@ -36,7 +36,7 @@ const SwipeableFooter = () => {
                 <div className='nugget' onClick={toggleSwipeableView}></div>
                 { emailSubmitted ?
                     <React.Fragment>
-                        <p>Awesome! You are subscribed to our newsletter:</p>
+                        <p>Awesome! You are subscribed to our newsletter!</p>
                         <p>{email}</p>
                         <Button variant='outlined' size='medium' onClick={toggleSwipeableView}>Back to $BOOKS</Button> 
                     </React.Fragment>
