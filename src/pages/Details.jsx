@@ -4,13 +4,10 @@ import {Link } from 'react-router-dom'
 import BuyModal from '../components/BuyModal'
 import {Button} from '../components/Button'
 
-const Details = (props) => {
-    //state//
-    // const [open, setOpen] = useState(false)
-    // const [modalOpen, setModalOpen] = useState(false)
+const Details = ({wallet}) => {
+
     const [triggerBuyModal, setTriggerBuyModal] = useState(false)
-    // token data eth is to use calue of token in ETH as smart contracts return value in Wei and to avoid mutating actual response from smart contracts//
-    //methods//
+
     const showBuyModal = () => {
         setTriggerBuyModal(true)
     }
@@ -67,6 +64,7 @@ const Details = (props) => {
             <BuyModal 
                 open={triggerBuyModal} 
                 close={closeBuyModal} 
+                wallet={wallet}
             />
         </div>
     )

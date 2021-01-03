@@ -50,6 +50,7 @@ function App () {
           </Route>
           <Route path='/details'>
             <Details 
+              wallet={wallet}
             />
           </Route>
         </Switch>
