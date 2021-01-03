@@ -391,6 +391,7 @@ footer span button {
   text-align: center;
 }
 .value-input button {
+  background-color: white;
   width: 30px;
   height: 32px;
 }

@@ -72,6 +72,7 @@ const HomeDesktop = (props) => {
             open={triggerBuyModal} 
             close={closeBuyModal} 
             wallet={wallet}
+            saleData={saleData}
             />
         </div>
     )

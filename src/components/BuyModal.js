@@ -8,9 +8,14 @@ import Web3SignIn from './Web3SignIn';
 
 const BuyModal = (props) => {
 
-    const {open, close, wallet} = props
+    const {open, close, wallet, saleData} = props
 
     const [triggerWeb3SignIn, setTriggerWeb3SignIn] = useState(false) //state for buy mmodal//
+
+    let displayPrice = 0
+    if(saleData.price) {
+        displayPrice = saleData.price.toString().substring(0,8)
+    }
 
     const buyTokens = async () => {
         let inputValue = document.querySelector('.value-input input').value //this will be replaced with refs//
@@ -45,7 +50,7 @@ const BuyModal = (props) => {
                             <img alt='$BOOK cover art' src={process.env.PUBLIC_URL +  'assets/books-presale.png'}/>
                             <section className='data-indicator'>
                                 <div className='token-data'>            
-                                    <h4>$ 200 USD</h4> {/* This is dummy value*/}
+                                    <h4>{displayPrice} ETH</h4>
                                 </div>
                                 <ValueInput />
                             </section>

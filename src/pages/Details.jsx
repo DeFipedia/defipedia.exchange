@@ -4,7 +4,7 @@ import {Link } from 'react-router-dom'
 import BuyModal from '../components/BuyModal'
 import {Button} from '../components/Button'
 
-const Details = ({wallet}) => {
+const Details = ({wallet, saleData}) => {
 
     const [triggerBuyModal, setTriggerBuyModal] = useState(false)
 
@@ -65,6 +65,7 @@ const Details = ({wallet}) => {
                 open={triggerBuyModal} 
                 close={closeBuyModal} 
                 wallet={wallet}
+                saleData={saleData}
             />
         </div>
     )

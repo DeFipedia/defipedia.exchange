@@ -51,6 +51,7 @@ function App () {
           <Route path='/details'>
             <Details 
               wallet={wallet}
+              saleData={saleData}
             />
           </Route>
         </Switch>
