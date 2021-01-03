@@ -65,7 +65,7 @@ const HomeMobile = (props) => {
                     <Button label='Redeem (coming soon)' variant='disabled' />
                 </section>
                 {/* Ducth auction card */}
-                <section>
+                <section className='dutch-auction-card'>
                     {/* this div is masking layer */}
                     <div className='dutch-auction-mask'></div>
                     <p className='auction-mask-text'>Auction Closed</p>
@@ -73,6 +73,7 @@ const HomeMobile = (props) => {
                         title='Auction'
                         image={process.env.PUBLIC_URL + 'assets/cover-art.jpg'}
                         totalTokens='950'
+                        learnMoreTag='The pre-sale has moved. Early participants can reclaim their pre-sale deposits here.'
                     />
                     <Button label='Withdraw deposit' variant='default'/>
                 </section>

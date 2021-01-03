@@ -53,7 +53,7 @@ const HomeDesktop = (props) => {
                     </section>
                 </Grid>
                 <Grid item>
-                    <section>
+                    <section className='dutch-auction-card'>
                         {/* this div is masking layer */}
                         <div className='auction-card-mask' />
                         <p className='auction-mask-text'>Auction Closed</p>
@@ -61,6 +61,7 @@ const HomeDesktop = (props) => {
                             title='Auction'
                             image={process.env.PUBLIC_URL + 'assets/cover-art.jpg'}
                             totalTokens='950'
+                            learnMoreTag='The pre-sale has moved. Early participants can reclaim their pre-sale deposits here.'
                         />
                         <Button label='Withdraw deposit' variant='default'/>
                     </section>
