@@ -20,7 +20,7 @@ export const Footer = () => {
         <footer>
             <p>Don't miss out, keep pace with all the latest</p>
             <span>
-                <input placeholder='Add an email address' type='text' value={email} onChange={(e) => handleInputChange(e)} />
+                <input placeholder='Add an email address' type='text' value={email} required onChange={(e) => handleInputChange(e)} />
                 {/* this is MUI button, not the custom one */}
                 <Button label='Subscribe' variant='outlined' size='small' onClick={submitEmail}/>
                 <a href='https://discord.com/invite/vNBe7CC' target='_blank' rel='noopener noreferrer'>

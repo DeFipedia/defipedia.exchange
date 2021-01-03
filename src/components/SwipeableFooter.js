@@ -15,7 +15,9 @@ const SwipeableFooter = () => {
     }
 
     const submitEmail = async () => {
-        subscribeToNewsletter(email)
+        if(email !== ''){
+            subscribeToNewsletter(email)
+        }
     }
 
     const openSwipeableView = () => {
@@ -23,7 +25,7 @@ const SwipeableFooter = () => {
     }
     return(
         <SwipeableBottomSheet overflowHeight={60} open={open}>
-            <div className='swipeable-footer' style={{ height: '285px' }} onClick={openSwipeableView}>
+            <div className='swipeable-footer' style={{ height: '285px' }} >
                 <div className='nugget' onClick={openSwipeableView}></div>
                 <p>Don't miss out, keep pace with all the latest</p>
                 <section className='subscribe-section'>
