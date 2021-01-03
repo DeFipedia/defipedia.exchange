@@ -32,7 +32,7 @@ const Details = ({wallet}) => {
                             <p>50</p>
                         </div>
                         <div>
-                            <p><span role='img' aria-label='book emoji'>📓</span> Initial BOOKS on Auction</p>
+                            <p><span role='img' aria-label='book emoji'>📓</span> Initial BOOKS on Sale</p>
                             <p>950</p>
                         </div>
                         <div>
