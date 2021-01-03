@@ -26,7 +26,7 @@ const HomeDesktop = (props) => {
             <Grid container justify='center' spacing={2}>
                 <Grid item>
                     {/* This is UniSwap Card */}
-                    <section>
+                    <section className='uniswap-card'>
                         <SaleCard 
                             title='Uniswap'
                             image={process.env.PUBLIC_URL + 'assets/cover-art.jpg'}
@@ -40,7 +40,7 @@ const HomeDesktop = (props) => {
                 </Grid>
                 <Grid item>
                     {/* Sale Card */}
-                    <section>
+                    <section className='pre-sale-card'>
                         <SaleCard 
                             title='Pre-sale'
                             image={process.env.PUBLIC_URL + 'assets/books-presale.png'}

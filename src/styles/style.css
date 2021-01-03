@@ -450,6 +450,14 @@ footer span button {
   margin-bottom: 120px;
 }
 
+.uniswap-card .sale-type {
+  color: #FF6400 !important;
+}
+
+.pre-sale-card .sale-type {
+  color: #006FFF !important;
+}
+
 .auction-card-mask {
   position: absolute;
   width: 344px;

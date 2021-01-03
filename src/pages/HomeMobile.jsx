@@ -41,7 +41,7 @@ const HomeMobile = (props) => {
         <div className='home-page-mobile'>
             <Slider className='sale-carousel' {...carouselSettings}>
                 {/* This is UniSwap Card */}
-                <section>
+                <section className='uniswap-card'>
                     <SaleCard 
                         title='Uniswap'
                         image={process.env.PUBLIC_URL + 'assets/cover-art.jpg'}
@@ -53,7 +53,7 @@ const HomeMobile = (props) => {
                     <Button label='Sell on Uniswap' variant='disabled' />
                 </section>
                 {/* Sale Card */}
-                <section>
+                <section className='pre-sale-card'>
                     <SaleCard 
                         title='Pre-sale'
                         image={process.env.PUBLIC_URL + 'assets/books-presale.png'}
