@@ -8,7 +8,6 @@ const SaleCard = (props) => {
     let displayPrice = 0
     if(price) {
         displayPrice = price.toString().substring(0,8)
-        console.log(typeof displayPrice, displayPrice)
     }
     
     return(
