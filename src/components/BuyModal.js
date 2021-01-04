@@ -5,6 +5,7 @@ import {Button} from './Button'
 import {buyTokensFromSale} from '../functions/buyTokensFromSale'
 import ValueInput from './ValueInput';
 import Web3SignIn from './Web3SignIn';
+import { Label } from './Label';
 
 const BuyModal = (props) => {
 
@@ -12,14 +13,21 @@ const BuyModal = (props) => {
 
     const [triggerWeb3SignIn, setTriggerWeb3SignIn] = useState(false) //state for buy mmodal//
 
-    let displayPrice = 0
+    let displayPrice = 0 //for displaying price in correcct format, only used in this component to display//
+
+    const [purchaseAount, setPurchaseAmount] = useState(displayPrice)
+
     if(saleData.price) {
         displayPrice = saleData.price.toString().substring(0,8)
     }
 
+    const handleInputValueChange = (value) => {
+        setPurchaseAmount(displayPrice*value)
+    }
+
     const buyTokens = async () => {
-        let inputValue = document.querySelector('.value-input input').value //this will be replaced with refs//
-        await buyTokensFromSale(inputValue, wallet)
+        let valueInput = document.querySelector('.value-input input').value //this will be replaced with refs//
+        await buyTokensFromSale(valueInput, wallet)
     }
 
     const showWeb3SignIn = () => {
@@ -52,13 +60,17 @@ const BuyModal = (props) => {
                                 <div className='token-data'>            
                                     <h4>{displayPrice} ETH</h4>
                                 </div>
-                                <ValueInput />
+                                <ValueInput handleInputValueChange={handleInputValueChange} />
                             </section>
                         </CardContent>
                     </Card>
                     <div className='actions'>
                         {  wallet.account !=null 
-                            ? <Button label='Buy' variant='primary' onClick={buyTokens}/>
+                            ? 
+                            <React.Fragment>
+                                <Label>{purchaseAount}</Label>
+                                <Button label='Buy' variant='primary' onClick={buyTokens}/>
+                            </React.Fragment>
                             : <Button label='Connect Wallet' variant='primary' onClick={showWeb3SignIn} />
                         }
                     </div>
