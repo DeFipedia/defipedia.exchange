@@ -1,44 +1,46 @@
-import React from 'react'
-import {Button, useTheme} from '@material-ui/core'
-import MailchimpSubscribe from "react-mailchimp-subscribe"
-
-const SimpleForm = () => <MailchimpSubscribe url={process.env.REACT_APP_MAILCHIMP_URL}/>
+import React, {useState} from 'react'
+import { subscribeToNewsletter } from '../functions/subscribeToNewletter'
+import {Button} from './Button'
+import {a} from 'react-router-dom'
 
 export const Footer = () => {
-    //for getting theme pallete
-    const theme = useTheme()
+
+    const [email, setEmail] = useState('')
+
+    const handleInputChange = (e) => {
+        let {value} = e.target
+        setEmail(value)
+    }
+
+    const submitEmail = async () => {
+        subscribeToNewsletter(email)
+    }
 
     return(
         <footer>
             <p>Don't miss out, keep pace with all the latest</p>
             <span>
-                {/* <input placeholder='Add an email address' /> */}
-                <MailchimpSubscribe 
-                    url={process.env.REACT_APP_MAILCHIMP_URL}
-                    render={({subscribe}) => (
-                        <div className='mailChimp-subscribe-form'>
-                            <SimpleForm onSubmitted={formData => subscribe(formData)} />
-                            {/* <input placeholder='Add an email address' />
-                            {status === "sending" && <div style={{ color: "blue" }}>sending...</div>}
-                            {status === "success" && <div style={{ color: "green" }}>Subscribed !</div>}
-                            <Button 
-                                variant='outlined' 
-                                style={{color: theme.palette.background.main}}
-                                onClick={formData => subscribe(formData)}
-                            >
-                            Subscribe
-                            </Button> */}
-                        </div>
-                    )}
-                />
+                <input placeholder='Add an email address' type='text' value={email} required onChange={(e) => handleInputChange(e)} />
                 {/* this is MUI button, not the custom one */}
-                {/* <Button variant='outlined' style={{color: theme.palette.background.main}}>Subscribe</Button> */}
-                <i className="fab fa-discord"></i>
-                <i className="fab fa-twitter-square"></i>
-                <i className="fab fa-linkedin"></i>
-                <i className="fab fa-github-square"></i>
-                <i className="fab fa-telegram"></i>
-                <i className="fab fa-medium"></i>
+                <Button label='Subscribe' variant={email.length > 0 ? 'outlined' : 'outlined-disabled'} size='small' onClick={submitEmail}/>
+                <a href='https://discord.com/invite/vNBe7CC' target='_blank' rel='noopener noreferrer'>
+                    <i className='fab fa-discord'></i>
+                </a>
+                <a href='https://twitter.com/defipedia?s=21' target='_blank' rel='noopener noreferrer'>
+                    <i className='fab fa-twitter-square'></i>
+                </a>
+                <a href='https://www.linkedin.com/company/69458766' target='_blank' rel='noopener noreferrer'>
+                    <i className='fab fa-linkedin'></i>
+                </a>
+                <a href='https://github.com/DeFipedia' target='_blank' rel='noopener noreferrer'>
+                    <i className='fab fa-github-square'></i>
+                </a>
+                <a href='https://t.me/defiped' target='_blank' rel='noopener noreferrer'>
+                    <i className='fab fa-telegram'></i>
+                </a>
+                <a href='https://web3wiki.medium.com/' target='_blank' rel='noopener noreferrer'>
+                    <i className='fab fa-medium'></i>
+                </a>
             </span>
         </footer>
     )

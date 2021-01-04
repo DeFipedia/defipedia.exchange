@@ -3,6 +3,7 @@
 
 // For sale card//
 .home-page-mobile
+    margin-bottom: 50px
     .sale-card
         width: 274px
         height: 360px
@@ -22,22 +23,33 @@
                 font-size: 12px
                 line-height: 14px
                 letter-spacing: 1px
+    //for center aligning the buttons//
+    button
+        margin-left: auto
+        margin-right: auto
 
 //---------------------------------------------------------------//
 
 //this is the masking layer for dutch-aution card// 
-.dutch-auction-mask
-    position: absolute
-    padding: 5px
-    width: 300px
-    height: 360px
-    margin-top:75px
-    z-index: 4
-    background-color: white
-    opacity: 0.2
+// .dutch-auction-mask
+//     position: absolute
+//     margin-left: auto
+//     margin-right: auto
+//     right: 10%
+//     right: 0
+//     padding: 5px
+//     width: 80%
+//     height: 80% 
+//     margin-top:75px
+//     z-index: 4
+//     background-color: white    
+//     opacity: 0.2 
 
-.auction-mask-text
-    top: 150px
+// .auction-mask-text
+//     top: 150px
+//     position: fixed
+//     margin-left: auto
+//     margin-right: auto
 
 //for learn more section i.e the grey backdrop on bottom on card//
 .home-page-mobile
@@ -77,39 +89,3 @@
     .slick-active
         button
             background-color: #343434 !important
-
-//These is for mobile footer built using react-swipeable-bottom-sheet//
-.mobile-footer
-    background: linear-gradient(269.5deg, $secondary 0%, $primary 100%)
-    border: 0.5px solid #FFFFFF
-    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.25)
-    .nugget
-        width: 13px
-        height: 3px
-        background-color: white
-        margin-left: auto
-        margin-right: auto
-        margin-top: 5px
-    p
-        color: white
-        margin-top: 52px
-        margin-left: 42px 
-        font-family: Helvetica
-        font-style: normal
-        font-weight: normal
-        font-size: 14px
-        line-height: 14px
-        letter-spacing: 0.625px
-    .subscribe-section
-        text-align: center
-        input
-            width: 360px
-            height: 40px
-    .social-media-handle
-        margin-right: auto
-        margin-left: auto
-        margin-top: 38px
-        display: flex
-        align-items: center
-
-        

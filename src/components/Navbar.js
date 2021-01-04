@@ -4,7 +4,7 @@ import Web3SignIn from './Web3SignIn'
 
 const Navbar = (props) => {
     //destructing props//
-    let {brandTitle, brandLogo, accountAddr, connectWallet} = props
+    let {brandTitle, brandLogo, wallet} = props
 
     // for state //
     const [open, setOpen] = useState(false)
@@ -28,17 +28,18 @@ const Navbar = (props) => {
                 </section>
                 <nav className='nav-options'>
                     <Button variant='outlined' color='primary'>None Redeemed</Button>
-                    {/* {accountAddr != null 
-                        ? <Button variant='outlined'>Connected</Button>
-                        : <Button variant='outlined' onClick={connectWallet}>Connect Wallet</Button>
-                    } */}
-                    <Button onClick={showModal} >Connect Wallet</Button>
+                    {wallet.account != null 
+                        ? <Button>Connected</Button>
+                        : <Button onClick={showModal}>Connect Wallet</Button>
+                    }
                 </nav>
             </Toolbar>
         </AppBar >
         <Web3SignIn 
             open={open}
             close={closeWeb3SignInModal}
+            wallet={wallet}
+            closeWeb3SignInModal={closeWeb3SignInModal}
         />
         </div>
     )

@@ -1,6 +1,15 @@
+html, body {
+  height: 100%;
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
-  overflow: hidden;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+.App {
+  height: 100%;
 }
 
 a {
@@ -51,13 +60,12 @@ a {
 .btn {
   border-radius: 4px;
   margin-top: 10px;
-  margin-left: auto;
-  margin-right: auto;
   display: block;
   font-family: Helvetica;
   font-style: normal;
   text-align: center;
   filter: drop-shadow(0px 2px 2px);
+  border: none;
 }
 
 .primary {
@@ -74,7 +82,8 @@ a {
 
 .default {
   background-color: #F2F2F2;
-  color: #979797;
+  color: black;
+  filter: drop-shadow(0px 1px 1px);
 }
 
 .outlined {
@@ -84,11 +93,33 @@ a {
   color: white;
 }
 
+.disabled {
+  filter: drop-shadow(0px 0px 0px) !important;
+  background-color: #F2F2F2;
+  color: #979797;
+}
+
+.outlined-disabled {
+  background-color: Transparent;
+  filter: none;
+  border: 0.5px solid #979797;
+  color: #979797;
+}
+
 .medium {
   height: 40px;
   width: 334px;
   font-size: 16px;
   line-height: 18px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.small {
+  width: 160px;
+  height: 40px;
+  font-size: 12px;
+  line-height: 14px;
   font-weight: bold;
   letter-spacing: 1px;
 }
@@ -263,31 +294,14 @@ footer span ::placeholder {
   letter-spacing: 0.625px;
   color: #343434;
 }
-
-.mailChimp-subscribe-form button {
+footer span button {
   margin-left: 10px;
-  height: 38px;
-  width: 126px;
-  font-size: 16px;
-  line-height: 18px;
-  font-weight: bold;
-  letter-spacing: 1px;
-  background-color: Transparent;
-  border: 0.5px solid #FFFFFF;
-  color: white;
-  font-size: 12px;
-  line-height: 14px;
-  border-radius: 4px;
-  font-style: normal;
-  font-weight: normal;
-}
-.mailChimp-subscribe-form div div {
-  display: none;
+  margin-top: 0px !important;
 }
 
 .fab {
   color: white;
-  font-size: 24px;
+  font-size: 26px;
   margin-left: 8px;
   cursor: pointer;
 }
@@ -323,6 +337,8 @@ footer span ::placeholder {
 }
 .wallet-connectors button {
   margin-top: 10px !important;
+  margin-right: auto;
+  margin-left: auto;
   width: 80%;
   height: 50px;
   font-size: 17px;
@@ -338,41 +354,179 @@ footer span ::placeholder {
     width: 380px;
   }
 }
+.buy-modal {
+  width: 334px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.buy-modal .MuiCard-root {
+  width: 334px;
+  height: 470px;
+  margin-top: 100px;
+  background: linear-gradient(to bottom right, #343434, #151515);
+  border-radius: 10px;
+  text-align: center;
+}
+.buy-modal .MuiCard-root .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.buy-modal .MuiCard-root .header h4 {
+  font-size: 20px;
+  font-weight: 350;
+  color: white;
+}
+.buy-modal .MuiCard-root img {
+  height: 240px;
+  width: 240px;
+  margin: 8%;
+  border: 2px solid #343434;
+  border-radius: 2px;
+  box-shadow: 2px 4px 4px;
+}
+.buy-modal .MuiCard-root .data-indicator {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.buy-modal .MuiCard-root .data-indicator h4 {
+  font-size: 18px;
+  color: white;
+  margin-left: 15px;
+}
+.buy-modal .actions button {
+  margin-top: 50px;
+  filter: none;
+}
+
+.value-input input {
+  width: 35px;
+  height: 30px;
+  border: none;
+  text-align: center;
+}
+.value-input button {
+  background-color: white;
+  width: 30px;
+  height: 32px;
+}
+.value-input button:nth-of-type(1) {
+  border-radius: 4px 0px 0px 4px;
+}
+.value-input button:nth-of-type(2) {
+  border-radius: 0px 4px 4px 0px;
+}
+
+.swipeable-footer {
+  background: linear-gradient(269.5deg, #006FFF 0%, #FF6400 100%);
+  border: 0.5px solid #FFFFFF;
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.25);
+}
+.swipeable-footer .nugget {
+  width: 13px;
+  height: 3px;
+  background-color: white;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5px;
+}
+.swipeable-footer p {
+  color: white;
+  margin-top: 52px;
+  margin-left: 25px;
+  font-family: Helvetica;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 14px;
+  letter-spacing: 0.625px;
+}
+.swipeable-footer p:nth-of-type(2) {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-family: Helvetica;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 14px;
+  letter-spacing: 0.625px;
+}
+.swipeable-footer .subscribe-section {
+  text-align: center;
+}
+.swipeable-footer .subscribe-section input {
+  width: 360px;
+  height: 40px;
+}
+.swipeable-footer .subscribe-section button {
+  width: 360px;
+}
+.swipeable-footer .social-media-handle {
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 38px;
+  display: flex;
+  align-items: center;
+}
+
 .home-page {
   margin-top: 50px;
   position: relative;
   margin-bottom: 120px;
+  margin-bottom: 200px;
 }
 
-.auction-card-mask {
+.uniswap-card .sale-type {
+  color: #FF6400 !important;
+}
+
+.pre-sale-card .sale-type {
+  color: #006FFF !important;
+}
+
+.dutch-auction-mask {
   position: absolute;
-  width: 344px;
-  height: 470px;
-  padding: 5%;
+  width: 80%;
+  height: 80%;
+  z-index: 4;
   background-color: white;
   opacity: 0.2;
-  z-index: 3;
 }
 
-.auction-mask-text {
-  position: absolute;
-  width: 271.94px;
-  height: 77.14px;
-  padding: 22px;
-  top: 180px;
-  font-family: Helvetica;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 48px;
-  line-height: 40px;
-  text-align: center;
-  letter-spacing: 1px;
-  color: #343434;
-  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
-  transform: rotate(-14deg);
-  z-index: 4;
+.dutch-auction-card .card-panel .card-data {
+  display: none;
+}
+.dutch-auction-card .card-panel .learn-more-section p:nth-of-type(1) {
+  display: none;
+}
+.dutch-auction-card .card-panel .learn-more-section p:nth-of-type(2) {
+  margin-top: 38px;
+  margin-right: 5px;
 }
 
+.dutch-auction-card .card-panel .learn-more-section p:nth-of-type(1) {
+  display: none;
+}
+.dutch-auction-card .card-panel .learn-more-section p:nth-of-type(2) {
+  margin-top: 38px;
+  margin-right: 5px;
+}
+
+@media screen and (max-width: 1080px) {
+  .dutch-auction-card .learn-more-section p:nth-of-type(2) {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 11px;
+    letter-spacing: 1px;
+    line-height: 16px;
+    margin-top: 12px !important;
+    margin-right: 5px;
+  }
+}
+.home-page-mobile {
+  margin-bottom: 50px;
+}
 .home-page-mobile .sale-card {
   width: 274px;
   height: 360px;
@@ -394,20 +548,9 @@ footer span ::placeholder {
   line-height: 14px;
   letter-spacing: 1px;
 }
-
-.dutch-auction-mask {
-  position: absolute;
-  padding: 5px;
-  width: 300px;
-  height: 360px;
-  margin-top: 75px;
-  z-index: 4;
-  background-color: white;
-  opacity: 0.2;
-}
-
-.auction-mask-text {
-  top: 150px;
+.home-page-mobile button {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .home-page-mobile .learn-more-section {
@@ -444,217 +587,60 @@ footer span ::placeholder {
   background-color: #343434 !important;
 }
 
-.mobile-footer {
-  background: linear-gradient(269.5deg, #006FFF 0%, #FF6400 100%);
-  border: 0.5px solid #FFFFFF;
-  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.25);
-}
-.mobile-footer .nugget {
-  width: 13px;
-  height: 3px;
-  background-color: white;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 5px;
-}
-.mobile-footer p {
-  color: white;
-  margin-top: 52px;
-  margin-left: 42px;
-  font-family: Helvetica;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 14px;
-  letter-spacing: 0.625px;
-}
-.mobile-footer .subscribe-section {
-  text-align: center;
-}
-.mobile-footer .subscribe-section input {
-  width: 360px;
-  height: 40px;
-}
-.mobile-footer .social-media-handle {
-  margin-right: auto;
-  margin-left: auto;
-  margin-top: 38px;
-  display: flex;
-  align-items: center;
-}
-
-.dynamic-pricing-modal {
-  height: 85vh;
-  width: 30vw;
-  max-width: 450px;
-  max-height: 600px;
-  margin: auto;
-  margin-top: 10vh;
-  z-index: 5 !important;
-  background-color: white;
-  border-radius: 10px;
-  padding-left: 2%;
-  padding-right: 2%;
-}
-.dynamic-pricing-modal .header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.dynamic-pricing-modal .header p {
-  font-weight: bold;
-}
-.dynamic-pricing-modal .dynamic-pricing-modal-content {
-  margin-top: 4%;
-  margin-bottom: 1%;
-}
-.dynamic-pricing-modal .dynamic-pricing-modal-content h4 {
-  font-size: 12pt !important;
-  margin: 0px;
-}
-.dynamic-pricing-modal .dynamic-pricing-modal-content p {
-  font-size: 10pt;
-}
-.dynamic-pricing-modal .dynamic-pricing-modal-content a {
-  color: #006FFF;
-}
-
-@media screen and (min-width: 700px) and (max-width: 900px) {
-  .dynamic-pricing-modal {
-    width: 50vw;
-    height: 55vh;
-  }
-}
-@media screen and (min-width: 400px) and (max-width: 699px) {
-  .dynamic-pricing-modal {
-    width: 80vw;
-    height: 600px;
-  }
-}
-@media screen and (max-width: 399px) {
-  .dynamic-pricing-modal {
-    width: 85vw;
-    height: 90vh;
-    margin-top: 5vh;
-  }
-}
 .details-page {
-  margin-top: 12vh;
-}
-.details-page .actions > button:nth-of-type(2) {
-  margin-top: 2%;
+  margin-top: 75px;
 }
 
-.detail-card {
-  width: 374px;
+.details-card {
+  width: 334px;
   height: 470px;
   background: linear-gradient(to bottom right, #343434, #151515);
   border-radius: 10px !important;
   margin: auto;
 }
-.detail-card .header {
+.details-card .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-left: 5%;
   margin-right: 5%;
 }
-.detail-card .header h4 {
+.details-card .header h4 {
   color: white;
 }
-.detail-card .detail-card-section div {
-  display: flex;
-  justify-content: space-between;
-  margin-left: 5%;
-  margin-right: 5%;
-}
-.detail-card .detail-card-section div p {
-  color: white;
-  font-size: 10pt;
-}
-.detail-card .detail-card-description {
-  margin-left: 5%;
-  margin-right: 5%;
-}
-.detail-card .detail-card-description p {
-  color: white;
-  margin-top: 10%;
-}
-.detail-card .detail-card-description a {
-  color: #FF6400;
-  font-weight: bold;
-}
 
-@media screen and (min-width: 700px) and (max-width: 900px) {
-  .detail-card {
-    width: 70vw;
-    height: 45vh;
-  }
-
-  .detail-card-description {
-    margin-top: 20%;
-  }
-}
-@media screen and (min-width: 400px) and (max-width: 699px) {
-  .detail-card-description {
-    margin-top: 25%;
-  }
-}
-@media screen and (max-width: 399px) {
-  .detail-card {
-    width: 90vw;
-    height: 450px;
-  }
-
-  .detail-card-description {
-    margin-top: 25%;
-  }
-}
-.buy-modal {
-  width: 374px;
+.details-page .actions {
+  width: 334px;
   margin-left: auto;
   margin-right: auto;
 }
-.buy-modal:focus {
-  outline: none !important;
+.details-page .actions .coming-soon-actions {
+  display: flex;
+  justify-content: space-between;
 }
-.buy-modal .MuiCard-root {
-  width: 374px;
-  height: 470px;
-  margin-top: 75px;
-  background: linear-gradient(to bottom right, #343434, #151515);
-  border-radius: 10px;
-  text-align: center;
+
+.detail-card-data div {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 5%;
+  margin-right: 5%;
 }
-.buy-modal .MuiCard-root h4 {
+.detail-card-data div p {
+  color: white;
+  font-size: 10pt;
+}
+
+.detail-card-description {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+.detail-card-description p {
+  color: white;
+  margin-top: 10%;
+}
+.detail-card-description a {
+  color: #FF6400;
   font-weight: bold;
-}
-.buy-modal .MuiCard-root .header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.buy-modal .MuiCard-root .data-indicator {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.buy-modal .MuiCard-root .data-indicator p {
-  font-size: 12pt;
-  color: white;
-}
-.buy-modal .MuiCard-root .data-indicator input {
-  width: 80px;
-  height: 38px;
-  border-radius: 10px;
-  border: none;
-}
-.buy-modal .actions .buy-button {
-  background-color: #FF6400 !important;
-  color: white;
-  width: 374px;
-  height: 40px;
-  text-transform: none;
 }
 
 /*# sourceMappingURL=style.css.map */

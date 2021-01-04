@@ -4,7 +4,9 @@ const VARIANTS = [
     'primary',
     'secondary',
     'default',
-    'outlined'
+    'outlined',
+    'disabled',
+    'outlined-disabled'
 ]
 
 const SIZES = [

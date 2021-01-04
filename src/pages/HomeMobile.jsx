@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 // @DEV: these were import as we are using a react port of slick carousel and it doesn't come with CSS bundled//
 //So, we have also installd slick-carousel and imported css as mentioned in docs//
 import 'slick-carousel/slick/slick.css';
@@ -6,18 +6,16 @@ import 'slick-carousel/slick/slick-theme.css';
 import Slider from 'react-slick'
 import SaleCard from '../components/SaleCard'
 import {Button} from '../components/Button'
-import SwipeableBottomSheet from 'react-swipeable-bottom-sheet'
-import MailchimpSubscribe from "react-mailchimp-subscribe"
-
-const SimpleForm = () => <MailchimpSubscribe url={process.env.REACT_APP_MAILCHIMP_URL}/>
+import SwipeableFooter from '../components/SwipeableFooter'
+import BuyModal from '../components/BuyModal'
 
 const HomeMobile = (props) => {
 
-    const {uniswapData} = props
+    const {uniswapData, saleData, wallet} = props
 
     const carouselSettings = {
         dots: true,
-        dotsClass: "slick-dots slick-square-dots", //this is to customize the dots//
+        dotsClass: 'slick-dots slick-square-dots', //this is to customize the dots//
         fade: false,
         infinite: false,
         speed: 500,
@@ -27,11 +25,24 @@ const HomeMobile = (props) => {
         initialSlide: 1,
         centerPadding: '45px'
     }
+
+    // for handling buy modal trigger //
+    const [triggerBuyModal, setTriggerBuyModal] = useState(false)
+
+    // methods //
+    const showBuyModal = () => {
+        setTriggerBuyModal(true)
+    }
+
+    const closeBuyModal = () => {
+        setTriggerBuyModal(false)
+    }
+
     return(
         <div className='home-page-mobile'>
             <Slider className='sale-carousel' {...carouselSettings}>
                 {/* This is UniSwap Card */}
-                <section>
+                <section className='uniswap-card'>
                     <SaleCard 
                         title='Uniswap'
                         image={process.env.PUBLIC_URL + 'assets/cover-art.jpg'}
@@ -40,60 +51,42 @@ const HomeMobile = (props) => {
                         learnMoreTag='Swap here!'
                     />
                     <Button label='Buy' variant='primary'/>
-                    <Button label='Sell on Uniswap' variant='default' />
+                    <Button label='Sell on Uniswap' variant='disabled' />
                 </section>
                 {/* Sale Card */}
-                <section>
+                <section className='pre-sale-card'>
                     <SaleCard 
                         title='Pre-sale'
                         image={process.env.PUBLIC_URL + 'assets/books-presale.png'}
-                        price='200'
+                        price={saleData.price}
                         totalTokens='950'
                         learnMoreTag='Buy direct!'
                     />
-                    <Button label='Buy' variant='secondary' />
-                    <Button label='Redeem (coming soon)' variant='default' />
+                    <Button label='Buy' variant='secondary' onClick={showBuyModal}/>
+                    <Button label='Redeem (coming soon)' variant='disabled' />
                 </section>
                 {/* Ducth auction card */}
-                <section>
+                <section className='dutch-auction-card'>
                     {/* this div is masking layer */}
                     <div className='dutch-auction-mask'></div>
-                    <p className='auction-mask-text'>Auction Closed</p>
+                    {/* <p className='auction-mask-text'>Auction Closed</p> */}
                     <SaleCard 
                         title='Auction'
                         image={process.env.PUBLIC_URL + 'assets/cover-art.jpg'}
                         totalTokens='950'
+                        learnMoreTag='The pre-sale has moved. Early participants can reclaim their pre-sale deposits here.'
                     />
                     <Button label='Withdraw deposit' variant='default'/>
                 </section>
             </Slider>
             {/* Swipeable footer */}
-            <SwipeableBottomSheet overflowHeight={64}>
-                <div className='mobile-footer' style={{ height: '284px' }}>
-                    <div className='nugget'></div>
-                    <p>Don't miss out, keep pace with all the latest</p>
-                    <section className='subscribe-section'>
-                        {/* <MailchimpSubscribe 
-                            url={process.env.REACT_APP_MAILCHIMP_URL}
-                            render={({subscribe}) => (
-                                <div className='mailChimp-subscribe-form'>
-                                    <SimpleForm onSubmitted={formData => subscribe(formData)} />
-                                </div>
-                            )} 
-                        /> */}
-                        <input placeholder='Add an email address' />
-                        <Button variant='outlined' size='medium'>Subscribe</Button>
-                    </section>
-                    <section className='social-media-handle'>
-                        <i class="fab fa-discord"></i>
-                        <i class="fab fa-twitter-square"></i>
-                        <i class="fab fa-linkedin"></i>
-                        <i class="fab fa-github-square"></i>
-                        <i class="fab fa-telegram"></i>
-                        <i class="fab fa-medium"></i>
-                    </section>
-                </div>
-            </SwipeableBottomSheet>
+            <SwipeableFooter />
+            <BuyModal 
+                open={triggerBuyModal} 
+                close={closeBuyModal} 
+                wallet={wallet}
+                saleData={saleData}
+            />
         </div>
 
     )

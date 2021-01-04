@@ -1,27 +1,17 @@
-import React, {useState} from 'react'
-import {useTheme, Card, CardContent} from '@material-ui/core'
-import CardModal from './CardModal'
+import React from 'react'
+import {Card, CardContent} from '@material-ui/core'
 
 const SaleCard = (props) => {
     //props for card data//
     let {title, image, price, totalTokens, learnMoreTag} = props
-    //for theme//
-    const theme = useTheme()
-    //for state //
-    const [modalOpen, setModalOpen] = useState(false)
-    //methods for pricing mechanism modal //
-    const showDynamicPricingStatModal = () => {
-        setModalOpen(true)
-    }
 
-    const closeDynamicPricingModal = () => {
-        setModalOpen(false)
+    let displayPrice = 0
+    if(price) {
+        displayPrice = price.toString().substring(0,8)
     }
-
+    
     return(
         <React.Fragment>
-            {/* @DEV: this renders the modal when 'learn more' is clicked */}
-            <CardModal open={modalOpen} handleClose={closeDynamicPricingModal} />
             {/* @DEV: this actually renders the card */}
             <div className='card-panel'>
                 <Card className='sale-card'>
@@ -34,7 +24,7 @@ const SaleCard = (props) => {
                         <p>2020 DeFi Packs</p>  
                         <img alt='cover-art' src={image}/>  
                         <section className='card-data'>
-                            <h4>$ {price} USD</h4> 
+                            <h4>{displayPrice} ETH</h4> 
                             <span>
                                 <p>{totalTokens} available</p>
                                 <div className='dynamic-pricing-icon'> 

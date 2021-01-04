@@ -1,103 +1,76 @@
 import React, {useState} from 'react';
-import {Modal, Card, CardContent, Typography, Button, IconButton, useTheme} from '@material-ui/core'
-import {commitEth} from '../functions/commitEth'
-import {convertETHToWei} from '../functions/convertETHToWei'
+import {Modal, Card, CardContent, Typography, IconButton} from '@material-ui/core'
 import CloseIcon from '@material-ui/icons/Close';
+import {Button} from './Button' 
+import {buyTokensFromSale} from '../functions/buyTokensFromSale'
+import ValueInput from './ValueInput';
+import Web3SignIn from './Web3SignIn';
 
 const BuyModal = (props) => {
 
-    let theme = useTheme()
+    const {open, close, wallet, saleData} = props
 
-    const {open, close, tokenDataETH, tokenData, accountAddr, connectWallet} = props
+    const [triggerWeb3SignIn, setTriggerWeb3SignIn] = useState(false) //state for buy mmodal//
 
-    const [inputValue, setInputValue] = useState(0)
-
-    const buyToken = async () => {
-        let inputValidation = await validateInput()
-        if(inputValidation === true){
-            const payableValue = await convertETHToWei(inputValue)
-            commitEth(payableValue)
-        }else{
-            alert('Please enter a valid number')
-        }
+    let displayPrice = 0
+    if(saleData.price) {
+        displayPrice = saleData.price.toString().substring(0,8)
     }
 
-    const validateInput = () => {
-        let maxValue = (tokenDataETH.tokenPrice * tokenDataETH.tokensRemaining)
-        if(inputValue > maxValue) {
-            alert('You can not select more than 5')
-            return false
-            
-        }else if (inputValue < 0.01) {
-            alert('Sorry, you can not buy less than 0.01')
-            return false
-        }else if (onlyContainsDigits(inputValue) === false) {
-            alert('Please insert a valid number')
-            return false
-        }
-        return true
+    const buyTokens = async () => {
+        let inputValue = document.querySelector('.value-input input').value //this will be replaced with refs//
+        await buyTokensFromSale(inputValue, wallet)
     }
 
-    const onlyContainsDigits = (str) => {
-        if((/\d/.test(str)) === true){
-            console.log(true)
-            return true
-        }else{
-            console.log(false)
-            return false
-        }
+    const showWeb3SignIn = () => {
+        setTriggerWeb3SignIn(true)
     }
 
-    const handleValueInputChange =  (e) => {
-        let value = e.target.value
-        if(onlyContainsDigits(value) === false){
-             alert('Please insert a valid number')
-        }else {
-            setInputValue(value)
-        }
+    const closeWeb3SignInModal = () => {
+        setTriggerWeb3SignIn(false)
     }
 
     return(
-        <Modal
-            open={open}
-            // onClose={handleClose}
-            aria-labelledby='$BOOKS Buy Modal'
-            aria-describedby='$BOOKS Buy Modal'
-        >
-            <div className='buy-modal'>
-                <Card>
-                    <CardContent>
-                        <span className='header'>
-                            <Typography variant='h4'>Buy</Typography>
-                            <IconButton elevation={0} onClick={close}>
-                                <CloseIcon style={{fill: '#FF6400'}} />
-                            </IconButton>
-                        </span>
-                        <img alt='$BOOK cover art' src={process.env.PUBLIC_URL +  'assets/cover-art.jpg'}/>
-                        <section className='data-indicator'>
-                            <div className='token-data'>
-                                <p>{tokenDataETH.tokenPrice} ETH / each</p>
-                                <p>{tokenDataETH.tokensRemaining}/950 available</p>
-                            </div>
-                            <div className='value-input'> 
-                                <input
-                                    value={inputValue}
-                                    placeholder='Enter amount (ETH)'
-                                    variant='outlined' 
-                                    onChange={handleValueInputChange}
-                                />             
-                            </div>
-                        </section>
-                    </CardContent>
-                </Card>
-                <div className='actions'>
-                {accountAddr != null 
-                    ? <Button className='buy-button' onClick={() => buyToken()}>Buy Now</Button>
-                    : <Button className='buy-button'onClick={() => connectWallet()}>Connect Wallet</Button>
-                }
+        <React.Fragment>
+            <Modal
+                open={open}
+                // onClose={handleClose}
+                aria-labelledby='$BOOKS Buy Modal'
+                aria-describedby='$BOOKS Buy Modal'
+            >
+                <div className='buy-modal'>
+                    <Card>
+                        <CardContent>
+                            <span className='header'>
+                                <Typography variant='h4'>Buy</Typography>
+                                <IconButton elevation={0} onClick={close}>
+                                    <CloseIcon style={{fill: '#FF6400'}} />
+                                </IconButton>
+                            </span>
+                            <img alt='$BOOK cover art' src={process.env.PUBLIC_URL +  'assets/books-presale.png'}/>
+                            <section className='data-indicator'>
+                                <div className='token-data'>            
+                                    <h4>{displayPrice} ETH</h4>
+                                </div>
+                                <ValueInput />
+                            </section>
+                        </CardContent>
+                    </Card>
+                    <div className='actions'>
+                        {  wallet.account !=null 
+                            ? <Button label='Buy' variant='primary' onClick={buyTokens}/>
+                            : <Button label='Connect Wallet' variant='primary' onClick={showWeb3SignIn} />
+                        }
+                    </div>
                 </div>
-            </div>
-        </Modal>
+            </Modal>
+            <Web3SignIn 
+                open={triggerWeb3SignIn}
+                close={closeWeb3SignInModal}
+                wallet={wallet}
+                closeWeb3SignInModal={closeWeb3SignInModal}
+            />
+        </React.Fragment>
     )
 }
 

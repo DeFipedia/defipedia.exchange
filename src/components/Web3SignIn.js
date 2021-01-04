@@ -1,15 +1,23 @@
 import React from 'react'
 import {Modal, Card, IconButton, CardContent} from '@material-ui/core'
-import { useWallet, UseWalletProvider } from 'use-wallet'
-import Web3 from "web3";
 import CloseIcon from '@material-ui/icons/Close';
 import {Button} from './Button'
 
 const Web3SignIn = (props) => {
+    //to do: create web instance here with conected wallet provider//
+    //-------------------------------------------------------------//
+    const {open, close, wallet, closeWeb3SignInModal} = props //this is just state for modal//
 
-    const {open, close} = props
-
-    const wallet = useWallet()
+    const connectWallet = async (connector) => {
+        //this is a trick for metamask as useWallet doesn't take an argument for metamask while it requires one for every other wallet//
+        if(connector === 'metamask') {
+            await wallet.connect()
+            closeWeb3SignInModal()
+        }else{
+            await wallet.connect(connector)
+            closeWeb3SignInModal()
+        }
+    }
 
     return(
         <>
@@ -22,19 +30,19 @@ const Web3SignIn = (props) => {
                     {/* @DEV: this is the header */}
                     <span>
                         <p>Select a wallet to connect</p>
-                        <IconButton elevation={0} >
-                            <CloseIcon style={{fill: '#FF6400'}} onClick={close} />
+                        <IconButton elevation={0} onClick={close}>
+                            <CloseIcon style={{fill: '#FF6400'}} />
                         </IconButton>
                     </span>
                     {/* Buttons for all the wallets */}
                     <section className='wallet-connectors'>
-                        <Button variant='primary' onClick={() => wallet.connect()}>MetaMask</Button>
-                        <Button variant='primary' onClick={() => wallet.connect('portis')}>Portis</Button>
-                        <Button variant='primary' onClick={() => {wallet.connect('fortmatic')}}>Fortmatic</Button>
-                        <Button variant='primary' onClick={() => {wallet.connect('walletconnect')}}>Wallet Connect</Button>
-                        <Button variant='primary' onClick={() => {wallet.connect('authereum')}}>Authereum</Button>
-                        <Button variant='primary' onClick={() => {wallet.connect('frame')}}>Frame</Button>
-                        <Button variant='primary' onClick={() => {wallet.connect('walletlink')}}>Wallet Link</Button>
+                        <Button variant='primary' onClick={() => connectWallet('metamask')}>MetaMask</Button>
+                        <Button variant='primary' onClick={() => connectWallet('portis')}>Portis</Button>
+                        <Button variant='primary' onClick={() => connectWallet('fortmatic')}>Fortmatic</Button>
+                        <Button variant='primary' onClick={() => connectWallet('walletconnect')}>Wallet Connect</Button>
+                        <Button variant='primary' onClick={() => connectWallet('authereum')}>Authereum</Button>
+                        <Button variant='primary' onClick={() => connectWallet('frame')}>Frame</Button>
+                        <Button variant='primary' onClick={() => connectWallet('walletlink')}>Wallet Link</Button>
                     </section>
                 </CardContent>
            </Card>
