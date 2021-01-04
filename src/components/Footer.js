@@ -22,7 +22,7 @@ export const Footer = () => {
             <span>
                 <input placeholder='Add an email address' type='text' value={email} required onChange={(e) => handleInputChange(e)} />
                 {/* this is MUI button, not the custom one */}
-                <Button label='Subscribe' variant='outlined' size='small' onClick={submitEmail}/>
+                <Button label='Subscribe' variant={email.length > 0 ? 'outlined' : 'outlined-disabled'} size='small' onClick={submitEmail}/>
                 <a href='https://discord.com/invite/vNBe7CC' target='_blank' rel='noopener noreferrer'>
                     <i className='fab fa-discord'></i>
                 </a>

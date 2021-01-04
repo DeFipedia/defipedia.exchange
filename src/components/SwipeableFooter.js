@@ -45,7 +45,7 @@ const SwipeableFooter = () => {
                         <p>Don't miss out, keep pace with all the latest</p>
                         <section className='subscribe-section'>
                             <input placeholder='Add an email address' value={email} onChange={(e) => handleInputChange(e)} required/>
-                            <Button variant='outlined' size='medium' onClick={submitEmail}>Subscribe</Button>         
+                            <Button variant={email.length > 0 ? 'outlined' : 'outlined-disabled'} size='medium' onClick={submitEmail}>Subscribe</Button>         
                         </section>
                     </React.Fragment>
                 }

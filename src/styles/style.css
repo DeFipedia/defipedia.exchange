@@ -91,6 +91,13 @@ a {
   color: #979797;
 }
 
+.outlined-disabled {
+  background-color: Transparent;
+  filter: none;
+  border: 0.5px solid #979797;
+  color: #979797;
+}
+
 .medium {
   height: 40px;
   width: 334px;
