@@ -23,7 +23,7 @@ const HomeMobile = (props) => {
         slidesToScroll: 1,
         centerMode: true,
         initialSlide: 1,
-        centerPadding: '42px'
+        centerPadding: '45px'
     }
 
     // for handling buy modal trigger //
@@ -69,7 +69,7 @@ const HomeMobile = (props) => {
                 <section className='dutch-auction-card'>
                     {/* this div is masking layer */}
                     <div className='dutch-auction-mask'></div>
-                    <p className='auction-mask-text'>Auction Closed</p>
+                    {/* <p className='auction-mask-text'>Auction Closed</p> */}
                     <SaleCard 
                         title='Auction'
                         image={process.env.PUBLIC_URL + 'assets/cover-art.jpg'}

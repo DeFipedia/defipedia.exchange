@@ -55,8 +55,8 @@ const HomeDesktop = (props) => {
                 <Grid item>
                     <section className='dutch-auction-card'>
                         {/* this div is masking layer */}
-                        <div className='auction-card-mask' />
-                        <p className='auction-mask-text'>Auction Closed</p>
+                        <div className='dutch-auction-mask' />
+                        {/* <p className='auction-mask-text'>Auction Closed</p> */}
                         <SaleCard 
                             title='Auction'
                             image={process.env.PUBLIC_URL + 'assets/cover-art.jpg'}
