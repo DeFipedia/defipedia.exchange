@@ -524,6 +524,9 @@ footer span button {
     margin-right: 5px;
   }
 }
+.home-page-mobile {
+  margin-bottom: 50px;
+}
 .home-page-mobile .sale-card {
   width: 274px;
   height: 360px;
