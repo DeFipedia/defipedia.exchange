@@ -6,14 +6,16 @@ import {Button} from './Button'
 const Web3SignIn = (props) => {
     //to do: create web instance here with conected wallet provider//
     //-------------------------------------------------------------//
-    const {open, close, wallet} = props //this is just state for modal//
+    const {open, close, wallet, closeWeb3SignInModal} = props //this is just state for modal//
 
     const connectWallet = async (connector) => {
         //this is a trick for metamask as useWallet doesn't take an argument for metamask while it requires one for every other wallet//
         if(connector === 'metamask') {
-            wallet.connect()
+            await wallet.connect()
+            closeWeb3SignInModal()
         }else{
-            wallet.connect(connector)
+            await wallet.connect(connector)
+            closeWeb3SignInModal()
         }
     }
 

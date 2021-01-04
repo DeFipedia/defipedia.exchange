@@ -39,6 +39,7 @@ const Navbar = (props) => {
             open={open}
             close={closeWeb3SignInModal}
             wallet={wallet}
+            closeWeb3SignInModal={closeWeb3SignInModal}
         />
         </div>
     )

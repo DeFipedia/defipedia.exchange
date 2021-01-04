@@ -68,6 +68,7 @@ const BuyModal = (props) => {
                 open={triggerWeb3SignIn}
                 close={closeWeb3SignInModal}
                 wallet={wallet}
+                closeWeb3SignInModal={closeWeb3SignInModal}
             />
         </React.Fragment>
     )

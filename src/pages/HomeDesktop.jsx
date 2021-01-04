@@ -69,10 +69,10 @@ const HomeDesktop = (props) => {
             </Grid>    
             <Footer />
             <BuyModal 
-            open={triggerBuyModal} 
-            close={closeBuyModal} 
-            wallet={wallet}
-            saleData={saleData}
+                open={triggerBuyModal} 
+                close={closeBuyModal} 
+                wallet={wallet}
+                saleData={saleData}
             />
         </div>
     )
