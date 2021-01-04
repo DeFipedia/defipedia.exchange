@@ -23,6 +23,7 @@ const HomeMobile = (props) => {
         slidesToScroll: 1,
         centerMode: true,
         initialSlide: 1,
+        centerPadding: '42px'
     }
 
     // for handling buy modal trigger //
