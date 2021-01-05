@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 
-const ValueInput = () => {
+const ValueInput = ({handleInputValueChange}) => {
+
 
     const [valueInput, setValueInput] = useState(1)
 
@@ -18,7 +19,7 @@ const ValueInput = () => {
     return(
         <div className='value-input'>
             <button onClick={decreaseValue}>-</button>
-            <input value={valueInput} readOnly/>
+            <input value={valueInput} readOnly onChange={handleInputValueChange(valueInput)}/>
             <button onClick={increaseValue}>+</button>
         </div>
     )
