@@ -362,7 +362,7 @@ footer span button {
 .buy-modal .MuiCard-root {
   width: 334px;
   height: 470px;
-  margin-top: 75px;
+  margin-top: 80px;
   background: linear-gradient(to bottom right, #343434, #151515);
   border-radius: 10px;
   text-align: center;
@@ -396,7 +396,7 @@ footer span button {
   margin-left: 15px;
 }
 .buy-modal .actions button {
-  margin-top: 15px;
+  margin-top: 20px;
   filter: none;
 }
 

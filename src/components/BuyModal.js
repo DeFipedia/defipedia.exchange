@@ -65,10 +65,11 @@ const BuyModal = (props) => {
                         </CardContent>
                     </Card>
                     <div className='actions'>
+                        <Label>{purchaseAount}</Label>
                         {  wallet.account !=null 
                             ? 
                             <React.Fragment>
-                                <Label>{purchaseAount}</Label>
+                                
                                 <Button label='Buy' variant='primary' onClick={buyTokens}/>
                             </React.Fragment>
                             : <Button label='Connect Wallet' variant='primary' onClick={showWeb3SignIn} />
