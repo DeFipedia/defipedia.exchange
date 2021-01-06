@@ -14,6 +14,11 @@
 .pre-sale-card
     .sale-type
         color: $secondary !important
+    //to remove shadow from "coming soon" button on presale//
+    //this is only instance where this happens. Hence,this style is not is Button variant but more of customization//
+    button
+        &:nth-of-type(2)
+            filter: drop-shadow(0px 0px 0px)
                     
 
 //this is the masking layer for dutch-aution card (for mobile and desktop)// 
@@ -25,36 +30,6 @@
     background-color: white    
     opacity: 0.2 
 
-// auction-card class used as massking layer//
-// .auction-card-mask
-//     position: absolute
-//     width: 344px
-//     height: 470px
-//     padding: 5%
-//     background-color: white
-//     opacity: 0.2
-//     z-index: 3
-
-// .auction-mask-text 
-//     position: absolute
-//     width: 271.94px
-//     height: 77.14px
-//     padding: 22px
-//     top: 180px
-//     font-family: Helvetica
-//     font-style: normal
-//     font-weight: bold
-//     font-size: 48px
-//     line-height: 40px
-//     text-align: center
-//     letter-spacing: 1px
-//     color: #343434
-//     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25)
-//     transform: rotate(-14deg)
-//     z-index: 4
-        
-//this is to sale data on dutch-auction card (works for both mobile and desktop)
-//and to adjust learn more data on the card//
 .dutch-auction-card
     .card-panel
         .card-data
