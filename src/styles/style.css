@@ -270,7 +270,8 @@ footer span {
   align-items: center;
   justify-content: center;
   margin-top: 5px;
-  margin-left: 15%;
+  margin-left: auto;
+  margin-right: auto;
 }
 footer span input {
   width: 334px;
@@ -281,7 +282,6 @@ footer span input {
   box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.75);
   border-radius: 4px;
   padding-left: 10px;
-  align-content: center !important;
 }
 footer span ::placeholder {
   width: 170px;
@@ -383,15 +383,20 @@ footer span button {
   border-radius: 2px;
   box-shadow: 2px 4px 4px;
 }
-.buy-modal .MuiCard-root .data-indicator {
+.buy-modal .MuiCard-root .token-data h4 {
+  margin-top: 2px;
+  color: white;
+  text-align: left;
+  margin-bottom: 0px;
+}
+.buy-modal .MuiCard-root .token-data span {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.buy-modal .MuiCard-root .data-indicator h4 {
-  font-size: 18px;
-  color: white;
-  margin-left: 15px;
+.buy-modal .MuiCard-root .token-data span p {
+  font-size: 12pt;
+  color: #979797;
 }
 .buy-modal .actions button {
   margin-top: 20px;

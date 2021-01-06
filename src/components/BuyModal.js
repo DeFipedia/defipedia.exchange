@@ -56,11 +56,12 @@ const BuyModal = (props) => {
                                 </IconButton>
                             </span>
                             <img alt='$BOOK cover art' src={process.env.PUBLIC_URL +  'assets/books-presale.png'}/>
-                            <section className='data-indicator'>
-                                <div className='token-data'>            
+                            <section className='token-data'>           
                                     <h4>{displayPrice} ETH</h4>
-                                </div>
-                                <ValueInput handleInputValueChange={handleInputValueChange} />
+                                <span>
+                                    <p>950 available</p>
+                                    <ValueInput handleInputValueChange={handleInputValueChange} />
+                                </span>   
                             </section>
                         </CardContent>
                     </Card>

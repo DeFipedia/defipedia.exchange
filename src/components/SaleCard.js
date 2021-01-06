@@ -4,7 +4,7 @@ import Details from '../pages/Details'
 
 const SaleCard = (props) => {
     //props for card data//
-    let {title, image, price, totalTokens, learnMoreTag} = props
+    let {title, image, price, totalTokens, learnMoreTag, desc} = props
 
     const [triggerDetailsModal, setDetailsModal] = useState(false)
 
@@ -49,7 +49,7 @@ const SaleCard = (props) => {
                     </CardContent>                
                 </Card>
                 <section className='learn-more-section'>
-                    <p>Support the free market</p>
+                    <p>{desc}</p>
                     <p>{learnMoreTag}</p>
                 </section>
             </div>
