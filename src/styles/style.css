@@ -485,9 +485,6 @@ footer span button {
 
 .home-page {
   margin-top: 50px;
-  position: relative;
-  margin-bottom: 120px;
-  margin-bottom: 200px;
 }
 
 .uniswap-card .sale-type {
@@ -500,9 +497,9 @@ footer span button {
 
 .dutch-auction-mask {
   position: absolute;
-  width: 80%;
-  height: 80%;
-  z-index: 4;
+  width: 340px;
+  height: 560px;
+  z-index: 3;
   background-color: white;
   opacity: 0.2;
 }
