@@ -1,13 +1,25 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {Card, CardContent} from '@material-ui/core'
+import Details from '../pages/Details'
 
 const SaleCard = (props) => {
     //props for card data//
-    let {title, image, price, totalTokens, learnMoreTag} = props
+    let {title, image, price, totalTokens, learnMoreTag, desc} = props
+
+    const [triggerDetailsModal, setDetailsModal] = useState(false)
 
     let displayPrice = 0
+
     if(price) {
         displayPrice = price.toString().substring(0,8)
+    }
+
+    const showDetailsModal = () => {
+        setDetailsModal(true)
+    }
+
+    const closeDetailsModal = () => {
+        setDetailsModal(false)
     }
     
     return(
@@ -28,19 +40,23 @@ const SaleCard = (props) => {
                             <span>
                                 <p>{totalTokens} available</p>
                                 <div className='dynamic-pricing-icon'> 
-                                    <a href='/details'>
+                                    <div onClick={showDetailsModal}>
                                         <p>Learn more <i className="fas fa-question-circle"></i></p>
-                                    </a>    
+                                    </div>    
                                 </div>
                             </span>
                         </section>                
                     </CardContent>                
                 </Card>
                 <section className='learn-more-section'>
-                    <p>Support the free market</p>
+                    <p>{desc}</p>
                     <p>{learnMoreTag}</p>
                 </section>
             </div>
+            <Details 
+                open={triggerDetailsModal}
+                closeDetailsModal={closeDetailsModal}
+            />
         </React.Fragment>
     )
 }

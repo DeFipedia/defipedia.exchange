@@ -38,6 +38,10 @@ const HomeMobile = (props) => {
         setTriggerBuyModal(false)
     }
 
+    const redirectToUniswap = () => {
+        window.open(`${process.env.REACT_APP_UNISWAP_LINK}`, '_blank')
+    }
+
     return(
         <div className='home-page-mobile'>
             <Slider className='sale-carousel' {...carouselSettings}>
@@ -50,7 +54,7 @@ const HomeMobile = (props) => {
                         totalTokens='50'
                         learnMoreTag='Swap here!'
                     />
-                    <Button label='Buy' variant='primary'/>
+                    <Button label='Buy' variant='primary' onClick={redirectToUniswap}/>
                     <Button label='Sell on Uniswap' variant='disabled' />
                 </section>
                 {/* Sale Card */}

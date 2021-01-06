@@ -1,30 +1,20 @@
-import React, {useState} from 'react'
+import React  from 'react'
 import CloseIcon from '@material-ui/icons/Close';
-import {Link } from 'react-router-dom'
-import BuyModal from '../components/BuyModal'
-import {Button} from '../components/Button'
-
-const Details = ({wallet, saleData}) => {
-
-    const [triggerBuyModal, setTriggerBuyModal] = useState(false)
-
-    const showBuyModal = () => {
-        setTriggerBuyModal(true)
-    }
-
-    const closeBuyModal = () => {
-        setTriggerBuyModal(false)
-    }
+import {Modal} from '@material-ui/core'
+// @DEV: this used to be seperate page on seperate route but converted into moda now//
+//TODO: Later on a custom modal component is will be created and this file will just hold JSX to display - for maintaning patterns better as code-base grows// 
+const Details = ({wallet, saleData, open, closeDetailsModal}) => {
 
     return(
-        <div className='details-page'>
+        <Modal
+        open={open}
+        onClose={closeDetailsModal}
+        className='details-page'
+        >
             <div className='details-card'>
                 <span className='header'>
                     <h4>BOOKS Stats</h4>
-                    {/* <IconButton elevation={0}> */}
-                    <Link to='/'>
-                    <CloseIcon style={{fill: '#FF6400'}}/>
-                    </Link>
+                    <CloseIcon onClick={closeDetailsModal}/>
                 </span>
                 <section className='detail-card-data'>
                         <div>
@@ -50,24 +40,7 @@ const Details = ({wallet, saleData}) => {
                     <a href='https://medium.com/@DeFiPedia/defipedia-debuts-with-books-collectors-defi-pack-b5eaf570ae9' target='_blank' rel='noopener noreferrer'>Read More</a>
                 </section>
             </div>
-            {/* ------------ */}
-            <div className='actions'>
-                <a rel='noopener noreferrer' href='https://uniswap.info/pair/0xe108fdab8b03f6bd4c35b8e7a2249b120bf91a87' target='_blank'>
-                    <Button label='Buy on Uniswap' variant='primary'/>
-                </a>
-                 <span className='coming-soon-actions'>
-                    <Button label='Sell on Uniswap' variant='disabled' size='small'/>
-                    <Button label='Redeem' variant='disabled' size='small'/>
-                </span>
-                <Button label='Buy on Sale' variant='primary' onClick={showBuyModal} />
-            </div>
-            <BuyModal 
-                open={triggerBuyModal} 
-                close={closeBuyModal} 
-                wallet={wallet}
-                saleData={saleData}
-            />
-        </div>
+        </Modal>
     )
 }
 
