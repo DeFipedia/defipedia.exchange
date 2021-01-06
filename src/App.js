@@ -2,7 +2,6 @@ import React, {useState, useEffect} from 'react';
 import {Route, Switch} from 'react-router-dom'
 import Navbar from './components/Navbar'
 import './styles/style.css'
-import Details from './pages/Details';
 import { useWallet, UseWalletProvider } from 'use-wallet'
 import Home from './pages/Home'
 import {getUniswapPoolData} from './functions/getUniswapPoolData'
@@ -48,12 +47,12 @@ function App () {
               wallet={wallet}
             />
           </Route>
-          <Route path='/details'>
+          {/* <Route path='/details'>
             <Details 
               wallet={wallet}
               saleData={saleData}
             />
-          </Route>
+          </Route> */}
         </Switch>
       </div>
   );

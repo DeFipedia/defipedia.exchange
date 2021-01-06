@@ -9,7 +9,7 @@ const HomeDesktop = (props) => {
 
     const {uniswapData, saleData, wallet} = props
 
-    // for handling buy modal trigger //
+    // for handling modal triggers //
     const [triggerBuyModal, setTriggerBuyModal] = useState(false)
 
     // methods //
