@@ -60,7 +60,7 @@ function App () {
 
 export default () => (
   <UseWalletProvider
-        chainId={42} //chain Id should '1' for mainnet, 42 is for kovan testnet//
+        chainId={1} //chain Id should '1' for mainnet, 42 is for kovan testnet//
         connectors={{
         // This is how connectors get configured
             portis: { 

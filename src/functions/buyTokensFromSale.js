@@ -11,7 +11,6 @@ export const buyTokensFromSale =  async (tokenAmount, wallet) => {
     let web3 = await web3Enabled()
     web3.setProvider(walletProvider)
     const saleContract = new web3.eth.Contract(saleABI, saleContractAddress)
-
     let selectedAccount = wallet.account
     const method = saleContract.methods.buyTokens(selectedAccount)
     const price = await getSalePrice()
