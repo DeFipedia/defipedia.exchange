@@ -27,7 +27,7 @@ const HomeDesktop = (props) => {
     }
 
     const redirectToUniswap = () => {
-        window.open(`${process.env.REACT_APP_UNISWAP_LINK}`, '_blank')
+        this.window.open(`${process.env.REACT_APP_UNISWAP_LINK}`, '_blank')
     }
     return(
         <div className='home-page'>
