@@ -423,13 +423,13 @@ footer span button {
 
 @media screen and (max-width: 450px) {
   .buy-modal .MuiCard-root {
-    margin-top: 30px;
+    margin-top: 25px;
     overflow-y: scroll;
   }
 }
 .value-input input {
   width: 35px;
-  height: 32px;
+  height: 30px;
   -webkit-appearance: none;
   border: none;
   text-align: center;
@@ -491,7 +491,7 @@ footer span button {
   letter-spacing: 0.625px;
 }
 .swipeable-footer .subscribe-section input {
-  width: 90%;
+  width: 85%;
   height: 40px;
   border: none;
   text-indent: 10px;
