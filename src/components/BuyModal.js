@@ -39,7 +39,7 @@ const BuyModal = (props) => {
     }
 
     return(
-        <React.Fragment>
+        <div className='buy-modal-container'>
             <Modal
                 open={open}
                 // onClose={handleClose}
@@ -84,7 +84,7 @@ const BuyModal = (props) => {
                 wallet={wallet}
                 closeWeb3SignInModal={closeWeb3SignInModal}
             />
-        </React.Fragment>
+        </div>
     )
 }
 

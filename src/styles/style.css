@@ -4,10 +4,15 @@ html, body {
 
 body {
   font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
 }
 
 .App {
   height: 100%;
+}
+
+*:focus {
+  outline: none;
 }
 
 a {
@@ -212,20 +217,22 @@ a {
   margin-right: auto;
   text-align: left;
   background-color: #F2F2F2;
-  height: 90px;
+  height: 70px;
   border-radius: 10px;
   grid-area: overlap;
   margin-top: 470px;
 }
 .learn-more-section p {
-  margin-top: 40px;
   margin-bottom: 0px;
   margin-left: 20px;
   font-style: normal;
   font-weight: normal;
   font-size: 12px;
-  line-height: 20px;
+  line-height: 18px;
   letter-spacing: 1px;
+}
+.learn-more-section p:nth-of-type(1) {
+  font-size: 11px;
 }
 .learn-more-section p:nth-of-type(2) {
   margin-top: 0px;
@@ -314,6 +321,7 @@ footer span button {
   margin-right: auto;
   width: 500px;
   height: 600px;
+  outline: none;
 }
 .web3-signIn .MuiCard-root span {
   display: flex;
@@ -349,15 +357,28 @@ footer span button {
     width: 380px;
   }
 }
+.buy-modal-container {
+  overflow: hidden;
+  position: relative;
+}
+
 .buy-modal {
+  position: absolute;
   width: 334px;
-  margin-left: auto;
+  left: 0;
+  right: 0;
   margin-right: auto;
+  margin-left: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
+  outline: none;
 }
 .buy-modal .MuiCard-root {
+  margin-left: auto;
+  margin-right: auto;
   width: 334px;
   height: 470px;
-  margin-top: 80px;
+  margin-top: 75px;
   background: linear-gradient(to bottom right, #343434, #151515);
   border-radius: 10px;
   text-align: center;
@@ -396,13 +417,20 @@ footer span button {
   color: #979797;
 }
 .buy-modal .actions button {
-  margin-top: 20px;
+  margin-top: 30px;
   filter: none;
 }
 
+@media screen and (max-width: 450px) {
+  .buy-modal .MuiCard-root {
+    margin-top: 25px;
+    overflow-y: scroll;
+  }
+}
 .value-input input {
   width: 35px;
   height: 30px;
+  -webkit-appearance: none;
   border: none;
   text-align: center;
 }
@@ -410,6 +438,8 @@ footer span button {
   background-color: white;
   width: 30px;
   height: 32px;
+  -webkit-appearance: none;
+  border: none;
 }
 .value-input button:nth-of-type(1) {
   border-radius: 4px 0px 0px 4px;
@@ -427,6 +457,14 @@ footer span button {
   width: 13px;
   height: 3px;
   background-color: white;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5px;
+}
+.swipeable-footer .MuiSvgIcon-root {
+  width: 100%;
+  color: white;
+  text-align: center;
   margin-left: auto;
   margin-right: auto;
   margin-top: 5px;
@@ -454,13 +492,17 @@ footer span button {
 }
 .swipeable-footer .subscribe-section {
   text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 .swipeable-footer .subscribe-section input {
-  width: 360px;
+  width: 340px;
   height: 40px;
+  border: none;
+  text-indent: 10px;
 }
 .swipeable-footer .subscribe-section button {
-  width: 360px;
+  width: 340px;
 }
 .swipeable-footer .social-media-handle {
   margin-right: auto;
@@ -514,33 +556,7 @@ footer span button {
 .dutch-auction-card .card-panel .card-data {
   display: none;
 }
-.dutch-auction-card .card-panel .learn-more-section p:nth-of-type(1) {
-  display: none;
-}
-.dutch-auction-card .card-panel .learn-more-section p:nth-of-type(2) {
-  margin-top: 38px;
-  margin-right: 5px;
-}
 
-.dutch-auction-card .card-panel .learn-more-section p:nth-of-type(1) {
-  display: none;
-}
-.dutch-auction-card .card-panel .learn-more-section p:nth-of-type(2) {
-  margin-top: 38px;
-  margin-right: 5px;
-}
-
-@media screen and (max-width: 1080px) {
-  .dutch-auction-card .learn-more-section p:nth-of-type(2) {
-    font-style: normal;
-    font-weight: 400;
-    font-size: 11px;
-    letter-spacing: 1px;
-    line-height: 16px;
-    margin-top: 12px !important;
-    margin-right: 5px;
-  }
-}
 .home-page-mobile {
   margin-bottom: 50px;
 }
@@ -605,7 +621,7 @@ footer span button {
 }
 
 .details-page {
-  margin-top: 80px;
+  margin-top: 75px;
 }
 
 .details-card {

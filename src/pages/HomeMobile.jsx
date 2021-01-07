@@ -52,6 +52,7 @@ const HomeMobile = (props) => {
                         image={process.env.PUBLIC_URL + 'assets/cover-art.jpg'}
                         price={uniswapData.rate}
                         totalTokens='50'
+                        desc='Support the free market'
                         learnMoreTag='Swap here!'
                     />
                     <Button label='Buy' variant='primary' onClick={redirectToUniswap}/>
@@ -64,6 +65,7 @@ const HomeMobile = (props) => {
                         image={process.env.PUBLIC_URL + 'assets/books-presale.png'}
                         price={saleData.price}
                         totalTokens='950'
+                        desc='Support DeFiPedia development'
                         learnMoreTag='Buy direct!'
                     />
                     <Button label='Buy' variant='secondary' onClick={showBuyModal}/>
@@ -73,12 +75,11 @@ const HomeMobile = (props) => {
                 <section className='dutch-auction-card'>
                     {/* this div is masking layer */}
                     <div className='dutch-auction-mask'></div>
-                    {/* <p className='auction-mask-text'>Auction Closed</p> */}
                     <SaleCard 
                         title='Auction'
                         image={process.env.PUBLIC_URL + 'assets/cover-art.jpg'}
                         totalTokens='950'
-                        learnMoreTag='The pre-sale has moved. Early participants can reclaim their pre-sale deposits here.'
+                        desc='The pre-sale has moved. Early participants can reclaim their pre-sale deposits here.'
                     />
                     <Button label='Withdraw deposit' variant='default'/>
                 </section>
