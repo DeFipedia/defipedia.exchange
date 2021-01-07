@@ -30,13 +30,11 @@ const SwipeableFooter = () => {
 
     return(
         <SwipeableBottomSheet overflowHeight={60} open={open}>
-            <div className='swipeable-footer' style={{ height: '285px' }} >
-                <div className='toggle-button'>
-                    {open ? 
-                        <CloseIcon onClick={toggleSwipeableView} /> :
-                        <div className='nugget' onClick={toggleSwipeableView}></div>
-                    }
-                </div>
+            <div className='swipeable-footer' style={{ height: '285px' }} > 
+                {open ? 
+                    <CloseIcon onClick={toggleSwipeableView} /> :
+                    <div className='nugget' onClick={toggleSwipeableView}></div>
+                }
                 { emailSubmitted ?
                     <React.Fragment>
                         <p>Awesome! You are subscribed to our newsletter!</p>
