@@ -19,11 +19,6 @@ a {
   text-decoration: none;
 }
 
-@media screen and (max-width: 450px) {
-  body::-webkit-scrollbar {
-    display: none;
-  }
-}
 .MuiAppBar-root {
   height: 75px;
 }
@@ -427,14 +422,15 @@ footer span button {
 }
 
 @media screen and (max-width: 450px) {
-  .buy-modal {
+  .buy-modal .MuiCard-root {
     margin-top: 30px;
     overflow-y: scroll;
   }
 }
 .value-input input {
   width: 35px;
-  height: 30px;
+  height: 32px;
+  -webkit-appearance: none;
   border: none;
   text-align: center;
 }
@@ -494,19 +490,18 @@ footer span button {
   line-height: 14px;
   letter-spacing: 0.625px;
 }
-.swipeable-footer .subscribe-section {
-  text-align: center;
-  margin-left: 20px;
-  margin-right: 20px;
-}
 .swipeable-footer .subscribe-section input {
-  width: 332px;
+  width: 90%;
   height: 40px;
   border: none;
   text-indent: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 .swipeable-footer .subscribe-section button {
-  width: 332px;
+  margin-left: 20px;
+  margin-right: 20px;
+  width: 90%;
 }
 .swipeable-footer .social-media-handle {
   margin-right: auto;
