@@ -19,6 +19,11 @@ a {
   text-decoration: none;
 }
 
+@media screen and (max-width: 450px) {
+  body::-webkit-scrollbar {
+    display: none;
+  }
+}
 .MuiAppBar-root {
   height: 75px;
 }
@@ -357,6 +362,10 @@ footer span button {
     width: 380px;
   }
 }
+.buy-modal-container {
+  overflow-y: initial !important;
+}
+
 .buy-modal {
   width: 334px;
   margin-left: auto;
@@ -368,7 +377,7 @@ footer span button {
   margin-right: auto;
   width: 334px;
   height: 470px;
-  margin-top: 75px;
+  margin-top: 95px;
   background: linear-gradient(to bottom right, #343434, #151515);
   border-radius: 10px;
   text-align: center;
@@ -411,6 +420,11 @@ footer span button {
   filter: none;
 }
 
+@media screen and (max-width: 450px) {
+  .buy-modal {
+    overflow: scroll;
+  }
+}
 .value-input input {
   width: 35px;
   height: 30px;
