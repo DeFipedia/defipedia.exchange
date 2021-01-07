@@ -435,6 +435,8 @@ footer span button {
   background-color: white;
   width: 30px;
   height: 32px;
+  -webkit-appearance: none;
+  border: none;
 }
 .value-input button:nth-of-type(1) {
   border-radius: 4px 0px 0px 4px;
