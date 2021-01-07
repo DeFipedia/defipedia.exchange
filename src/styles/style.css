@@ -316,6 +316,7 @@ footer span button {
   margin-right: auto;
   width: 500px;
   height: 600px;
+  outline: none;
 }
 .web3-signIn .MuiCard-root span {
   display: flex;
@@ -355,6 +356,7 @@ footer span button {
   width: 334px;
   margin-left: auto;
   margin-right: auto;
+  outline: none;
 }
 .buy-modal .MuiCard-root {
   width: 334px;
@@ -363,6 +365,9 @@ footer span button {
   background: linear-gradient(to bottom right, #343434, #151515);
   border-radius: 10px;
   text-align: center;
+}
+.buy-modal .MuiCard-root:focus {
+  display: none !important;
 }
 .buy-modal .MuiCard-root .header {
   display: flex;
