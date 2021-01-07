@@ -363,13 +363,19 @@ footer span button {
   }
 }
 .buy-modal-container {
-  overflow-y: initial !important;
+  overflow: hidden;
+  position: relative;
 }
 
 .buy-modal {
+  position: absolute;
   width: 334px;
-  margin-left: auto;
+  left: 0;
+  right: 0;
   margin-right: auto;
+  margin-left: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
   outline: none;
 }
 .buy-modal .MuiCard-root {
@@ -377,7 +383,7 @@ footer span button {
   margin-right: auto;
   width: 334px;
   height: 470px;
-  margin-top: 95px;
+  margin-top: 75px;
   background: linear-gradient(to bottom right, #343434, #151515);
   border-radius: 10px;
   text-align: center;
@@ -422,7 +428,8 @@ footer span button {
 
 @media screen and (max-width: 450px) {
   .buy-modal {
-    overflow: scroll;
+    margin-top: 30px;
+    overflow-y: scroll;
   }
 }
 .value-input input {
@@ -493,10 +500,13 @@ footer span button {
   margin-right: 20px;
 }
 .swipeable-footer .subscribe-section input {
-  width: 100%;
+  width: 332px;
   height: 40px;
   border: none;
   text-indent: 10px;
+}
+.swipeable-footer .subscribe-section button {
+  width: 332px;
 }
 .swipeable-footer .social-media-handle {
   margin-right: auto;

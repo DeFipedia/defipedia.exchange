@@ -1,20 +1,24 @@
 .buy-modal-container
-    overflow-y: initial !important
-    // overflow-x: hidden !important
+    overflow: hidden
+    position: relative
 
 
 .buy-modal
+    position: absolute
     width: 334px
-    margin-left: auto
+    left: 0
+    right: 0
     margin-right: auto
-    // overflow: scroll !important
+    margin-left: auto
+    overflow-y: auto
+    overflow-x: hidden
     outline: none  //this is to hide focused outline on BuyModal//
     .MuiCard-root
         margin-left: auto
         margin-right: auto
         width: 334px
         height: 470px
-        margin-top: 95px
+        margin-top: 75px
         background: linear-gradient(to bottom right, #343434, #151515)
         border-radius: 10px
         text-align: center
@@ -55,7 +59,8 @@
 //to make BuyModal look better on mobile -same size as other cards
 @media screen and ( max-width: 450px )
     .buy-modal
-        overflow: scroll
+        margin-top: 30px 
+        overflow-y: scroll
        
             
     
