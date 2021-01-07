@@ -458,6 +458,14 @@ footer span button {
   margin-right: auto;
   margin-top: 5px;
 }
+.swipeable-footer .MuiSvgIcon-root {
+  width: 100%;
+  color: white;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5px;
+}
 .swipeable-footer p {
   color: white;
   margin-top: 52px;
@@ -481,13 +489,14 @@ footer span button {
 }
 .swipeable-footer .subscribe-section {
   text-align: center;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 .swipeable-footer .subscribe-section input {
-  width: 360px;
+  width: 100%;
   height: 40px;
-}
-.swipeable-footer .subscribe-section button {
-  width: 360px;
+  border: none;
+  text-indent: 10px;
 }
 .swipeable-footer .social-media-handle {
   margin-right: auto;

@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import SwipeableBottomSheet from 'react-swipeable-bottom-sheet'
 import {Button} from '../components/Button'
 import { subscribeToNewsletter } from '../functions/subscribeToNewletter'
+import CloseIcon from '@material-ui/icons/Close';
 
 const SwipeableFooter = () => {
 
@@ -27,13 +28,15 @@ const SwipeableFooter = () => {
         setOpen(!open)
     }
 
-    // if(emailSubmitted) {
-    //     return <p>thitititititititit</p>
-    // }
     return(
         <SwipeableBottomSheet overflowHeight={60} open={open}>
             <div className='swipeable-footer' style={{ height: '285px' }} >
-                <div className='nugget' onClick={toggleSwipeableView}></div>
+                <div className='toggle-button'>
+                    {open ? 
+                        <CloseIcon onClick={toggleSwipeableView} /> :
+                        <div className='nugget' onClick={toggleSwipeableView}></div>
+                    }
+                </div>
                 { emailSubmitted ?
                     <React.Fragment>
                         <p>Awesome! You are subscribed to our newsletter!</p>
