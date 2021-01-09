@@ -436,13 +436,22 @@ footer span button {
 }
 .buy-modal .actions button {
   margin-top: 80px;
-  filter: none;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 600px) {
   .buy-modal .MuiCard-root {
-    margin-top: 25px;
-    overflow-y: scroll;
+    width: 274px;
+    height: 360px;
+  }
+  .buy-modal .MuiCard-root img {
+    width: 178px;
+    height: 178px;
+  }
+  .buy-modal .actions button {
+    margin-top: 65px;
+    width: 274px;
   }
 }
 .value-input input {
