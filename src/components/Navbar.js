@@ -17,6 +17,10 @@ const Navbar = (props) => {
         setOpen(false)
     }
 
+    const disconeectWallet = () => {
+        wallet.reset()
+    }
+
     return(
         <div>
         <AppBar position='fixed' color='inherit' elevation={0} >
@@ -29,7 +33,7 @@ const Navbar = (props) => {
                 <nav className='nav-options'>
                     <Button variant='outlined' color='primary'>None Redeemed</Button>
                     {wallet.account != null 
-                        ? <Button>Connected</Button>
+                        ? <Button onClick={disconeectWallet}>Disconnect</Button>
                         : <Button onClick={showModal}>Connect Wallet</Button>
                     }
                 </nav>
