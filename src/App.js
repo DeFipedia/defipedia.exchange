@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {Route, Switch} from 'react-router-dom'
 import Navbar from './components/Navbar'
-import './styles/style.css'
+import './styles/style.sass'
 import { useWallet, UseWalletProvider } from 'use-wallet'
 import Home from './pages/Home'
 import {getUniswapPoolData} from './functions/getUniswapPoolData'
