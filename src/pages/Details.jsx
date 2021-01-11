@@ -1,9 +1,17 @@
 import React  from 'react'
 import CloseIcon from '@material-ui/icons/Close';
 import {Modal} from '@material-ui/core'
+import styled from 'styled-components'
+
+const PositionedDiv = styled.div`
+  position: fixed;
+  left: ${props => props.x}px;
+  top: ${props => props.y}px;
+`
+
 // @DEV: this used to be seperate page on seperate route but converted into moda now//
 //TODO: Later on a custom modal component is will be created and this file will just hold JSX to display - for maintaning patterns better as code-base grows// 
-const Details = ({wallet, saleData, open, closeDetailsModal}) => {
+const Details = ({wallet, saleData, open, closeDetailsModal, displayX, displayY}) => {
 
     return(
         <Modal
@@ -11,7 +19,7 @@ const Details = ({wallet, saleData, open, closeDetailsModal}) => {
         onClose={closeDetailsModal}
         className='details-page'
         >
-            <div className='details-card'>
+            <PositionedDiv className='details-card' x={displayX} y={displayY}>
                 <span className='header'>
                     <h4>BOOKS Stats</h4>
                     <CloseIcon onClick={closeDetailsModal}/>
@@ -39,7 +47,7 @@ const Details = ({wallet, saleData, open, closeDetailsModal}) => {
                     <p>The price of BOOKS changes when tokens are bought and sold</p>
                     <a href='https://medium.com/@DeFiPedia/defipedia-debuts-with-books-collectors-defi-pack-b5eaf570ae9' target='_blank' rel='noopener noreferrer'>Read More</a>
                 </section>
-            </div>
+            </PositionedDiv>
         </Modal>
     )
 }

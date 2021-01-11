@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useRef} from 'react'
 import {Card, CardContent} from '@material-ui/core'
 import Details from '../pages/Details'
 
@@ -7,6 +7,7 @@ const SaleCard = (props) => {
     let {title, image, price, totalTokens, learnMoreTag, desc} = props
 
     const [triggerDetailsModal, setDetailsModal] = useState(false)
+    const cardRef = useRef()
 
     let displayPrice = 0
 
@@ -21,11 +22,22 @@ const SaleCard = (props) => {
     const closeDetailsModal = () => {
         setDetailsModal(false)
     }
+
+    const getBoundingRect = () => {
+        if (!cardRef.current) {
+            return {
+                x: 0,
+                y: 0
+            }
+        }
+
+        return cardRef.current.getBoundingClientRect();
+    }
     
     return(
         <React.Fragment>
             {/* @DEV: this actually renders the card */}
-            <div className='card-panel'>
+            <div className='card-panel' ref={cardRef}>
                 <Card className='sale-card'>
                     <CardContent>
                         <span className='card-header'>
@@ -56,6 +68,8 @@ const SaleCard = (props) => {
             <Details 
                 open={triggerDetailsModal}
                 closeDetailsModal={closeDetailsModal}
+                displayX={getBoundingRect().x}
+                displayY={getBoundingRect().y}
             />
         </React.Fragment>
     )
