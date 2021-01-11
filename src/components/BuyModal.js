@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Modal, Card, CardContent, Typography, IconButton} from '@material-ui/core'
+import {Modal, Card, CardContent, IconButton} from '@material-ui/core'
 import CloseIcon from '@material-ui/icons/Close';
 import {Button} from './Button' 
 import {buyTokensFromSale} from '../functions/buyTokensFromSale'
