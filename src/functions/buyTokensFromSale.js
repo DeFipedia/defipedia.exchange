@@ -23,7 +23,6 @@ export const sendTransaction = async (method, from, value) => {
     return new Promise(async (resolve, reject) => {
         try {
             let gasPriceInWei = await web3.eth.getGasPrice()
-
             let valueInWei = 0;
 
             if (value) {
@@ -31,6 +30,7 @@ export const sendTransaction = async (method, from, value) => {
             }
             const options = {
                 from: from,
+                gasLimit: 1000000,
                 gasPrice: web3.utils.toHex(gasPriceInWei),
                 value: valueInWei
             }
