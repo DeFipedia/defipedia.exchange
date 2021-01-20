@@ -1,5 +1,8 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+# cache
+.eslintcache
+
 # dependencies
 /node_modules
 /.pnp
@@ -20,6 +23,9 @@
 .env.development.local
 .env.test.local
 .env.production.local
+
+# IDE
+.idea
 
 npm-debug.log*
 yarn-debug.log*

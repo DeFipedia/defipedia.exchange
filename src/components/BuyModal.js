@@ -1,11 +1,10 @@
 import React, {useState} from 'react';
-import {Modal, Card, CardContent, Typography, IconButton} from '@material-ui/core'
+import {Modal, Card, CardContent, IconButton} from '@material-ui/core'
 import CloseIcon from '@material-ui/icons/Close';
 import {Button} from './Button' 
 import {buyTokensFromSale} from '../functions/buyTokensFromSale'
 import ValueInput from './ValueInput';
 import Web3SignIn from './Web3SignIn';
-import { Label } from './Label';
 
 const BuyModal = (props) => {
 
@@ -15,7 +14,7 @@ const BuyModal = (props) => {
 
     let displayPrice = 0 //for displaying price in correcct format, only used in this component to display//
 
-    const [purchaseAount, setPurchaseAmount] = useState(displayPrice)
+    const [purchaseAmount, setPurchaseAmount] = useState(displayPrice)
 
     if(saleData.price) {
         displayPrice = saleData.price.toString().substring(0,8)
@@ -48,29 +47,30 @@ const BuyModal = (props) => {
             >
                 <div className='buy-modal'>
                     <Card>
-                        <CardContent>
-                            <span className='header'>
-                                <Typography variant='h4'>Buy</Typography>
-                                <IconButton elevation={0} onClick={close}>
-                                    <CloseIcon style={{fill: '#FF6400'}} />
-                                </IconButton>
-                            </span>
-                            <img alt='$BOOK cover art' src={process.env.PUBLIC_URL +  'assets/books-presale.png'}/>
-                            <section className='token-data'>           
-                                    <h4>{displayPrice} ETH</h4>
-                                <span>
-                                    <p>950 available</p>
-                                    <ValueInput handleInputValueChange={handleInputValueChange} />
-                                </span>   
-                            </section>
-                        </CardContent>
+                    <CardContent>
+                        <span className='header'>
+                            <div className='title'>
+                                <h3>Buy</h3>
+                                <p>2020 DeFi Packs</p>  
+                            </div>
+                            <IconButton elevation={0} onClick={close}>
+                                <CloseIcon />
+                            </IconButton>
+                        </span>
+                        <img alt='$BOOK cover art' src={process.env.PUBLIC_URL +  'assets/books-presale.png'}/>
+                        <section className='token-data'>  
+                            <span>          
+                                <h4>{purchaseAmount} ETH</h4>
+                                <p>950 available</p>
+                            </span>   
+                            <ValueInput handleInputValueChange={handleInputValueChange} /> 
+                        </section>           
+                    </CardContent>     
                     </Card>
                     <div className='actions'>
-                        <Label>{purchaseAount}</Label>
                         {  wallet.account !=null 
                             ? 
                             <React.Fragment>
-                                
                                 <Button label='Buy' variant='primary' onClick={buyTokens}/>
                             </React.Fragment>
                             : <Button label='Connect Wallet' variant='primary' onClick={showWeb3SignIn} />

@@ -270,6 +270,8 @@ footer p {
   text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.25);
 }
 footer span {
+  position: absolute;
+  left: calc(50% - 172px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -388,43 +390,70 @@ footer span button {
   align-items: center;
   justify-content: space-between;
 }
-.buy-modal .MuiCard-root .header h4 {
-  font-size: 20px;
-  font-weight: 350;
+.buy-modal .MuiCard-root .header .title {
+  margin-left: 15px;
+}
+.buy-modal .MuiCard-root .header .title h3 {
   color: white;
+  margin-bottom: 0px;
+  text-align: left;
+}
+.buy-modal .MuiCard-root .header .title p {
+  color: #979797;
+  margin-top: 5px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+}
+.buy-modal .MuiCard-root .header .MuiSvgIcon-root {
+  color: #FF6400;
 }
 .buy-modal .MuiCard-root img {
   height: 240px;
   width: 240px;
-  margin: 8%;
   border: 2px solid #343434;
   border-radius: 2px;
   box-shadow: 2px 4px 4px;
-}
-.buy-modal .MuiCard-root .token-data h4 {
-  margin-top: 2px;
-  color: white;
-  text-align: left;
   margin-bottom: 0px;
-}
-.buy-modal .MuiCard-root .token-data span {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.buy-modal .MuiCard-root .token-data span p {
-  font-size: 12pt;
-  color: #979797;
-}
-.buy-modal .actions button {
-  margin-top: 30px;
-  filter: none;
+  margin-top: 10px;
 }
 
-@media screen and (max-width: 450px) {
+.buy-modal .token-data {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.buy-modal .token-data span {
+  margin-left: 15px;
+}
+.buy-modal .token-data span h4 {
+  color: white;
+  margin-bottom: 5px;
+  text-align: left;
+}
+.buy-modal .token-data span p {
+  color: #979797;
+  margin-top: 0px;
+  text-align: left;
+}
+.buy-modal .actions button {
+  margin-top: 80px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (max-width: 600px) {
   .buy-modal .MuiCard-root {
-    margin-top: 25px;
-    overflow-y: scroll;
+    width: 274px;
+    height: 360px;
+  }
+  .buy-modal .MuiCard-root img {
+    width: 178px;
+    height: 178px;
+  }
+  .buy-modal .actions button {
+    margin-top: 65px;
+    width: 274px;
   }
 }
 .value-input input {
@@ -527,7 +556,6 @@ footer span button {
 
 .home-page {
   margin-top: 75px;
-  margin-bottom: 200px;
 }
 
 .uniswap-card .sale-type {
