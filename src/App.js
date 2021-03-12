@@ -1,11 +1,12 @@
 import React, {useState, useEffect} from 'react';
 import {Route, Switch} from 'react-router-dom'
 import Navbar from './components/Navbar'
-import './styles/style.sass'
+import './styles/style.css'
 import { useWallet, UseWalletProvider } from 'use-wallet'
 import Home from './pages/Home'
 import {getUniswapPoolData} from './functions/getUniswapPoolData'
 import {getSalePrice} from './functions/getSalePrice'
+import LandingPage from './pages/Landing.jsx'
 
 function App () {  
 
@@ -17,7 +18,7 @@ function App () {
     price: 0
   })
 
-  // //this variable is to handle wallet connection (by usinng aragon's use-wallet), and pass onto other components when required//
+  // //this variable is to handle wallet connection (by using aragon's use-wallet), and pass onto other components when required//
   const wallet = useWallet()
 
   const fetchData = async () => {
@@ -34,13 +35,16 @@ function App () {
   // -----------------------//
   return (
       <div className='App'>
-        <Navbar 
-          brandTitle={process.env.PUBLIC_URL + 'assets/brand-title.svg'}
-          brandLogo={process.env.PUBLIC_URL + 'defipedia_logo.png'}
-          wallet={wallet}
-        />
         <Switch>
           <Route exact path='/'>
+              <LandingPage />
+          </Route>
+          <Route exact path='/home'>
+            <Navbar 
+              brandTitle={process.env.PUBLIC_URL + 'assets/brand-title.svg'}
+              brandLogo={process.env.PUBLIC_URL + 'defipedia_logo.png'}
+              wallet={wallet}
+            />
             <Home 
               uniswapData={uniswapPoolData}
               saleData={saleData}
