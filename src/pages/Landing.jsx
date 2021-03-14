@@ -1,4 +1,4 @@
-import { Button} from '@material-ui/core'
+import { Button, LinearProgress} from '@material-ui/core'
 import React from 'react'
 
 const LandingPage = () => {
@@ -19,6 +19,19 @@ const LandingPage = () => {
                     <p>$BOOKS</p>
                     <p>SNAP SHOT OF DEFI IN A BOOK</p>
                 </div>
+            </section>
+            {/* Section 2 */}
+            <section>
+                <img src={process.env.PUBLIC_URL + 'assets/BOOKS_Render.png'} alt='books-render'/>
+            </section>
+            {/* Section 3 */}
+            <section>
+                <span>
+                    <p>We documented the future of Finance.</p>
+                    <p>Only 1,000 will exist.</p>
+                    <LinearProgress variant='determinate' value={30}/>
+                    <Button variant='contained'>Buy</Button>
+                </span>
             </section>
         </div>
     )
