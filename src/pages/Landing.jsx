@@ -1,5 +1,6 @@
 import { Button, LinearProgress} from '@material-ui/core'
 import React from 'react'
+import {IMG} from '../assets/bg.png'
 
 const LandingPage = () => {
     // @DEV: this is treated as stand-alone page, hence many components like button are just particular to this page and not a variant available to button//
@@ -32,6 +33,15 @@ const LandingPage = () => {
                     <LinearProgress variant='determinate' value={30}/>
                     <Button variant='contained'>Buy</Button>
                 </span>
+            </section>
+            {/* Section 4 */}
+            <section>
+                    <span>
+                        <p>$BOOKS includes a DeFiPack</p>
+                        <p>What's included?</p>
+                        <p>Stickers, exclusive NFTs,</p>
+                        <p>POAPs, free shipping.</p>
+                    </span>
             </section>
         </div>
     )
