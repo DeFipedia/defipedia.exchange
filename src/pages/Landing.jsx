@@ -51,14 +51,24 @@ const LandingPage = () => {
                     </span>
             </section>
             {/* Section 4 */}
-            {/* <section>
+            <section>
                     <span>
-                        <p>$BOOKS includes a DeFiPack</p>
-                        <p>What's included?</p>
-                        <p>Stickers, exclusive NFTs,</p>
-                        <p>POAPs, free shipping.</p>
+                        <article>
+                            <p>Support the DeFiPedia DAO</p>
+                            <p>Funds go towards funding the development of DeFiPedia.</p>
+                        </article>
+                        <article>
+                            <p>We're building a project for the community, with the community, without VC funding.</p>
+                            <p>Tools such as educational resources, chat bot and a decentralized help desk.</p>
+                            <p>These are all the things  we're working on to push DeFi forward to a billion users.</p>
+                            <p>Join us</p>
+                        </article>
+                        <article>
+                            <p>"In order to change an existing paradigm you do not struggle to try and change the problematic model. You create a new model and make the old one obsolete."</p>
+                            <p>- Buckminster Fuller</p>
+                        </article>
                     </span>
-            </section> */}
+            </section>
         </div>
     )
 }
