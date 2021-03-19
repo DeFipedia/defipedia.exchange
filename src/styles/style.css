@@ -709,7 +709,7 @@ footer span button {
 }
 
 .landing-page section {
-  width: 100vw;
+  width: 100%;
 }
 .landing-page section:nth-of-type(1) {
   position: absolute;
@@ -940,6 +940,7 @@ footer span button {
   align-items: center;
 }
 .landing-page section:nth-of-type(5) span button {
+  background-color: white;
   height: 80px;
   width: 210px;
   border-radius: 28px;
