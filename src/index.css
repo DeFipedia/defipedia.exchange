@@ -28,12 +28,14 @@ code {
   background-size: cover;
 }
 
-.landing-page section:nth-of-type(2) {
+/* .landing-page section:nth-of-type(2) {
   background-image: url('./assets/section2.png') ;
   background-repeat: no-repeat;
   background-size: cover;
-}
-
-/* .landing-page section:nth-of-type(3) {
-  background-image: url('./assets/section3.png') ;
 } */
+
+.landing-page section:nth-of-type(3) {
+  background-image: url('./assets/section3.jpg') ;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
