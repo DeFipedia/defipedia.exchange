@@ -22,18 +22,20 @@ const LandingPage = () => {
                 </div>
             </section>
             {/* Section 2 */}
-            {/* <section>
+            <section>
                 <img src={process.env.PUBLIC_URL + 'assets/BOOKS_Render.png'} alt='books-render'/>
-            </section> */}
+            </section>
             {/* Section 3 */}
-            {/* <section>
+            <section>
                 <span>
                     <p>We documented the future of Finance.</p>
                     <p>Only 1,000 will exist.</p>
-                    <LinearProgress variant='determinate' value={30}/>
-                    <Button variant='contained'>Buy</Button>
                 </span>
-            </section> */}
+                <span>
+                    <LinearProgress variant='determinate' value={30}/>
+                    <button>Buy</button>
+                </span>
+            </section>
             {/* Section 4 */}
             {/* <section>
                     <span>
