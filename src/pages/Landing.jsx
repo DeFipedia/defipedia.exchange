@@ -44,6 +44,10 @@ const LandingPage = () => {
                         <p>Stickers, exclusive NFTs,</p>
                         <p>POAPs, free shipping.</p>
                     </article>
+                    <article>
+                        <img src={process.env.PUBLIC_URL + 'assets/card-picture.png'} alt='card-asset'></img>
+                        <label>Limited to 1000</label>
+                    </article>
                     </span>
             </section>
             {/* Section 4 */}
