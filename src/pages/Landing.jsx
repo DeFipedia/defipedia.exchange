@@ -1,6 +1,5 @@
 import { Button, LinearProgress} from '@material-ui/core'
 import React from 'react'
-import {IMG} from '../assets/bg.png'
 
 const LandingPage = () => {
     // @DEV: this is treated as stand-alone page, hence many components like button are just particular to this page and not a variant available to button//
@@ -68,6 +67,19 @@ const LandingPage = () => {
                             <p>- Buckminster Fuller</p>
                         </article>
                     </span>
+            </section>
+            {/* Section 5 */}
+            <section>
+                <span>
+                    <button>
+                        <i className='fab fa-discord' />
+                        Discord
+                    </button>
+                    <button>
+                        <i class="fab fa-telegram"></i>
+                        Telegram
+                    </button>
+                </span>
             </section>
         </div>
     )
