@@ -35,6 +35,16 @@ const LandingPage = () => {
                     <LinearProgress variant='determinate' value={30}/>
                     <button>Buy</button>
                 </span>
+                <span>
+                    <article>
+                        <p>$BOOKS includes a DeFiPack</p>
+                        <p>What's included?</p>
+                    </article>
+                    <article>
+                        <p>Stickers, exclusive NFTs,</p>
+                        <p>POAPs, free shipping.</p>
+                    </article>
+                    </span>
             </section>
             {/* Section 4 */}
             {/* <section>

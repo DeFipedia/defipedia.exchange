@@ -832,5 +832,23 @@ footer span button {
   top: 500px;
   right: 51%;
 }
+.landing-page section:nth-of-type(3) span:nth-of-type(3) {
+  width: 50%;
+}
+.landing-page section:nth-of-type(3) span:nth-of-type(3) article {
+  color: white;
+  margin-left: calc(50% - 420px);
+  width: 420px;
+}
+.landing-page section:nth-of-type(3) span:nth-of-type(3) article:nth-of-type(1) {
+  font-size: 24px;
+  font-weight: 800;
+  margin-top: 800px;
+}
+.landing-page section:nth-of-type(3) span:nth-of-type(3) article:nth-of-type(2) {
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 140px;
+}
 
 /*# sourceMappingURL=style.css.map */
