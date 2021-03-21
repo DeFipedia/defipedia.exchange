@@ -76,7 +76,7 @@
                 margin-right: auto
                 left: 0px
                 right: 0px
-                text-align: center
+                // text-align: center
 
 // //this targets section 3 //
 .landing-page
@@ -222,7 +222,7 @@
                 margin-right: auto
                 margin-left: auto
                 margin-top: 140px
-                justify-content: space-between
+                justify-content: space-evenly
                 align-items: center
                 button
                     background-color: white
@@ -317,10 +317,82 @@
                             &:nth-of-type(3)
                                 img
                                     width: 400px
-
+                                label
+                                    min-width: 110px
+                                    line-height: 40px
+                                    font-size: 14px
+                                    font-weight: 200
             &:nth-of-type(4)
                 article
                     &:nth-of-type(3)
                         p
                             &:nth-of-type(1)
                                 width: 450px
+
+//for mobile - below 550px//
+@media screen and ( max-width: 550px)
+    .landing-page
+        section
+            &:nth-of-type(1)
+                .hero
+                    p
+                        &:nth-of-type(1)
+                            font-size: 4em
+                            margin-left: 30px
+                            -webkit-text-stroke: 3px white
+                        &:nth-of-type(2)
+                            font-size: 14px
+                            top: 280px
+                            margin-left: 70px
+            &:nth-of-type(2)
+                height: 600px
+                img
+                    height: 300px
+                    width: 350px
+            &:nth-of-type(3)
+                top: 1500px //this is bcox height of section 2 is reducedd for mobile to fix very long scroll//
+                span
+                    &:nth-of-type(1)
+                        p
+                            margin-right: 5%
+                            font-size: 20px
+                    &:nth-of-type(2)
+                        .MuiLinearProgress-root
+                            width: 260px
+                            margin-right: 7%
+                        button
+                            right: 7%
+                    &:nth-of-type(3)
+                        article
+                            margin-right: 5%
+                            &:nth-of-type(3)
+                                display: flex
+                                flex-direction: column
+                                justify-content: center
+                                align-items: center
+                                img
+                                    margin-top: 30px
+                                label
+                                    width: 200px
+                                    font-size: 16px
+                                    font-weight: 600
+            &:nth-of-type(4)
+                top: 3500px
+                span
+                    margin-left: 10%
+                    article
+
+                        &:nth-of-type(3)
+                            p
+                                &:nth-of-type(1)
+                                    width: 320px
+                                &:nth-of-type(2)
+                                    margin-top: 40px
+            &:nth-of-type(5)
+                top: 4600px
+                span
+                    width: 450px
+                    button
+                        width: 160px
+                        height: 50px
+                        font-size: 20px
