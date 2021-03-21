@@ -729,7 +729,7 @@ footer span button {
   height: 50px;
   background-color: white;
   border-radius: 15px;
-  margin-right: 60px;
+  margin-right: 2%;
   text-align: center;
 }
 .landing-page section:nth-of-type(1) .header .MuiButton-root:nth-of-type(1) {
