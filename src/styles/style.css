@@ -875,7 +875,7 @@ footer span button {
 }
 
 .landing-page section:nth-of-type(4) {
-  height: 900px;
+  height: 980px;
   position: absolute;
   top: 4000px;
 }
@@ -887,28 +887,28 @@ footer span button {
   color: white;
 }
 .landing-page section:nth-of-type(4) span article:nth-of-type(1) {
-  margin-top: 220px;
+  margin-top: 180px;
 }
 .landing-page section:nth-of-type(4) span article:nth-of-type(1) p:nth-of-type(1) {
   font-size: 24px;
   font-weight: 700;
 }
 .landing-page section:nth-of-type(4) span article:nth-of-type(1) p:nth-of-type(2) {
-  font-size: 20px;
-  font-weight: 400;
+  font-size: 18px;
+  font-weight: 600;
 }
 .landing-page section:nth-of-type(4) span article:nth-of-type(2) {
-  margin-top: 95px;
+  margin-top: 55px;
 }
 .landing-page section:nth-of-type(4) span article:nth-of-type(2) p {
   font-size: 20px;
   font-weight: 400;
 }
 .landing-page section:nth-of-type(4) span article:nth-of-type(2) p:nth-of-type(2) {
-  margin-top: 30px;
+  margin-top: 50px;
 }
 .landing-page section:nth-of-type(4) span article:nth-of-type(2) p:nth-of-type(4) {
-  margin-top: 90px;
+  margin-top: 60px;
 }
 .landing-page section:nth-of-type(4) span article:nth-of-type(3) {
   margin-top: 90px;
@@ -974,6 +974,13 @@ footer span button {
   .landing-page section:nth-of-type(1) .hero p:nth-of-type(2) {
     font-size: 24px;
     margin-left: 290px;
+  }
+  .landing-page section:nth-of-type(4) span {
+    margin-left: 100px;
+    margin-right: 50px;
+  }
+  .landing-page section:nth-of-type(4) span article:nth-of-type(3) {
+    margin-top: 20px;
   }
 }
 
