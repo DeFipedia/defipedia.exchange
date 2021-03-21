@@ -879,8 +879,9 @@ footer span button {
   position: absolute;
   top: 4000px;
 }
-.landing-page section:nth-of-type(4) span article {
-  margin-left: calc(50% - 620px);
+.landing-page section:nth-of-type(4) span {
+  display: block;
+  margin-left: calc( 50% - 455px);
 }
 .landing-page section:nth-of-type(4) span article p {
   color: white;
