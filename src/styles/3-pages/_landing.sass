@@ -140,20 +140,21 @@
                             font-weight: 700
                             margin-top: 140px
                         &:nth-of-type(3)
-                            background-color: green
-                            width: 35%
-                            margin-left: calc( 25% + 50px )// to make card align with text above //
+                            // background-color: green
+                            // width: 40%
+                            margin-left: calc( 25%)// to make card align with text above //
                             margin-top: 85px
                             display: flex
                             // justify-content: space-between
                             align-items: center
                             img
                                 height: 280px
-                                width: 20%
-                                min-width: 450px
+                                width: 500px
+                                // width: 20%
+                                // min-width: 450px
                             label
                                 // float: right
-                                width: 200px
+                                min-width: 200px
                                 height: 40px
                                 color: black
                                 background-color: white
@@ -261,7 +262,16 @@
                             font-size: 24px
                             margin-left: 290px
                             top: 450px
-            //for responsiveness of text in section 4//
+            &:nth-of-type(3)
+                span
+                    &:nth-of-type(2)
+                        .MuiLinearProgress-root
+                            width: 280px
+                    &:nth-of-type(3)
+                        article
+                            &:nth-of-type(3)
+                                margin-left: 5%
+
             &:nth-of-type(4)
                 span
                     margin-left: 100px
@@ -270,8 +280,8 @@
                         &:nth-of-type(3)
                             margin-top: 20px
 
-//this is adjustment for 725 width//
-@media screen and ( max-width: 725px )
+//this is adjustment for 750 width//
+@media screen and ( max-width: 750px )
     .landing-page
         section
             &:nth-of-type(1)
@@ -304,3 +314,13 @@
                     &:nth-of-type(3)
                         article
                             margin-right: calc(32% + 2px)
+                            &:nth-of-type(3)
+                                img
+                                    width: 400px
+
+            &:nth-of-type(4)
+                article
+                    &:nth-of-type(3)
+                        p
+                            &:nth-of-type(1)
+                                width: 450px
