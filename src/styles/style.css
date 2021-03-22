@@ -557,6 +557,8 @@ footer span button {
 
 .home-page {
   margin-top: 75px;
+  background-color: white;
+  height: 100vh;
 }
 
 .uniswap-card .sale-type {
