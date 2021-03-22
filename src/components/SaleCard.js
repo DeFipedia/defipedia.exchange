@@ -4,7 +4,7 @@ import Details from '../pages/Details'
 
 const SaleCard = (props) => {
     //props for card data//
-    let {title, image, price, totalTokens, learnMoreTag, desc} = props
+    let {title, image, price, numberOfTokens, learnMoreTag, desc} = props
 
     const [triggerDetailsModal, setDetailsModal] = useState(false)
     const cardRef = useRef()
@@ -50,7 +50,7 @@ const SaleCard = (props) => {
                         <section className='card-data'>
                             <h4>{displayPrice} ETH</h4> 
                             <span>
-                                <p>{totalTokens} available</p>
+                                <p>{numberOfTokens} available</p>
                                 <div className='dynamic-pricing-icon'> 
                                     <div onClick={showDetailsModal}>
                                         <p>Learn more <i className="fas fa-question-circle"></i></p>

@@ -6,7 +6,6 @@ import {Footer} from '../components/Footer'
 import BuyModal from '../components/BuyModal'
 import {withdrawCommit} from '../functions/withdrawCommit'
 import Web3SignIn from '../components/Web3SignIn'
-import getAvailableBOOKS from '../functions/getAvailableBOOKS'
 
 const HomeDesktop = (props) => {
 
@@ -52,7 +51,7 @@ const HomeDesktop = (props) => {
                             title='Uniswap'
                             image={process.env.PUBLIC_URL + 'assets/cover-art.jpg'}
                             price={uniswapData.rate}
-                            totalTokens='50'
+                            numberOfTokens='50'
                             desc='Support the free market'
                             learnMoreTag='Swap here!'
                         />
@@ -67,7 +66,7 @@ const HomeDesktop = (props) => {
                             title='Pre-sale'
                             image={process.env.PUBLIC_URL + 'assets/books-presale.png'}
                             price={saleData.price}
-                            totalTokens='950'
+                            numberOfTokens={saleData.availableBOOKS}
                             desc='Support DeFiPedia development'
                             learnMoreTag='Buy direct!'
                         />
