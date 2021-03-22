@@ -2,6 +2,18 @@ import { Button, LinearProgress} from '@material-ui/core'
 import React from 'react'
 
 const LandingPage = () => {
+
+    const linkToDiscord = () => {
+        window.open('https://discord.gg/u8K4TnQJ', '_blank')
+    }
+
+    const linkToBuy = () => {
+        window.location.href='/home'
+    }
+
+    const linkToTelegram = () => {
+        window.open('https://t.me/defiped', '_blank')
+    }
     // @DEV: this is treated as stand-alone page, hence many components like button are just particular to this page and not a variant available to button//
     // Consistency is not a concept for this  as it  designed by  Sam  Ratnakar and sole purpose of this page is marketing.//
     return(
@@ -9,11 +21,11 @@ const LandingPage = () => {
             {/* Section 1 */}
             <section>
                 <div className='header'>
-                    <Button variant='contained'>
+                    <Button variant='contained' onClick={linkToDiscord}>
                         <i className='fab fa-discord' />
                         Discord
                     </Button>
-                    <Button variant='contained'>Buy</Button>
+                    <Button variant='contained' onClick={linkToBuy}>Buy</Button>
                 </div>
                 <div className='hero'>
                     <p>$BOOKS</p>
@@ -32,7 +44,7 @@ const LandingPage = () => {
                 </span>
                 <span>
                     <LinearProgress variant='determinate' value={30}/>
-                    <button>Buy</button>
+                    <button onClick={linkToBuy}>Buy</button>
                 </span>
                 <span>
                     <article>
@@ -71,11 +83,11 @@ const LandingPage = () => {
             {/* Section 5 */}
             <section>
                 <span>
-                    <button>
+                    <button onClick={linkToDiscord}>
                         <i className='fab fa-discord' />
                         Discord
                     </button>
-                    <button>
+                    <button onClick={linkToTelegram}>
                         <i class="fab fa-telegram"></i>
                         Telegram
                     </button>
