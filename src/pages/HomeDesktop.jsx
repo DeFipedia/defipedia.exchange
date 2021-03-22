@@ -6,6 +6,7 @@ import {Footer} from '../components/Footer'
 import BuyModal from '../components/BuyModal'
 import {withdrawCommit} from '../functions/withdrawCommit'
 import Web3SignIn from '../components/Web3SignIn'
+import getAvailableBOOKS from '../functions/getAvailableBOOKS'
 
 const HomeDesktop = (props) => {
 
