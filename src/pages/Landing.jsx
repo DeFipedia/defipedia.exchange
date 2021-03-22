@@ -1,7 +1,11 @@
 import { Button, LinearProgress} from '@material-ui/core'
 import React from 'react'
 
-const LandingPage = () => {
+const LandingPage = (props) => {
+
+    let {saleData} = props
+
+    let availableBOOKS = ((100 * Number(saleData.availableBOOKS))/1000)
 
     const linkToDiscord = () => {
         window.open('https://discord.gg/u8K4TnQJ', '_blank')
@@ -14,6 +18,7 @@ const LandingPage = () => {
     const linkToTelegram = () => {
         window.open('https://t.me/defiped', '_blank')
     }
+
     // @DEV: this is treated as stand-alone page, hence many components like button are just particular to this page and not a variant available to button//
     // Consistency is not a concept for this  as it  designed by  Sam  Ratnakar and sole purpose of this page is marketing.//
     return(
@@ -43,7 +48,7 @@ const LandingPage = () => {
                     <p>Only 1,000 will exist.</p>
                 </span>
                 <span>
-                    <LinearProgress variant='determinate' value={30}/>
+                    <LinearProgress variant='determinate' value={availableBOOKS}/>
                     <button onClick={linkToBuy}>Buy</button>
                 </span>
                 <span>
