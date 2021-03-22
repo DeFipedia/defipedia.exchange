@@ -458,7 +458,7 @@ footer span button {
   }
 }
 .value-input input {
-  width: 35px;
+  width: 30px;
   height: 30px;
   -webkit-appearance: none;
   border: none;
@@ -590,6 +590,8 @@ footer span button {
 
 .home-page-mobile {
   margin-bottom: 50px;
+  height: 100vh;
+  background-color: white;
 }
 .home-page-mobile .sale-card {
   width: 274px;

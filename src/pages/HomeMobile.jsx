@@ -42,6 +42,7 @@ const HomeMobile = (props) => {
         window.open(`${process.env.REACT_APP_UNISWAP_LINK}`, '_blank')
     }
 
+    console.log('wallet', wallet.account)
     return(
         <div className='home-page-mobile'>
             <Slider className='sale-carousel' {...carouselSettings}>
@@ -68,7 +69,13 @@ const HomeMobile = (props) => {
                         desc='Support DeFiPedia development'
                         learnMoreTag='Buy direct!'
                     />
-                    <Button label='Buy' variant='secondary' onClick={showBuyModal}/>
+                    {   wallet.account != null
+                        ?
+                        <Button label='Buy' variant='secondary' onClick={showBuyModal}/>
+                        :
+                        <Button label='Connect Wallet' variant='secondary' onClick={showBuyModal}/>
+                    }
+                    {/* <Button label='Buy' variant='secondary' onClick={showBuyModal}/> */}
                     <Button label='Redeem (coming soon)' variant='disabled' />
                 </section>
                 {/* Ducth auction card */}

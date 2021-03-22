@@ -10,14 +10,14 @@ const BuyModal = (props) => {
 
     const {open, close, wallet, saleData} = props
 
-    const [triggerWeb3SignIn, setTriggerWeb3SignIn] = useState(false) //state for buy mmodal//
+    const [triggerWeb3SignIn, setTriggerWeb3SignIn] = useState(false) //state for buy modal//
 
     let displayPrice = 0 //for displaying price in correcct format, only used in this component to display//
 
     const [purchaseAmount, setPurchaseAmount] = useState(displayPrice)
 
     if(saleData.price) {
-        displayPrice = saleData.price.toString().substring(0,8)
+        displayPrice = saleData.price.toString().substring(0,6)
     }
 
     const handleInputValueChange = (value) => {
