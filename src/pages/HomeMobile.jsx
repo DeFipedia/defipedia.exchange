@@ -8,6 +8,7 @@ import SaleCard from '../components/SaleCard'
 import {Button} from '../components/Button'
 import SwipeableFooter from '../components/SwipeableFooter'
 import BuyModal from '../components/BuyModal'
+import Web3SignIn from '../components/Web3SignIn'
 
 const HomeMobile = (props) => {
 
@@ -29,6 +30,9 @@ const HomeMobile = (props) => {
     // for handling buy modal trigger //
     const [triggerBuyModal, setTriggerBuyModal] = useState(false)
 
+    //for handling state of Web3SignIn - wallet connection modal//
+    const [triggerWeb3SignIn, setTriggerWeb3SignIn] = useState(false)
+
     // methods //
     const showBuyModal = () => {
         setTriggerBuyModal(true)
@@ -36,6 +40,14 @@ const HomeMobile = (props) => {
 
     const closeBuyModal = () => {
         setTriggerBuyModal(false)
+    }
+
+    const showWeb3SignIn = () => {
+        setTriggerWeb3SignIn(true)
+    }
+
+    const closeWeb3SignInModal = () => {
+        setTriggerWeb3SignIn(false)
     }
 
     const redirectToUniswap = () => {
@@ -73,12 +85,12 @@ const HomeMobile = (props) => {
                         ?
                         <Button label='Buy' variant='secondary' onClick={showBuyModal}/>
                         :
-                        <Button label='Connect Wallet' variant='secondary' onClick={showBuyModal}/>
+                        <Button label='Connect Wallet' variant='secondary' onClick={showWeb3SignIn}/>
                     }
                     {/* <Button label='Buy' variant='secondary' onClick={showBuyModal}/> */}
                     <Button label='Redeem (coming soon)' variant='disabled' />
                 </section>
-                {/* Ducth auction card */}
+                {/* Dutch auction card */}
                 <section className='dutch-auction-card'>
                     {/* this div is masking layer */}
                     <div className='dutch-auction-mask'></div>
@@ -91,13 +103,18 @@ const HomeMobile = (props) => {
                     <Button label='Withdraw deposit' variant='default'/>
                 </section>
             </Slider>
-            {/* Swipeable footer */}
             <SwipeableFooter />
             <BuyModal 
                 open={triggerBuyModal} 
                 close={closeBuyModal} 
                 wallet={wallet}
                 saleData={saleData}
+            />
+            <Web3SignIn 
+                open={triggerWeb3SignIn}
+                close={closeWeb3SignInModal}
+                wallet={wallet}
+                closeWeb3SignInModal={closeWeb3SignInModal}
             />
         </div>
 

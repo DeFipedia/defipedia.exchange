@@ -5,6 +5,7 @@ import {Button} from '../components/Button'
 import {Footer} from '../components/Footer'
 import BuyModal from '../components/BuyModal'
 import {withdrawCommit} from '../functions/withdrawCommit'
+import Web3SignIn from '../components/Web3SignIn'
 
 const HomeDesktop = (props) => {
 
@@ -13,6 +14,9 @@ const HomeDesktop = (props) => {
     // for handling modal triggers //
     const [triggerBuyModal, setTriggerBuyModal] = useState(false)
 
+    //for handling state of Web3SignIn - wallet connection modal//
+    const [triggerWeb3SignIn, setTriggerWeb3SignIn] = useState(false)
+
     // methods //
     const showBuyModal = () => {
         setTriggerBuyModal(true)
@@ -20,6 +24,14 @@ const HomeDesktop = (props) => {
 
     const closeBuyModal = () => {
         setTriggerBuyModal(false)
+    }
+
+    const showWeb3SignIn = () => {
+        setTriggerWeb3SignIn(true)
+    }
+
+    const closeWeb3SignInModal = () => {
+        setTriggerWeb3SignIn(false)
     }
 
     const withdrawFromDutchSwap = () => {
@@ -62,7 +74,7 @@ const HomeDesktop = (props) => {
                             ?
                             <Button label='Buy' variant='secondary' onClick={showBuyModal}/>
                             :
-                            <Button label='Connect Wallet' variant='secondary' onClick={showBuyModal}/>
+                            <Button label='Connect Wallet' variant='secondary' onClick={showWeb3SignIn}/>
                         }
                         {/* <Button label='Buy' variant='secondary' onClick={showBuyModal}/> */}
                         <Button label='Redeem (coming soon)' variant='disabled' className='subscribe-btn-desktop' />
@@ -88,6 +100,13 @@ const HomeDesktop = (props) => {
                 close={closeBuyModal} 
                 wallet={wallet}
                 saleData={saleData}
+            />
+            {/* to trigger if wallet isn't connected */}
+            <Web3SignIn 
+                open={triggerWeb3SignIn}
+                close={closeWeb3SignInModal}
+                wallet={wallet}
+                closeWeb3SignInModal={closeWeb3SignInModal}
             />
         </div>
     )
