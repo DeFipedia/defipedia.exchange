@@ -58,7 +58,13 @@ const HomeDesktop = (props) => {
                             desc='Support DeFiPedia development'
                             learnMoreTag='Buy direct!'
                         />
-                        <Button label='Buy' variant='secondary' onClick={showBuyModal}/>
+                        {   wallet.account != null
+                            ?
+                            <Button label='Buy' variant='secondary' onClick={showBuyModal}/>
+                            :
+                            <Button label='Connect Wallet' variant='secondary' onClick={showBuyModal}/>
+                        }
+                        {/* <Button label='Buy' variant='secondary' onClick={showBuyModal}/> */}
                         <Button label='Redeem (coming soon)' variant='disabled' className='subscribe-btn-desktop' />
                     </section>
                 </Grid>
