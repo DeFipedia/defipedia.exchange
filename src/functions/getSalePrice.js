@@ -3,7 +3,7 @@ import { web3Enabled } from './web3Enabled'
 
 export const getSalePrice = async () => {
     const web3 = await web3Enabled()
-    console.log('from buytokenfromsale')
+    // console.log('from buytokenfromsale')
     const saleContractAddr = `${process.env.REACT_APP_SALE_CONTRACT_ADDRESS}`
     const saleContract =  new web3.eth.Contract(saleABI, saleContractAddr)
     

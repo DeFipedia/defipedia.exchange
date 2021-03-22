@@ -7,6 +7,7 @@ import Home from './pages/Home'
 import {getUniswapPoolData} from './functions/getUniswapPoolData'
 import {getSalePrice} from './functions/getSalePrice'
 import LandingPage from './pages/Landing.jsx'
+import getAvailableBOOKS from './functions/getAvailableBOOKS'
 
 function App () {  
 
@@ -14,9 +15,13 @@ function App () {
     rate: 0
   })
 
+  //@DEV: data in here is coming from two different methods//
+  //look at "fetchData" for more info//
   const [saleData, setSaleData] = useState({
-    price: 0
+    price: 0,
+    availableBOOKS: 0
   })
+
 
   // //this variable is to handle wallet connection (by using aragon's use-wallet), and pass onto other components when required//
   const wallet = useWallet()
@@ -24,6 +29,11 @@ function App () {
   const fetchData = async () => {
       let currentSalePrice = await getSalePrice()
       setSaleData({price: currentSalePrice})
+      let availableBOOKS = await getAvailableBOOKS()
+      setSaleData(prevState => {
+        //@DEV: "prevState"is necessary to keep existing data and only update this field// 
+        return {...prevState, availableBOOKS: availableBOOKS}
+      })
       let uniswapPoolData = await getUniswapPoolData()
       setuniswapPoolData(uniswapPoolData)
   }
@@ -37,7 +47,7 @@ function App () {
       <div className='App'>
         <Switch>
           <Route exact path='/'>
-              <LandingPage />
+              <LandingPage saleData={saleData} />
           </Route>
           <Route exact path='/home'>
             <Navbar 
