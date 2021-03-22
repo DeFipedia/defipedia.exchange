@@ -590,6 +590,8 @@ footer span button {
 
 .home-page-mobile {
   margin-bottom: 50px;
+  height: 100vh;
+  background-color: white;
 }
 .home-page-mobile .sale-card {
   width: 274px;
