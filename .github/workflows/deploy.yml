@@ -26,7 +26,7 @@ jobs:
 
       - name: Build
         run: |
-          docker build -t gcr.io/${{ secrets.GCP_PROJECT_ID }}/github-action-test:latest
+          docker build --tag gcr.io/${{ secrets.GCP_PROJECT_ID }}/github-action-test:latest
 
       - name: Push
         run: |
