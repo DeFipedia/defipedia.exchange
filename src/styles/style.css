@@ -831,6 +831,10 @@ footer span button {
   letter-spacing: 1;
   color: #923bca;
   position: absolute;
+  border-radius: 15px;
+  box-shadow: none;
+  border-color: white;
+  background-color: white;
   top: 800px;
   right: calc(50% + 12px);
 }
