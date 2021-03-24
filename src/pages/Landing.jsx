@@ -48,7 +48,7 @@ const LandingPage = (props) => {
                     <p>Only 1,000 will exist.</p>
                 </span>
                 <span>
-                    <LinearProgress variant='determinate' value={availableBOOKS}/>
+                    <LinearProgress variant='determinate' value={100 - availableBOOKS}/>
                     <button onClick={linkToBuy}>Buy</button>
                 </span>
                 <span>
