@@ -1,10 +1,11 @@
-import { Button, LinearProgress} from '@material-ui/core'
+import { Button, LinearProgress, Typography} from '@material-ui/core'
 import React from 'react'
 
 const LandingPage = (props) => {
 
-    let {saleData} = props
+    const {saleData} = props
 
+    //this returns percentage of available BOOKS//
     let availableBOOKS = ((100 * Number(saleData.availableBOOKS))/1000)
 
     const linkToDiscord = () => {
@@ -49,7 +50,10 @@ const LandingPage = (props) => {
                 </span>
                 <span>
                     <LinearProgress variant='determinate' value={100 - availableBOOKS}/>
-                    <button onClick={linkToBuy}>Buy</button>
+                    <div className='data'>
+                        <p>{1000 - saleData.availableBOOKS} Sold</p>
+                        <button onClick={linkToBuy}>Buy</button>
+                    </div>
                 </span>
                 <span>
                     <article>
@@ -71,7 +75,6 @@ const LandingPage = (props) => {
                     <span>
                         <article>
                             <p>Support the DeFiPedia DAO</p>
-                            <p>Funds go towards development of DeFiPedia.</p>
                         </article>
                         <article>
                             <p>We're building for the community, with the community</p>

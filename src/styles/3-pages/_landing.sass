@@ -111,20 +111,33 @@
                         margin-top: 25px
                         .MuiLinearProgress-bar
                             background-color: white
-                    button
-                        height: 60px
-                        width: 200px
-                        font-size: 20px
-                        font-weight: 700
-                        letter-spacing: 1
-                        color: $dp-purple
+                    .data
+                        display: flex
+                        margin-top: 100px
                         position: absolute
-                        border-radius: 15px
-                        box-shadow: none
-                        border-color: white
-                        background-color: white
-                        top: 800px
-                        right: calc(50% + 12px) //this will re-written in a better way later on//
+                        right: calc(50% + 12px)
+                        width: 425px
+                        justify-content: space-between
+                        align-items: center
+                        // margin-top:
+                        p
+                            color: white
+                            font-size: 22px
+                            font-weight: 700
+                        button
+                            height: 60px
+                            width: 200px
+                            font-size: 20px
+                            font-weight: 700
+                            letter-spacing: 1
+                            color: $dp-purple
+                            // position: absolute
+                            border-radius: 15px
+                            box-shadow: none
+                            border-color: white
+                            background-color: white
+                            // top: 800px
+                            right: calc(50% + 12px) //this will re-written in a better way later on//
                 &:nth-of-type(3)
                     display: block
                     width: 100%
@@ -270,7 +283,12 @@
                 span
                     &:nth-of-type(2)
                         .MuiLinearProgress-root
-                            width: 280px
+                            width: 300px
+                        .data
+                            width: 310px
+                            button
+                                width: 200px
+
                     &:nth-of-type(3)
                         article
                             &:nth-of-type(3)
@@ -311,10 +329,13 @@
                         .MuiLinearProgress-root
                             width: 350px
                             margin-right: 30%
-                        button
-                            height: 50px
-                            width: 180px
-                            right: calc(30% + 2px)
+                        .data
+                            width: 300px
+                            right: 30px
+                            button
+                                height: 50px
+                                width: 180px
+                                // right: calc(30% + 2px)
                     &:nth-of-type(3)
                         article
                             margin-right: calc(32% + 2px)
