@@ -51,7 +51,7 @@ const LandingPage = (props) => {
                 <span>
                     <LinearProgress variant='determinate' value={100 - availableBOOKS}/>
                     <div className='data'>
-                        <p>{1000 - saleData.availableBOOKS} Sold</p>
+                        <p>{1000 - saleData.availableBOOKS} /1000 Sold</p>
                         <button onClick={linkToBuy}>Buy</button>
                     </div>
                 </span>
