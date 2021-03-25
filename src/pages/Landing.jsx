@@ -75,7 +75,6 @@ const LandingPage = (props) => {
                     <span>
                         <article>
                             <p>Support the DeFiPedia DAO</p>
-                            <p>Funds go towards development of DeFiPedia.</p>
                         </article>
                         <article>
                             <p>We're building for the community, with the community</p>
