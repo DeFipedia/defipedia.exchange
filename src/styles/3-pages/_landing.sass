@@ -119,25 +119,22 @@
                         width: 425px
                         justify-content: space-between
                         align-items: center
-                        // margin-top:
                         p
                             color: white
                             font-size: 22px
                             font-weight: 700
-                        button
-                            height: 60px
-                            width: 200px
-                            font-size: 20px
-                            font-weight: 700
-                            letter-spacing: 1
-                            color: $dp-purple
-                            // position: absolute
-                            border-radius: 15px
-                            box-shadow: none
-                            border-color: white
+                        .MuiButton-root
+                            width: 160px
+                            height: 50px
                             background-color: white
-                            // top: 800px
-                            right: calc(50% + 12px) //this will re-written in a better way later on//
+                            border-radius: 15px
+                            // margin-right: 2%
+                            display: flex
+                            font-weight: bold
+                            color: $dicord-purple
+                            .MuiButton-label //this is to fix weird floating issue of text//
+                                margin-top: 100px
+                                text-align: center
                 &:nth-of-type(3)
                     display: block
                     width: 100%
@@ -286,8 +283,6 @@
                             width: 300px
                         .data
                             width: 310px
-                            button
-                                width: 200px
 
                     &:nth-of-type(3)
                         article
@@ -331,10 +326,12 @@
                             margin-right: 30%
                         .data
                             width: 300px
-                            right: 30px
-                            button
+                            right: 10px
+                            p
+                                font-size: 18px
+                            .MuiButton-root
                                 height: 50px
-                                width: 180px
+                                width: 140px
                                 // right: calc(30% + 2px)
                     &:nth-of-type(3)
                         article
