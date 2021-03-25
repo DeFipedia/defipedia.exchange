@@ -837,18 +837,18 @@ footer span button {
   font-size: 22px;
   font-weight: 700;
 }
-.landing-page section:nth-of-type(3) span:nth-of-type(2) .data button {
-  height: 60px;
-  width: 200px;
-  font-size: 20px;
-  font-weight: 700;
-  letter-spacing: 1;
-  color: #923bca;
-  border-radius: 15px;
-  box-shadow: none;
-  border-color: white;
+.landing-page section:nth-of-type(3) span:nth-of-type(2) .data .MuiButton-root {
+  width: 160px;
+  height: 50px;
   background-color: white;
-  right: calc(50% + 12px);
+  border-radius: 15px;
+  display: flex;
+  font-weight: bold;
+  color: #7289DA;
+}
+.landing-page section:nth-of-type(3) span:nth-of-type(2) .data .MuiButton-root .MuiButton-label {
+  margin-top: 100px;
+  text-align: center;
 }
 .landing-page section:nth-of-type(3) span:nth-of-type(3) {
   display: block;
@@ -998,9 +998,6 @@ footer span button {
   .landing-page section:nth-of-type(3) span:nth-of-type(2) .data {
     width: 310px;
   }
-  .landing-page section:nth-of-type(3) span:nth-of-type(2) .data button {
-    width: 200px;
-  }
   .landing-page section:nth-of-type(3) span:nth-of-type(3) article:nth-of-type(3) {
     margin-left: 5%;
   }
@@ -1035,11 +1032,14 @@ footer span button {
   }
   .landing-page section:nth-of-type(3) span:nth-of-type(2) .data {
     width: 300px;
-    right: 30px;
+    right: 10px;
   }
-  .landing-page section:nth-of-type(3) span:nth-of-type(2) .data button {
+  .landing-page section:nth-of-type(3) span:nth-of-type(2) .data p {
+    font-size: 18px;
+  }
+  .landing-page section:nth-of-type(3) span:nth-of-type(2) .data .MuiButton-root {
     height: 50px;
-    width: 180px;
+    width: 140px;
   }
   .landing-page section:nth-of-type(3) span:nth-of-type(3) article {
     margin-right: calc(32% + 2px);
