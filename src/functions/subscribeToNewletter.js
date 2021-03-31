@@ -1,18 +1,18 @@
 import axios from 'axios'
-import AlertMessage from '../components/AlertMessage'
 
 export const subscribeToNewsletter = async (email) => {
     if(email !== ''){
-        axios.post(`${process.env.REACT_APP_MAILING_SERVICE}/subscribe`, {email: email})
-        .then(res => {
-            if(res.request.status === 200) {
+        try{
+            const res = await axios.post(`${process.env.REACT_APP_MAILING_SERVICE}/subscribe`, {email: email})
+            if (res.status === 200){
                 return true
+            // TODO: Can add more descriptive errors here - needs to be implemented on service first
             }else{
-                return false
+                console.log('Bad Request')
             }
-        })
-        .catch(error => {
-            console.log(error)
-        })
+
+        }catch(error){
+            console.error('Error: ', error)
+        }
     }
 }

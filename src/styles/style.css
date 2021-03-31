@@ -555,6 +555,10 @@ footer span button {
   padding: 10px;
 }
 
+.alert-message {
+  margin-top: 70px;
+}
+
 .home-page {
   margin-top: 75px;
   background-color: white;

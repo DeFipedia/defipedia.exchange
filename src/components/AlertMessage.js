@@ -1,11 +1,26 @@
 import React from 'react' 
-import {Alert} from '@material-ui/lab'
+import MuiAlert from '@material-ui/lab/Alert'
+import {Snackbar} from '@material-ui/core'
 
-const AlertMessage = ({type='info', msg}) => {
+function Alert(props) {
+    return <MuiAlert elevation={0} variant="filled" {...props}/>
+}
+
+
+const AlertMessage = ({type='info', msg, open}) => {
+
+
     return(
-        <Alert severity={type}>
-            {msg}
-        </Alert>
+        <Snackbar 
+        className='alert-message'
+        anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+        open={open} 
+        autoHideDuration={300} 
+        >
+            <Alert severity={type}>
+                {msg}
+            </Alert>
+        </Snackbar>
     )
 }
 
