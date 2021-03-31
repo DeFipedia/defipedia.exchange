@@ -1,10 +1,11 @@
-import { Button, LinearProgress} from '@material-ui/core'
+import { Button, LinearProgress, Typography} from '@material-ui/core'
 import React from 'react'
 
 const LandingPage = (props) => {
 
-    let {saleData} = props
+    const {saleData} = props
 
+    //this returns percentage of available BOOKS//
     let availableBOOKS = ((100 * Number(saleData.availableBOOKS))/1000)
 
     const linkToDiscord = () => {
@@ -48,17 +49,20 @@ const LandingPage = (props) => {
                     <p>Only 1,000 will exist.</p>
                 </span>
                 <span>
-                    <LinearProgress variant='determinate' value={availableBOOKS}/>
-                    <button onClick={linkToBuy}>Buy</button>
+                    <LinearProgress variant='determinate' value={100 - availableBOOKS}/>
+                    <div className='data'>
+                        <p>{1000 - saleData.availableBOOKS} /1000 Sold</p>
+                        <Button variant='contained' onClick={linkToBuy}>Buy</Button>
+                    </div>
                 </span>
                 <span>
                     <article>
-                        <p>$BOOKS includes a DeFiPack</p>
+                        <p>Redeem $Books, get a DeFiPack</p>
                         <p>What's included?</p>
                     </article>
                     <article>
-                        <p>Stickers, exclusive NFTs,</p>
-                        <p>POAPs, free shipping.</p>
+                        <p>Exclusive NFTs, Stickers, Physical book in premium packaging</p>
+                        <p>Free shipping worldwide.</p>
                     </article>
                     <article>
                         <img src={process.env.PUBLIC_URL + 'assets/card-picture.png'} alt='card-asset'></img>
@@ -71,12 +75,12 @@ const LandingPage = (props) => {
                     <span>
                         <article>
                             <p>Support the DeFiPedia DAO</p>
-                            <p>Funds go towards funding the development of DeFiPedia.</p>
                         </article>
                         <article>
-                            <p>We're building a project for the community, with the community, without VC funding.</p>
-                            <p>Tools such as educational resources, chat bot and a decentralized help desk.</p>
-                            <p>These are all the things  we're working on to push DeFi forward to a billion users.</p>
+                            <p>We're building for the community, with the community</p>
+                            <p>Creating tools such as a term database, chat bot, and a decentralized help desk.</p>
+                            <p>We're going to revolutionize learning.</p>
+                            <p>Funds go towards the development of decentralized educational tools.</p>
                             <p>Join us</p>
                         </article>
                         <article>
