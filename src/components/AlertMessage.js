@@ -6,16 +6,15 @@ function Alert(props) {
     return <MuiAlert elevation={0} variant="filled" {...props}/>
 }
 
-
-const AlertMessage = ({type='info', msg, open}) => {
-
+const AlertMessage = ({type='info', msg, open, handleClose}) => {
 
     return(
         <Snackbar 
         className='alert-message'
         anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
         open={open} 
-        autoHideDuration={300} 
+        onClose={handleClose}
+        autoHideDuration={3000} 
         >
             <Alert severity={type}>
                 {msg}

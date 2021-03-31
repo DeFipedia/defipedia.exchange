@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import SwipeableBottomSheet from 'react-swipeable-bottom-sheet'
 import {Button} from '../components/Button'
-import { subscribeToNewsletter } from '../functions/subscribeToNewletter'
+import { subscribeToNewsletter } from '../functions/subscribeToNewsletter'
 import CloseIcon from '@material-ui/icons/Close';
 
 const SwipeableFooter = () => {

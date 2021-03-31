@@ -1,17 +1,22 @@
 import React, {useState} from 'react'
-import { subscribeToNewsletter } from '../functions/subscribeToNewletter'
+import {subscribeToNewsletter}  from '../functions/subscribeToNewsletter'
 import {Button} from './Button'
 import AlertMessage from './AlertMessage'
 
 export const Footer = () => {
 
     const [email, setEmail] = useState('')
-    const [subscribed, setSubscribed] = useState(false)
+    const [showAlert, setShowAlert] = useState(false)
     const [msg, setMsg] = useState(null)
+
 
     const handleInputChange = (e) => {
         let {value} = e.target
         setEmail(value)
+    }
+
+    const handleAlertClose = () => {
+        setShowAlert(false)
     }
 
     const submitEmail = async () => {
@@ -19,17 +24,14 @@ export const Footer = () => {
         if(subscribed === true){
             let alertMessage = 'Successfully subscribed to the newsletter'
             setMsg(alertMessage)
-            setSubscribed(true)
-            console.log('here')
-        }else{
-            console.log('there')
+            setShowAlert(true)
         }
         
     }
 
     return(
         <React.Fragment>
-            {subscribed ? <AlertMessage open={alert} msg={msg} type='success'/> : null}
+            {showAlert ? <AlertMessage open={alert}  handleClose={handleAlertClose} msg={msg} type='success'/> : null}
         <footer>
             <p>Don't miss out, keep pace with all the latest</p>
             <span>
