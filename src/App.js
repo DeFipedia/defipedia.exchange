@@ -47,6 +47,9 @@ function App () {
       <div className='App'>
         <Switch>
           <Route exact path='/'>
+            <LandingPage />
+          </Route>
+          <Route exact path='/home'>
             <Navbar 
               brandTitle={process.env.PUBLIC_URL + 'assets/brand-title.svg'}
               brandLogo={process.env.PUBLIC_URL + 'defipedia_logo.png'}

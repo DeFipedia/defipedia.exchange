@@ -1,23 +1,17 @@
-//This is the single file outpu by sass. It is intended to ONLY import other syltsheets //
+/* Error: Expected newline.
+ *   ,
+ * 8 | body::before {
+ *   |              ^
+ *   '
+ *   style.sass 8:14  root stylesheet */
 
-//1- Basics //
-@import '1-basics/variables.sass'
-@import '1-basics/global.sass'
-
-//2- Components //
-@import '2-components/navbar.sass'
-@import '2-components/button.sass'
-@import '2-components/saleCard.sass'
-@import '2-components/footer.sass'
-@import '2-components/web3SignIn.sass'
-@import '2-components/buymodal.sass'
-@import '2-components/valueInput.sass'
-@import '2-components/swipeableFooter.sass'
-@import '2-components/label.sass'
-@import '2-components/alertMessage.sass'
-
-//3- Pages //
-@import '3-pages/home.sass'
-@import '3-pages/homeMobile.sass'
-@import '3-pages/details.sass'
-@import '3-pages/landing.sass'
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Expected newline.\a   \2577 \a 8 \2502  body::before {\a   \2502               ^\a   \2575 \a   style.sass 8:14  root stylesheet";
+}
