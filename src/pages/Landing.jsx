@@ -1,4 +1,5 @@
 import React from 'react'
+import {Grid} from '@material-ui/core'
 
 const LandingPage = (props) => {
 
@@ -35,6 +36,24 @@ const LandingPage = (props) => {
                 <img src={process.env.PUBLIC_URL + 'assets/book.svg'} alt='$books-render'/> 
                 <p>902 Left</p>
             </section>
+            <Grid container className='data'>
+                <Grid item xs={12} sm={12} md={6} lg={6}>
+                <p>$1002.33<sup>+23%</sup></p>
+                <span>
+                    <button> 
+                        <img src={process.env.PUBLIC_URL + 'assets/uni-logo.svg'} alt='uniswap-logo'/>
+                        Uniswap 
+                    </button>
+                    <button>
+                        <img src={process.env.PUBLIC_URL + 'assets/dfp-logo.svg'} alt='defipedia-logo'/>
+                        Buy Direct
+                    </button>
+                </span>
+                </Grid>
+                <Grid item xs={12} sm={12} md={6} lg={6}>
+                <p>Section 2</p>
+                </Grid>
+            </Grid>
         </div>
     )
 }

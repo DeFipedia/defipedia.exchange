@@ -726,7 +726,7 @@ footer span button {
 }
 .landing-page .opaque-wrapper {
   position: absolute;
-  height: 96%;
+  height: 96vh;
   width: 96%;
   left: 0;
   right: 0;
@@ -808,6 +808,54 @@ footer span button {
   margin-right: auto;
   margin-top: 60px;
   z-index: 5;
+}
+.landing-page .data {
+  position: absolute;
+  height: 250px;
+  width: 86%;
+  max-width: 1900px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  top: 550px;
+  z-index: 4;
+}
+.landing-page .data .MuiGrid-item:nth-of-type(1) p {
+  color: white;
+  font-family: "Lato", sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 35px;
+  margin-left: 2.5%;
+}
+.landing-page .data .MuiGrid-item:nth-of-type(1) p sup {
+  color: #00FF85;
+  margin-left: 5px;
+}
+.landing-page .data .MuiGrid-item:nth-of-type(1) span {
+  display: flex;
+}
+.landing-page .data .MuiGrid-item:nth-of-type(1) span button {
+  background-color: white;
+  color: black;
+  border: none;
+  font-family: "Nunito Sans", sans-serif;
+  font-style: normal;
+  height: 50px;
+  width: 190px;
+  border: 1px solid white;
+  box-sizing: border-box;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+}
+.landing-page .data .MuiGrid-item:nth-of-type(1) span button img {
+  padding-right: 20px;
+  margin-left: 20px;
+}
+.landing-page .data .MuiGrid-item:nth-of-type(1) span button:nth-of-type(2) {
+  margin-left: 15px;
 }
 
 @media screen and (max-width: 900px) {

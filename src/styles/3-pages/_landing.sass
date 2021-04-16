@@ -8,7 +8,7 @@
     z-index: 1
     .opaque-wrapper
         position: absolute
-        height: 96%
+        height: 96vh
         width: 96%
         left: 0
         right: 0
@@ -21,7 +21,7 @@
         background-color: black
         opacity: 0.8
         z-index: 2
-        // mix-blend-mode: darken
+
     nav
         display: flex
         flex-direction: row
@@ -89,6 +89,56 @@
             margin-right: auto
             margin-top: 60px
             z-index: 5
+    .data
+        position: absolute
+        height: 250px
+        width: 86%
+        max-width: 1900px
+        left: 0
+        right: 0
+        margin-left: auto
+        margin-right: auto
+        // background-color: grey
+        top: 550px
+        z-index: 4
+        .MuiGrid-item
+            &:nth-of-type(1)
+                p
+                    color: white
+                    font-family: 'Lato', sans-serif
+                    font-style: normal
+                    font-weight: 900
+                    font-size: 35px
+                    margin-left: 2.5%
+                    // line-height: 166px
+                    sup
+                        color: #00FF85
+                        margin-left: 5px
+                span
+                    display: flex
+                    // // flex-direction: row
+                    // width: 420px
+                    // align-content: space-evenly
+                    button
+                        background-color: white
+                        color: black
+                        border: none
+                        font-family: 'Nunito Sans', sans-serif
+                        font-style: normal
+                        height: 50px
+                        width: 190px
+                        border: 1px solid white
+                        box-sizing: border-box
+                        border-radius: 7px
+                        display: flex
+                        align-items: center
+                        // justify-content: center
+                        img
+                            padding-right: 20px
+                            margin-left: 20px
+                        //targets second button
+                        &:nth-of-type(2)
+                            margin-left: 15px
 
 // Media queries// 
 
