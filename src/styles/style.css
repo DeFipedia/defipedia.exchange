@@ -3,7 +3,7 @@ html, body {
 }
 
 body {
-  font-family: Avenir;
+  font-family: "Nunito Sans", sans-serif;
   overflow-x: hidden;
 }
 
@@ -752,7 +752,7 @@ footer span button {
 }
 .landing-page nav li {
   color: white;
-  font-family: Avenir;
+  font-family: "Nunito Sans", sans-serif;
   font-style: normal;
   font-weight: 900;
   font-size: 14px;
@@ -771,9 +771,8 @@ footer span button {
 }
 .landing-page .hero p {
   color: white;
-  font-family: Avenir;
+  font-family: "Nunito Sans", sans-serif;
   font-style: normal;
-  font-weight: 900;
   text-transform: uppercase;
   width: 100%;
   text-align: center;
