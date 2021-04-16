@@ -722,6 +722,7 @@ footer span button {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  z-index: 1;
 }
 .landing-page .opaque-wrapper {
   position: absolute;
@@ -737,6 +738,7 @@ footer span button {
   margin-bottom: auto;
   background-color: black;
   opacity: 0.8;
+  z-index: 2;
 }
 .landing-page nav {
   display: flex;
@@ -747,8 +749,9 @@ footer span button {
   height: 30px;
   position: absolute;
   left: calc(50% - 280px/2);
-  top: 35px;
+  top: max(2%, 35px);
   justify-content: space-between;
+  z-index: 3;
 }
 .landing-page nav li {
   color: white;
@@ -763,36 +766,34 @@ footer span button {
   position: absolute;
   width: 70%;
   height: 692px;
-  top: 50px;
   left: 0;
   right: 0;
   margin-left: auto;
   margin-right: auto;
 }
 .landing-page .hero p {
+  position: absolute;
   color: white;
   font-style: normal;
   text-transform: uppercase;
   width: 100%;
   text-align: center;
   letter-spacing: 0.5px;
+  z-index: 3;
 }
 .landing-page .hero p:nth-of-type(1) {
   font-family: "Nunito Sans", sans-serif;
-  font-size: max(10vw, 18px);
-  margin-top: 50px;
+  font-size: max(12vw, 48px);
+  margin-top: max(5%, 100px);
   margin-bottom: 0px;
+  z-index: 3;
 }
 .landing-page .hero p:nth-of-type(2) {
+  position: absolute;
   font-family: "Lato", sans-serif !important;
-  font-size: max(5vw, 16px);
-  margin-top: 120px;
-}
-.landing-page .hero p img {
-  width: 450px;
-  height: 500px;
-  top: 16%;
-  left: calc(50% - 450px/2);
+  font-size: max(6vw, 36px);
+  top: max(280px, 10%);
+  z-index: 6;
 }
 
 /*# sourceMappingURL=style.css.map */
