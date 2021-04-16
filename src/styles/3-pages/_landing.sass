@@ -169,6 +169,7 @@
 
 // Media queries// 
 
+    // ---------------------------------------tablet--------------------------------------------------//
 @media screen and ( max-width: 960px )
     .hero
         img
@@ -179,24 +180,16 @@
             &:nth-of-type(2)
                 top: 34%
     .data
-        top: 100px
+        top: 490px !important
         .MuiGrid-item
             &:nth-of-type(1)
                 > p
                     margin-left: 11% !important
                 span
                     margin-left: 11% !important
-                    // margin-right: 0px !important
 
-                    // background-color: red
-
-            // &:nth-of-type(1)
-            //     margin-right: 2%
-            // &:nth-of-type(2)
-            //     margin-left: 1%
-// @media screen and ( max-width:900px)
-
-@media screen and ( max-width: 650px )
+    //-----------------------------------------------------mobile--------------------------------------------------------------//
+@media screen and ( max-width: 600px )
     .hero
         img
             width: 300px !important
@@ -205,6 +198,23 @@
         p
             &:nth-of-type(2)
                 top: 230px !important
+    .data
+        top: 42% !important
+        .MuiGrid-item
+            &:nth-of-type(1)
+                > p
+                    font-size: 18px !important
+                span
+                    width: 320px !important
+                    button
+                        img
+                            padding-right: 10px !important
+                            margin-left: 10px !important
+            &:nth-of-type(2)
+                article
+                    margin-top: 30px !important
+
+//---------------------------------------------smaller mobile--------------------------------------------------------------------//
 
 @media screen and ( max-width: 415px )
     .hero
