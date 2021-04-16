@@ -1,40 +1,44 @@
 .landing-page
-    background-image: url('../assets/DFP_CoverArt.png')
+    background: url('../assets/DFP_CoverArt.png') no-repeat center center fixed
     height: 100vh
-    width: 100vw
-    background-repeat: no-repeat
+    -webkit-background-size: cover
+    -moz-background-size: cover
+    -o-background-size: cover
     background-size: cover
-    section
+    .opaque-wrapper
         position: absolute
-        height: 95%
+        height: 96%
         width: 96%
         left: 0
         right: 0
         margin-left: auto
         margin-right: auto
-        top: 25px
+        top: 0
+        bottom: 0
+        margin-top: auto
+        margin-bottom: auto
         background-color: black
         opacity: 0.8
-        // mix-blend-mode: pass-through
-        nav
-            display: flex
-            flex-direction: row
-            align-items: center
-            list-style-type: none
-            width: 280px
-            height: 30px
-            position: absolute
-            left: calc(50% - 280px/2)
-            top: 20px
-            justify-content: space-between
-            li
-                color: white
-                font-family: Avenir
-                font-style: normal
-                font-weight: 900
-                font-size: 12px
-                line-height: 18px
-                letter-spacing: 0.5px
+        // mix-blend-mode: darken
+    nav
+        display: flex
+        flex-direction: row
+        align-items: center
+        list-style-type: none
+        width: 280px
+        height: 30px
+        position: absolute
+        left: calc(50% - 280px/2)
+        top: 35px
+        justify-content: space-between
+        li
+            color: white
+            font-family: Avenir
+            font-style: normal
+            font-weight: 900
+            font-size: 14px
+            line-height: 18px
+            letter-spacing: 0.5px
         .hero
             position: absolute
             width: 70%

@@ -23,19 +23,19 @@ const LandingPage = (props) => {
     // Consistency is not a concept for this  as it  designed by  Sam  Ratnakar and sole purpose of this page is marketing.//
     return(
         <div className='landing-page'>
-            <section className='wrapper'>
-               <nav>
-                       <li>DEFIPEDIA.IO</li>
-                       <li>Discord</li>
-                       <li>Telegram</li>
-                </nav> 
-                <section className='hero'>
+            {/* this is the opaque container for all the elements, all to the other elements need to be outside to avoid opacity */}
+            <section className='opaque-wrapper' />
+            <nav>
+                <li>DEFIPEDIA.IO</li>
+               <li>Discord</li>
+               <li>Telegram</li>
+            </nav> 
+                {/* <section className='hero'>
                     <p>$BOOKS</p>
                     <img src={process.env.PUBLIC_URL + 'assets/book.png'} alt='$books-render'/>
-                    {/* dummy data fro now */}
+        
                     <p>902 Left</p>
-                </section>
-            </section>
+                </section> */}
         </div>
     )
 }
