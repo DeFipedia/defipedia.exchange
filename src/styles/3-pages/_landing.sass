@@ -39,35 +39,40 @@
             font-size: 14px
             line-height: 18px
             letter-spacing: 0.5px
-        .hero
-            position: absolute
-            width: 70%
-            height: 692px
-            top: 50px
+    .hero
+        position: absolute
+        width: 70%
+        height: 692px
+        top: 50px
+        left: 0
+        right: 0
+        margin-left: auto
+        margin-right: auto
+        // background-color: red
+        p
+            // position: absolute
+            color: white
+            font-family: Avenir
+            font-style: normal
+            font-weight: 900
+            text-transform: uppercase
+            width: 100%
+            text-align: center
+            letter-spacing: 0.5px
             // background-color: red
-            p
-                color: white
-                font-family: Avenir
-                font-style: normal
-                font-weight: 900
-                text-transform: uppercase
-                width: 100%
-                text-align: center
-                letter-spacing: 0.5px
-                &:nth-of-type(1)
-                    font-size: 180px
-                    margin-top: 80px
-                    margin-bottom: 0px
-                    line-height: 166px
-                &:nth-of-type(2)
-                    font-size: 100px
-                    margin-top: 80px
-                    z-index: 5
+            &:nth-of-type(1)
+                font-size: max(10vw, 18px)
+                margin-top: 50px
+                margin-bottom: 0px
+                // line-height: 166px
+            &:nth-of-type(2)
+                font-size: max(5vw, 16px)
+                margin-top: 120px
+                // z-index: 5
             img
-                position: absolute
                 width: 450px
                 height: 500px
-                padding: 0px
-                top: 8%
+                top: 16%
+
                 left: calc(50% - 450px/2)
-                z-index: 1
+                // z-index: 1

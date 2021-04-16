@@ -3,7 +3,7 @@ html, body {
 }
 
 body {
-  font-family: Avenier, Helvetica, sans-serif;
+  font-family: Avenir;
   overflow-x: hidden;
 }
 
@@ -759,13 +759,17 @@ footer span button {
   line-height: 18px;
   letter-spacing: 0.5px;
 }
-.landing-page nav .hero {
+.landing-page .hero {
   position: absolute;
   width: 70%;
   height: 692px;
   top: 50px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
 }
-.landing-page nav .hero p {
+.landing-page .hero p {
   color: white;
   font-family: Avenir;
   font-style: normal;
@@ -775,25 +779,20 @@ footer span button {
   text-align: center;
   letter-spacing: 0.5px;
 }
-.landing-page nav .hero p:nth-of-type(1) {
-  font-size: 180px;
-  margin-top: 80px;
+.landing-page .hero p:nth-of-type(1) {
+  font-size: max(10vw, 18px);
+  margin-top: 50px;
   margin-bottom: 0px;
-  line-height: 166px;
 }
-.landing-page nav .hero p:nth-of-type(2) {
-  font-size: 100px;
-  margin-top: 80px;
-  z-index: 5;
+.landing-page .hero p:nth-of-type(2) {
+  font-size: max(5vw, 16px);
+  margin-top: 120px;
 }
-.landing-page nav .hero img {
-  position: absolute;
+.landing-page .hero p img {
   width: 450px;
   height: 500px;
-  padding: 0px;
-  top: 8%;
+  top: 16%;
   left: calc(50% - 450px/2);
-  z-index: 1;
 }
 
 /*# sourceMappingURL=style.css.map */
