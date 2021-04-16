@@ -64,29 +64,72 @@
             z-index: 3
             &:nth-of-type(1)
                 font-family: 'Nunito Sans', sans-serif
-                font-size: min(12em, 14vw)
-                top: 0px
+                //this is to keep it scalable in both small and large viewports//
+                font-size: min(12em, 18vw)
                 margin-top: max(2%, 120px)
                 margin-bottom: 0px
+                top: 0px
                 z-index: 3
                 // line-height: 166px
             &:nth-of-type(2)
                 position: absolute
                 font-family: 'Lato', sans-serif !important
-                font-size: max(6vw, 36px)
-                //top:
+                font-size: min(6em, 10vw)
+                top: 38%
                 z-index: 6
         img
             position: absolute
-            // display: block
             padding: 0px
-            width: 70%
-            height: 70%
+            width: 400px
+            height: 500px
             top: auto
             left: 0
             right: 0
             margin-left: auto
             margin-right: auto
-            margin-top: 300px
-            // background-color: red
+            margin-top: 60px
             z-index: 5
+
+// Media queries// 
+
+@media screen and ( max-width:900px)
+    .hero
+        img
+            width: 350px !important
+            height: 400px !important
+            margin-top: 90px !important
+        p
+            &:nth-of-type(2)
+                top: 34%
+
+            // background-color: red
+
+@media screen and ( max-width: 650px )
+    .hero
+        img
+            width: 300px !important
+            height: 350px !important
+            margin-top: 80px !important
+        p
+            &:nth-of-type(2)
+                top: 230px !important
+
+// @media screen and ( max-width: 500px )
+//     .hero
+//         img
+//             width: 200px !important
+//             height: 250px !important
+//             margin-top: 80px !important
+//         p
+//             &:nth-of-type(2)
+//                 top: 190px !important
+
+@media screen and ( max-width: 415px )
+    .hero
+        img
+            width: 180px !important
+            height: 200px !important
+            margin-top: 100px !important
+        p
+            &:nth-of-type(2)
+                top: 180px !important

@@ -783,30 +783,62 @@ footer span button {
 }
 .landing-page .hero p:nth-of-type(1) {
   font-family: "Nunito Sans", sans-serif;
-  font-size: min(12em, 14vw);
-  top: 0px;
+  font-size: min(12em, 18vw);
   margin-top: max(2%, 120px);
   margin-bottom: 0px;
+  top: 0px;
   z-index: 3;
 }
 .landing-page .hero p:nth-of-type(2) {
   position: absolute;
   font-family: "Lato", sans-serif !important;
-  font-size: max(6vw, 36px);
+  font-size: min(6em, 10vw);
+  top: 38%;
   z-index: 6;
 }
 .landing-page .hero img {
   position: absolute;
   padding: 0px;
-  width: 70%;
-  height: 70%;
+  width: 400px;
+  height: 500px;
   top: auto;
   left: 0;
   right: 0;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 300px;
+  margin-top: 60px;
   z-index: 5;
+}
+
+@media screen and (max-width: 900px) {
+  .hero img {
+    width: 350px !important;
+    height: 400px !important;
+    margin-top: 90px !important;
+  }
+  .hero p:nth-of-type(2) {
+    top: 34%;
+  }
+}
+@media screen and (max-width: 650px) {
+  .hero img {
+    width: 300px !important;
+    height: 350px !important;
+    margin-top: 80px !important;
+  }
+  .hero p:nth-of-type(2) {
+    top: 230px !important;
+  }
+}
+@media screen and (max-width: 415px) {
+  .hero img {
+    width: 180px !important;
+    height: 200px !important;
+    margin-top: 100px !important;
+  }
+  .hero p:nth-of-type(2) {
+    top: 180px !important;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
