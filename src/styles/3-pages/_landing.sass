@@ -8,7 +8,7 @@
     z-index: 1
     .opaque-wrapper
         position: absolute
-        height: 96vh
+        height: 96%
         width: 96%
         left: 0
         right: 0
@@ -98,27 +98,29 @@
         right: 0
         margin-left: auto
         margin-right: auto
-        // background-color: grey
         top: 550px
         z-index: 4
         .MuiGrid-item
             &:nth-of-type(1)
+                // background-color: red
                 p
                     color: white
+                    // background-color: green
                     font-family: 'Lato', sans-serif
                     font-style: normal
                     font-weight: 900
                     font-size: 35px
-                    margin-left: 2.5%
+                    text-align: right
+                    // margin-left: 2.5%
+                    margin-right: calc( 50% - 80px/2 + 70px )
                     // line-height: 166px
                     sup
                         color: #00FF85
                         margin-left: 5px
                 span
                     display: flex
-                    // // flex-direction: row
-                    // width: 420px
-                    // align-content: space-evenly
+                    float: right
+                    margin-right: calc( 50% - 400px/2 + 80px )
                     button
                         background-color: white
                         color: black
@@ -126,7 +128,7 @@
                         font-family: 'Nunito Sans', sans-serif
                         font-style: normal
                         height: 50px
-                        width: 190px
+                        width: 200px
                         border: 1px solid white
                         box-sizing: border-box
                         border-radius: 7px
@@ -165,7 +167,7 @@
 
 // Media queries// 
 
-@media screen and ( max-width:900px)
+@media screen and ( max-width: 960px )
     .hero
         img
             width: 350px !important
@@ -174,8 +176,14 @@
         p
             &:nth-of-type(2)
                 top: 34%
-
-            // background-color: red
+    .data
+        top: 100px
+        .MuiGrid-item
+            &:nth-of-type(1)
+                margin-right: 2%
+            &:nth-of-type(2)
+                margin-left: 1%
+// @media screen and ( max-width:900px)
 
 @media screen and ( max-width: 650px )
     .hero
@@ -186,16 +194,6 @@
         p
             &:nth-of-type(2)
                 top: 230px !important
-
-// @media screen and ( max-width: 500px )
-//     .hero
-//         img
-//             width: 200px !important
-//             height: 250px !important
-//             margin-top: 80px !important
-//         p
-//             &:nth-of-type(2)
-//                 top: 190px !important
 
 @media screen and ( max-width: 415px )
     .hero
