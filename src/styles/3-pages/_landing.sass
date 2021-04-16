@@ -110,17 +110,19 @@
                     font-style: normal
                     font-weight: 900
                     font-size: 35px
-                    text-align: right
+                    text-align: left
+                    width: 512px
                     // margin-left: 2.5%
-                    margin-right: calc( 50% - 80px/2 + 70px )
+                    margin-left: 25%
                     // line-height: 166px
                     sup
                         color: #00FF85
                         margin-left: 5px
                 span
                     display: flex
-                    float: right
-                    margin-right: calc( 50% - 400px/2 + 80px )
+                    float: left
+                    width: 380px
+                    margin-left: 20%
                     button
                         background-color: white
                         color: black
@@ -128,7 +130,7 @@
                         font-family: 'Nunito Sans', sans-serif
                         font-style: normal
                         height: 50px
-                        width: 200px
+                        width: 180px
                         border: 1px solid white
                         box-sizing: border-box
                         border-radius: 7px
@@ -180,9 +182,18 @@
         top: 100px
         .MuiGrid-item
             &:nth-of-type(1)
-                margin-right: 2%
-            &:nth-of-type(2)
-                margin-left: 1%
+                > p
+                    margin-left: 11% !important
+                span
+                    margin-left: 11% !important
+                    // margin-right: 0px !important
+
+                    // background-color: red
+
+            // &:nth-of-type(1)
+            //     margin-right: 2%
+            // &:nth-of-type(2)
+            //     margin-left: 1%
 // @media screen and ( max-width:900px)
 
 @media screen and ( max-width: 650px )
