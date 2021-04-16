@@ -32,8 +32,8 @@ const LandingPage = (props) => {
             </nav> 
             <section className='hero'>
                 <p>$BOOKS</p>
-                {/* <img src={process.env.PUBLIC_URL + 'assets/book.svg'} alt='$books-render'/>  */}
-                <p>902 Left</p>
+                <img src={process.env.PUBLIC_URL + 'assets/book.svg'} alt='$books-render'/> 
+                {/* <p>902 Left</p> */}
             </section>
         </div>
     )
