@@ -38,20 +38,24 @@ const LandingPage = (props) => {
             </section>
             <Grid container className='data'>
                 <Grid item xs={12} sm={12} md={6} lg={6}>
-                <p>$1002.33<sup>+23%</sup></p>
-                <span>
-                    <button> 
-                        <img src={process.env.PUBLIC_URL + 'assets/uni-logo.svg'} alt='uniswap-logo'/>
-                        Uniswap 
-                    </button>
-                    <button>
-                        <img src={process.env.PUBLIC_URL + 'assets/dfp-logo.svg'} alt='defipedia-logo'/>
-                        Buy Direct
-                    </button>
-                </span>
+                    <p>$1002.33<sup>+23%</sup></p>
+                    <span>
+                        <button> 
+                            <img src={process.env.PUBLIC_URL + 'assets/uni-logo.svg'} alt='uniswap-logo'/>
+                            Uniswap 
+                        </button>
+                        <button>
+                            <img src={process.env.PUBLIC_URL + 'assets/dfp-logo.svg'} alt='defipedia-logo'/>
+                            Buy Direct
+                        </button>
+                    </span>
                 </Grid>
                 <Grid item xs={12} sm={12} md={6} lg={6}>
-                <p>Section 2</p>
+                    <p>Support DeFiPedia</p>
+                    <article>
+                        We're building a project for the community, with the community, without VC funding. Tools such as a wiki for the web3 space, an educational chat bot and a decentralized help desk. These are all the things we're working on to push DeFi forward to a billion users. 
+                    </article>
+                    <p>Join US</p>
                 </Grid>
             </Grid>
         </div>

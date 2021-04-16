@@ -857,6 +857,29 @@ footer span button {
 .landing-page .data .MuiGrid-item:nth-of-type(1) span button:nth-of-type(2) {
   margin-left: 15px;
 }
+.landing-page .data .MuiGrid-item:nth-of-type(2) p {
+  color: white;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 14px;
+  margin-left: 10%;
+}
+.landing-page .data .MuiGrid-item:nth-of-type(2) p:nth-of-type(1) {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 13px;
+  margin-top: 30px;
+}
+.landing-page .data .MuiGrid-item:nth-of-type(2) article {
+  font-family: "Nunito Sans", sans-serif;
+  color: white;
+  font-style: normal;
+  font-size: 14px;
+  margin-top: 45px;
+  margin-bottom: 20px;
+  margin-left: 10%;
+  width: 70%;
+}
 
 @media screen and (max-width: 900px) {
   .hero img {
