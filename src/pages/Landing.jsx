@@ -29,6 +29,12 @@ const LandingPage = (props) => {
                        <li>Discord</li>
                        <li>Telegram</li>
                 </nav> 
+                <section className='hero'>
+                    <p>$BOOKS</p>
+                    <img src={process.env.PUBLIC_URL + 'assets/book.png'} alt='$books-render'/>
+                    {/* dummy data fro now */}
+                    <p>902 Left</p>
+                </section>
             </section>
         </div>
     )
