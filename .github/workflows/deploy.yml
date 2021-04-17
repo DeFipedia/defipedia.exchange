@@ -1,0 +1,43 @@
+name: cloud-run-deploy
+on:
+  push:
+    branches:
+      - develop
+
+jobs:
+  build-and-deploy:
+    name: Cloud Run Deployment
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@master
+
+      - name: Setup GCP Service Account
+        uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
+        with:
+          version: "latest"
+          service_account_email: ${{ secrets.GCP_SA_EMAIL }}
+          service_account_key: ${{ secrets.GCP_SA_KEY }}
+          export_default_credentials: true
+
+      - name: Configure Docker
+        run: |
+          gcloud auth configure-docker
+
+      - name: Build
+        run: |
+          echo "gcr.io/${{secrets.GCP_PROJECT_ID}}/github-action-test:latest"
+          docker build --progress=plain -t gcr.io/${{ secrets.GCP_PROJECT_ID }}/github-action-test:latest
+
+      - name: Push
+        run: |
+          docker push gcr.io/${{ secrets.GCP_PROJECT_ID }}/github-action-test:latest
+
+      - name: Deploy
+        run: |
+          gcloud run deploy github-action-test \
+          --region europe-west1 \
+          --image gcr.io/${{ secrets.GCP_PROJECT_ID }}/github-action-test \
+          --platform managed \
+          --allow-unauthenticated \
+          --project ${{ secrets.GCP_PROJECT_ID }}

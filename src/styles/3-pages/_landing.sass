@@ -1,0 +1,238 @@
+@use '../1-basics/variables'
+
+.landing-page
+    background: url('../assets/DFP_CoverArt.png') no-repeat center center fixed
+    height: 1080px
+    -webkit-background-size: cover
+    -moz-background-size: cover
+    -o-background-size: cover
+    background-size: cover
+    z-index: 1
+    .opaque-wrapper
+        position: absolute
+        height: 1000px
+        width: 96%
+        left: 0
+        right: 0
+        margin-left: auto
+        margin-right: auto
+        top: 20px
+        bottom: 0
+        // margin-top: auto
+        // margin-bottom: auto
+        background-color: black
+        opacity: 0.8
+        z-index: 2
+
+    nav
+        display: flex
+        flex-direction: row
+        align-items: center
+        list-style-type: none
+        width: 280px
+        height: 30px
+        position: absolute
+        left: calc(50% - 280px/2)
+        top: max(2%, 35px)
+        justify-content: space-between
+        z-index: 3
+        li
+            color: white
+            font-family: 'Nunito Sans', sans-serif
+            font-style: normal
+            font-weight: 900
+            font-size: 14px
+            line-height: 18px
+            letter-spacing: 0.5px
+            &:hover
+                color: $dp-purple
+    .hero
+        position: absolute
+        width: 70%
+        height: 692px
+        left: 0
+        right: 0
+        margin-left: auto
+        margin-right: auto
+        p
+            position: absolute
+            color: white
+            font-style: normal
+            text-transform: uppercase
+            width: 100%
+            text-align: center
+            letter-spacing: 0.5px
+            z-index: 3
+            &:nth-of-type(1)
+                font-family: 'Nunito Sans', sans-serif
+                //this is to keep it scalable in both small and large viewports//
+                font-size: min(12em, 18vw)
+                margin-top: max(2%, 120px)
+                margin-bottom: 0px
+                top: 0px
+                z-index: 3
+                // line-height: 166px
+            &:nth-of-type(2)
+                position: absolute
+                font-family: 'Lato', sans-serif !important
+                font-size: min(6em, 10vw)
+                top: 38%
+                z-index: 6
+        img
+            position: absolute
+            padding: 0px
+            width: 400px
+            height: 500px
+            top: auto
+            left: 0
+            right: 0
+            margin-left: auto
+            margin-right: auto
+            margin-top: 60px
+            z-index: 5
+    .data
+        position: absolute
+        height: 250px
+        width: 86%
+        max-width: 1900px
+        left: 0
+        right: 0
+        margin-left: auto
+        margin-right: auto
+        top: 550px
+        z-index: 4
+        .MuiGrid-item
+            &:nth-of-type(1)
+                // background-color: red
+                p
+                    color: white
+                    // background-color: green
+                    font-family: 'Lato', sans-serif
+                    font-style: normal
+                    font-weight: 900
+                    font-size: 35px
+                    text-align: left
+                    width: 512px
+                    // margin-left: 2.5%
+                    margin-left: 25%
+                    // line-height: 166px
+                    sup
+                        color: #00FF85
+                        margin-left: 5px
+                span
+                    display: flex
+                    float: left
+                    width: 380px
+                    margin-left: 20%
+                    a
+                        width: 180px
+                    button
+                        background-color: white
+                        color: black
+                        border: none
+                        font-family: 'Nunito Sans', sans-serif
+                        font-style: normal
+                        height: 50px
+                        width: 180px
+                        border: 1px solid white
+                        box-sizing: border-box
+                        border-radius: 7px
+                        display: flex
+                        align-items: center
+                        // justify-content: center
+                        img
+                            padding-right: 20px
+                            margin-left: 20px
+                        //targets second button
+                    a
+                        &:nth-of-type(2)
+                            margin-left: 15px
+            &:nth-of-type(2)
+                p
+                    color: white
+                    font-family: 'Nunito Sans', sans-serif
+                    font-size: 14px
+                    margin-left: 10%
+                    &:nth-of-type(1)
+                        font-style: normal
+                        font-weight: bold
+                        font-size: 22px
+                        line-height: 13px
+                        margin-top: 30px
+                article
+                    font-family: 'Nunito Sans', sans-serif
+                    color: white
+                    font-style: normal
+                    font-size: 14px
+                    // line-height: 20px
+                    margin-top: 45px
+                    margin-bottom: 20px
+                    margin-left: 10%
+                    width: 70%
+                    // width: 480px
+
+// Media queries// 
+
+    // ---------------------------------------tablet--------------------------------------------------//
+@media screen and ( max-width: 960px )
+    .hero
+        img
+            width: 350px !important
+            height: 400px !important
+            margin-top: 90px !important
+        p
+            &:nth-of-type(2)
+                top: 34%
+    .data
+        top: 490px !important
+        .MuiGrid-item
+            &:nth-of-type(1)
+                > p
+                    margin-left: 11% !important
+                span
+                    margin-left: 11% !important
+
+    //-----------------------------------------------------mobile--------------------------------------------------------------//
+@media screen and ( max-width: 600px )
+    .hero
+        img
+            width: 300px !important
+            height: 350px !important
+            margin-top: 80px !important
+        p
+            &:nth-of-type(2)
+                top: 230px !important
+    .data
+        top: 360px !important
+        .MuiGrid-item
+            &:nth-of-type(1)
+                > p
+                    font-size: 18px !important
+                span
+                    width: 300px !important
+                    button
+                        width: 150px !important
+                        img
+                            padding-right: 10px !important
+                            margin-left: 10px !important
+            &:nth-of-type(2)
+                article
+                    margin-top: 30px !important
+
+//---------------------------------------------smaller mobile--------------------------------------------------------------------//
+
+@media screen and ( max-width: 415px )
+    .hero
+        img
+            width: 180px !important
+            height: 200px !important
+            margin-top: 100px !important
+        p
+            &:nth-of-type(2)
+                top: 180px !important
+    .data
+        .MuiGrid-item
+            &:nth-of-type(1)
+                span
+                    button
+                        width: 140px !important

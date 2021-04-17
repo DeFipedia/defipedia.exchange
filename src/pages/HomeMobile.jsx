@@ -8,6 +8,7 @@ import SaleCard from '../components/SaleCard'
 import {Button} from '../components/Button'
 import SwipeableFooter from '../components/SwipeableFooter'
 import BuyModal from '../components/BuyModal'
+import Web3SignIn from '../components/Web3SignIn'
 
 const HomeMobile = (props) => {
 
@@ -29,6 +30,9 @@ const HomeMobile = (props) => {
     // for handling buy modal trigger //
     const [triggerBuyModal, setTriggerBuyModal] = useState(false)
 
+    //for handling state of Web3SignIn - wallet connection modal//
+    const [triggerWeb3SignIn, setTriggerWeb3SignIn] = useState(false)
+
     // methods //
     const showBuyModal = () => {
         setTriggerBuyModal(true)
@@ -38,10 +42,19 @@ const HomeMobile = (props) => {
         setTriggerBuyModal(false)
     }
 
+    const showWeb3SignIn = () => {
+        setTriggerWeb3SignIn(true)
+    }
+
+    const closeWeb3SignInModal = () => {
+        setTriggerWeb3SignIn(false)
+    }
+
     const redirectToUniswap = () => {
         window.open(`${process.env.REACT_APP_UNISWAP_LINK}`, '_blank')
     }
 
+    console.log('wallet', wallet.account)
     return(
         <div className='home-page-mobile'>
             <Slider className='sale-carousel' {...carouselSettings}>
@@ -51,7 +64,7 @@ const HomeMobile = (props) => {
                         title='Uniswap'
                         image={process.env.PUBLIC_URL + 'assets/cover-art.jpg'}
                         price={uniswapData.rate}
-                        totalTokens='50'
+                        numberOfTokens='50'
                         desc='Support the free market'
                         learnMoreTag='Swap here!'
                     />
@@ -64,14 +77,20 @@ const HomeMobile = (props) => {
                         title='Pre-sale'
                         image={process.env.PUBLIC_URL + 'assets/books-presale.png'}
                         price={saleData.price}
-                        totalTokens='950'
+                        numberOfTokens={saleData.availableBOOKS}
                         desc='Support DeFiPedia development'
                         learnMoreTag='Buy direct!'
                     />
-                    <Button label='Buy' variant='secondary' onClick={showBuyModal}/>
+                    {   wallet.account != null
+                        ?
+                        <Button label='Buy' variant='secondary' onClick={showBuyModal}/>
+                        :
+                        <Button label='Connect Wallet' variant='secondary' onClick={showWeb3SignIn}/>
+                    }
+                    {/* <Button label='Buy' variant='secondary' onClick={showBuyModal}/> */}
                     <Button label='Redeem (coming soon)' variant='disabled' />
                 </section>
-                {/* Ducth auction card */}
+                {/* Dutch auction card */}
                 <section className='dutch-auction-card'>
                     {/* this div is masking layer */}
                     <div className='dutch-auction-mask'></div>
@@ -84,13 +103,18 @@ const HomeMobile = (props) => {
                     <Button label='Withdraw deposit' variant='default'/>
                 </section>
             </Slider>
-            {/* Swipeable footer */}
             <SwipeableFooter />
             <BuyModal 
                 open={triggerBuyModal} 
                 close={closeBuyModal} 
                 wallet={wallet}
                 saleData={saleData}
+            />
+            <Web3SignIn 
+                open={triggerWeb3SignIn}
+                close={closeWeb3SignInModal}
+                wallet={wallet}
+                closeWeb3SignInModal={closeWeb3SignInModal}
             />
         </div>
 

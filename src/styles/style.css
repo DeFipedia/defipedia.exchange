@@ -3,7 +3,7 @@ html, body {
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Nunito Sans", sans-serif;
   overflow-x: hidden;
 }
 
@@ -457,7 +457,7 @@ footer span button {
   }
 }
 .value-input input {
-  width: 35px;
+  width: 30px;
   height: 30px;
   -webkit-appearance: none;
   border: none;
@@ -554,8 +554,14 @@ footer span button {
   padding: 10px;
 }
 
+.alert-message {
+  margin-top: 70px;
+}
+
 .home-page {
   margin-top: 75px;
+  background-color: white;
+  height: 100vh;
 }
 
 .uniswap-card .sale-type {
@@ -587,6 +593,8 @@ footer span button {
 
 .home-page-mobile {
   margin-bottom: 50px;
+  height: 100vh;
+  background-color: white;
 }
 .home-page-mobile .sale-card {
   width: 274px;
@@ -705,6 +713,246 @@ footer span button {
 .detail-card-description a {
   color: #FF6400;
   font-weight: bold;
+}
+
+.landing-page {
+  background: url("../assets/DFP_CoverArt.png") no-repeat center center fixed;
+  height: 1080px;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  z-index: 1;
+}
+.landing-page .opaque-wrapper {
+  position: absolute;
+  height: 1000px;
+  width: 96%;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  top: 20px;
+  bottom: 0;
+  background-color: black;
+  opacity: 0.8;
+  z-index: 2;
+}
+.landing-page nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  list-style-type: none;
+  width: 280px;
+  height: 30px;
+  position: absolute;
+  left: calc(50% - 280px/2);
+  top: max(2%, 35px);
+  justify-content: space-between;
+  z-index: 3;
+}
+.landing-page nav li {
+  color: white;
+  font-family: "Nunito Sans", sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0.5px;
+}
+.landing-page nav li:hover {
+  color: #923bca;
+}
+.landing-page .hero {
+  position: absolute;
+  width: 70%;
+  height: 692px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+.landing-page .hero p {
+  position: absolute;
+  color: white;
+  font-style: normal;
+  text-transform: uppercase;
+  width: 100%;
+  text-align: center;
+  letter-spacing: 0.5px;
+  z-index: 3;
+}
+.landing-page .hero p:nth-of-type(1) {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: min(12em, 18vw);
+  margin-top: max(2%, 120px);
+  margin-bottom: 0px;
+  top: 0px;
+  z-index: 3;
+}
+.landing-page .hero p:nth-of-type(2) {
+  position: absolute;
+  font-family: "Lato", sans-serif !important;
+  font-size: min(6em, 10vw);
+  top: 38%;
+  z-index: 6;
+}
+.landing-page .hero img {
+  position: absolute;
+  padding: 0px;
+  width: 400px;
+  height: 500px;
+  top: auto;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 60px;
+  z-index: 5;
+}
+.landing-page .data {
+  position: absolute;
+  height: 250px;
+  width: 86%;
+  max-width: 1900px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  top: 550px;
+  z-index: 4;
+}
+.landing-page .data .MuiGrid-item:nth-of-type(1) p {
+  color: white;
+  font-family: "Lato", sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 35px;
+  text-align: left;
+  width: 512px;
+  margin-left: 25%;
+}
+.landing-page .data .MuiGrid-item:nth-of-type(1) p sup {
+  color: #00FF85;
+  margin-left: 5px;
+}
+.landing-page .data .MuiGrid-item:nth-of-type(1) span {
+  display: flex;
+  float: left;
+  width: 380px;
+  margin-left: 20%;
+}
+.landing-page .data .MuiGrid-item:nth-of-type(1) span a {
+  width: 180px;
+}
+.landing-page .data .MuiGrid-item:nth-of-type(1) span button {
+  background-color: white;
+  color: black;
+  border: none;
+  font-family: "Nunito Sans", sans-serif;
+  font-style: normal;
+  height: 50px;
+  width: 180px;
+  border: 1px solid white;
+  box-sizing: border-box;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+}
+.landing-page .data .MuiGrid-item:nth-of-type(1) span button img {
+  padding-right: 20px;
+  margin-left: 20px;
+}
+.landing-page .data .MuiGrid-item:nth-of-type(1) span a:nth-of-type(2) {
+  margin-left: 15px;
+}
+.landing-page .data .MuiGrid-item:nth-of-type(2) p {
+  color: white;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 14px;
+  margin-left: 10%;
+}
+.landing-page .data .MuiGrid-item:nth-of-type(2) p:nth-of-type(1) {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 13px;
+  margin-top: 30px;
+}
+.landing-page .data .MuiGrid-item:nth-of-type(2) article {
+  font-family: "Nunito Sans", sans-serif;
+  color: white;
+  font-style: normal;
+  font-size: 14px;
+  margin-top: 45px;
+  margin-bottom: 20px;
+  margin-left: 10%;
+  width: 70%;
+}
+
+@media screen and (max-width: 960px) {
+  .hero img {
+    width: 350px !important;
+    height: 400px !important;
+    margin-top: 90px !important;
+  }
+  .hero p:nth-of-type(2) {
+    top: 34%;
+  }
+
+  .data {
+    top: 490px !important;
+  }
+  .data .MuiGrid-item:nth-of-type(1) > p {
+    margin-left: 11% !important;
+  }
+  .data .MuiGrid-item:nth-of-type(1) span {
+    margin-left: 11% !important;
+  }
+}
+@media screen and (max-width: 600px) {
+  .hero img {
+    width: 300px !important;
+    height: 350px !important;
+    margin-top: 80px !important;
+  }
+  .hero p:nth-of-type(2) {
+    top: 230px !important;
+  }
+
+  .data {
+    top: 360px !important;
+  }
+  .data .MuiGrid-item:nth-of-type(1) > p {
+    font-size: 18px !important;
+  }
+  .data .MuiGrid-item:nth-of-type(1) span {
+    width: 300px !important;
+  }
+  .data .MuiGrid-item:nth-of-type(1) span button {
+    width: 150px !important;
+  }
+  .data .MuiGrid-item:nth-of-type(1) span button img {
+    padding-right: 10px !important;
+    margin-left: 10px !important;
+  }
+  .data .MuiGrid-item:nth-of-type(2) article {
+    margin-top: 30px !important;
+  }
+}
+@media screen and (max-width: 415px) {
+  .hero img {
+    width: 180px !important;
+    height: 200px !important;
+    margin-top: 100px !important;
+  }
+  .hero p:nth-of-type(2) {
+    top: 180px !important;
+  }
+
+  .data .MuiGrid-item:nth-of-type(1) span button {
+    width: 140px !important;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

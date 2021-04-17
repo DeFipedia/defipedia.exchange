@@ -1,11 +1,13 @@
 import React, {useState, useEffect} from 'react';
 import {Route, Switch} from 'react-router-dom'
 import Navbar from './components/Navbar'
-import './styles/style.sass'
+import './styles/style.css'
 import { useWallet, UseWalletProvider } from 'use-wallet'
 import Home from './pages/Home'
 import {getUniswapPoolData} from './functions/getUniswapPoolData'
 import {getSalePrice} from './functions/getSalePrice'
+import LandingPage from './pages/Landing.jsx'
+import getAvailableBOOKS from './functions/getAvailableBOOKS'
 
 function App () {  
 
@@ -13,16 +15,25 @@ function App () {
     rate: 0
   })
 
+  //@DEV: data in here is coming from two different methods//
+  //look at "fetchData" for more info//
   const [saleData, setSaleData] = useState({
-    price: 0
+    price: 0,
+    availableBOOKS: 0
   })
 
-  // //this variable is to handle wallet connection (by usinng aragon's use-wallet), and pass onto other components when required//
+
+  // //this variable is to handle wallet connection (by using aragon's use-wallet), and pass onto other components when required//
   const wallet = useWallet()
 
   const fetchData = async () => {
       let currentSalePrice = await getSalePrice()
       setSaleData({price: currentSalePrice})
+      let availableBOOKS = await getAvailableBOOKS()
+      setSaleData(prevState => {
+        //@DEV: "prevState"is necessary to keep existing data and only update this field// 
+        return {...prevState, availableBOOKS: availableBOOKS}
+      })
       let uniswapPoolData = await getUniswapPoolData()
       setuniswapPoolData(uniswapPoolData)
   }
@@ -34,13 +45,16 @@ function App () {
   // -----------------------//
   return (
       <div className='App'>
-        <Navbar 
-          brandTitle={process.env.PUBLIC_URL + 'assets/brand-title.svg'}
-          brandLogo={process.env.PUBLIC_URL + 'defipedia_logo.png'}
-          wallet={wallet}
-        />
         <Switch>
           <Route exact path='/'>
+            <LandingPage saleData={saleData} />
+          </Route>
+          <Route exact path='/home'>
+            <Navbar 
+              brandTitle={process.env.PUBLIC_URL + 'assets/brand-title.svg'}
+              brandLogo={process.env.PUBLIC_URL + 'defipedia_logo.png'}
+              wallet={wallet}
+            />
             <Home 
               uniswapData={uniswapPoolData}
               saleData={saleData}
