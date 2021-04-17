@@ -47,7 +47,7 @@ function App () {
       <div className='App'>
         <Switch>
           <Route exact path='/'>
-            <LandingPage />
+            <LandingPage saleData={saleData} />
           </Route>
           <Route exact path='/home'>
             <Navbar 

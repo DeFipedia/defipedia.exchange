@@ -1,28 +1,23 @@
-import React from 'react'
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, {useEffect, useState} from 'react'
 import {Grid} from '@material-ui/core'
+import axios from 'axios'
 
 const LandingPage = (props) => {
 
-    // const {saleData} = props
+    const {saleData} = props
+
+    const [ethPrice, setEthPrice] = useState(null)
 
     const uniswapLink = 'https://app.uniswap.org/#/swap?inputCurrency=ETH&outputCurrency=0x117c2aca45d87958ba054cb85af0fd57be00d624'
-    // //this returns percentage of available BOOKS//
-    // let availableBOOKS = ((100 * Number(saleData.availableBOOKS))/1000)
 
-    // const linkToDiscord = () => {
-    //     window.open('https://discord.gg/u8K4TnQJ', '_blank')
-    // }
 
-    // const linkToBuy = () => {
-    //     window.location.href='/home'
-    // }
+    useEffect(async() => {
+        let price = await axios.get('https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=usd')
+        let ethPrice = price.data.ethereum.usd
+        setEthPrice(ethPrice)
+    }, [])
 
-    // const linkToTelegram = () => {
-    //     window.open('https://t.me/defiped', '_blank')
-    // }
-
-    // @DEV: this is treated as stand-alone page, hence many components like button are just particular to this page and not a variant available to button//
-    // Consistency is not a concept for this  as it  designed by  Sam  Ratnakar and sole purpose of this page is marketing.//
     return(
         <div className='landing-page'>
             {/* this is the opaque container for all the elements, all to the other elements need to be outside to avoid opacity */}
@@ -41,11 +36,11 @@ const LandingPage = (props) => {
             <section className='hero'>
                 <p>$BOOKS</p>
                 <img src={process.env.PUBLIC_URL + 'assets/book.svg'} alt='$books-render'/> 
-                <p>902 Left</p>
+                <p>{saleData ? saleData.availableBOOKS : 1000} LEFT</p>
             </section>
             <Grid container className='data'>
                 <Grid item xs={12} sm={12} md={6} lg={6}>
-                    <p>$1002.33<sup>+23%</sup></p>
+                    <p>{ethPrice ? (ethPrice * saleData.price).toString().substring(0, 7) : 5}<sup>+23%</sup></p>
                     <span>
                     <a href={uniswapLink} target='_blank' rel='noreferrer'>
                         <button> 
