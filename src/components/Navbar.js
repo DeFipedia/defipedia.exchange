@@ -26,7 +26,7 @@ const Navbar = (props) => {
         <AppBar position='fixed' color='inherit' elevation={0} >
             <Toolbar>
                 <section className='brand-header'>   
-                    <img className='brand-logo' alt='brand-logo' src={brandLogo}/>
+                    <img className='brand-logo' alt='brand-logo' src={process.env.PUBLIC_URL + 'assets/dfp-logo.svg'} />
                     {/* this was text earlier but later changed into asset */}
                     <img alt='brand-title' className='brand-title' src={brandTitle} />
                 </section>
