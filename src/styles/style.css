@@ -844,6 +844,9 @@ footer span button {
   width: 380px;
   margin-left: 20%;
 }
+.landing-page .data .MuiGrid-item:nth-of-type(1) span a {
+  width: 180px;
+}
 .landing-page .data .MuiGrid-item:nth-of-type(1) span button {
   background-color: white;
   color: black;
@@ -926,7 +929,10 @@ footer span button {
     font-size: 18px !important;
   }
   .data .MuiGrid-item:nth-of-type(1) span {
-    width: 320px !important;
+    width: 300px !important;
+  }
+  .data .MuiGrid-item:nth-of-type(1) span button {
+    width: 150px !important;
   }
   .data .MuiGrid-item:nth-of-type(1) span button img {
     padding-right: 10px !important;
@@ -944,6 +950,10 @@ footer span button {
   }
   .hero p:nth-of-type(2) {
     top: 180px !important;
+  }
+
+  .data .MuiGrid-item:nth-of-type(1) span button {
+    width: 140px !important;
   }
 }
 
