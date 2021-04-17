@@ -762,6 +762,9 @@ footer span button {
   line-height: 18px;
   letter-spacing: 0.5px;
 }
+.landing-page nav li:hover {
+  color: #923bca;
+}
 .landing-page .hero {
   position: absolute;
   width: 70%;
@@ -859,7 +862,7 @@ footer span button {
   padding-right: 20px;
   margin-left: 20px;
 }
-.landing-page .data .MuiGrid-item:nth-of-type(1) span button:nth-of-type(2) {
+.landing-page .data .MuiGrid-item:nth-of-type(1) span a:nth-of-type(2) {
   margin-left: 15px;
 }
 .landing-page .data .MuiGrid-item:nth-of-type(2) p {

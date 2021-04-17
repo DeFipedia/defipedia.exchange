@@ -5,6 +5,7 @@ const LandingPage = (props) => {
 
     // const {saleData} = props
 
+    const uniswapLink = 'https://app.uniswap.org/#/swap?inputCurrency=ETH&outputCurrency=0x117c2aca45d87958ba054cb85af0fd57be00d624'
     // //this returns percentage of available BOOKS//
     // let availableBOOKS = ((100 * Number(saleData.availableBOOKS))/1000)
 
@@ -27,9 +28,15 @@ const LandingPage = (props) => {
             {/* this is the opaque container for all the elements, all to the other elements need to be outside to avoid opacity */}
             <section className='opaque-wrapper' />
             <nav>
-                <li>DEFIPEDIA.IO</li>
-               <li>Discord</li>
-               <li>Telegram</li>
+                <a href='https://www.defipedia.io/' target='_blank' rel='noreferrer'>
+                    <li>DEFIPEDIA.IO</li>
+                </a>
+                <a href='https://discord.defipedia.io/' target='_blank' rel='noreferrer'>
+                    <li>Discord</li>
+                </a>
+                <a href='https://t.me/defiped' target='_blank' rel='noreferrer'>
+                    <li>Telegram</li>
+                </a>
             </nav> 
             <section className='hero'>
                 <p>$BOOKS</p>
@@ -40,14 +47,18 @@ const LandingPage = (props) => {
                 <Grid item xs={12} sm={12} md={6} lg={6}>
                     <p>$1002.33<sup>+23%</sup></p>
                     <span>
+                    <a href={uniswapLink} target='_blank' rel='noreferrer'>
                         <button> 
                             <img src={process.env.PUBLIC_URL + 'assets/uni-logo.svg'} alt='uniswap-logo'/>
                             Uniswap 
                         </button>
+                        </a>
+                        <a href='https://defipedia.exchange/home' target='_blank' rel='noreferrer'>
                         <button>
                             <img src={process.env.PUBLIC_URL + 'assets/dfp-logo.svg'} alt='defipedia-logo'/>
                             Buy Direct
                         </button>
+                        </a>
                     </span>
                 </Grid>
                 <Grid item xs={12} sm={12} md={6} lg={6}>
