@@ -48,7 +48,7 @@ const LandingPage = (props) => {
                             Uniswap 
                         </button>
                         </a>
-                        <a href='https://defipedia.exchange/home' target='_blank' rel='noreferrer'>
+                        <a href='/home' rel='noreferrer'>
                         <button>
                             <img src={process.env.PUBLIC_URL + 'assets/dfp-logo.svg'} alt='defipedia-logo'/>
                             Buy Direct

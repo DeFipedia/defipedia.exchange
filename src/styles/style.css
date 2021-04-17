@@ -717,7 +717,7 @@ footer span button {
 
 .landing-page {
   background: url("../assets/DFP_CoverArt.png") no-repeat center center fixed;
-  height: 100vh;
+  height: 1080px;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -726,16 +726,14 @@ footer span button {
 }
 .landing-page .opaque-wrapper {
   position: absolute;
-  height: 96%;
+  height: 1000px;
   width: 96%;
   left: 0;
   right: 0;
   margin-left: auto;
   margin-right: auto;
-  top: 0;
+  top: 20px;
   bottom: 0;
-  margin-top: auto;
-  margin-bottom: auto;
   background-color: black;
   opacity: 0.8;
   z-index: 2;
@@ -923,7 +921,7 @@ footer span button {
   }
 
   .data {
-    top: 42% !important;
+    top: 360px !important;
   }
   .data .MuiGrid-item:nth-of-type(1) > p {
     font-size: 18px !important;
