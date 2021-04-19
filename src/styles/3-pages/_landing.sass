@@ -2,7 +2,7 @@
 
 .landing-page
     background: url('../assets/DFP_CoverArt.png') no-repeat center center fixed
-    height: 1080px
+    height: max(1080px, 100vh)
     -webkit-background-size: cover
     -moz-background-size: cover
     -o-background-size: cover
@@ -10,7 +10,7 @@
     z-index: 1
     .opaque-wrapper
         position: absolute
-        height: 1000px
+        height: max(100vh, 1000px)
         width: 96%
         left: 0
         right: 0
@@ -18,40 +18,46 @@
         margin-right: auto
         top: 20px
         bottom: 0
-        // margin-top: auto
-        // margin-bottom: auto
         background-color: black
         opacity: 0.8
         z-index: 2
 
-    nav
+    nav ul
+        position: absolute
         display: flex
         flex-direction: row
         align-items: center
         list-style-type: none
         width: 280px
-        height: 30px
-        position: absolute
-        left: calc(50% - 280px/2)
+        left: 0
+        right: 0
+        margin-left: auto
+        margin-right: auto
         top: max(2%, 35px)
         justify-content: space-between
         z-index: 3
         li
-            color: white
             font-family: 'Nunito Sans', sans-serif
             font-style: normal
             font-weight: 900
-            font-size: 14px
-            line-height: 18px
+            font-size: 15px
             letter-spacing: 0.5px
-            &:hover
-                color: $dp-purple
+            padding: 0px
+            a
+                display: block
+                color: white
+                &:hover
+                    color: $dp-purple
+                &:visited
+                    color: white
+
     .hero
         position: absolute
         width: 70%
         height: 692px
         left: 0
         right: 0
+        top: 30px
         margin-left: auto
         margin-right: auto
         p
@@ -99,7 +105,7 @@
         right: 0
         margin-left: auto
         margin-right: auto
-        top: 550px
+        top: 620px
         z-index: 4
         .MuiGrid-item
             &:nth-of-type(1)
@@ -184,7 +190,7 @@
             &:nth-of-type(2)
                 top: 34%
     .data
-        top: 490px !important
+        top: 550px !important
         .MuiGrid-item
             &:nth-of-type(1)
                 > p
@@ -203,7 +209,7 @@
             &:nth-of-type(2)
                 top: 230px !important
     .data
-        top: 360px !important
+        top: 420px !important
         .MuiGrid-item
             &:nth-of-type(1)
                 > p

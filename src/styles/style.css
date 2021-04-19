@@ -717,7 +717,7 @@ footer span button {
 
 .landing-page {
   background: url("../assets/DFP_CoverArt.png") no-repeat center center fixed;
-  height: 1080px;
+  height: max(1080px, 100vh);
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -726,7 +726,7 @@ footer span button {
 }
 .landing-page .opaque-wrapper {
   position: absolute;
-  height: 1000px;
+  height: max(100vh, 1000px);
   width: 96%;
   left: 0;
   right: 0;
@@ -738,30 +738,38 @@ footer span button {
   opacity: 0.8;
   z-index: 2;
 }
-.landing-page nav {
+.landing-page nav ul {
+  position: absolute;
   display: flex;
   flex-direction: row;
   align-items: center;
   list-style-type: none;
   width: 280px;
-  height: 30px;
-  position: absolute;
-  left: calc(50% - 280px/2);
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
   top: max(2%, 35px);
   justify-content: space-between;
   z-index: 3;
 }
-.landing-page nav li {
-  color: white;
+.landing-page nav ul li {
   font-family: "Nunito Sans", sans-serif;
   font-style: normal;
   font-weight: 900;
-  font-size: 14px;
-  line-height: 18px;
+  font-size: 15px;
   letter-spacing: 0.5px;
+  padding: 0px;
 }
-.landing-page nav li:hover {
+.landing-page nav ul li a {
+  display: block;
+  color: white;
+}
+.landing-page nav ul li a:hover {
   color: #923bca;
+}
+.landing-page nav ul li a:visited {
+  color: white;
 }
 .landing-page .hero {
   position: absolute;
@@ -769,6 +777,7 @@ footer span button {
   height: 692px;
   left: 0;
   right: 0;
+  top: 30px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -819,7 +828,7 @@ footer span button {
   right: 0;
   margin-left: auto;
   margin-right: auto;
-  top: 550px;
+  top: 620px;
   z-index: 4;
 }
 .landing-page .data .MuiGrid-item:nth-of-type(1) p {
@@ -901,7 +910,7 @@ footer span button {
   }
 
   .data {
-    top: 490px !important;
+    top: 550px !important;
   }
   .data .MuiGrid-item:nth-of-type(1) > p {
     margin-left: 11% !important;
@@ -921,7 +930,7 @@ footer span button {
   }
 
   .data {
-    top: 360px !important;
+    top: 420px !important;
   }
   .data .MuiGrid-item:nth-of-type(1) > p {
     font-size: 18px !important;
