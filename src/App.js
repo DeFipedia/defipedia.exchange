@@ -61,17 +61,12 @@ function App () {
               wallet={wallet}
             />
           </Route>
-          {/* <Route path='/details'>
-            <Details 
-              wallet={wallet}
-              saleData={saleData}
-            />
-          </Route> */}
         </Switch>
       </div>
   );
 }
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default () => (
   <UseWalletProvider
         chainId={1} //chain Id should '1' for mainnet, 42 is for kovan testnet//
