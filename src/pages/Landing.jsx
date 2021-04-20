@@ -23,15 +23,23 @@ const LandingPage = (props) => {
             {/* this is the opaque container for all the elements, all to the other elements need to be outside to avoid opacity */}
             <section className='opaque-wrapper' />
             <nav>
-                <a href='https://www.defipedia.io/' target='_blank' rel='noreferrer'>
-                    <li>DEFIPEDIA.IO</li>
-                </a>
-                <a href='https://discord.defipedia.io/' target='_blank' rel='noreferrer'>
-                    <li>Discord</li>
-                </a>
-                <a href='https://t.me/defiped' target='_blank' rel='noreferrer'>
-                    <li>Telegram</li>
-                </a>
+                <ul>
+                    <li>
+                        <a href='https://discord.defipedia.io/' target='_blank' rel='noreferrer'>
+                            DEFIPEDIA.IO
+                        </a>
+                    </li>
+                    <li>
+                        <a href='https://discord.defipedia.io/' target='_blank' rel='noreferrer'>
+                            Discord
+                        </a>
+                    </li>
+                    <li>
+                        <a href='https://t.me/defiped' target='_blank' rel='noreferrer'>
+                            Telegram
+                        </a>
+                    </li>
+                </ul>
             </nav> 
             <section className='hero'>
                 <p>$BOOKS</p>
