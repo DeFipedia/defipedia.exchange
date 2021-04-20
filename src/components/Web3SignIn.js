@@ -4,7 +4,7 @@ import CloseIcon from '@material-ui/icons/Close';
 import {Button} from './Button'
 
 const Web3SignIn = (props) => {
-    //to do: create web instance here with conected wallet provider//
+    //to do: create web instance here with connected wallet provider//
     //-------------------------------------------------------------//
     const {open, close, wallet, closeWeb3SignInModal} = props //this is just state for modal//
 

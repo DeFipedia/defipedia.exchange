@@ -4,7 +4,7 @@ import Web3SignIn from './Web3SignIn'
 
 const Navbar = (props) => {
     //destructing props//
-    let {brandTitle, brandLogo, wallet} = props
+    let {brandTitle, wallet} = props
 
     // for state //
     const [open, setOpen] = useState(false)
@@ -17,7 +17,7 @@ const Navbar = (props) => {
         setOpen(false)
     }
 
-    const disconeectWallet = () => {
+    const disconnectWallet = () => {
         wallet.reset()
     }
 
@@ -33,7 +33,7 @@ const Navbar = (props) => {
                 <nav className='nav-options'>
                     <Button variant='outlined' color='primary'>None Redeemed</Button>
                     {wallet.account != null 
-                        ? <Button onClick={disconeectWallet}>Disconnect</Button>
+                        ? <Button onClick={disconnectWallet}>Disconnect</Button>
                         : <Button onClick={showModal}>Connect Wallet</Button>
                     }
                 </nav>

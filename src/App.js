@@ -83,7 +83,7 @@ export default () => (
             },
             walletlink: {
               appName: 'DeFipedia Exchange',
-              url: `https://mainnet.infura.io/v3/${process.env.REACT_APP_INFURA_ID}`
+              url: `${process.env.REACT_APP_WEB3_HTTP_PROVIDER}`
             }
         }}
     >
