@@ -14,9 +14,9 @@ const LandingPage = (props) => {
 
     useEffect(async() => {
         let price = await axios.get('https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=usd')
-        let ethPrice = price.data.ethereum.usd
+        let ethPrice = price.data.ethereum.usd.toString()
         setEthPrice(ethPrice)
-    }, [])
+        })
 
     return(
         <div className='landing-page'>
@@ -48,7 +48,7 @@ const LandingPage = (props) => {
             </section>
             <Grid container className='data'>
                 <Grid item xs={12} sm={12} md={6} lg={6}>
-                    <p>{ethPrice ? (ethPrice * saleData.price).toString().substring(0, 7) : 5}<sup>+23%</sup></p>
+                    <p>${ethPrice ? (ethPrice * saleData.price).toString().substring(0, 7) : 0.5}<sup>+23%</sup></p>
                     <span>
                     <a href={uniswapLink} target='_blank' rel='noreferrer'>
                         <button> 
