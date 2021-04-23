@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React  from 'react'
 import CloseIcon from '@material-ui/icons/Close';
 import {Modal} from '@material-ui/core'
@@ -9,11 +10,9 @@ const PositionedDiv = styled.div`
   top: ${props => props.y}px;
 `
 
-// @DEV: this used to be seperate page on seperate route but converted into moda now//
-//TODO: Later on a custom modal component is will be created and this file will just hold JSX to display - for maintaning patterns better as code-base grows// 
-const Details = ({wallet, saleData, open, closeDetailsModal, displayX, displayY}) => {
-
-    return(
+// @DEV: this used to be separate page on separate route but converted into mode now//
+// TODO: Later on a custom modal component is will be created and this file will just hold JSX to display - for maintaining patterns better as code-base grows// 
+const Details = ({open, closeDetailsModal, displayX, displayY}) => (
         <Modal
         open={open}
         onClose={closeDetailsModal}
@@ -50,6 +49,5 @@ const Details = ({wallet, saleData, open, closeDetailsModal, displayX, displayY}
             </PositionedDiv>
         </Modal>
     )
-}
 
 export default Details

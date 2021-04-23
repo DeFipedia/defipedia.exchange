@@ -5,13 +5,13 @@ import {getSalePrice} from './getSalePrice'
 const saleContractAddress = process.env.REACT_APP_SALE_CONTRACT_ADDRESS
 
 export const buyTokensFromSale =  async (tokenAmount, wallet) => {
-    //extracting provider from wallet object//
-    let walletProvider = await wallet.ethereum
-    //setting wallet as web3 provider//
-    let web3 = await web3Enabled()
+    // extracting provider from wallet object//
+    const walletProvider = await wallet.ethereum
+    // setting wallet as web3 provider//
+    const web3 = await web3Enabled()
     web3.setProvider(walletProvider)
     const saleContract = new web3.eth.Contract(saleABI, saleContractAddress)
-    let selectedAccount = wallet.account
+    const selectedAccount = wallet.account
     const method = saleContract.methods.buyTokens(selectedAccount)
     const price = await getSalePrice()
     const value = (price * tokenAmount).toString() 
@@ -22,14 +22,14 @@ export const sendTransaction = async (method, from, value) => {
     const web3 = await web3Enabled()
     return new Promise(async (resolve, reject) => {
         try {
-            let gasPriceInWei = await web3.eth.getGasPrice()
+            const gasPriceInWei = await web3.eth.getGasPrice()
             let valueInWei = 0;
 
             if (value) {
                 valueInWei = web3.utils.toWei(value, 'ether');
             }
             const options = {
-                from: from,
+                from,
                 gasLimit: 1000000,
                 gasPrice: web3.utils.toHex(gasPriceInWei),
                 value: valueInWei
