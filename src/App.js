@@ -8,6 +8,8 @@ import {getUniswapPoolData} from './functions/getUniswapPoolData'
 import {getSalePrice} from './functions/getSalePrice'
 import LandingPage from './pages/Landing.jsx'
 import getAvailableBOOKS from './functions/getAvailableBOOKS'
+import {ThemeProvider} from 'styled-components'
+import styledTheme  from './styledTheme'
 
 function App () {  
 
@@ -44,6 +46,7 @@ function App () {
 
   // -----------------------//
   return (
+    <ThemeProvider theme={styledTheme}>
       <div className='App'>
         <Switch>
           <Route exact path='/'>
@@ -54,21 +57,16 @@ function App () {
               brandTitle={process.env.PUBLIC_URL + 'assets/brand-title.svg'}
               brandLogo={process.env.PUBLIC_URL + 'defipedia_logo.png'}
               wallet={wallet}
-            />
+              />
             <Home 
               uniswapData={uniswapPoolData}
               saleData={saleData}
               wallet={wallet}
-            />
+              />
           </Route>
-          {/* <Route path='/details'>
-            <Details 
-              wallet={wallet}
-              saleData={saleData}
-            />
-          </Route> */}
         </Switch>
       </div>
+      </ThemeProvider>
   );
 }
 
