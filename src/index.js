@@ -6,12 +6,15 @@ import * as serviceWorker from './serviceWorker';
 import { BrowserRouter } from 'react-router-dom';
 import {ThemeProvider} from '@material-ui/core/styles'
 import theme from './theme'
-
+import {ChakraProvider} from '@chakra-ui/react'
+import ctheme from './ctheme'
 ReactDOM.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
       <BrowserRouter>
-        <App />
+        <ChakraProvider theme={ctheme}>
+          <App />
+          </ChakraProvider>     
       </BrowserRouter>
     </ThemeProvider>
   </React.StrictMode>,

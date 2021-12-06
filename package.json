@@ -4,6 +4,9 @@
   "author": "Pradhumna Pancholi",
   "private": true,
   "dependencies": {
+    "@chakra-ui/react": "^1.7.2",
+    "@emotion/react": "^11",
+    "@emotion/styled": "^11",
     "@material-ui/core": "^4.11.0",
     "@material-ui/icons": "^4.11.2",
     "@material-ui/lab": "^4.0.0-alpha.56",
@@ -17,6 +20,7 @@
     "axios": "^0.21.1",
     "dotenv": "^8.2.0",
     "ethers": "^5.0.32",
+    "framer-motion": "^4",
     "node-sass": "^4.0.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",

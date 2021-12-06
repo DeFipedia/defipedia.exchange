@@ -8,7 +8,6 @@ import {getUniswapPoolData} from './functions/getUniswapPoolData'
 import {getSalePrice} from './functions/getSalePrice'
 import LandingPage from './pages/Landing.jsx'
 import getAvailableBOOKS from './functions/getAvailableBOOKS'
-
 function App () {  
 
   const [uniswapPoolData, setuniswapPoolData] = useState({
@@ -44,7 +43,8 @@ function App () {
 
   // -----------------------//
   return (
-      <div className='App'>
+       
+     <div className='App'>
         <Switch>
           <Route exact path='/'>
             <LandingPage saleData={saleData} />
@@ -59,12 +59,12 @@ function App () {
               uniswapData={uniswapPoolData}
               saleData={saleData}
               wallet={wallet}
-            />
+              />
           </Route>
           {/* <Route path='/details'>
             <Details 
-              wallet={wallet}
-              saleData={saleData}
+            wallet={wallet}
+            saleData={saleData}
             />
           </Route> */}
         </Switch>
