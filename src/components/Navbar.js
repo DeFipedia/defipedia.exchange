@@ -1,4 +1,4 @@
-import { Flex } from '@chakra-ui/react'
+import { Button, Flex, Spacer } from '@chakra-ui/react'
 import React from 'react'
 
 function Navbar() {
@@ -6,6 +6,9 @@ function Navbar() {
        <Flex height='75px' align='center' px='30px'>
             <img className='brand-logo' alt='brand-logo' src={process.env.PUBLIC_URL + 'assets/dfp-logo.svg'} />
             <img alt='brand-title' className='brand-title' src={process.env.PUBLIC_URL + 'assets/brand-title.svg'} />
+            <Spacer />
+                <Button variant='outlined' colorScheme='primary' size='sm'>None Redeemed</Button>
+                <Button  colorScheme='secondary'>Connect Wallet</Button>
        </Flex> 
     )
     
