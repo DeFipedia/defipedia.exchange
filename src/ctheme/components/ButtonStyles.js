@@ -13,9 +13,9 @@ export const ButtonStyles = {
      sizes:{
          sm: {
              mx: 2,
-            width: '160px',
+            // width: '160px',
             height: '40px',
-            fontSize: '12px',
+            fontSize: 'sm',
             lineHeight: '14px',
             fontWeight: 'bold',
             letterSpacing: '1px',
