@@ -1,5 +1,6 @@
 import { Button, Flex, Spacer } from '@chakra-ui/react'
 import React from 'react'
+import Web3SignIn from './Web3SignIn'
 
 function Navbar() {
     return(
@@ -8,7 +9,7 @@ function Navbar() {
             <img alt='brand-title' className='brand-title' src={process.env.PUBLIC_URL + 'assets/brand-title.svg'} />
             <Spacer />
                 <Button variant='outlined' colorScheme='primary' size='sm'>None Redeemed</Button>
-                <Button  colorScheme='secondary'>Connect Wallet</Button>
+                <Web3SignIn />
        </Flex> 
     )
     

@@ -1,35 +1,37 @@
 export const ButtonStyles = {
-    baseStyles:{
-        // borderRadius: '4px',
-        // marginTop: '10px',
-        // display: 'block',
-        // fontFamily: 'Helvetica',
-        // fontStyle: 'normal',
-        // textAlign: 'center',
-        // filter: 'drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.25))',
-        // border: 'none'
+    baseStyle:{
+        bg: 'white',
+        borderRadius: '4px',
+        fontStyle: 'normal',
     },
-    /// only small and large are declared due to no implementation of a medium button ///
      sizes:{
          sm: {
-             mx: 2,
-            // width: '160px',
+            mx: 2,
             height: '40px',
             fontSize: 'sm',
             lineHeight: '14px',
             fontWeight: 'bold',
             letterSpacing: '1px',
-           }
+           },
+        md: {
+            height: '40px',
+            width: '334px',
+            // fontSize: 16px
+    lineHeight: '18px',
+    fontWeight: 'bold',
+    letterSpacing: '1px'
+        }
      },
      variants: {
         solid: (props) => ({
-            bg:`${props.colorScheme}`, 
+            bg:props.colorScheme ? props.colorScheme : 'primary', 
             color: 'white',
         }),
         outlined: (props) => ({
             border: '1px solid',
-            borderColor: `${props.colorScheme}`,
-            color: props.colorScheme
+            borderColor: props.colorScheme ? props.colorScheme : 'primary',
+            color:  props.colorScheme ? props.colorScheme : 'primary',
+            bg: 'white'
         })
 },
     defaultProps: {
