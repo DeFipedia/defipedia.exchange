@@ -45,28 +45,18 @@ function App () {
   return (
        
      <div className='App'>
+       <Navbar />
         <Switch>
           <Route exact path='/'>
             <LandingPage saleData={saleData} />
           </Route>
           <Route exact path='/home'>
-            <Navbar 
-              brandTitle={process.env.PUBLIC_URL + 'assets/brand-title.svg'}
-              brandLogo={process.env.PUBLIC_URL + 'defipedia_logo.png'}
-              wallet={wallet}
-            />
             <Home 
               uniswapData={uniswapPoolData}
               saleData={saleData}
               wallet={wallet}
               />
           </Route>
-          {/* <Route path='/details'>
-            <Details 
-            wallet={wallet}
-            saleData={saleData}
-            />
-          </Route> */}
         </Switch>
       </div>
   );

@@ -17,7 +17,7 @@ function Web3SignIn () {
 
     return(
         <>
-            <Button colorScheme='secondary' onClick={onOpen}>Connect Wallet</Button>
+            <Button colorScheme='secondary' variant='solid' onClick={onOpen}>Connect Wallet</Button>
 
             <Modal isOpen={isOpen} onClose={onClose}>
                 <ModalOverlay />

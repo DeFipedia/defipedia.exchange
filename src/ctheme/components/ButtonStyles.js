@@ -1,6 +1,7 @@
 export const ButtonStyles = {
     baseStyle:{
-        bg: 'white',
+        background: 'white',
+        color:'black',
         borderRadius: '4px',
         fontStyle: 'normal',
     },
@@ -24,18 +25,18 @@ export const ButtonStyles = {
      },
      variants: {
         solid: (props) => ({
-            bg:props.colorScheme ? props.colorScheme : 'primary', 
             color: 'white',
+            background: props.colorScheme ? props.colorScheme : 'primary'
         }),
         outlined: (props) => ({
             border: '1px solid',
             borderColor: props.colorScheme ? props.colorScheme : 'primary',
             color:  props.colorScheme ? props.colorScheme : 'primary',
-            bg: 'white'
+            background: 'white'
         })
 },
     defaultProps: {
         size: 'sm',
-        variant: 'solid'
+        // variant: 'solid'
     }
     }
