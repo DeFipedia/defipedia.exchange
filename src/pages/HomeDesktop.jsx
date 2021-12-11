@@ -1,14 +1,13 @@
-import { Grid, GridItem, Button } from '@chakra-ui/react'
+import { Button, SimpleGrid, Box } from '@chakra-ui/react'
 import React from 'react'
 import SaleCard from '../components/SaleCard'
+
 function HomeDesktop(props) {
     const {uniswapData, saleData, wallet} = props
     return(
-        <div className='home-page'>
-            <Grid templateColumns='repeat(4, 1fr)'>
-                <GridItem>
+            <SimpleGrid columns={3} spacing='40px' justifyContent='center' >
                 {/* This is UniSwap Card  */}
-                <section className='uniswap-card'>
+                <Box>
                     <SaleCard 
                         title='Uniswap'
                         image={process.env.PUBLIC_URL + 'assets/cover-art.jpg'}
@@ -17,10 +16,11 @@ function HomeDesktop(props) {
                         desc='Support the free market'
                         learnMoreTag='Swap here!'
                         />
-                </section>
-                </GridItem>
-                <GridItem>
+                        <Button size='md' variant='solid' colorScheme='primary'>Buy</Button>
+                        <Button size='md' variant='bland'>Sell on Uniswap</Button>
+                </Box>
                     {/* Sale Card */}
+                    <Box>
                         <SaleCard 
                              title='Pre-sale'
                              image={process.env.PUBLIC_URL + 'assets/books-presale.png'}
@@ -29,18 +29,19 @@ function HomeDesktop(props) {
                              desc='Support DeFiPedia development'
                              learnMoreTag='Buy direct!'
                          />
- 
-                </GridItem>
-                <GridItem>
-                         <SaleCard 
+                        <Button size='md' variant='solid' colorScheme='secondary'>Buy</Button>
+                        <Button size='md' variant='disabled'>Redeem (coming soon)</Button>
+                    </Box>
+                <Box>
+                    <SaleCard 
                              title='Auction'
                              image={process.env.PUBLIC_URL + 'assets/cover-art.jpg'}
                              totalTokens='950'
                             desc='The pre-sale has moved. Early participants can reclaim their pre-sale deposits here.'
                          />
-                </GridItem>
-            </Grid>
-        </div>
+                         <Button size='md' variant='bland'>Withdraw deposit</Button>
+                </Box>
+            </SimpleGrid>
     )
 }
 export default HomeDesktop

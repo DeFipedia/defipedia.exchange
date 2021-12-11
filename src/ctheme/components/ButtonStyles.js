@@ -1,5 +1,7 @@
 export const ButtonStyles = {
     baseStyle:{
+        marginTop: '10px',
+        filter: 'drop-shadow(0 2px 2px rgba(0,0,0,.25))'
     },
      sizes:{
          sm: {
@@ -37,6 +39,10 @@ export const ButtonStyles = {
             _hover: {
                 border: '2px solid black'
             }
+        }),
+        disabled: ({
+            color: '#979797',
+            background: '#f2f2f2'
         })
 },
     defaultProps: {

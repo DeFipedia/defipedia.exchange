@@ -7,7 +7,7 @@ export const Footer = () => {
 
     const [email, setEmail] = useState('')
     const [showAlert, setShowAlert] = useState(false)
-    const [msg, setMsg] = useState(null)
+ const [msg, setMsg] = useState(null)
 
 
     const handleInputChange = (e) => {
