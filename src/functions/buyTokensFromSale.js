@@ -19,33 +19,33 @@ export const buyTokensFromSale =  async (tokenAmount, wallet) => {
 }
 
 export const sendTransaction = async (method, from, value) => {
-    const web3 = await web3Enabled()
-    return new Promise(async (resolve, reject) => {
-        try {
-            let gasPriceInWei = await web3.eth.getGasPrice()
-            let valueInWei = 0;
+    // const web3 = await web3Enabled()
+    // return new Promise(async (resolve, reject) => {
+    //     try {
+    //         let gasPriceInWei = await web3.eth.getGasPrice()
+    //         let valueInWei = 0;
 
-            if (value) {
-                valueInWei = web3.utils.toWei(value, 'ether');
-            }
-            const options = {
-                from: from,
-                gasLimit: 1000000,
-                gasPrice: web3.utils.toHex(gasPriceInWei),
-                value: valueInWei
-            }
-            method.send(options, (err, txHash) => {
-                if (err) {
-                    console.log('err:', err)
-                    return resolve(false);
-                }
-                console.log('success msg here')
-                return resolve(txHash);
-            })
-        } catch (error) {
-            if (error.code !== 4001)
-                console.log('can not send eth', error)
-            return resolve(false);
-        }
-    });
+    //         if (value) {
+    //             valueInWei = web3.utils.toWei(value, 'ether');
+    //         }
+    //         const options = {
+    //             from: from,
+    //             gasLimit: 1000000,
+    //             gasPrice: web3.utils.toHex(gasPriceInWei),
+    //             value: valueInWei
+    //         }
+    //         method.send(options, (err, txHash) => {
+    //             if (err) {
+    //                 console.log('err:', err)
+    //                 return resolve(false);
+    //             }
+    //             console.log('success msg here')
+    //             return resolve(txHash);
+    //         })
+    //     } catch (error) {
+    //         if (error.code !== 4001)
+    //             console.log('can not send eth', error)
+    //         return resolve(false);
+    //     }
+    // });
 }

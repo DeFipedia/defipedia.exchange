@@ -1,9 +1,5 @@
 export const ButtonStyles = {
     baseStyle:{
-        background: 'white',
-        color:'black',
-        borderRadius: '4px',
-        fontStyle: 'normal',
     },
      sizes:{
          sm: {
@@ -33,10 +29,18 @@ export const ButtonStyles = {
             borderColor: props.colorScheme ? props.colorScheme : 'primary',
             color:  props.colorScheme ? props.colorScheme : 'primary',
             background: 'white'
+        }),
+        bland: ({
+            color: 'black',
+            background: 'white',
+            border: '1px solid black',
+            _hover: {
+                border: '2px solid black'
+            }
         })
 },
     defaultProps: {
         size: 'sm',
-        // variant: 'solid'
+        variant: 'solid'
     }
     }
