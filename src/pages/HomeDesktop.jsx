@@ -3,8 +3,23 @@ import React from 'react'
 import SaleCard from '../components/SaleCard'
 import Web3SignIn from '../components/Web3SignIn'
 
+import {withdrawCommit} from '../functions/withdrawCommit'
+// import Web3SignIn from '../components/Web3SignIn'
 function HomeDesktop(props) {
     const {uniswapData, saleData, wallet} = props
+
+    const withdrawFromDutchSwap = () => {
+        withdrawCommit(wallet.account)
+    }
+
+    const buyOnUniswap = () => {
+        window.open('https://app.uniswap.org/#/swap?inputCurrency=ETH&outputCurrency=0x117c2aca45d87958ba054cb85af0fd57be00d624', '_blank')
+    }
+
+    const sellOnUniswap = () => {
+        window.open('https://app.uniswap.org/#/swap?inputCurrency=0x117c2aca45d87958ba054cb85af0fd57be00d624&outputCurrency=ETH', '_blank')
+    }
+
     return(
             <SimpleGrid columns={3} spacing='40px' justifyContent='center' >
                 {/* This is UniSwap Card  */}
@@ -17,8 +32,8 @@ function HomeDesktop(props) {
                         desc='Support the free market'
                         learnMoreTag='Swap here!'
                         />
-                        <Button size='md' variant='solid' colorScheme='primary'>Buy</Button>
-                        <Button size='md' variant='bland'>Sell on Uniswap</Button>
+                        <Button size='md' variant='solid' colorScheme='primary' onClick={buyOnUniswap}>Buy</Button>
+                        <Button size='md' variant='bland' onClick={sellOnUniswap}>Sell on Uniswap</Button>
                 </Box>
                     {/* Sale Card */}
                     <Box>
@@ -55,7 +70,6 @@ export default HomeDesktop
 // import {Button} from '../components/Button'
 // import {Footer} from '../components/Footer'
 // import BuyModal from '../components/BuyModal'
-// import {withdrawCommit} from '../functions/withdrawCommit'
 // import Web3SignIn from '../components/Web3SignIn'
 
 // const HomeDesktop = (props) => {
@@ -85,13 +99,6 @@ export default HomeDesktop
 //         setTriggerWeb3SignIn(false)
 //     }
 
-//     const withdrawFromDutchSwap = () => {
-//         withdrawCommit(wallet.account)
-//     }
-
-//     const redirectToUniswap = () => {
-//         window.open(`${process.env.REACT_APP_UNISWAP_LINK}`, '_blank')
-//     }
 //     return(
 //         <div className='home-page'>
 //             <Grid container justify='center' spacing={2}>
