@@ -3,8 +3,7 @@ import { useWallet } from 'use-wallet';
 import { Button, Modal, ModalBody, ModalCloseButton, ModalContent, ModalHeader, ModalOverlay, VStack, useDisclosure, Image } from "@chakra-ui/react";
 
 
-function WalletOption(props) {
-    const {label, option, logo} = props
+function WalletOption({label, option, logo}) {
     const wallet = useWallet()
     const connectWallet = async (connector) => {
         console.log(connector)
@@ -27,12 +26,12 @@ function WalletOption(props) {
 }
 
 
-function Web3SignIn () {
+function Web3SignIn ({size='sm'}) {
     const {isOpen, onOpen, onClose} = useDisclosure()
-
+    const wallet = useWallet()
     return(
         <>
-            <Button colorScheme='secondary' variant='solid' onClick={onOpen}>Connect Wallet</Button>
+            <Button colorScheme='secondary' variant='solid' size={size} onClick={onOpen}>{wallet.account ? `....${wallet.account.substring(wallet.account.length - 6)}` : 'Connect Wallet'}</Button>
 
             <Modal isOpen={isOpen} onClose={onClose}>
                 <ModalOverlay />

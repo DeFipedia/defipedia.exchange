@@ -4,7 +4,7 @@ import Web3SignIn from './Web3SignIn'
 
 function Navbar() {
     return(
-       <Flex height='75px' align='center' px='30px'>
+       <Flex height='75px' align='center' px='2%'>
             <img className='brand-logo' alt='brand-logo' src={process.env.PUBLIC_URL + 'assets/dfp-logo.svg'} />
             <img alt='brand-title' className='brand-title' src={process.env.PUBLIC_URL + 'assets/brand-title.svg'} />
             <Spacer />

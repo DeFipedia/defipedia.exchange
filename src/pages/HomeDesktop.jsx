@@ -1,6 +1,7 @@
 import { Button, SimpleGrid, Box } from '@chakra-ui/react'
 import React from 'react'
 import SaleCard from '../components/SaleCard'
+import Web3SignIn from '../components/Web3SignIn'
 
 function HomeDesktop(props) {
     const {uniswapData, saleData, wallet} = props
@@ -29,7 +30,10 @@ function HomeDesktop(props) {
                              desc='Support DeFiPedia development'
                              learnMoreTag='Buy direct!'
                          />
+                         {
+                             wallet.account == null ? <Web3SignIn size='md'/> :
                         <Button size='md' variant='solid' colorScheme='secondary'>Buy</Button>
+                         }
                         <Button size='md' variant='disabled'>Redeem (coming soon)</Button>
                     </Box>
                 <Box>
