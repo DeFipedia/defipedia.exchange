@@ -8,6 +8,7 @@ import {getUniswapPoolData} from './functions/getUniswapPoolData'
 import {getSalePrice} from './functions/getSalePrice'
 import LandingPage from './pages/Landing.jsx'
 import getAvailableBOOKS from './functions/getAvailableBOOKS'
+import Footer from './components/Footer';
 function App () {  
 
   const [uniswapPoolData, setuniswapPoolData] = useState({
@@ -58,6 +59,7 @@ function App () {
               />
           </Route>
         </Switch>
+        <Footer />
       </div>
   );
 }

@@ -30,7 +30,7 @@ export const ButtonStyles = {
             border: '1px solid',
             borderColor: props.colorScheme ? props.colorScheme : 'primary',
             color:  props.colorScheme ? props.colorScheme : 'primary',
-            background: 'white'
+            background: 'transparent'
         }),
         bland: ({
             color: 'black',
@@ -41,8 +41,8 @@ export const ButtonStyles = {
             }
         }),
         disabled: ({
-            color: '#979797',
-            background: '#f2f2f2'
+            color: 'grey.200',
+            background: 'grey.100'
         })
 },
     defaultProps: {

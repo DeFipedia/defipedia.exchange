@@ -1,0 +1,18 @@
+.h-stack {
+    position: absolute;
+    left: calc(50% - 184px);
+}
+
+
+.fab {
+    font-size: 26px;
+    margin-left: 8px;
+    cursor: pointer;
+    color: white;
+}
+
+.social-media-handle {
+    width: 190px;
+    height: 24px;
+}
+

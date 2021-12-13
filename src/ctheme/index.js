@@ -18,7 +18,11 @@ const ctheme = extendTheme({
         background: '#ffffff',
         text: '#252525',
         secondary: '#006fff',
-        complimentary: '#D6D6D6'
+        complimentary: '#D6D6D6',
+        grey: {
+            100: '#f2f2f2',
+            200: '#979797'
+        }
     },
     components: {
         Button
