@@ -1,5 +1,6 @@
 import { Button, SimpleGrid, Box } from '@chakra-ui/react'
 import React from 'react'
+import BuyModal from '../components/BuyModal'
 import SaleCard from '../components/SaleCard'
 import Web3SignIn from '../components/Web3SignIn'
 
@@ -11,6 +12,7 @@ function HomeDesktop(props) {
     const withdrawFromDutchSwap = () => {
         withdrawCommit(wallet.account)
     }
+
 
     const buyOnUniswap = () => {
         window.open('https://app.uniswap.org/#/swap?inputCurrency=ETH&outputCurrency=0x117c2aca45d87958ba054cb85af0fd57be00d624', '_blank')
@@ -25,7 +27,7 @@ function HomeDesktop(props) {
                 {/* This is UniSwap Card  */}
                 <Box>
                     <SaleCard 
-                        title='Uniswap'
+                        title='$BOOKS on Uniswap'
                         image={process.env.PUBLIC_URL + 'assets/cover-art.jpg'}
                         price={uniswapData.rate}
                         numberOfTokens='50'
@@ -38,7 +40,7 @@ function HomeDesktop(props) {
                     {/* Sale Card */}
                     <Box>
                         <SaleCard 
-                             title='Pre-sale'
+                             title='$BOOKS on Pre-sale'
                              image={process.env.PUBLIC_URL + 'assets/books-presale.png'}
                              price={saleData.price}
                              numberOfTokens={saleData.availableBOOKS}
@@ -46,8 +48,7 @@ function HomeDesktop(props) {
                              learnMoreTag='Buy direct!'
                          />
                          {
-                             wallet.account == null ? <Web3SignIn size='md'/> :
-                        <Button size='md' variant='solid' colorScheme='secondary'>Buy</Button>
+                             wallet.account == null ? <Web3SignIn size='md'/> : <BuyModal />
                          }
                         <Button size='md' variant='disabled'>Redeem (coming soon)</Button>
                     </Box>
@@ -58,7 +59,7 @@ function HomeDesktop(props) {
                              totalTokens='950'
                             desc='The pre-sale has moved. Early participants can reclaim their pre-sale deposits here.'
                          />
-                         <Button size='md' variant='bland'>Withdraw deposit</Button>
+                         <Button size='md' variant='bland' onClick={withdrawFromDutchSwap}>Withdraw deposit</Button>
                 </Box>
             </SimpleGrid>
     )

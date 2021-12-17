@@ -2,7 +2,7 @@ import { Box, Text , Image, Flex, Spacer} from "@chakra-ui/react";
 import React from 'react'
 
 function SaleCard(props) {
-    let {title, image, price, numberOfTokens, learnMoreTag, desc} = props
+    const {title, image, price, numberOfTokens, learnMoreTag, desc, color} = props
 
     return(
         <React.Fragment>
@@ -19,7 +19,7 @@ function SaleCard(props) {
                 pt='35px'
                 fontWeight='bold'
                 as='h3'
-            >$BOOKS on {title}</Text>
+            > {title} </Text>
             <Text color='#979797' ml='36px' as='p' fontSize='12px'>2020 DeFi Packs</Text>
             <Image h='240px' w='240px' m='auto' mt={8} src={image} border='2px solid #343434' borderRadius='2px' boxShadow='2px 4px 4px' alt='$BOOKS'/>
             <Text as='h3' color='white' ml='35px' mt='15px'>{price ? price.toString().substring(0,6)+'  ETH' : null }</Text>
@@ -33,10 +33,12 @@ function SaleCard(props) {
                 null
             }
         </Box>
+        {desc && learnMoreTag ? 
         <Box h='70px' width='334px' background='#F2F2F2' borderRadius='10px'>
             <Text ml='30px' pt='10px' fontSize='12px' as='p'>{desc}</Text>
             <Text ml='30px' fontSize='12px' as='p'>{learnMoreTag}</Text>
         </Box>
+        : null}
         </React.Fragment>
     )
 }
